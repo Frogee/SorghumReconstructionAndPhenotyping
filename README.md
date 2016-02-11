@@ -8,4 +8,4 @@ OpenCV - http://opencv.org/
 
 PCL - http://pointclouds.org/
 
-(and the PCL's dependencies; e.g. Boost, Eigen, VTK)
+  (and the PCL's dependencies; e.g. Boost, Eigen, VTK)
