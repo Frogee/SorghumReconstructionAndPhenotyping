@@ -3,6 +3,17 @@ Program to reconstruct sorghum plants from depth images and make measurements of
 
 This software is provided as is, without warranty or guarantee that it will work, and many features remain untested.
 
+# Workflow
+- A series of depth images representing a single plant are converted to point clouds and registered.
+- The pot is segmented out from the registered clouds, and a final round of registration is performed.
+- The registered cloud is meshed (using a combination of MeshLab and Screened Poisson Surface Reconstruction; these are external to the SorghumReconstructionAndPhenotyping program).
+  - MeshLab - http://meshlab.sourceforge.net/
+  - Screened Poisson Surface Reconstruction - http://www.cs.jhu.edu/~misha/Code/PoissonRecon/Version8.0/
+- The plant mesh is segmented into stem, leaves, and inflorescence using a machine learning approach (trained on point features)
+  - MultiBoost - http://www.multiboost.org/
+- Individual leaves are segmented out using supervoxels and geodesic lengths across the mesh.
+- Measurements of the entire plant mesh and individual plant organs are made.
+
 # Contact
 Ryan McCormick at ryanabashbash@tamu.edu or http://codextechnicanum.blogspot.com/
 
