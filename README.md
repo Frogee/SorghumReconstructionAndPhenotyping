@@ -4,7 +4,7 @@ Program to reconstruct sorghum plants from depth images and make measurements of
 This software is provided as is, without warranty or guarantee that it will work, and many features remain untested.
 
 # Contact
-Ryan McCormick
+Ryan McCormick at ryanabashbash@tamu.edu or http://codextechnicanum.blogspot.com/
 
 # Dependencies
 - RapidXML - http://rapidxml.sourceforge.net/
