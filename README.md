@@ -22,6 +22,7 @@ Ryan McCormick at ryanabashbash@tamu.edu or http://codextechnicanum.blogspot.com
 - OpenCV - http://opencv.org/
 - PCL - http://pointclouds.org/
   - (and the PCL's dependencies; e.g. Boost, Eigen, VTK)
+- Intel's Threading Building Blocks - https://www.threadingbuildingblocks.org/
 
 # Compilation
 First, make sure you can compile a project that depends on PCL and OpenCV (e.g., http://codextechnicanum.blogspot.com/2014/10/installing-point-cloud-library-and.html). On an Ubuntu system, PCL and OpenCV can be obtained from the apt package manager, but I recommend compiling PCL from source (e.g., http://pointclouds.org/documentation/tutorials/compiling_pcl_posix.php) so that you have access to an up to date version and ability to turn on things like fitting NURBS and B-splines (e.g., http://pointclouds.org/documentation/tutorials/bspline_fitting.php).
