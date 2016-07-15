@@ -1,0 +1,331 @@
+\hypertarget{classLSystemParameters}{\section{L\-System\-Parameters Class Reference}
+\label{classLSystemParameters}\index{L\-System\-Parameters@{L\-System\-Parameters}}
+}
+
+
+{\ttfamily \#include $<$lsystem\-Parameters.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLSystemParameters_a23ecf893047602d4076b70d46e3d13f1}{L\-System\-Parameters} ()
+\item 
+\hyperlink{classLSystemParameters_a0cccedff9fc2f0ea82a5f3a89106a6de}{$\sim$\-L\-System\-Parameters} ()
+\item 
+void \hyperlink{classLSystemParameters_a14e47fea48f4d73bd363e86bc9ae8f85}{set\-Number\-Derivations} (int input\-Number\-Derivations)
+\item 
+int \hyperlink{classLSystemParameters_a922f8a577c222df6330735bc6f9dd847}{get\-Number\-Derivations} ()
+\item 
+void \hyperlink{classLSystemParameters_ac2d66eb83df0a7569285c77777b59555}{set\-Internode\-Lengths} (std\-::vector$<$ float $>$ input\-Internode\-Lengths)
+\item 
+void \hyperlink{classLSystemParameters_aa3b4318d190e105b629225eaa624efc8}{append\-Internode\-Length} (float input\-Internode\-Length)
+\item 
+std\-::vector$<$ float $>$ \hyperlink{classLSystemParameters_af91d7c9254210830a3c7ead31c54cae9}{get\-Internode\-Lengths} ()
+\item 
+void \hyperlink{classLSystemParameters_ae602c3d680038b52145d2e9c57f10900}{set\-Internode\-Radii} (std\-::vector$<$ float $>$ input\-Internode\-Radii)
+\item 
+void \hyperlink{classLSystemParameters_a1a91050d244b8f758ae67f1d75afcaa2}{append\-Internode\-Radius} (float input\-Internode\-Radius)
+\item 
+std\-::vector$<$ float $>$ \hyperlink{classLSystemParameters_ad74efb57707873999645bf4b542d1f18}{get\-Internode\-Radii} ()
+\item 
+void \hyperlink{classLSystemParameters_a9e0f7914e97c1998009ef34d15e23025}{set\-Internode\-Pitch\-Angles} (std\-::vector$<$ float $>$ input\-Pitch\-Angles)
+\begin{DoxyCompactList}\small\item\em Pitches up by angle around the L axis (seems to be Y). Corresponds to \char`\"{}$^\wedge$\char`\"{} instruction.$>$ \end{DoxyCompactList}\item 
+void \hyperlink{classLSystemParameters_af605476ba5e0315e53617953eda145ec}{append\-Internode\-Pitch\-Angle} (float input\-Pitch\-Angle)
+\item 
+std\-::vector$<$ float $>$ \hyperlink{classLSystemParameters_a25f10717a3d2ffb4caa6949e67b05170}{get\-Internode\-Pitch\-Angles} ()
+\begin{DoxyCompactList}\small\item\em Pitches up by angle around the L axis (seems to be Y). Corresponds to \char`\"{}$^\wedge$\char`\"{} instruction. $>$ \end{DoxyCompactList}\item 
+void \hyperlink{classLSystemParameters_a11964e14c43fb1dbd443006173ac3993}{set\-Internode\-Turn\-Angles} (std\-::vector$<$ float $>$ input\-Turn\-Angles)
+\begin{DoxyCompactList}\small\item\em Turns right by angle around the U axis (seems to be X). Corresponds to \char`\"{}-\/\char`\"{} instruction. $>$ \end{DoxyCompactList}\item 
+void \hyperlink{classLSystemParameters_a42c09989d87627bfd5217d5799de6261}{append\-Internode\-Turn\-Angle} (float input\-Turn\-Angle)
+\item 
+std\-::vector$<$ float $>$ \hyperlink{classLSystemParameters_ae75f4c86bceacdd960c3a41a2de94265}{get\-Internode\-Turn\-Angles} ()
+\begin{DoxyCompactList}\small\item\em Turns right by angle around the U axis (seems to be X). Corresponds to \char`\"{}-\/\char`\"{} instruction. $>$ \end{DoxyCompactList}\item 
+void \hyperlink{classLSystemParameters_aac5a310edc93f3f431d0bbcef0f64bb5}{set\-Leaf\-Phyllotaxy\-Angles} (std\-::vector$<$ float $>$ input\-Leaf\-Phyllotaxy\-Angles)
+\begin{DoxyCompactList}\small\item\em Turns counter-\/clockwise around Z axis, starting along X axis. Corresponds to \char`\"{}/\char`\"{} instruction. $>$ \end{DoxyCompactList}\item 
+void \hyperlink{classLSystemParameters_abfe638849fd39e447a12231b1ca22a50}{append\-Leaf\-Phyllotaxy\-Angle} (float input\-Leaf\-Phyllotaxy\-Angle)
+\item 
+std\-::vector$<$ float $>$ \hyperlink{classLSystemParameters_ad28db9029a6879362cd7af7f969c3f87}{get\-Leaf\-Phyllotaxy\-Angles} ()
+\begin{DoxyCompactList}\small\item\em Turns counter-\/clockwise around Z axis, starting along X axis. Corresponds to \char`\"{}/\char`\"{} instruction. $>$ \end{DoxyCompactList}\item 
+void \hyperlink{classLSystemParameters_a8518e051415f3684548081ebe4e6d079}{set\-Leaf\-Widths} (std\-::vector$<$ float $>$ input\-Leaf\-Widths)
+\item 
+void \hyperlink{classLSystemParameters_a5ba39d60b7c69f087292d1a69468611f}{append\-Leaf\-Width} (float input\-Leaf\-Width)
+\item 
+std\-::vector$<$ float $>$ \hyperlink{classLSystemParameters_ae8236379ad72509c59c784f08d9a752b}{get\-Leaf\-Widths} ()
+\item 
+void \hyperlink{classLSystemParameters_a1dc078c5bc7d25a951c523bd8bbd16db}{set\-Leaf\-Curvatures} (std\-::vector$<$ std\-::vector$<$ std\-::pair$<$ float, float $>$ $>$ $>$ input\-Leaf\-Curvatures)
+\item 
+void \hyperlink{classLSystemParameters_a3db8d293bc9d8a7d50f93202f88be317}{append\-Leaf\-Curvature} (std\-::vector$<$ std\-::pair$<$ float, float $>$ $>$ input\-Leaf\-Curvature)
+\item 
+std\-::vector$<$ std\-::vector\\*
+$<$ std\-::pair$<$ float, float $>$ $>$ $>$ \hyperlink{classLSystemParameters_a127b9e85d7d1f6071f720709d324be88}{get\-Leaf\-Curvatures} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classLSystemParameters_aa6c15efa6da78e759317beebcd63072d}{\-\_\-number\-Derivations}
+\item 
+std\-::vector$<$ float $>$ \hyperlink{classLSystemParameters_a2465e8385f6f4a44e6066b8e373f911a}{\-\_\-internode\-Lengths}
+\item 
+std\-::vector$<$ float $>$ \hyperlink{classLSystemParameters_aed5693a39acfe7da5f2338a470fa56da}{\-\_\-internode\-Radii}
+\item 
+std\-::vector$<$ float $>$ \hyperlink{classLSystemParameters_a262a0b893a9ef18489b35cce0b6053b6}{\-\_\-internode\-Pitch\-Angles}
+\begin{DoxyCompactList}\small\item\em Pitches up by angle around the L axis (seems to be Y). Corresponds to \char`\"{}$^\wedge$\char`\"{} instruction. $>$ \end{DoxyCompactList}\item 
+std\-::vector$<$ float $>$ \hyperlink{classLSystemParameters_af078859120313ef883b1ac15dddc8330}{\-\_\-internode\-Turn\-Angles}
+\begin{DoxyCompactList}\small\item\em Turns right by angle around the U axis (seems to be X). Corresponds to \char`\"{}-\/\char`\"{} instruction. $>$ \end{DoxyCompactList}\item 
+std\-::vector$<$ float $>$ \hyperlink{classLSystemParameters_ad34438ab953227fe2810433f2c0fbcd6}{\-\_\-leaf\-Phyllotaxy\-Angles}
+\begin{DoxyCompactList}\small\item\em Turns counter-\/clockwise around Z axis, starting along X axis. Corresponds to \char`\"{}/\char`\"{} instruction. $>$ \end{DoxyCompactList}\item 
+std\-::vector$<$ float $>$ \hyperlink{classLSystemParameters_afdad1e5edf4a2d3f00012f0ad8d5d6f3}{\-\_\-leaf\-Widths}
+\item 
+std\-::vector$<$ std\-::vector\\*
+$<$ std\-::pair$<$ float, float $>$ $>$ $>$ \hyperlink{classLSystemParameters_a257d10b96cb874d2756013098f8c7095}{\-\_\-leaf\-Curvatures}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classLSystemParameters_a23ecf893047602d4076b70d46e3d13f1}{\index{L\-System\-Parameters@{L\-System\-Parameters}!L\-System\-Parameters@{L\-System\-Parameters}}
+\index{L\-System\-Parameters@{L\-System\-Parameters}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{L\-System\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}L\-System\-Parameters\-::\-L\-System\-Parameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_a23ecf893047602d4076b70d46e3d13f1}
+\hypertarget{classLSystemParameters_a0cccedff9fc2f0ea82a5f3a89106a6de}{\index{L\-System\-Parameters@{L\-System\-Parameters}!$\sim$\-L\-System\-Parameters@{$\sim$\-L\-System\-Parameters}}
+\index{$\sim$\-L\-System\-Parameters@{$\sim$\-L\-System\-Parameters}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{$\sim$\-L\-System\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}L\-System\-Parameters\-::$\sim$\-L\-System\-Parameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_a0cccedff9fc2f0ea82a5f3a89106a6de}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLSystemParameters_aa3b4318d190e105b629225eaa624efc8}{\index{L\-System\-Parameters@{L\-System\-Parameters}!append\-Internode\-Length@{append\-Internode\-Length}}
+\index{append\-Internode\-Length@{append\-Internode\-Length}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{append\-Internode\-Length}]{\setlength{\rightskip}{0pt plus 5cm}void L\-System\-Parameters\-::append\-Internode\-Length (
+\begin{DoxyParamCaption}
+\item[{float}]{input\-Internode\-Length}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_aa3b4318d190e105b629225eaa624efc8}
+\hypertarget{classLSystemParameters_af605476ba5e0315e53617953eda145ec}{\index{L\-System\-Parameters@{L\-System\-Parameters}!append\-Internode\-Pitch\-Angle@{append\-Internode\-Pitch\-Angle}}
+\index{append\-Internode\-Pitch\-Angle@{append\-Internode\-Pitch\-Angle}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{append\-Internode\-Pitch\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}void L\-System\-Parameters\-::append\-Internode\-Pitch\-Angle (
+\begin{DoxyParamCaption}
+\item[{float}]{input\-Pitch\-Angle}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_af605476ba5e0315e53617953eda145ec}
+\hypertarget{classLSystemParameters_a1a91050d244b8f758ae67f1d75afcaa2}{\index{L\-System\-Parameters@{L\-System\-Parameters}!append\-Internode\-Radius@{append\-Internode\-Radius}}
+\index{append\-Internode\-Radius@{append\-Internode\-Radius}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{append\-Internode\-Radius}]{\setlength{\rightskip}{0pt plus 5cm}void L\-System\-Parameters\-::append\-Internode\-Radius (
+\begin{DoxyParamCaption}
+\item[{float}]{input\-Internode\-Radius}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_a1a91050d244b8f758ae67f1d75afcaa2}
+\hypertarget{classLSystemParameters_a42c09989d87627bfd5217d5799de6261}{\index{L\-System\-Parameters@{L\-System\-Parameters}!append\-Internode\-Turn\-Angle@{append\-Internode\-Turn\-Angle}}
+\index{append\-Internode\-Turn\-Angle@{append\-Internode\-Turn\-Angle}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{append\-Internode\-Turn\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}void L\-System\-Parameters\-::append\-Internode\-Turn\-Angle (
+\begin{DoxyParamCaption}
+\item[{float}]{input\-Turn\-Angle}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_a42c09989d87627bfd5217d5799de6261}
+\hypertarget{classLSystemParameters_a3db8d293bc9d8a7d50f93202f88be317}{\index{L\-System\-Parameters@{L\-System\-Parameters}!append\-Leaf\-Curvature@{append\-Leaf\-Curvature}}
+\index{append\-Leaf\-Curvature@{append\-Leaf\-Curvature}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{append\-Leaf\-Curvature}]{\setlength{\rightskip}{0pt plus 5cm}void L\-System\-Parameters\-::append\-Leaf\-Curvature (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::pair$<$ float, float $>$ $>$}]{input\-Leaf\-Curvature}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_a3db8d293bc9d8a7d50f93202f88be317}
+\hypertarget{classLSystemParameters_abfe638849fd39e447a12231b1ca22a50}{\index{L\-System\-Parameters@{L\-System\-Parameters}!append\-Leaf\-Phyllotaxy\-Angle@{append\-Leaf\-Phyllotaxy\-Angle}}
+\index{append\-Leaf\-Phyllotaxy\-Angle@{append\-Leaf\-Phyllotaxy\-Angle}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{append\-Leaf\-Phyllotaxy\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}void L\-System\-Parameters\-::append\-Leaf\-Phyllotaxy\-Angle (
+\begin{DoxyParamCaption}
+\item[{float}]{input\-Leaf\-Phyllotaxy\-Angle}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_abfe638849fd39e447a12231b1ca22a50}
+\hypertarget{classLSystemParameters_a5ba39d60b7c69f087292d1a69468611f}{\index{L\-System\-Parameters@{L\-System\-Parameters}!append\-Leaf\-Width@{append\-Leaf\-Width}}
+\index{append\-Leaf\-Width@{append\-Leaf\-Width}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{append\-Leaf\-Width}]{\setlength{\rightskip}{0pt plus 5cm}void L\-System\-Parameters\-::append\-Leaf\-Width (
+\begin{DoxyParamCaption}
+\item[{float}]{input\-Leaf\-Width}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_a5ba39d60b7c69f087292d1a69468611f}
+\hypertarget{classLSystemParameters_af91d7c9254210830a3c7ead31c54cae9}{\index{L\-System\-Parameters@{L\-System\-Parameters}!get\-Internode\-Lengths@{get\-Internode\-Lengths}}
+\index{get\-Internode\-Lengths@{get\-Internode\-Lengths}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{get\-Internode\-Lengths}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ float $>$ L\-System\-Parameters\-::get\-Internode\-Lengths (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_af91d7c9254210830a3c7ead31c54cae9}
+\hypertarget{classLSystemParameters_a25f10717a3d2ffb4caa6949e67b05170}{\index{L\-System\-Parameters@{L\-System\-Parameters}!get\-Internode\-Pitch\-Angles@{get\-Internode\-Pitch\-Angles}}
+\index{get\-Internode\-Pitch\-Angles@{get\-Internode\-Pitch\-Angles}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{get\-Internode\-Pitch\-Angles}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ float $>$ L\-System\-Parameters\-::get\-Internode\-Pitch\-Angles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_a25f10717a3d2ffb4caa6949e67b05170}
+
+
+Pitches up by angle around the L axis (seems to be Y). Corresponds to \char`\"{}$^\wedge$\char`\"{} instruction. $>$ 
+
+\hypertarget{classLSystemParameters_ad74efb57707873999645bf4b542d1f18}{\index{L\-System\-Parameters@{L\-System\-Parameters}!get\-Internode\-Radii@{get\-Internode\-Radii}}
+\index{get\-Internode\-Radii@{get\-Internode\-Radii}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{get\-Internode\-Radii}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ float $>$ L\-System\-Parameters\-::get\-Internode\-Radii (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_ad74efb57707873999645bf4b542d1f18}
+\hypertarget{classLSystemParameters_ae75f4c86bceacdd960c3a41a2de94265}{\index{L\-System\-Parameters@{L\-System\-Parameters}!get\-Internode\-Turn\-Angles@{get\-Internode\-Turn\-Angles}}
+\index{get\-Internode\-Turn\-Angles@{get\-Internode\-Turn\-Angles}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{get\-Internode\-Turn\-Angles}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ float $>$ L\-System\-Parameters\-::get\-Internode\-Turn\-Angles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_ae75f4c86bceacdd960c3a41a2de94265}
+
+
+Turns right by angle around the U axis (seems to be X). Corresponds to \char`\"{}-\/\char`\"{} instruction. $>$ 
+
+\hypertarget{classLSystemParameters_a127b9e85d7d1f6071f720709d324be88}{\index{L\-System\-Parameters@{L\-System\-Parameters}!get\-Leaf\-Curvatures@{get\-Leaf\-Curvatures}}
+\index{get\-Leaf\-Curvatures@{get\-Leaf\-Curvatures}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{get\-Leaf\-Curvatures}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ std\-::vector$<$ std\-::pair$<$ float, float $>$ $>$ $>$ L\-System\-Parameters\-::get\-Leaf\-Curvatures (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_a127b9e85d7d1f6071f720709d324be88}
+\hypertarget{classLSystemParameters_ad28db9029a6879362cd7af7f969c3f87}{\index{L\-System\-Parameters@{L\-System\-Parameters}!get\-Leaf\-Phyllotaxy\-Angles@{get\-Leaf\-Phyllotaxy\-Angles}}
+\index{get\-Leaf\-Phyllotaxy\-Angles@{get\-Leaf\-Phyllotaxy\-Angles}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{get\-Leaf\-Phyllotaxy\-Angles}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ float $>$ L\-System\-Parameters\-::get\-Leaf\-Phyllotaxy\-Angles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_ad28db9029a6879362cd7af7f969c3f87}
+
+
+Turns counter-\/clockwise around Z axis, starting along X axis. Corresponds to \char`\"{}/\char`\"{} instruction. $>$ 
+
+\hypertarget{classLSystemParameters_ae8236379ad72509c59c784f08d9a752b}{\index{L\-System\-Parameters@{L\-System\-Parameters}!get\-Leaf\-Widths@{get\-Leaf\-Widths}}
+\index{get\-Leaf\-Widths@{get\-Leaf\-Widths}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{get\-Leaf\-Widths}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ float $>$ L\-System\-Parameters\-::get\-Leaf\-Widths (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_ae8236379ad72509c59c784f08d9a752b}
+\hypertarget{classLSystemParameters_a922f8a577c222df6330735bc6f9dd847}{\index{L\-System\-Parameters@{L\-System\-Parameters}!get\-Number\-Derivations@{get\-Number\-Derivations}}
+\index{get\-Number\-Derivations@{get\-Number\-Derivations}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{get\-Number\-Derivations}]{\setlength{\rightskip}{0pt plus 5cm}int L\-System\-Parameters\-::get\-Number\-Derivations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_a922f8a577c222df6330735bc6f9dd847}
+\hypertarget{classLSystemParameters_ac2d66eb83df0a7569285c77777b59555}{\index{L\-System\-Parameters@{L\-System\-Parameters}!set\-Internode\-Lengths@{set\-Internode\-Lengths}}
+\index{set\-Internode\-Lengths@{set\-Internode\-Lengths}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{set\-Internode\-Lengths}]{\setlength{\rightskip}{0pt plus 5cm}void L\-System\-Parameters\-::set\-Internode\-Lengths (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ float $>$}]{input\-Internode\-Lengths}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_ac2d66eb83df0a7569285c77777b59555}
+\hypertarget{classLSystemParameters_a9e0f7914e97c1998009ef34d15e23025}{\index{L\-System\-Parameters@{L\-System\-Parameters}!set\-Internode\-Pitch\-Angles@{set\-Internode\-Pitch\-Angles}}
+\index{set\-Internode\-Pitch\-Angles@{set\-Internode\-Pitch\-Angles}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{set\-Internode\-Pitch\-Angles}]{\setlength{\rightskip}{0pt plus 5cm}void L\-System\-Parameters\-::set\-Internode\-Pitch\-Angles (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ float $>$}]{input\-Pitch\-Angles}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_a9e0f7914e97c1998009ef34d15e23025}
+
+
+Pitches up by angle around the L axis (seems to be Y). Corresponds to \char`\"{}$^\wedge$\char`\"{} instruction.$>$ 
+
+\hypertarget{classLSystemParameters_ae602c3d680038b52145d2e9c57f10900}{\index{L\-System\-Parameters@{L\-System\-Parameters}!set\-Internode\-Radii@{set\-Internode\-Radii}}
+\index{set\-Internode\-Radii@{set\-Internode\-Radii}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{set\-Internode\-Radii}]{\setlength{\rightskip}{0pt plus 5cm}void L\-System\-Parameters\-::set\-Internode\-Radii (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ float $>$}]{input\-Internode\-Radii}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_ae602c3d680038b52145d2e9c57f10900}
+\hypertarget{classLSystemParameters_a11964e14c43fb1dbd443006173ac3993}{\index{L\-System\-Parameters@{L\-System\-Parameters}!set\-Internode\-Turn\-Angles@{set\-Internode\-Turn\-Angles}}
+\index{set\-Internode\-Turn\-Angles@{set\-Internode\-Turn\-Angles}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{set\-Internode\-Turn\-Angles}]{\setlength{\rightskip}{0pt plus 5cm}void L\-System\-Parameters\-::set\-Internode\-Turn\-Angles (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ float $>$}]{input\-Turn\-Angles}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_a11964e14c43fb1dbd443006173ac3993}
+
+
+Turns right by angle around the U axis (seems to be X). Corresponds to \char`\"{}-\/\char`\"{} instruction. $>$ 
+
+\hypertarget{classLSystemParameters_a1dc078c5bc7d25a951c523bd8bbd16db}{\index{L\-System\-Parameters@{L\-System\-Parameters}!set\-Leaf\-Curvatures@{set\-Leaf\-Curvatures}}
+\index{set\-Leaf\-Curvatures@{set\-Leaf\-Curvatures}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{set\-Leaf\-Curvatures}]{\setlength{\rightskip}{0pt plus 5cm}void L\-System\-Parameters\-::set\-Leaf\-Curvatures (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::vector$<$ std\-::pair$<$ float, float $>$ $>$ $>$}]{input\-Leaf\-Curvatures}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_a1dc078c5bc7d25a951c523bd8bbd16db}
+\hypertarget{classLSystemParameters_aac5a310edc93f3f431d0bbcef0f64bb5}{\index{L\-System\-Parameters@{L\-System\-Parameters}!set\-Leaf\-Phyllotaxy\-Angles@{set\-Leaf\-Phyllotaxy\-Angles}}
+\index{set\-Leaf\-Phyllotaxy\-Angles@{set\-Leaf\-Phyllotaxy\-Angles}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{set\-Leaf\-Phyllotaxy\-Angles}]{\setlength{\rightskip}{0pt plus 5cm}void L\-System\-Parameters\-::set\-Leaf\-Phyllotaxy\-Angles (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ float $>$}]{input\-Leaf\-Phyllotaxy\-Angles}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_aac5a310edc93f3f431d0bbcef0f64bb5}
+
+
+Turns counter-\/clockwise around Z axis, starting along X axis. Corresponds to \char`\"{}/\char`\"{} instruction. $>$ 
+
+\hypertarget{classLSystemParameters_a8518e051415f3684548081ebe4e6d079}{\index{L\-System\-Parameters@{L\-System\-Parameters}!set\-Leaf\-Widths@{set\-Leaf\-Widths}}
+\index{set\-Leaf\-Widths@{set\-Leaf\-Widths}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{set\-Leaf\-Widths}]{\setlength{\rightskip}{0pt plus 5cm}void L\-System\-Parameters\-::set\-Leaf\-Widths (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ float $>$}]{input\-Leaf\-Widths}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_a8518e051415f3684548081ebe4e6d079}
+\hypertarget{classLSystemParameters_a14e47fea48f4d73bd363e86bc9ae8f85}{\index{L\-System\-Parameters@{L\-System\-Parameters}!set\-Number\-Derivations@{set\-Number\-Derivations}}
+\index{set\-Number\-Derivations@{set\-Number\-Derivations}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{set\-Number\-Derivations}]{\setlength{\rightskip}{0pt plus 5cm}void L\-System\-Parameters\-::set\-Number\-Derivations (
+\begin{DoxyParamCaption}
+\item[{int}]{input\-Number\-Derivations}
+\end{DoxyParamCaption}
+)}}\label{classLSystemParameters_a14e47fea48f4d73bd363e86bc9ae8f85}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classLSystemParameters_a2465e8385f6f4a44e6066b8e373f911a}{\index{L\-System\-Parameters@{L\-System\-Parameters}!\-\_\-internode\-Lengths@{\-\_\-internode\-Lengths}}
+\index{\-\_\-internode\-Lengths@{\-\_\-internode\-Lengths}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{\-\_\-internode\-Lengths}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$float$>$ L\-System\-Parameters\-::\-\_\-internode\-Lengths\hspace{0.3cm}{\ttfamily [private]}}}\label{classLSystemParameters_a2465e8385f6f4a44e6066b8e373f911a}
+\hypertarget{classLSystemParameters_a262a0b893a9ef18489b35cce0b6053b6}{\index{L\-System\-Parameters@{L\-System\-Parameters}!\-\_\-internode\-Pitch\-Angles@{\-\_\-internode\-Pitch\-Angles}}
+\index{\-\_\-internode\-Pitch\-Angles@{\-\_\-internode\-Pitch\-Angles}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{\-\_\-internode\-Pitch\-Angles}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$float$>$ L\-System\-Parameters\-::\-\_\-internode\-Pitch\-Angles\hspace{0.3cm}{\ttfamily [private]}}}\label{classLSystemParameters_a262a0b893a9ef18489b35cce0b6053b6}
+
+
+Pitches up by angle around the L axis (seems to be Y). Corresponds to \char`\"{}$^\wedge$\char`\"{} instruction. $>$ 
+
+\hypertarget{classLSystemParameters_aed5693a39acfe7da5f2338a470fa56da}{\index{L\-System\-Parameters@{L\-System\-Parameters}!\-\_\-internode\-Radii@{\-\_\-internode\-Radii}}
+\index{\-\_\-internode\-Radii@{\-\_\-internode\-Radii}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{\-\_\-internode\-Radii}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$float$>$ L\-System\-Parameters\-::\-\_\-internode\-Radii\hspace{0.3cm}{\ttfamily [private]}}}\label{classLSystemParameters_aed5693a39acfe7da5f2338a470fa56da}
+\hypertarget{classLSystemParameters_af078859120313ef883b1ac15dddc8330}{\index{L\-System\-Parameters@{L\-System\-Parameters}!\-\_\-internode\-Turn\-Angles@{\-\_\-internode\-Turn\-Angles}}
+\index{\-\_\-internode\-Turn\-Angles@{\-\_\-internode\-Turn\-Angles}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{\-\_\-internode\-Turn\-Angles}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$float$>$ L\-System\-Parameters\-::\-\_\-internode\-Turn\-Angles\hspace{0.3cm}{\ttfamily [private]}}}\label{classLSystemParameters_af078859120313ef883b1ac15dddc8330}
+
+
+Turns right by angle around the U axis (seems to be X). Corresponds to \char`\"{}-\/\char`\"{} instruction. $>$ 
+
+\hypertarget{classLSystemParameters_a257d10b96cb874d2756013098f8c7095}{\index{L\-System\-Parameters@{L\-System\-Parameters}!\-\_\-leaf\-Curvatures@{\-\_\-leaf\-Curvatures}}
+\index{\-\_\-leaf\-Curvatures@{\-\_\-leaf\-Curvatures}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{\-\_\-leaf\-Curvatures}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ std\-::vector$<$ std\-::pair$<$float, float$>$ $>$ $>$ L\-System\-Parameters\-::\-\_\-leaf\-Curvatures\hspace{0.3cm}{\ttfamily [private]}}}\label{classLSystemParameters_a257d10b96cb874d2756013098f8c7095}
+\hypertarget{classLSystemParameters_ad34438ab953227fe2810433f2c0fbcd6}{\index{L\-System\-Parameters@{L\-System\-Parameters}!\-\_\-leaf\-Phyllotaxy\-Angles@{\-\_\-leaf\-Phyllotaxy\-Angles}}
+\index{\-\_\-leaf\-Phyllotaxy\-Angles@{\-\_\-leaf\-Phyllotaxy\-Angles}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{\-\_\-leaf\-Phyllotaxy\-Angles}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$float$>$ L\-System\-Parameters\-::\-\_\-leaf\-Phyllotaxy\-Angles\hspace{0.3cm}{\ttfamily [private]}}}\label{classLSystemParameters_ad34438ab953227fe2810433f2c0fbcd6}
+
+
+Turns counter-\/clockwise around Z axis, starting along X axis. Corresponds to \char`\"{}/\char`\"{} instruction. $>$ 
+
+\hypertarget{classLSystemParameters_afdad1e5edf4a2d3f00012f0ad8d5d6f3}{\index{L\-System\-Parameters@{L\-System\-Parameters}!\-\_\-leaf\-Widths@{\-\_\-leaf\-Widths}}
+\index{\-\_\-leaf\-Widths@{\-\_\-leaf\-Widths}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{\-\_\-leaf\-Widths}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$float$>$ L\-System\-Parameters\-::\-\_\-leaf\-Widths\hspace{0.3cm}{\ttfamily [private]}}}\label{classLSystemParameters_afdad1e5edf4a2d3f00012f0ad8d5d6f3}
+\hypertarget{classLSystemParameters_aa6c15efa6da78e759317beebcd63072d}{\index{L\-System\-Parameters@{L\-System\-Parameters}!\-\_\-number\-Derivations@{\-\_\-number\-Derivations}}
+\index{\-\_\-number\-Derivations@{\-\_\-number\-Derivations}!LSystemParameters@{L\-System\-Parameters}}
+\subsubsection[{\-\_\-number\-Derivations}]{\setlength{\rightskip}{0pt plus 5cm}int L\-System\-Parameters\-::\-\_\-number\-Derivations\hspace{0.3cm}{\ttfamily [private]}}}\label{classLSystemParameters_aa6c15efa6da78e759317beebcd63072d}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lsystemParameters_8h}{lsystem\-Parameters.\-h}\item 
+\hyperlink{lsystemParameters_8cpp}{lsystem\-Parameters.\-cpp}\end{DoxyCompactItemize}

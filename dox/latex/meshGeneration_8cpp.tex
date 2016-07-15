@@ -1,0 +1,103 @@
+\hypertarget{meshGeneration_8cpp}{\section{mesh\-Generation.\-cpp File Reference}
+\label{meshGeneration_8cpp}\index{mesh\-Generation.\-cpp@{mesh\-Generation.\-cpp}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$pcl/point\-\_\-types.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/io/pcd\-\_\-io.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/kdtree/kdtree\-\_\-flann.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/features/normal\-\_\-3d.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/surface/gp3.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/io/vtk\-\_\-io.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/io/ply\-\_\-io.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/surface/mls.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/filters/voxel\-\_\-grid.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/visualization/pcl\-\_\-visualizer.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/surface/marching\-\_\-cubes\-\_\-rbf.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/surface/marching\-\_\-cubes\-\_\-hoppe.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/filters/statistical\-\_\-outlier\-\_\-removal.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/filters/passthrough.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/common/common.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/features/normal\-\_\-3d\-\_\-omp.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/surface/poisson.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/surface/vtk\-\_\-smoothing/vtk\-\_\-mesh\-\_\-quadric\-\_\-decimation.\-h$>$}\\*
+{\ttfamily \#include $<$boost/thread/thread.\-hpp$>$}\\*
+{\ttfamily \#include \char`\"{}mesh\-Generation.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}input\-Params.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}logging\-Helper.\-h\char`\"{}}\\*
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef pcl\-::\-Point\-Normal \hyperlink{meshGeneration_8cpp_addedd5f094ff6a9309d30e396aa0514b}{Point\-N\-T}
+\item 
+typedef \\*
+pcl\-::visualization\-::\-Point\-Cloud\-Color\-Handler\-Custom\\*
+$<$ pcl\-::\-Point\-X\-Y\-Z $>$ \hyperlink{meshGeneration_8cpp_a2782f78115ae6b3e2449e6775607a98b}{Color\-Handler\-X\-Y\-Z}
+\item 
+typedef \\*
+pcl\-::visualization\-::\-Point\-Cloud\-Color\-Handler\-Custom\\*
+$<$ \hyperlink{features_8cpp_addedd5f094ff6a9309d30e396aa0514b}{Point\-N\-T} $>$ \hyperlink{meshGeneration_8cpp_ab5a065c9a2e6dc92a1da2023ab564420}{Color\-Handler\-N\-T}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{meshGeneration_8cpp_a18794891f7a19f783cf95ffc66bf37ce}{mesh\-Generation} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+int \hyperlink{meshGeneration_8cpp_a44c5f92b8fbbf33aa61c1f019a0830e9}{convert\-P\-C\-D\-To\-P\-L\-Y} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+int \hyperlink{meshGeneration_8cpp_a35e99635563549d60627c0c500351f13}{convert\-P\-L\-Y\-To\-P\-C\-D} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+int \hyperlink{meshGeneration_8cpp_ade9671dd372fab0bec9eab24051a9a5e}{multi\-Cloud\-Mesh\-Generation} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{meshGeneration_8cpp_ab5a065c9a2e6dc92a1da2023ab564420}{\index{mesh\-Generation.\-cpp@{mesh\-Generation.\-cpp}!Color\-Handler\-N\-T@{Color\-Handler\-N\-T}}
+\index{Color\-Handler\-N\-T@{Color\-Handler\-N\-T}!meshGeneration.cpp@{mesh\-Generation.\-cpp}}
+\subsubsection[{Color\-Handler\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}typedef pcl\-::visualization\-::\-Point\-Cloud\-Color\-Handler\-Custom$<${\bf Point\-N\-T}$>$ {\bf Color\-Handler\-N\-T}}}\label{meshGeneration_8cpp_ab5a065c9a2e6dc92a1da2023ab564420}
+\hypertarget{meshGeneration_8cpp_a2782f78115ae6b3e2449e6775607a98b}{\index{mesh\-Generation.\-cpp@{mesh\-Generation.\-cpp}!Color\-Handler\-X\-Y\-Z@{Color\-Handler\-X\-Y\-Z}}
+\index{Color\-Handler\-X\-Y\-Z@{Color\-Handler\-X\-Y\-Z}!meshGeneration.cpp@{mesh\-Generation.\-cpp}}
+\subsubsection[{Color\-Handler\-X\-Y\-Z}]{\setlength{\rightskip}{0pt plus 5cm}typedef pcl\-::visualization\-::\-Point\-Cloud\-Color\-Handler\-Custom$<$pcl\-::\-Point\-X\-Y\-Z$>$ {\bf Color\-Handler\-X\-Y\-Z}}}\label{meshGeneration_8cpp_a2782f78115ae6b3e2449e6775607a98b}
+\hypertarget{meshGeneration_8cpp_addedd5f094ff6a9309d30e396aa0514b}{\index{mesh\-Generation.\-cpp@{mesh\-Generation.\-cpp}!Point\-N\-T@{Point\-N\-T}}
+\index{Point\-N\-T@{Point\-N\-T}!meshGeneration.cpp@{mesh\-Generation.\-cpp}}
+\subsubsection[{Point\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}typedef pcl\-::\-Point\-Normal {\bf Point\-N\-T}}}\label{meshGeneration_8cpp_addedd5f094ff6a9309d30e396aa0514b}
+
+
+\subsection{Function Documentation}
+\hypertarget{meshGeneration_8cpp_a44c5f92b8fbbf33aa61c1f019a0830e9}{\index{mesh\-Generation.\-cpp@{mesh\-Generation.\-cpp}!convert\-P\-C\-D\-To\-P\-L\-Y@{convert\-P\-C\-D\-To\-P\-L\-Y}}
+\index{convert\-P\-C\-D\-To\-P\-L\-Y@{convert\-P\-C\-D\-To\-P\-L\-Y}!meshGeneration.cpp@{mesh\-Generation.\-cpp}}
+\subsubsection[{convert\-P\-C\-D\-To\-P\-L\-Y}]{\setlength{\rightskip}{0pt plus 5cm}int convert\-P\-C\-D\-To\-P\-L\-Y (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{meshGeneration_8cpp_a44c5f92b8fbbf33aa61c1f019a0830e9}
+\hypertarget{meshGeneration_8cpp_a35e99635563549d60627c0c500351f13}{\index{mesh\-Generation.\-cpp@{mesh\-Generation.\-cpp}!convert\-P\-L\-Y\-To\-P\-C\-D@{convert\-P\-L\-Y\-To\-P\-C\-D}}
+\index{convert\-P\-L\-Y\-To\-P\-C\-D@{convert\-P\-L\-Y\-To\-P\-C\-D}!meshGeneration.cpp@{mesh\-Generation.\-cpp}}
+\subsubsection[{convert\-P\-L\-Y\-To\-P\-C\-D}]{\setlength{\rightskip}{0pt plus 5cm}int convert\-P\-L\-Y\-To\-P\-C\-D (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{meshGeneration_8cpp_a35e99635563549d60627c0c500351f13}
+\hypertarget{meshGeneration_8cpp_a18794891f7a19f783cf95ffc66bf37ce}{\index{mesh\-Generation.\-cpp@{mesh\-Generation.\-cpp}!mesh\-Generation@{mesh\-Generation}}
+\index{mesh\-Generation@{mesh\-Generation}!meshGeneration.cpp@{mesh\-Generation.\-cpp}}
+\subsubsection[{mesh\-Generation}]{\setlength{\rightskip}{0pt plus 5cm}int mesh\-Generation (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{meshGeneration_8cpp_a18794891f7a19f783cf95ffc66bf37ce}
+\hypertarget{meshGeneration_8cpp_ade9671dd372fab0bec9eab24051a9a5e}{\index{mesh\-Generation.\-cpp@{mesh\-Generation.\-cpp}!multi\-Cloud\-Mesh\-Generation@{multi\-Cloud\-Mesh\-Generation}}
+\index{multi\-Cloud\-Mesh\-Generation@{multi\-Cloud\-Mesh\-Generation}!meshGeneration.cpp@{mesh\-Generation.\-cpp}}
+\subsubsection[{multi\-Cloud\-Mesh\-Generation}]{\setlength{\rightskip}{0pt plus 5cm}int multi\-Cloud\-Mesh\-Generation (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{meshGeneration_8cpp_ade9671dd372fab0bec9eab24051a9a5e}

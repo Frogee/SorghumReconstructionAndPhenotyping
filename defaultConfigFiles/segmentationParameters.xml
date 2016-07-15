@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<InputParameters>
+	<ParameterSet name="CameraParameters" description="Settings for the PCL visualizer camera.">
+		<Parameter name="xCoordinateLocation" description="the x coordinate of the camera location" type="float" value="0"> </Parameter>
+		<Parameter name="yCoordinateLocation" description="the y coordinate of the camera location" type="float" value="1250"> </Parameter>
+		<Parameter name="zCoordinateLocation" description="the z coordinate of the camera location" type="float" value="500"> </Parameter>
+		<Parameter name="xViewComponent" description="the x component of the view point of the camera" type="float" value="0"> </Parameter>
+		<Parameter name="yViewComponent" description="the y component of the view point of the camera" type="float" value="0"> </Parameter>
+		<Parameter name="zViewComponent" description="the z component of the view point of the camera" type="float" value="300"> </Parameter>
+		<Parameter name="xUpComponent" description="the x component of the view up direction of the camera" type="float" value="0"> </Parameter>
+		<Parameter name="yUpComponent" description="the y component of the view up direction of the camera" type="float" value="0"> </Parameter>
+		<Parameter name="zUpComponent" description="the z component of the view up direction of the camera" type="float" value="1"> </Parameter>
+	</ParameterSet>
+	<ParameterSet name="NormalEstimation" description="Estimates normals of cloud">
+		<Parameter name="RadiusSearch" description="Radius of point search for normal estimation" type="float" value="30.0"> </Parameter>
+		<Parameter name="KSearch" description="Number of neighbors to consider for normal estimation" type="int" value="10"> </Parameter>
+	</ParameterSet>
+	<ParameterSet name="FeatureEstimation" description="Estimates features of cloud">
+		<Parameter name="RadiusSearch" description="Radius of point search for feature estimation" type="float" value="55.0"> </Parameter>
+	</ParameterSet>
+	<ParameterSet name="SampleConsensusPrerejective" description="RANSAC with pre-rejection step">
+		<Parameter name="MaximumIterations" description="Maximum number of iterations of RANSAC" type="int" value="30000"> </Parameter>
+		<Parameter name="NumberOfSamples" description="Number of samples to take for generating a pose" type="int" value="3"> </Parameter>
+		<Parameter name="CorrespondenceRandomness" description="Number of nearest features to use" type="int" value="2"> </Parameter>
+		<Parameter name="SimilarityThreshold" description="Polygonal edge length similarity threshold necessary to avoid immediate rejection" type="float" value="0.80"> </Parameter>
+		<Parameter name="MaxCorrespondenceDistance" description="Maximum distance for points to be considered inliers" type="float" value="7.5"> </Parameter>
+		<Parameter name="InlierFraction" description="Proportion of inliers required to accept a pose" type="float" value="0.40"> </Parameter>
+	</ParameterSet>
+	<ParameterSet name="RegionGrowing" description="Region growing for segmentation of point cloud">
+		<Parameter name="MinClusterSize" description="Minimum number of points for a group of points to be considered an object" type="int" value="100"> </Parameter>
+		<Parameter name="MaxClusterSize" description="Maximum number of points for a group of points to be considered an object" type="int" value="1000000"> </Parameter>
+		<Parameter name="NumberOfNeighbours" description="Number of neighbors to consider for smoothness and curvature" type="int" value="25"> 25 </Parameter>
+		<Parameter name="SmoothnessThreshold" description="Smoothness threshold over which points won't be considered part of the same object" type="float" value="11.0">
+			Angle in degrees 11.0	
+		</Parameter>
+		<Parameter name="CurvatureThreshold" description="Curvature threshold over which points won't be considered part of the same object" type="float" value="1.5"> 1.5 </Parameter>
+	</ParameterSet>
+
+	<ParameterSet name="SACFromNormals" description="Segmentation by fitting a cylindrical model">
+		<Parameter name="MaxIterations" description="Maximum number of SAC iterations" type="int" value="250000"> </Parameter>
+		<Parameter name="DistanceThreshold" description="TODO: Add description" type="float" value="5.0">
+			IS3620C_3: 5.0
+			IS3620C_3-2: 10.0
+			BTx623_1: 5.0
+			MultiplePlants: 5.0
+		</Parameter>
+		<Parameter name="NormalDistanceWeight" description="TODO: Add description" type="float" value="0.3"> 
+			IS3620C_3: 0.70
+			IS3620C_3-2: 0.20
+			BTx623_1: 0.20
+			MultiplePlants: 0.30
+		</Parameter>
+		<Parameter name="RadiusLimitsMin" description="Minimum radius of cylindrical model for SAC" type="float" value="1.0">
+			IS3620C_3: 1.0
+			IS3620C_3-2: 1.0
+			BTx623_1: 1.0
+			MultiplePlants: 1.0
+		</Parameter>
+		<Parameter name="RadiusLimitsMax" description="Maximum radius of cylindrical model for SAC" type="float" value="20.0"> 
+			IS3620C_3: 10.0
+			IS3620C_3-2: 20.0
+			BTx623_1: 20.0
+			MultiplePlants: 20.0
+			The stem shouldn't be more than 2x this value in diameter (mm).
+		</Parameter>
+		<Parameter name="SelectWithinDistanceValue" description="Distance around original inliers that additional points will be considered as inliers." type="float" value="10.0">
+			IS3620C_3: 17.0
+			IS3620C_3-2: 10.0
+			BTx623_1: 10.0
+			MultiplePlants: 20.0
+		</Parameter>
+	</ParameterSet>
+
+	<ParameterSet name="SupervoxelClustering" description="Cluster the input cloud to supervoxels">
+		<Parameter name="VoxelResolution" description="TODO: Add description" type="float" value="23.0"> 25.0 works great; bumping it up to make it faster for debugging. </Parameter>
+		<Parameter name="SeedResolution" description="TODO: Add description" type="float" value="1.00"> 5.0 </Parameter>
+		<Parameter name="ColorImportance" description="TODO: Add description" type="float" value="0.01"> </Parameter>
+		<Parameter name="SpatialImportance" description="TODO: Add description" type="float" value="0.20"> 0.7 </Parameter>
+		<Parameter name="NormalImportance" description="TODO: Add description" type="float" value="0.40"> 0.95 </Parameter>
+	</ParameterSet>
+	<ParameterSet name="Debugging" description="Level of debugging output. 0 will prevent display of images. 1 will show images. 2 will pause images.">
+		<Parameter name="DebuggingLevel" description="Level of debugging output; 0 is lowest level" type="int" value="0"> </Parameter>
+	</ParameterSet>
+</InputParameters>

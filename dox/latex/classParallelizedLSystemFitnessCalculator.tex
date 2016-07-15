@@ -1,0 +1,63 @@
+\hypertarget{classParallelizedLSystemFitnessCalculator}{\section{Parallelized\-L\-System\-Fitness\-Calculator Class Reference}
+\label{classParallelizedLSystemFitnessCalculator}\index{Parallelized\-L\-System\-Fitness\-Calculator@{Parallelized\-L\-System\-Fitness\-Calculator}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classParallelizedLSystemFitnessCalculator_a1f789c2a0f7a2f0fa469db4c788eca41}{operator()} (const tbb\-::blocked\-\_\-range$<$ int $>$ \&range) const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\-::\-Matrix4f \hyperlink{classParallelizedLSystemFitnessCalculator_a9815585129bdb124aec9386b044932e2}{initial\-Rotation\-Matrix}
+\item 
+\hyperlink{classInputParameters}{Input\-Parameters} \hyperlink{classParallelizedLSystemFitnessCalculator_a0cc33b29534993d9a43ae2b2dc7a8112}{input\-Params}
+\item 
+std\-::vector$<$ \hyperlink{classLSystemParameters}{L\-System\-Parameters} $>$ $\ast$ \hyperlink{classParallelizedLSystemFitnessCalculator_ad6da0730abb54dc15d9f8c3d7c076c35}{l\-Systems\-To\-Test}
+\item 
+std\-::vector\\*
+$<$ \hyperlink{classLSystemFitnessResults}{L\-System\-Fitness\-Results} $>$ $\ast$ \hyperlink{classParallelizedLSystemFitnessCalculator_ac12326eda28a925883fe7ec78b61d6f8}{l\-System\-Results\-Container}
+\item 
+std\-::vector$<$ pcl\-::\-Polygon\-Mesh $>$ $\ast$ \hyperlink{classParallelizedLSystemFitnessCalculator_ad8eff5943f0da001ab54efe575c14f3b}{l\-System\-Meshes\-To\-Test}
+\item 
+pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\\*
+\-::Ptr \hyperlink{classParallelizedLSystemFitnessCalculator_a75e602fceb0fbbe5f58973a9b4b67ff9}{input\-Cloud\-To\-Fit\-L\-System\-To}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classParallelizedLSystemFitnessCalculator_a1f789c2a0f7a2f0fa469db4c788eca41}{\index{Parallelized\-L\-System\-Fitness\-Calculator@{Parallelized\-L\-System\-Fitness\-Calculator}!operator()@{operator()}}
+\index{operator()@{operator()}!ParallelizedLSystemFitnessCalculator@{Parallelized\-L\-System\-Fitness\-Calculator}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}void Parallelized\-L\-System\-Fitness\-Calculator\-::operator() (
+\begin{DoxyParamCaption}
+\item[{const tbb\-::blocked\-\_\-range$<$ int $>$ \&}]{range}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classParallelizedLSystemFitnessCalculator_a1f789c2a0f7a2f0fa469db4c788eca41}
+I\-M\-P\-O\-R\-T\-A\-N\-T M\-A\-G\-I\-C N\-U\-M\-B\-E\-R H\-E\-R\-E, C\-O\-N\-S\-I\-D\-E\-R R\-E\-F\-A\-C\-T\-O\-R\-I\-N\-G T\-O I\-N\-P\-U\-T V\-A\-R\-I\-A\-B\-L\-E I\-F T\-H\-I\-S M\-E\-T\-H\-O\-D I\-S U\-S\-E\-D. This number determines the radius away from the L-\/\-System points that points in the original cloud will be considered accounted for in the L-\/system.
+
+I\-M\-P\-O\-R\-T\-A\-N\-T M\-A\-G\-I\-C N\-U\-M\-B\-E\-R H\-E\-R\-E, C\-O\-N\-S\-I\-D\-E\-R R\-E\-F\-A\-C\-T\-O\-R\-I\-N\-G T\-O I\-N\-P\-U\-T V\-A\-R\-I\-A\-B\-L\-E I\-F T\-H\-I\-S M\-E\-T\-H\-O\-D I\-S U\-S\-E\-D. This number determines the search radius 
+
+\subsection{Member Data Documentation}
+\hypertarget{classParallelizedLSystemFitnessCalculator_a9815585129bdb124aec9386b044932e2}{\index{Parallelized\-L\-System\-Fitness\-Calculator@{Parallelized\-L\-System\-Fitness\-Calculator}!initial\-Rotation\-Matrix@{initial\-Rotation\-Matrix}}
+\index{initial\-Rotation\-Matrix@{initial\-Rotation\-Matrix}!ParallelizedLSystemFitnessCalculator@{Parallelized\-L\-System\-Fitness\-Calculator}}
+\subsubsection[{initial\-Rotation\-Matrix}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\-::\-Matrix4f Parallelized\-L\-System\-Fitness\-Calculator\-::initial\-Rotation\-Matrix}}\label{classParallelizedLSystemFitnessCalculator_a9815585129bdb124aec9386b044932e2}
+\hypertarget{classParallelizedLSystemFitnessCalculator_a75e602fceb0fbbe5f58973a9b4b67ff9}{\index{Parallelized\-L\-System\-Fitness\-Calculator@{Parallelized\-L\-System\-Fitness\-Calculator}!input\-Cloud\-To\-Fit\-L\-System\-To@{input\-Cloud\-To\-Fit\-L\-System\-To}}
+\index{input\-Cloud\-To\-Fit\-L\-System\-To@{input\-Cloud\-To\-Fit\-L\-System\-To}!ParallelizedLSystemFitnessCalculator@{Parallelized\-L\-System\-Fitness\-Calculator}}
+\subsubsection[{input\-Cloud\-To\-Fit\-L\-System\-To}]{\setlength{\rightskip}{0pt plus 5cm}pcl\-::\-Point\-Cloud$<$pcl\-::\-Point\-X\-Y\-Z$>$\-::Ptr Parallelized\-L\-System\-Fitness\-Calculator\-::input\-Cloud\-To\-Fit\-L\-System\-To}}\label{classParallelizedLSystemFitnessCalculator_a75e602fceb0fbbe5f58973a9b4b67ff9}
+\hypertarget{classParallelizedLSystemFitnessCalculator_a0cc33b29534993d9a43ae2b2dc7a8112}{\index{Parallelized\-L\-System\-Fitness\-Calculator@{Parallelized\-L\-System\-Fitness\-Calculator}!input\-Params@{input\-Params}}
+\index{input\-Params@{input\-Params}!ParallelizedLSystemFitnessCalculator@{Parallelized\-L\-System\-Fitness\-Calculator}}
+\subsubsection[{input\-Params}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Input\-Parameters} Parallelized\-L\-System\-Fitness\-Calculator\-::input\-Params}}\label{classParallelizedLSystemFitnessCalculator_a0cc33b29534993d9a43ae2b2dc7a8112}
+\hypertarget{classParallelizedLSystemFitnessCalculator_ad8eff5943f0da001ab54efe575c14f3b}{\index{Parallelized\-L\-System\-Fitness\-Calculator@{Parallelized\-L\-System\-Fitness\-Calculator}!l\-System\-Meshes\-To\-Test@{l\-System\-Meshes\-To\-Test}}
+\index{l\-System\-Meshes\-To\-Test@{l\-System\-Meshes\-To\-Test}!ParallelizedLSystemFitnessCalculator@{Parallelized\-L\-System\-Fitness\-Calculator}}
+\subsubsection[{l\-System\-Meshes\-To\-Test}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$pcl\-::\-Polygon\-Mesh$>$$\ast$ Parallelized\-L\-System\-Fitness\-Calculator\-::l\-System\-Meshes\-To\-Test}}\label{classParallelizedLSystemFitnessCalculator_ad8eff5943f0da001ab54efe575c14f3b}
+\hypertarget{classParallelizedLSystemFitnessCalculator_ac12326eda28a925883fe7ec78b61d6f8}{\index{Parallelized\-L\-System\-Fitness\-Calculator@{Parallelized\-L\-System\-Fitness\-Calculator}!l\-System\-Results\-Container@{l\-System\-Results\-Container}}
+\index{l\-System\-Results\-Container@{l\-System\-Results\-Container}!ParallelizedLSystemFitnessCalculator@{Parallelized\-L\-System\-Fitness\-Calculator}}
+\subsubsection[{l\-System\-Results\-Container}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf L\-System\-Fitness\-Results}$>$$\ast$ Parallelized\-L\-System\-Fitness\-Calculator\-::l\-System\-Results\-Container}}\label{classParallelizedLSystemFitnessCalculator_ac12326eda28a925883fe7ec78b61d6f8}
+\hypertarget{classParallelizedLSystemFitnessCalculator_ad6da0730abb54dc15d9f8c3d7c076c35}{\index{Parallelized\-L\-System\-Fitness\-Calculator@{Parallelized\-L\-System\-Fitness\-Calculator}!l\-Systems\-To\-Test@{l\-Systems\-To\-Test}}
+\index{l\-Systems\-To\-Test@{l\-Systems\-To\-Test}!ParallelizedLSystemFitnessCalculator@{Parallelized\-L\-System\-Fitness\-Calculator}}
+\subsubsection[{l\-Systems\-To\-Test}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf L\-System\-Parameters}$>$$\ast$ Parallelized\-L\-System\-Fitness\-Calculator\-::l\-Systems\-To\-Test}}\label{classParallelizedLSystemFitnessCalculator_ad6da0730abb54dc15d9f8c3d7c076c35}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lsystemRefinement_8cpp}{lsystem\-Refinement.\-cpp}\end{DoxyCompactItemize}

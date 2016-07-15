@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<InputParameters>
+	<ParameterSet name="StatisticalOutlierRemoval" description="Removes outlier points">
+		<Parameter name="MeanK" description="Number of neighbors considered for calculating average distance of points" type="int" value="30"> </Parameter>
+		<Parameter name="StdDevMulThresh" description="Standard deviation threshold over which points are considered outliers" type="float" value="2.0">
+			1.75 was used to try to capture smaller leaves initially. Now that poisson meshing is at 8, going to try to drop it down again.
+			30 and 0.25 seem good for the initial filter.
+			30 and 1.0 seem okay for the final filter.
+		</Parameter>
+	</ParameterSet>
+	<ParameterSet name="NormalEstimation" description="Estimates normals of cloud">
+		<Parameter name="RadiusSearch" description="Radius of point search for normal estimation" type="float" value="30.0"> </Parameter>
+		<Parameter name="KSearch" description="Number of neighbors to consider for normal estimation" type="int" value="10"> </Parameter>
+	</ParameterSet>
+	<ParameterSet name="FeatureEstimation" description="Estimates features of cloud">
+		<Parameter name="RadiusSearch" description="Radius of point search for feature estimation" type="float" value="55.0"> </Parameter>
+	</ParameterSet>
+	<ParameterSet name="VoxelGridFilter" description="Voxel grid for downsampling">
+		<Parameter name="LeafSize" description="Size of X, Y, and Z grid leaves" type="float" value="2.00"> 
+			Some earlier notes in my code suggest that I couldn't get this to work. I think it may need to be write the output to a new cloud instead of overwriting the input cloud. It seems to work well though, at least on clouds of individual leaves; before it was choking on the whole plant.
+
+			3.0 is good, higher values can sometimes be used to speed up things for testing (e.g. 10).
+		</Parameter>
+	</ParameterSet>
+	<ParameterSet name="MovingLeastSquares" description="MLS for cloud smoothing">
+		<Parameter name="SearchRadius" description="Radius for MLS smoothing search" type="float" value="0.50"> </Parameter>
+		<Parameter name="UpsampleFlag" description="Flag whether or not to perform upsampling. 0 is no; 1 is yes." type="int" value="0"> </Parameter>
+		<Parameter name="PolynomialOrder" description="TODO: Add description" type="int" value="2"> </Parameter>
+		<Parameter name="UpsamplingRadius" description="TODO: Add description" type="float" value="5.0"> </Parameter>
+		<Parameter name="UpsamplingStepSize" description="TODO: Add description" type="float" value="4.0"> </Parameter>
+
+	</ParameterSet>
+	<ParameterSet name="RegionGrowing" description="Region growing for segmentation of point cloud">
+		<Parameter name="MinClusterSize" description="Minimum number of points for a group of points to be considered an object" type="int" value="1"> </Parameter>
+		<Parameter name="MaxClusterSize" description="Maximum number of points for a group of points to be considered an object" type="int" value="1000000"> </Parameter>
+		<Parameter name="NumberOfNeighbours" description="Number of neighbors to consider for smoothness and curvature" type="int" value="20"> 25 </Parameter>
+		<Parameter name="SmoothnessThreshold" description="Smoothness threshold over which points won't be considered part of the same object" type="float" value="45.0">
+			Angle in degrees 11.0	
+		</Parameter>
+		<Parameter name="CurvatureThreshold" description="Curvature threshold over which points won't be considered part of the same object" type="float" value="10.5"> 1.5 </Parameter>
+	</ParameterSet>
+	<ParameterSet name="Debugging" description="Level of debugging output. 0 will prevent display of images. 1 will show images. 2 will pause images.">
+		<Parameter name="DebuggingLevel" description="Level of debugging output; 0 is lowest level" type="int" value="2"> </Parameter>
+	</ParameterSet>
+</InputParameters>

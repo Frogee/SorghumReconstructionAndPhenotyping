@@ -1,0 +1,84 @@
+\hypertarget{classColorMap}{\section{Color\-Map Class Reference}
+\label{classColorMap}\index{Color\-Map@{Color\-Map}}
+}
+
+
+Container for all R\-G\-B colors that have meaning during segmentation.  
+
+
+
+
+{\ttfamily \#include $<$tuple\-Triplet.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classColorMap_ae1b5944932c0b018b1faa8d78831f57e}{Color\-Map} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::map$<$ int, \hyperlink{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{Tuple\-Triplet} $>$ \hyperlink{classColorMap_ab9474afada1f2a6e80064c9a96257bb7}{\-\_\-leaf\-Color\-Map}
+\item 
+std\-::map$<$ \hyperlink{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{Tuple\-Triplet}, int $>$ \hyperlink{classColorMap_ad4a0ffa302e1b5ac1cf56b8228c91c8d}{\-\_\-leaf\-Color\-Map\-\_\-colors\-To\-Label}
+\item 
+std\-::map$<$ \hyperlink{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{Tuple\-Triplet}, int $>$ \hyperlink{classColorMap_aaf7f6a19620ab4f9bccfc842ccee1a14}{\-\_\-map\-\_\-explicitly\-Handled\-Colors}
+\item 
+\hyperlink{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{Tuple\-Triplet} \hyperlink{classColorMap_a92b0918914c5748a554c839e4e3c18f7}{\-\_\-stem\-\_\-color}
+\item 
+\hyperlink{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{Tuple\-Triplet} \hyperlink{classColorMap_ac14da2d8cff300273259beec73527823}{\-\_\-border\-\_\-color}
+\item 
+\hyperlink{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{Tuple\-Triplet} \hyperlink{classColorMap_a17a0591add2cec4e5c9d266ade02213c}{\-\_\-unsegmented\-\_\-color}
+\item 
+\hyperlink{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{Tuple\-Triplet} \hyperlink{classColorMap_afed7eeec6dcbe55ab0aefb47e90c5ce4}{\-\_\-debug\-\_\-color}
+\item 
+\hyperlink{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{Tuple\-Triplet} \hyperlink{classColorMap_a09f8cb11bf9f40129642c4ce9f453b6c}{\-\_\-inflorescence\-\_\-color}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Container for all R\-G\-B colors that have meaning during segmentation. 
+
+This class exists to contain a set of hard-\/coded R\-G\-B color values used during segmentation. The colors are defined in the constructor. If a hand-\/segmented or machine learning segmented plant is provided and colors don't correspond to these values, behavior will likely be unexpected. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classColorMap_ae1b5944932c0b018b1faa8d78831f57e}{\index{Color\-Map@{Color\-Map}!Color\-Map@{Color\-Map}}
+\index{Color\-Map@{Color\-Map}!ColorMap@{Color\-Map}}
+\subsubsection[{Color\-Map}]{\setlength{\rightskip}{0pt plus 5cm}Color\-Map\-::\-Color\-Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classColorMap_ae1b5944932c0b018b1faa8d78831f57e}
+The \hyperlink{classColorMap}{Color\-Map} constructor defines many hardcoded R\-G\-B values that are used during segmentation. The most important of these with respect to inputs are the S\-T\-E\-M\-\_\-\-C\-O\-L\-O\-R, B\-O\-R\-D\-E\-R\-\_\-\-C\-O\-L\-O\-R, U\-N\-S\-E\-G\-M\-E\-N\-T\-E\-D\-\_\-\-C\-O\-L\-O\-R. The remainders correspond to leaves. If a hand-\/segmented or machine learning segmented plant is provided and colors don't correspond to these values, behavior will likely be unexpected. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classColorMap_ac14da2d8cff300273259beec73527823}{\index{Color\-Map@{Color\-Map}!\-\_\-border\-\_\-color@{\-\_\-border\-\_\-color}}
+\index{\-\_\-border\-\_\-color@{\-\_\-border\-\_\-color}!ColorMap@{Color\-Map}}
+\subsubsection[{\-\_\-border\-\_\-color}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tuple\-Triplet} Color\-Map\-::\-\_\-border\-\_\-color}}\label{classColorMap_ac14da2d8cff300273259beec73527823}
+\hypertarget{classColorMap_afed7eeec6dcbe55ab0aefb47e90c5ce4}{\index{Color\-Map@{Color\-Map}!\-\_\-debug\-\_\-color@{\-\_\-debug\-\_\-color}}
+\index{\-\_\-debug\-\_\-color@{\-\_\-debug\-\_\-color}!ColorMap@{Color\-Map}}
+\subsubsection[{\-\_\-debug\-\_\-color}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tuple\-Triplet} Color\-Map\-::\-\_\-debug\-\_\-color}}\label{classColorMap_afed7eeec6dcbe55ab0aefb47e90c5ce4}
+\hypertarget{classColorMap_a09f8cb11bf9f40129642c4ce9f453b6c}{\index{Color\-Map@{Color\-Map}!\-\_\-inflorescence\-\_\-color@{\-\_\-inflorescence\-\_\-color}}
+\index{\-\_\-inflorescence\-\_\-color@{\-\_\-inflorescence\-\_\-color}!ColorMap@{Color\-Map}}
+\subsubsection[{\-\_\-inflorescence\-\_\-color}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tuple\-Triplet} Color\-Map\-::\-\_\-inflorescence\-\_\-color}}\label{classColorMap_a09f8cb11bf9f40129642c4ce9f453b6c}
+\hypertarget{classColorMap_ab9474afada1f2a6e80064c9a96257bb7}{\index{Color\-Map@{Color\-Map}!\-\_\-leaf\-Color\-Map@{\-\_\-leaf\-Color\-Map}}
+\index{\-\_\-leaf\-Color\-Map@{\-\_\-leaf\-Color\-Map}!ColorMap@{Color\-Map}}
+\subsubsection[{\-\_\-leaf\-Color\-Map}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$int, {\bf Tuple\-Triplet}$>$ Color\-Map\-::\-\_\-leaf\-Color\-Map}}\label{classColorMap_ab9474afada1f2a6e80064c9a96257bb7}
+\hypertarget{classColorMap_ad4a0ffa302e1b5ac1cf56b8228c91c8d}{\index{Color\-Map@{Color\-Map}!\-\_\-leaf\-Color\-Map\-\_\-colors\-To\-Label@{\-\_\-leaf\-Color\-Map\-\_\-colors\-To\-Label}}
+\index{\-\_\-leaf\-Color\-Map\-\_\-colors\-To\-Label@{\-\_\-leaf\-Color\-Map\-\_\-colors\-To\-Label}!ColorMap@{Color\-Map}}
+\subsubsection[{\-\_\-leaf\-Color\-Map\-\_\-colors\-To\-Label}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<${\bf Tuple\-Triplet}, int$>$ Color\-Map\-::\-\_\-leaf\-Color\-Map\-\_\-colors\-To\-Label}}\label{classColorMap_ad4a0ffa302e1b5ac1cf56b8228c91c8d}
+\hypertarget{classColorMap_aaf7f6a19620ab4f9bccfc842ccee1a14}{\index{Color\-Map@{Color\-Map}!\-\_\-map\-\_\-explicitly\-Handled\-Colors@{\-\_\-map\-\_\-explicitly\-Handled\-Colors}}
+\index{\-\_\-map\-\_\-explicitly\-Handled\-Colors@{\-\_\-map\-\_\-explicitly\-Handled\-Colors}!ColorMap@{Color\-Map}}
+\subsubsection[{\-\_\-map\-\_\-explicitly\-Handled\-Colors}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<${\bf Tuple\-Triplet}, int$>$ Color\-Map\-::\-\_\-map\-\_\-explicitly\-Handled\-Colors}}\label{classColorMap_aaf7f6a19620ab4f9bccfc842ccee1a14}
+\hypertarget{classColorMap_a92b0918914c5748a554c839e4e3c18f7}{\index{Color\-Map@{Color\-Map}!\-\_\-stem\-\_\-color@{\-\_\-stem\-\_\-color}}
+\index{\-\_\-stem\-\_\-color@{\-\_\-stem\-\_\-color}!ColorMap@{Color\-Map}}
+\subsubsection[{\-\_\-stem\-\_\-color}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tuple\-Triplet} Color\-Map\-::\-\_\-stem\-\_\-color}}\label{classColorMap_a92b0918914c5748a554c839e4e3c18f7}
+\hypertarget{classColorMap_a17a0591add2cec4e5c9d266ade02213c}{\index{Color\-Map@{Color\-Map}!\-\_\-unsegmented\-\_\-color@{\-\_\-unsegmented\-\_\-color}}
+\index{\-\_\-unsegmented\-\_\-color@{\-\_\-unsegmented\-\_\-color}!ColorMap@{Color\-Map}}
+\subsubsection[{\-\_\-unsegmented\-\_\-color}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tuple\-Triplet} Color\-Map\-::\-\_\-unsegmented\-\_\-color}}\label{classColorMap_a17a0591add2cec4e5c9d266ade02213c}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{tupleTriplet_8h}{tuple\-Triplet.\-h}\item 
+\hyperlink{tupleTriplet_8cpp}{tuple\-Triplet.\-cpp}\end{DoxyCompactItemize}

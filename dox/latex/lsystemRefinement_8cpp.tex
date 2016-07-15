@@ -1,0 +1,123 @@
+\hypertarget{lsystemRefinement_8cpp}{\section{lsystem\-Refinement.\-cpp File Reference}
+\label{lsystemRefinement_8cpp}\index{lsystem\-Refinement.\-cpp@{lsystem\-Refinement.\-cpp}}
+}
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include $<$pcl/visualization/pcl\-\_\-visualizer.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}logging\-Helper.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Iterative\-Closest\-Point.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}lsystem\-Fitting.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}lsystem\-Refinement.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sample\-Mesh\-To\-Point\-Cloud.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}tbb/parallel\-\_\-for.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}tbb/blocked\-\_\-range.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classAverageWithVectors}{Average\-With\-Vectors}
+\item 
+class \hyperlink{classLSystemFitnessResults}{L\-System\-Fitness\-Results}
+\item 
+class \hyperlink{classParallelizedLSystemFitnessCalculator}{Parallelized\-L\-System\-Fitness\-Calculator}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLSystemParameters}{L\-System\-Parameters} \hyperlink{lsystemRefinement_8cpp_a79837853b2223b6f496778d37b441079}{refine\-L\-System\-Parallel\-\_\-\-Expanded\-Stem\-\_\-\-Internode\-Length} (Py\-Object $\ast$input\-Lpy\-Function, \hyperlink{classLSystemParameters}{L\-System\-Parameters} input\-Lsystem\-Params, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr input\-Cloud\-To\-Fit\-L\-System\-To, std\-::vector$<$ int $>$ phytomer\-Indices\-To\-Refine\-\_\-\-One\-Based, pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$visu, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+\hyperlink{classLSystemParameters}{L\-System\-Parameters} \hyperlink{lsystemRefinement_8cpp_a6c776ef08e0a82582fe74c3ecd397f5a}{refine\-L\-System\-Parallel\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Phyllotaxy\-Angle} (Py\-Object $\ast$input\-Lpy\-Function, \hyperlink{classLSystemParameters}{L\-System\-Parameters} input\-Lsystem\-Params, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr input\-Cloud\-To\-Fit\-L\-System\-To, std\-::vector$<$ int $>$ phytomer\-Indices\-To\-Refine\-\_\-\-One\-Based, pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$visu, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+\hyperlink{classLSystemParameters}{L\-System\-Parameters} \hyperlink{lsystemRefinement_8cpp_a43d0cac6f6d457e6d5f2660ca0a188d6}{refine\-L\-System\-Parallel\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Curvatures\-Control\-Point\-Two} (Py\-Object $\ast$input\-Lpy\-Function, \hyperlink{classLSystemParameters}{L\-System\-Parameters} input\-Lsystem\-Params, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr input\-Cloud\-To\-Fit\-L\-System\-To, std\-::vector$<$ int $>$ phytomer\-Indices\-To\-Refine\-\_\-\-One\-Based, pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$visu, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+\hyperlink{classLSystemParameters}{L\-System\-Parameters} \hyperlink{lsystemRefinement_8cpp_a858ea2192e89533916641cde920370e9}{refine\-L\-System\-\_\-\-Expanded\-Stem\-\_\-\-Internode\-Length} (Py\-Object $\ast$input\-Lpy\-Function, \hyperlink{classLSystemParameters}{L\-System\-Parameters} input\-Lsystem\-Params, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr input\-Cloud\-To\-Fit\-L\-System\-To, std\-::vector$<$ int $>$ phytomer\-Indices\-To\-Refine\-\_\-\-One\-Based, pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$visu, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+\hyperlink{classLSystemParameters}{L\-System\-Parameters} \hyperlink{lsystemRefinement_8cpp_ab30c52e926f2c9a1c420a3036cbf4fdb}{refine\-L\-System\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Phyllotaxy\-Angle} (Py\-Object $\ast$input\-Lpy\-Function, \hyperlink{classLSystemParameters}{L\-System\-Parameters} input\-Lsystem\-Params, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr input\-Cloud\-To\-Fit\-L\-System\-To, std\-::vector$<$ int $>$ phytomer\-Indices\-To\-Refine\-\_\-\-One\-Based, pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$visu, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+\hyperlink{classLSystemParameters}{L\-System\-Parameters} \hyperlink{lsystemRefinement_8cpp_adb53e3bc6bc8b366a0fbe5deadf10a5f}{refine\-L\-System\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Curvatures\-Control\-Point\-Two} (Py\-Object $\ast$input\-Lpy\-Function, \hyperlink{classLSystemParameters}{L\-System\-Parameters} input\-Lsystem\-Params, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr input\-Cloud\-To\-Fit\-L\-System\-To, std\-::vector$<$ int $>$ phytomer\-Indices\-To\-Refine\-\_\-\-One\-Based, pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$visu, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{lsystemRefinement_8cpp_a858ea2192e89533916641cde920370e9}{\index{lsystem\-Refinement.\-cpp@{lsystem\-Refinement.\-cpp}!refine\-L\-System\-\_\-\-Expanded\-Stem\-\_\-\-Internode\-Length@{refine\-L\-System\-\_\-\-Expanded\-Stem\-\_\-\-Internode\-Length}}
+\index{refine\-L\-System\-\_\-\-Expanded\-Stem\-\_\-\-Internode\-Length@{refine\-L\-System\-\_\-\-Expanded\-Stem\-\_\-\-Internode\-Length}!lsystemRefinement.cpp@{lsystem\-Refinement.\-cpp}}
+\subsubsection[{refine\-L\-System\-\_\-\-Expanded\-Stem\-\_\-\-Internode\-Length}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\-System\-Parameters} refine\-L\-System\-\_\-\-Expanded\-Stem\-\_\-\-Internode\-Length (
+\begin{DoxyParamCaption}
+\item[{Py\-Object $\ast$}]{input\-Lpy\-Function, }
+\item[{{\bf L\-System\-Parameters}}]{input\-Lsystem\-Params, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{input\-Cloud\-To\-Fit\-L\-System\-To, }
+\item[{std\-::vector$<$ int $>$}]{phytomer\-Indices\-To\-Refine\-\_\-\-One\-Based, }
+\item[{pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$}]{visu, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{lsystemRefinement_8cpp_a858ea2192e89533916641cde920370e9}
+What should be the strategy for refinement? A decent first approximation could be to maximize point correspondences between the L\-System and this part of the cloud. We already have a basic template of the L-\/\-System. We could modify it over a range of values, check correspondences for each value, and choose the max.
+
+I\-M\-P\-O\-R\-T\-A\-N\-T M\-A\-G\-I\-C N\-U\-M\-B\-E\-R H\-E\-R\-E, C\-O\-N\-S\-I\-D\-E\-R R\-E\-F\-A\-C\-T\-O\-R\-I\-N\-G T\-O I\-N\-P\-U\-T V\-A\-R\-I\-A\-B\-L\-E I\-F T\-H\-I\-S M\-E\-T\-H\-O\-D I\-S U\-S\-E\-D. This number determines the radius away from the L-\/\-System points that points in the original cloud will be considered accounted for in the L-\/system.
+
+I\-M\-P\-O\-R\-T\-A\-N\-T M\-A\-G\-I\-C N\-U\-M\-B\-E\-R H\-E\-R\-E, C\-O\-N\-S\-I\-D\-E\-R R\-E\-F\-A\-C\-T\-O\-R\-I\-N\-G T\-O I\-N\-P\-U\-T V\-A\-R\-I\-A\-B\-L\-E I\-F T\-H\-I\-S M\-E\-T\-H\-O\-D I\-S U\-S\-E\-D. This number determines the search radius \hypertarget{lsystemRefinement_8cpp_adb53e3bc6bc8b366a0fbe5deadf10a5f}{\index{lsystem\-Refinement.\-cpp@{lsystem\-Refinement.\-cpp}!refine\-L\-System\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Curvatures\-Control\-Point\-Two@{refine\-L\-System\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Curvatures\-Control\-Point\-Two}}
+\index{refine\-L\-System\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Curvatures\-Control\-Point\-Two@{refine\-L\-System\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Curvatures\-Control\-Point\-Two}!lsystemRefinement.cpp@{lsystem\-Refinement.\-cpp}}
+\subsubsection[{refine\-L\-System\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Curvatures\-Control\-Point\-Two}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\-System\-Parameters} refine\-L\-System\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Curvatures\-Control\-Point\-Two (
+\begin{DoxyParamCaption}
+\item[{Py\-Object $\ast$}]{input\-Lpy\-Function, }
+\item[{{\bf L\-System\-Parameters}}]{input\-Lsystem\-Params, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{input\-Cloud\-To\-Fit\-L\-System\-To, }
+\item[{std\-::vector$<$ int $>$}]{phytomer\-Indices\-To\-Refine\-\_\-\-One\-Based, }
+\item[{pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$}]{visu, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{lsystemRefinement_8cpp_adb53e3bc6bc8b366a0fbe5deadf10a5f}
+What should be the strategy for refinement? A decent first approximation could be to maximize point correspondences between the L\-System and this part of the cloud. We already have a basic template of the L-\/\-System. We could modify it over a range of values, check correspondences for each value, and choose the max.
+
+I\-M\-P\-O\-R\-T\-A\-N\-T M\-A\-G\-I\-C N\-U\-M\-B\-E\-R H\-E\-R\-E, C\-O\-N\-S\-I\-D\-E\-R R\-E\-F\-A\-C\-T\-O\-R\-I\-N\-G T\-O I\-N\-P\-U\-T V\-A\-R\-I\-A\-B\-L\-E I\-F T\-H\-I\-S M\-E\-T\-H\-O\-D I\-S U\-S\-E\-D. This number determines the radius away from the L-\/\-System points that points in the original cloud will be considered accounted for in the L-\/system.
+
+I\-M\-P\-O\-R\-T\-A\-N\-T M\-A\-G\-I\-C N\-U\-M\-B\-E\-R H\-E\-R\-E, C\-O\-N\-S\-I\-D\-E\-R R\-E\-F\-A\-C\-T\-O\-R\-I\-N\-G T\-O I\-N\-P\-U\-T V\-A\-R\-I\-A\-B\-L\-E I\-F T\-H\-I\-S M\-E\-T\-H\-O\-D I\-S U\-S\-E\-D. This number determines the search radius \hypertarget{lsystemRefinement_8cpp_ab30c52e926f2c9a1c420a3036cbf4fdb}{\index{lsystem\-Refinement.\-cpp@{lsystem\-Refinement.\-cpp}!refine\-L\-System\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Phyllotaxy\-Angle@{refine\-L\-System\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Phyllotaxy\-Angle}}
+\index{refine\-L\-System\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Phyllotaxy\-Angle@{refine\-L\-System\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Phyllotaxy\-Angle}!lsystemRefinement.cpp@{lsystem\-Refinement.\-cpp}}
+\subsubsection[{refine\-L\-System\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Phyllotaxy\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\-System\-Parameters} refine\-L\-System\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Phyllotaxy\-Angle (
+\begin{DoxyParamCaption}
+\item[{Py\-Object $\ast$}]{input\-Lpy\-Function, }
+\item[{{\bf L\-System\-Parameters}}]{input\-Lsystem\-Params, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{input\-Cloud\-To\-Fit\-L\-System\-To, }
+\item[{std\-::vector$<$ int $>$}]{phytomer\-Indices\-To\-Refine\-\_\-\-One\-Based, }
+\item[{pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$}]{visu, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{lsystemRefinement_8cpp_ab30c52e926f2c9a1c420a3036cbf4fdb}
+What should be the strategy for refinement? A decent first approximation could be to maximize point correspondences between the L\-System and this part of the cloud. We already have a basic template of the L-\/\-System. We could modify it over a range of values, check correspondences for each value, and choose the max.
+
+I\-M\-P\-O\-R\-T\-A\-N\-T M\-A\-G\-I\-C N\-U\-M\-B\-E\-R H\-E\-R\-E, C\-O\-N\-S\-I\-D\-E\-R R\-E\-F\-A\-C\-T\-O\-R\-I\-N\-G T\-O I\-N\-P\-U\-T V\-A\-R\-I\-A\-B\-L\-E I\-F T\-H\-I\-S M\-E\-T\-H\-O\-D I\-S U\-S\-E\-D. This number determines the radius away from the L-\/\-System points that points in the original cloud will be considered accounted for in the L-\/system.
+
+I\-M\-P\-O\-R\-T\-A\-N\-T M\-A\-G\-I\-C N\-U\-M\-B\-E\-R H\-E\-R\-E, C\-O\-N\-S\-I\-D\-E\-R R\-E\-F\-A\-C\-T\-O\-R\-I\-N\-G T\-O I\-N\-P\-U\-T V\-A\-R\-I\-A\-B\-L\-E I\-F T\-H\-I\-S M\-E\-T\-H\-O\-D I\-S U\-S\-E\-D. This number determines the search radius \hypertarget{lsystemRefinement_8cpp_a79837853b2223b6f496778d37b441079}{\index{lsystem\-Refinement.\-cpp@{lsystem\-Refinement.\-cpp}!refine\-L\-System\-Parallel\-\_\-\-Expanded\-Stem\-\_\-\-Internode\-Length@{refine\-L\-System\-Parallel\-\_\-\-Expanded\-Stem\-\_\-\-Internode\-Length}}
+\index{refine\-L\-System\-Parallel\-\_\-\-Expanded\-Stem\-\_\-\-Internode\-Length@{refine\-L\-System\-Parallel\-\_\-\-Expanded\-Stem\-\_\-\-Internode\-Length}!lsystemRefinement.cpp@{lsystem\-Refinement.\-cpp}}
+\subsubsection[{refine\-L\-System\-Parallel\-\_\-\-Expanded\-Stem\-\_\-\-Internode\-Length}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\-System\-Parameters} refine\-L\-System\-Parallel\-\_\-\-Expanded\-Stem\-\_\-\-Internode\-Length (
+\begin{DoxyParamCaption}
+\item[{Py\-Object $\ast$}]{input\-Lpy\-Function, }
+\item[{{\bf L\-System\-Parameters}}]{input\-Lsystem\-Params, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{input\-Cloud\-To\-Fit\-L\-System\-To, }
+\item[{std\-::vector$<$ int $>$}]{phytomer\-Indices\-To\-Refine\-\_\-\-One\-Based, }
+\item[{pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$}]{visu, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{lsystemRefinement_8cpp_a79837853b2223b6f496778d37b441079}
+\hypertarget{lsystemRefinement_8cpp_a43d0cac6f6d457e6d5f2660ca0a188d6}{\index{lsystem\-Refinement.\-cpp@{lsystem\-Refinement.\-cpp}!refine\-L\-System\-Parallel\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Curvatures\-Control\-Point\-Two@{refine\-L\-System\-Parallel\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Curvatures\-Control\-Point\-Two}}
+\index{refine\-L\-System\-Parallel\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Curvatures\-Control\-Point\-Two@{refine\-L\-System\-Parallel\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Curvatures\-Control\-Point\-Two}!lsystemRefinement.cpp@{lsystem\-Refinement.\-cpp}}
+\subsubsection[{refine\-L\-System\-Parallel\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Curvatures\-Control\-Point\-Two}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\-System\-Parameters} refine\-L\-System\-Parallel\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Curvatures\-Control\-Point\-Two (
+\begin{DoxyParamCaption}
+\item[{Py\-Object $\ast$}]{input\-Lpy\-Function, }
+\item[{{\bf L\-System\-Parameters}}]{input\-Lsystem\-Params, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{input\-Cloud\-To\-Fit\-L\-System\-To, }
+\item[{std\-::vector$<$ int $>$}]{phytomer\-Indices\-To\-Refine\-\_\-\-One\-Based, }
+\item[{pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$}]{visu, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{lsystemRefinement_8cpp_a43d0cac6f6d457e6d5f2660ca0a188d6}
+\hypertarget{lsystemRefinement_8cpp_a6c776ef08e0a82582fe74c3ecd397f5a}{\index{lsystem\-Refinement.\-cpp@{lsystem\-Refinement.\-cpp}!refine\-L\-System\-Parallel\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Phyllotaxy\-Angle@{refine\-L\-System\-Parallel\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Phyllotaxy\-Angle}}
+\index{refine\-L\-System\-Parallel\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Phyllotaxy\-Angle@{refine\-L\-System\-Parallel\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Phyllotaxy\-Angle}!lsystemRefinement.cpp@{lsystem\-Refinement.\-cpp}}
+\subsubsection[{refine\-L\-System\-Parallel\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Phyllotaxy\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\-System\-Parameters} refine\-L\-System\-Parallel\-\_\-\-Expanded\-Stem\-\_\-\-Leaf\-Phyllotaxy\-Angle (
+\begin{DoxyParamCaption}
+\item[{Py\-Object $\ast$}]{input\-Lpy\-Function, }
+\item[{{\bf L\-System\-Parameters}}]{input\-Lsystem\-Params, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{input\-Cloud\-To\-Fit\-L\-System\-To, }
+\item[{std\-::vector$<$ int $>$}]{phytomer\-Indices\-To\-Refine\-\_\-\-One\-Based, }
+\item[{pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$}]{visu, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{lsystemRefinement_8cpp_a6c776ef08e0a82582fe74c3ecd397f5a}

@@ -1,0 +1,209 @@
+\hypertarget{IterativeClosestPoint_8h}{\section{Iterative\-Closest\-Point.\-h File Reference}
+\label{IterativeClosestPoint_8h}\index{Iterative\-Closest\-Point.\-h@{Iterative\-Closest\-Point.\-h}}
+}
+{\ttfamily \#include $<$pcl/registration/registration.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/registration/icp.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/registration/icp\-\_\-nl.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}input\-Params.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}logging\-Helper.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classIterativeClosestPointNonLinear__Exposed}{Iterative\-Closest\-Point\-Non\-Linear\-\_\-\-Exposed$<$ Point\-Source, Point\-Target, Scalar $>$}
+\begin{DoxyCompactList}\small\item\em This is a mock class with the sole purpose of accessing a protected member of a class it inherits from. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{IterativeClosestPoint_8h_a54ecf78abe3f9eefb5b7ec1d3295e641}{register\-Point\-Clouds\-I\-C\-P\-\_\-pairwise} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\begin{DoxyCompactList}\small\item\em Performs pairwise iterative closest point for all input clouds in the order they are provided. \end{DoxyCompactList}\item 
+int \hyperlink{IterativeClosestPoint_8h_a580a19087a295cbd8e44bdbf7634aa9f}{register\-Point\-Clouds\-I\-C\-P\-\_\-one\-Against\-Global} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\begin{DoxyCompactList}\small\item\em Performs pairwise iterative closest point for all input clouds in the order they are provided. After finishing a pair, the pair is added to the global cloud. The global cloud is used for the next pairwise iteration. \end{DoxyCompactList}\item 
+int \hyperlink{IterativeClosestPoint_8h_a68bbbedcab6ea50b6336ba7cea992fbe}{register\-Point\-Clouds\-I\-C\-P\-\_\-refinement} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\begin{DoxyCompactList}\small\item\em Uses statistical outlier removal to filter the cloud, then performs pairwise iterative closest point for all input clouds in the order they are provided. After finishing a pair, the pair is added to the global cloud. The global cloud is used for the next pairwise iteration. This is nearly identical to the one\-Against\-Global I\-C\-P. \end{DoxyCompactList}\item 
+int \hyperlink{IterativeClosestPoint_8h_aa720360aa2b366e9d226f0b0f09d81af}{register\-Kinect\-Fusion\-P\-L\-Ys} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+pcl\-::\-Correspondences\-Ptr \hyperlink{IterativeClosestPoint_8h_a55b426ba508182ca15bba314aebe6442}{register\-Point\-Clouds\-I\-C\-P\-And\-Return\-Correspondences} (pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr input\-Source\-Cloud, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr input\-Target\-Cloud, pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$visu, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+int \hyperlink{IterativeClosestPoint_8h_ad913fa3484ef5f3db509492e9f1d078e}{register\-L\-System\-I\-C\-P} (pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr input\-Source\-Cloud, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr input\-Target\-Cloud, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr output\-Source\-Transformed\-To\-Target, pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$visu, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+Eigen\-::\-Matrix4f \hyperlink{IterativeClosestPoint_8h_a347472dc7d5c1a5e71f1c46a8d42b762}{register\-L\-System\-I\-C\-P\-And\-Return\-Translation\-Matrix} (pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr input\-Source\-Cloud, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr input\-Target\-Cloud, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr output\-Source\-Transformed\-To\-Target, pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$visu, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+float \hyperlink{IterativeClosestPoint_8h_a1ea831ca107b73142e30eee25fa95a36}{register\-L\-System\-I\-C\-P\-And\-Return\-Fitness} (pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr input\-Source\-Cloud, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr input\-Target\-Cloud, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr output\-Source\-Transformed\-To\-Target, pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$visu, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+float \hyperlink{IterativeClosestPoint_8h_a276ef486ac156cff9bc59dd5fe057886}{register\-L\-System\-I\-C\-P\-And\-Return\-Fitness\-\_\-\-For\-Parallel\-Calling} (pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr input\-Source\-Cloud, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr input\-Target\-Cloud, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr output\-Source\-Transformed\-To\-Target, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{IterativeClosestPoint_8h_aa720360aa2b366e9d226f0b0f09d81af}{\index{Iterative\-Closest\-Point.\-h@{Iterative\-Closest\-Point.\-h}!register\-Kinect\-Fusion\-P\-L\-Ys@{register\-Kinect\-Fusion\-P\-L\-Ys}}
+\index{register\-Kinect\-Fusion\-P\-L\-Ys@{register\-Kinect\-Fusion\-P\-L\-Ys}!IterativeClosestPoint.h@{Iterative\-Closest\-Point.\-h}}
+\subsubsection[{register\-Kinect\-Fusion\-P\-L\-Ys}]{\setlength{\rightskip}{0pt plus 5cm}int register\-Kinect\-Fusion\-P\-L\-Ys (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{IterativeClosestPoint_8h_aa720360aa2b366e9d226f0b0f09d81af}
+Here we downsample the plant to speed up registration.
+
+Here we crudely cut off the pot to prevent it from causing problems during registration of the plant.
+
+If debugging level is set to high, visualize each individual transformation. There is tremendous duplication of code here between the debugging level if statment cases(and all throughout the I\-C\-P code). Consider refactoring.
+
+Sometimes I\-C\-P isn't sufficient. Let's try adding a check based on fitness score, and send the pair to Prerejective R\-A\-N\-S\-A\-C to get a better transformation.
+
+Else if the debugging level is not high, try to do it more quickly. We should probably still reduce max correspondence distance as we go.
+
+Sometimes I\-C\-P isn't sufficient. Let's try adding a check based on fitness score, and send the pair to Prerejective R\-A\-N\-S\-A\-C to get a better transformation. \hypertarget{IterativeClosestPoint_8h_ad913fa3484ef5f3db509492e9f1d078e}{\index{Iterative\-Closest\-Point.\-h@{Iterative\-Closest\-Point.\-h}!register\-L\-System\-I\-C\-P@{register\-L\-System\-I\-C\-P}}
+\index{register\-L\-System\-I\-C\-P@{register\-L\-System\-I\-C\-P}!IterativeClosestPoint.h@{Iterative\-Closest\-Point.\-h}}
+\subsubsection[{register\-L\-System\-I\-C\-P}]{\setlength{\rightskip}{0pt plus 5cm}int register\-L\-System\-I\-C\-P (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{input\-Source\-Cloud, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{input\-Target\-Cloud, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{output\-Source\-Transformed\-To\-Target, }
+\item[{pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$}]{visu, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{IterativeClosestPoint_8h_ad913fa3484ef5f3db509492e9f1d078e}
+Sometimes I\-C\-P isn't sufficient. Let's try adding a check based on fitness score, and send the pair to Prerejective R\-A\-N\-S\-A\-C to get a better transformation. \hypertarget{IterativeClosestPoint_8h_a1ea831ca107b73142e30eee25fa95a36}{\index{Iterative\-Closest\-Point.\-h@{Iterative\-Closest\-Point.\-h}!register\-L\-System\-I\-C\-P\-And\-Return\-Fitness@{register\-L\-System\-I\-C\-P\-And\-Return\-Fitness}}
+\index{register\-L\-System\-I\-C\-P\-And\-Return\-Fitness@{register\-L\-System\-I\-C\-P\-And\-Return\-Fitness}!IterativeClosestPoint.h@{Iterative\-Closest\-Point.\-h}}
+\subsubsection[{register\-L\-System\-I\-C\-P\-And\-Return\-Fitness}]{\setlength{\rightskip}{0pt plus 5cm}float register\-L\-System\-I\-C\-P\-And\-Return\-Fitness (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{input\-Source\-Cloud, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{input\-Target\-Cloud, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{output\-Source\-Transformed\-To\-Target, }
+\item[{pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$}]{visu, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{IterativeClosestPoint_8h_a1ea831ca107b73142e30eee25fa95a36}
+Sometimes I\-C\-P isn't sufficient. Let's try adding a check based on fitness score, and send the pair to Prerejective R\-A\-N\-S\-A\-C to get a better transformation. \hypertarget{IterativeClosestPoint_8h_a276ef486ac156cff9bc59dd5fe057886}{\index{Iterative\-Closest\-Point.\-h@{Iterative\-Closest\-Point.\-h}!register\-L\-System\-I\-C\-P\-And\-Return\-Fitness\-\_\-\-For\-Parallel\-Calling@{register\-L\-System\-I\-C\-P\-And\-Return\-Fitness\-\_\-\-For\-Parallel\-Calling}}
+\index{register\-L\-System\-I\-C\-P\-And\-Return\-Fitness\-\_\-\-For\-Parallel\-Calling@{register\-L\-System\-I\-C\-P\-And\-Return\-Fitness\-\_\-\-For\-Parallel\-Calling}!IterativeClosestPoint.h@{Iterative\-Closest\-Point.\-h}}
+\subsubsection[{register\-L\-System\-I\-C\-P\-And\-Return\-Fitness\-\_\-\-For\-Parallel\-Calling}]{\setlength{\rightskip}{0pt plus 5cm}float register\-L\-System\-I\-C\-P\-And\-Return\-Fitness\-\_\-\-For\-Parallel\-Calling (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{input\-Source\-Cloud, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{input\-Target\-Cloud, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{output\-Source\-Transformed\-To\-Target, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{IterativeClosestPoint_8h_a276ef486ac156cff9bc59dd5fe057886}
+\hypertarget{IterativeClosestPoint_8h_a347472dc7d5c1a5e71f1c46a8d42b762}{\index{Iterative\-Closest\-Point.\-h@{Iterative\-Closest\-Point.\-h}!register\-L\-System\-I\-C\-P\-And\-Return\-Translation\-Matrix@{register\-L\-System\-I\-C\-P\-And\-Return\-Translation\-Matrix}}
+\index{register\-L\-System\-I\-C\-P\-And\-Return\-Translation\-Matrix@{register\-L\-System\-I\-C\-P\-And\-Return\-Translation\-Matrix}!IterativeClosestPoint.h@{Iterative\-Closest\-Point.\-h}}
+\subsubsection[{register\-L\-System\-I\-C\-P\-And\-Return\-Translation\-Matrix}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\-::\-Matrix4f register\-L\-System\-I\-C\-P\-And\-Return\-Translation\-Matrix (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{input\-Source\-Cloud, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{input\-Target\-Cloud, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{output\-Source\-Transformed\-To\-Target, }
+\item[{pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$}]{visu, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{IterativeClosestPoint_8h_a347472dc7d5c1a5e71f1c46a8d42b762}
+Sometimes I\-C\-P isn't sufficient. Let's try adding a check based on fitness score, and send the pair to Prerejective R\-A\-N\-S\-A\-C to get a better transformation. \hypertarget{IterativeClosestPoint_8h_a580a19087a295cbd8e44bdbf7634aa9f}{\index{Iterative\-Closest\-Point.\-h@{Iterative\-Closest\-Point.\-h}!register\-Point\-Clouds\-I\-C\-P\-\_\-one\-Against\-Global@{register\-Point\-Clouds\-I\-C\-P\-\_\-one\-Against\-Global}}
+\index{register\-Point\-Clouds\-I\-C\-P\-\_\-one\-Against\-Global@{register\-Point\-Clouds\-I\-C\-P\-\_\-one\-Against\-Global}!IterativeClosestPoint.h@{Iterative\-Closest\-Point.\-h}}
+\subsubsection[{register\-Point\-Clouds\-I\-C\-P\-\_\-one\-Against\-Global}]{\setlength{\rightskip}{0pt plus 5cm}int register\-Point\-Clouds\-I\-C\-P\-\_\-one\-Against\-Global (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{IterativeClosestPoint_8h_a580a19087a295cbd8e44bdbf7634aa9f}
+
+
+Performs pairwise iterative closest point for all input clouds in the order they are provided. After finishing a pair, the pair is added to the global cloud. The global cloud is used for the next pairwise iteration. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em argc} & the value of argc at runtime decremented by 2 (to account for removing the program name and the input .xml file) \\
+\hline
+\mbox{\tt in}  & {\em argv} & the argv given at runtime shifted by two indices (to account for removing the program name and the input .xml file). argv will have the called processing option in argv\mbox{[}0\mbox{]}, and the remaining indices are the point clouds in the order to be processed. \\
+\hline
+\mbox{\tt in}  & {\em input\-Params} & the \hyperlink{classInputParameters}{Input\-Parameters} object that contains values to be used, read in from the input .xml file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick
+\end{DoxyAuthor}
+This one against global I\-C\-P is helpful to refine the alignment after an initial round of the pairwise. Much of this code originates from the P\-C\-L tutorial at \href{http://pointclouds.org/documentation/tutorials/pairwise_incremental_registration.php}{\tt http\-://pointclouds.\-org/documentation/tutorials/pairwise\-\_\-incremental\-\_\-registration.\-php} Much of the code is duplicated from the pairwise registration.
+
+We take the time to use this one after the initial pairwise since the initial pairwise can be off by a few centimeters which has potential to mess things up when trying to segment the pot out. Here we crudely cut off the pot to prevent it from causing problems during registration of the plant.
+
+If debugging level is set to high, visualize each individual transformation. There is tremendous duplication of code here between the debugging level if statment cases(and all throughout the I\-C\-P code). Consider refactoring.
+
+Else if the debugging level is not high, try to do it more quickly. We should probably still reduce max correspondence distance as we go. \hypertarget{IterativeClosestPoint_8h_a54ecf78abe3f9eefb5b7ec1d3295e641}{\index{Iterative\-Closest\-Point.\-h@{Iterative\-Closest\-Point.\-h}!register\-Point\-Clouds\-I\-C\-P\-\_\-pairwise@{register\-Point\-Clouds\-I\-C\-P\-\_\-pairwise}}
+\index{register\-Point\-Clouds\-I\-C\-P\-\_\-pairwise@{register\-Point\-Clouds\-I\-C\-P\-\_\-pairwise}!IterativeClosestPoint.h@{Iterative\-Closest\-Point.\-h}}
+\subsubsection[{register\-Point\-Clouds\-I\-C\-P\-\_\-pairwise}]{\setlength{\rightskip}{0pt plus 5cm}int register\-Point\-Clouds\-I\-C\-P\-\_\-pairwise (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{IterativeClosestPoint_8h_a54ecf78abe3f9eefb5b7ec1d3295e641}
+
+
+Performs pairwise iterative closest point for all input clouds in the order they are provided. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em argc} & the value of argc at runtime decremented by 2 (to account for removing the program name and the input .xml file) \\
+\hline
+\mbox{\tt in}  & {\em argv} & the argv given at runtime shifted by two indices (to account for removing the program name and the input .xml file). argv will have the called processing option in argv\mbox{[}0\mbox{]}, and the remaining indices are the point clouds in the order to be processed. \\
+\hline
+\mbox{\tt in}  & {\em input\-Params} & the \hyperlink{classInputParameters}{Input\-Parameters} object that contains values to be used, read in from the input .xml file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick
+\end{DoxyAuthor}
+Incrementally registers a group of pointclouds. Each pair is registered, and a global transform is updated to put all clouds into the same reference frame as the first. Much of this code originates from the P\-C\-L tutorial at \href{http://pointclouds.org/documentation/tutorials/pairwise_incremental_registration.php}{\tt http\-://pointclouds.\-org/documentation/tutorials/pairwise\-\_\-incremental\-\_\-registration.\-php}
+
+This is useful for a \char`\"{}coarse\char`\"{} registration to get each cloud in roughly the same frame. Jumping straight to a global I\-C\-P seems to often provide poor results, whereas using a coarse pairwise registration first has worked well.
+
+This will also try a R\-A\-N\-S\-A\-C approach to registration if the I\-C\-P fitness score is too large.
+
+Relevant sets of input parameters\-: \hyperlink{classPassThroughFilterParameters}{Pass\-Through\-Filter\-Parameters} to crudely remove parts of the image that would ruin I\-C\-P registration (e.\-g., the pot). \hyperlink{classVoxelGridFilterParameters}{Voxel\-Grid\-Filter\-Parameters} to downsample the clouds and speed up registration. \hyperlink{classIterativeClosestPointParameters}{Iterative\-Closest\-Point\-Parameters} to define I\-C\-P parameters Sample\-Consensus\-P\-Rerejective\-Parameters in case I\-C\-P fails to be underneath a fitness threshold specified in the configuration. \hyperlink{classDebuggingParameters}{Debugging\-Parameters} to affect the verbosity of output and to choose whether or not to display I\-C\-P updates in the visualizer. Here we downsample the plant to speed up registration.
+
+Here we crudely cut off the pot to prevent it from causing problems during registration of the plant.
+
+If debugging level is set to high, visualize each individual transformation. There is tremendous duplication of code here between the debugging level if statment cases(and all throughout the I\-C\-P code). Consider refactoring.
+
+Sometimes I\-C\-P isn't sufficient. Let's try adding a check based on fitness score, and send the pair to Prerejective R\-A\-N\-S\-A\-C to get a better transformation.
+
+Else if the debugging level is not high, try to do it more quickly. We should probably still reduce max correspondence distance as we go.
+
+Sometimes I\-C\-P isn't sufficient. Let's try adding a check based on fitness score, and send the pair to Prerejective R\-A\-N\-S\-A\-C to get a better transformation. \hypertarget{IterativeClosestPoint_8h_a68bbbedcab6ea50b6336ba7cea992fbe}{\index{Iterative\-Closest\-Point.\-h@{Iterative\-Closest\-Point.\-h}!register\-Point\-Clouds\-I\-C\-P\-\_\-refinement@{register\-Point\-Clouds\-I\-C\-P\-\_\-refinement}}
+\index{register\-Point\-Clouds\-I\-C\-P\-\_\-refinement@{register\-Point\-Clouds\-I\-C\-P\-\_\-refinement}!IterativeClosestPoint.h@{Iterative\-Closest\-Point.\-h}}
+\subsubsection[{register\-Point\-Clouds\-I\-C\-P\-\_\-refinement}]{\setlength{\rightskip}{0pt plus 5cm}int register\-Point\-Clouds\-I\-C\-P\-\_\-refinement (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{IterativeClosestPoint_8h_a68bbbedcab6ea50b6336ba7cea992fbe}
+
+
+Uses statistical outlier removal to filter the cloud, then performs pairwise iterative closest point for all input clouds in the order they are provided. After finishing a pair, the pair is added to the global cloud. The global cloud is used for the next pairwise iteration. This is nearly identical to the one\-Against\-Global I\-C\-P. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em argc} & the value of argc at runtime decremented by 2 (to account for removing the program name and the input .xml file) \\
+\hline
+\mbox{\tt in}  & {\em argv} & the argv given at runtime shifted by two indices (to account for removing the program name and the input .xml file). argv will have the called processing option in argv\mbox{[}0\mbox{]}, and the remaining indices are the point clouds in the order to be processed. \\
+\hline
+\mbox{\tt in}  & {\em input\-Params} & the \hyperlink{classInputParameters}{Input\-Parameters} object that contains values to be used, read in from the input .xml file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick
+\end{DoxyAuthor}
+Nearly identical to the one\-Against\-Global, except adds a step to remove statistical outliers. The idea here is that, prior to removing the pot from the images, the high density of points relative to the plant skews statistical outlier removal. Additionally, removing outliers from the combined point cloud doesn't prevent the noise from harming registration. So, this special step here is used to remove outliers and then register A\-F\-T\-E\-R the pot has been removed. If debugging level is set to high, visualize each individual transformation. There is tremendous duplication of code here between the debugging level if statment cases(and all throughout the I\-C\-P code). Consider refactoring.
+
+Else if the debugging level is not high, try to do it more quickly. We should probably still reduce max correspondence distance as we go. \hypertarget{IterativeClosestPoint_8h_a55b426ba508182ca15bba314aebe6442}{\index{Iterative\-Closest\-Point.\-h@{Iterative\-Closest\-Point.\-h}!register\-Point\-Clouds\-I\-C\-P\-And\-Return\-Correspondences@{register\-Point\-Clouds\-I\-C\-P\-And\-Return\-Correspondences}}
+\index{register\-Point\-Clouds\-I\-C\-P\-And\-Return\-Correspondences@{register\-Point\-Clouds\-I\-C\-P\-And\-Return\-Correspondences}!IterativeClosestPoint.h@{Iterative\-Closest\-Point.\-h}}
+\subsubsection[{register\-Point\-Clouds\-I\-C\-P\-And\-Return\-Correspondences}]{\setlength{\rightskip}{0pt plus 5cm}pcl\-::\-Correspondences\-Ptr register\-Point\-Clouds\-I\-C\-P\-And\-Return\-Correspondences (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{input\-Source\-Cloud, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{input\-Target\-Cloud, }
+\item[{pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$}]{visu, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{IterativeClosestPoint_8h_a55b426ba508182ca15bba314aebe6442}
+Sometimes I\-C\-P isn't sufficient. Let's try adding a check based on fitness score, and send the pair to Prerejective R\-A\-N\-S\-A\-C to get a better transformation. 

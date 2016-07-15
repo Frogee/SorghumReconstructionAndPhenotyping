@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<InputParameters>
+	<ParameterSet name="CameraParameters" description="Settings for the PCL visualizer camera.">
+		<Parameter name="xCoordinateLocation" description="the x coordinate of the camera location" type="float" value="0"> </Parameter>
+		<Parameter name="yCoordinateLocation" description="the y coordinate of the camera location" type="float" value="1700"> </Parameter>
+		<Parameter name="zCoordinateLocation" description="the z coordinate of the camera location" type="float" value="700"> </Parameter>
+		<Parameter name="xViewComponent" description="the x component of the view point of the camera" type="float" value="0"> </Parameter>
+		<Parameter name="yViewComponent" description="the y component of the view point of the camera" type="float" value="0"> </Parameter>
+		<Parameter name="zViewComponent" description="the z component of the view point of the camera" type="float" value="700"> </Parameter>
+		<Parameter name="xUpComponent" description="the x component of the view up direction of the camera" type="float" value="0"> </Parameter>
+		<Parameter name="yUpComponent" description="the y component of the view up direction of the camera" type="float" value="0"> </Parameter>
+		<Parameter name="zUpComponent" description="the z component of the view up direction of the camera" type="float" value="1"> </Parameter>
+	</ParameterSet>
+</InputParameters>

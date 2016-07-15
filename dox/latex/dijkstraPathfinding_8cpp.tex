@@ -1,0 +1,99 @@
+\hypertarget{dijkstraPathfinding_8cpp}{\section{dijkstra\-Pathfinding.\-cpp File Reference}
+\label{dijkstraPathfinding_8cpp}\index{dijkstra\-Pathfinding.\-cpp@{dijkstra\-Pathfinding.\-cpp}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$list$>$}\\*
+{\ttfamily \#include $<$limits$>$}\\*
+{\ttfamily \#include $<$set$>$}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include $<$iterator$>$}\\*
+{\ttfamily \#include $<$pcl/common/distances.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}dijkstra\-Pathfinding.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}plant\-Segmentation\-Data\-Container.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}logging\-Helper.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+pcl\-::\-Polygon\-Mesh \hyperlink{dijkstraPathfinding_8cpp_a1ffdddfc2f05c0bc1de5c6a5824601b1}{return\-Largest\-Connected\-Mesh} (pcl\-::\-Polygon\-Mesh $\ast$input\-Mesh)
+\begin{DoxyCompactList}\small\item\em Takes a set of vertices and edges, and returns the largest connected set. \end{DoxyCompactList}\item 
+\hyperlink{dijkstraPathfinding_8h_a8c1d6029622c85b0c047b344a90a6f84}{adjacency\-\_\-list\-\_\-t} \hyperlink{dijkstraPathfinding_8cpp_a23445887b862ab85e404ae6fec2ca21f}{convert\-Polygon\-Mesh\-To\-Adjacency\-List} (pcl\-::\-Polygon\-Mesh $\ast$input\-Mesh)
+\begin{DoxyCompactList}\small\item\em Writes content to the logging file and stdout if the debugging level is set sufficiently high by the user. \end{DoxyCompactList}\item 
+void \hyperlink{dijkstraPathfinding_8cpp_a2dc1776f0cb8939464dbec5847b4877c}{Dijkstra\-Compute\-Paths} (\hyperlink{dijkstraPathfinding_8h_af4d7cdf2478501dc15b627a84f3f4073}{vertex\-\_\-t} source, const \hyperlink{dijkstraPathfinding_8h_a8c1d6029622c85b0c047b344a90a6f84}{adjacency\-\_\-list\-\_\-t} \&adjacency\-\_\-list, std\-::vector$<$ \hyperlink{dijkstraPathfinding_8h_ac7889bf9b3596f63c57011af217212dd}{weight\-\_\-t} $>$ \&min\-\_\-distance, std\-::vector$<$ \hyperlink{dijkstraPathfinding_8h_af4d7cdf2478501dc15b627a84f3f4073}{vertex\-\_\-t} $>$ \&previous)
+\item 
+std\-::list$<$ \hyperlink{dijkstraPathfinding_8h_af4d7cdf2478501dc15b627a84f3f4073}{vertex\-\_\-t} $>$ \hyperlink{dijkstraPathfinding_8cpp_a6ee82e3d0260ca8d33d3576c77cb06bb}{Dijkstra\-Get\-Shortest\-Path\-To} (\hyperlink{dijkstraPathfinding_8h_af4d7cdf2478501dc15b627a84f3f4073}{vertex\-\_\-t} vertex, const std\-::vector$<$ \hyperlink{dijkstraPathfinding_8h_af4d7cdf2478501dc15b627a84f3f4073}{vertex\-\_\-t} $>$ \&previous)
+\item 
+int \hyperlink{dijkstraPathfinding_8cpp_a41e9623ef328197d84c0323456be013d}{Dijkstra\-Example} ()
+\item 
+int \hyperlink{dijkstraPathfinding_8cpp_a1c6ffcf62f9a149c5513f385fa13031f}{Dijkstra\-Unconnected\-Test} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{dijkstraPathfinding_8cpp_a23445887b862ab85e404ae6fec2ca21f}{\index{dijkstra\-Pathfinding.\-cpp@{dijkstra\-Pathfinding.\-cpp}!convert\-Polygon\-Mesh\-To\-Adjacency\-List@{convert\-Polygon\-Mesh\-To\-Adjacency\-List}}
+\index{convert\-Polygon\-Mesh\-To\-Adjacency\-List@{convert\-Polygon\-Mesh\-To\-Adjacency\-List}!dijkstraPathfinding.cpp@{dijkstra\-Pathfinding.\-cpp}}
+\subsubsection[{convert\-Polygon\-Mesh\-To\-Adjacency\-List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf adjacency\-\_\-list\-\_\-t} convert\-Polygon\-Mesh\-To\-Adjacency\-List (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Polygon\-Mesh $\ast$}]{input\-Mesh}
+\end{DoxyParamCaption}
+)}}\label{dijkstraPathfinding_8cpp_a23445887b862ab85e404ae6fec2ca21f}
+
+
+Writes content to the logging file and stdout if the debugging level is set sufficiently high by the user. 
+
+Despite the \hyperlink{classDijkstraPathfinder}{Dijkstra\-Pathfinder} class, this function is sticking around until I can refactor the supervoxel adjacency trimming code that depends on it. input\-Mesh-\/$>$polygons\mbox{[}i\mbox{]} will return a 3-\/vector of three point indices. The point index will work as the node name, but we need the actual point To determine euclidean distance. It should correspond to the index of the point cloud. \hypertarget{dijkstraPathfinding_8cpp_a2dc1776f0cb8939464dbec5847b4877c}{\index{dijkstra\-Pathfinding.\-cpp@{dijkstra\-Pathfinding.\-cpp}!Dijkstra\-Compute\-Paths@{Dijkstra\-Compute\-Paths}}
+\index{Dijkstra\-Compute\-Paths@{Dijkstra\-Compute\-Paths}!dijkstraPathfinding.cpp@{dijkstra\-Pathfinding.\-cpp}}
+\subsubsection[{Dijkstra\-Compute\-Paths}]{\setlength{\rightskip}{0pt plus 5cm}void Dijkstra\-Compute\-Paths (
+\begin{DoxyParamCaption}
+\item[{{\bf vertex\-\_\-t}}]{source, }
+\item[{const {\bf adjacency\-\_\-list\-\_\-t} \&}]{adjacency\-\_\-list, }
+\item[{std\-::vector$<$ {\bf weight\-\_\-t} $>$ \&}]{min\-\_\-distance, }
+\item[{std\-::vector$<$ {\bf vertex\-\_\-t} $>$ \&}]{previous}
+\end{DoxyParamCaption}
+)}}\label{dijkstraPathfinding_8cpp_a2dc1776f0cb8939464dbec5847b4877c}
+This function is copied straight from \href{http://rosettacode.org/wiki/Dijkstra's_algorithm#C.2B.2B}{\tt http\-://rosettacode.\-org/wiki/\-Dijkstra's\-\_\-algorithm\#\-C.\-2\-B.\-2\-B} It does the great majority of the heavy lifting for pathfinding. \hypertarget{dijkstraPathfinding_8cpp_a41e9623ef328197d84c0323456be013d}{\index{dijkstra\-Pathfinding.\-cpp@{dijkstra\-Pathfinding.\-cpp}!Dijkstra\-Example@{Dijkstra\-Example}}
+\index{Dijkstra\-Example@{Dijkstra\-Example}!dijkstraPathfinding.cpp@{dijkstra\-Pathfinding.\-cpp}}
+\subsubsection[{Dijkstra\-Example}]{\setlength{\rightskip}{0pt plus 5cm}int Dijkstra\-Example (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{dijkstraPathfinding_8cpp_a41e9623ef328197d84c0323456be013d}
+This function is copied straight from \href{http://rosettacode.org/wiki/Dijkstra's_algorithm#C.2B.2B}{\tt http\-://rosettacode.\-org/wiki/\-Dijkstra's\-\_\-algorithm\#\-C.\-2\-B.\-2\-B} \hypertarget{dijkstraPathfinding_8cpp_a6ee82e3d0260ca8d33d3576c77cb06bb}{\index{dijkstra\-Pathfinding.\-cpp@{dijkstra\-Pathfinding.\-cpp}!Dijkstra\-Get\-Shortest\-Path\-To@{Dijkstra\-Get\-Shortest\-Path\-To}}
+\index{Dijkstra\-Get\-Shortest\-Path\-To@{Dijkstra\-Get\-Shortest\-Path\-To}!dijkstraPathfinding.cpp@{dijkstra\-Pathfinding.\-cpp}}
+\subsubsection[{Dijkstra\-Get\-Shortest\-Path\-To}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<${\bf vertex\-\_\-t}$>$ Dijkstra\-Get\-Shortest\-Path\-To (
+\begin{DoxyParamCaption}
+\item[{{\bf vertex\-\_\-t}}]{vertex, }
+\item[{const std\-::vector$<$ {\bf vertex\-\_\-t} $>$ \&}]{previous}
+\end{DoxyParamCaption}
+)}}\label{dijkstraPathfinding_8cpp_a6ee82e3d0260ca8d33d3576c77cb06bb}
+This function is copied straight from \href{http://rosettacode.org/wiki/Dijkstra's_algorithm#C.2B.2B}{\tt http\-://rosettacode.\-org/wiki/\-Dijkstra's\-\_\-algorithm\#\-C.\-2\-B.\-2\-B} \hypertarget{dijkstraPathfinding_8cpp_a1c6ffcf62f9a149c5513f385fa13031f}{\index{dijkstra\-Pathfinding.\-cpp@{dijkstra\-Pathfinding.\-cpp}!Dijkstra\-Unconnected\-Test@{Dijkstra\-Unconnected\-Test}}
+\index{Dijkstra\-Unconnected\-Test@{Dijkstra\-Unconnected\-Test}!dijkstraPathfinding.cpp@{dijkstra\-Pathfinding.\-cpp}}
+\subsubsection[{Dijkstra\-Unconnected\-Test}]{\setlength{\rightskip}{0pt plus 5cm}int Dijkstra\-Unconnected\-Test (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{dijkstraPathfinding_8cpp_a1c6ffcf62f9a149c5513f385fa13031f}
+This function is mostly a copy from \href{http://rosettacode.org/wiki/Dijkstra's_algorithm#C.2B.2B}{\tt http\-://rosettacode.\-org/wiki/\-Dijkstra's\-\_\-algorithm\#\-C.\-2\-B.\-2\-B} It is slightly modified to test the behavior of unconnected nodes. \hypertarget{dijkstraPathfinding_8cpp_a1ffdddfc2f05c0bc1de5c6a5824601b1}{\index{dijkstra\-Pathfinding.\-cpp@{dijkstra\-Pathfinding.\-cpp}!return\-Largest\-Connected\-Mesh@{return\-Largest\-Connected\-Mesh}}
+\index{return\-Largest\-Connected\-Mesh@{return\-Largest\-Connected\-Mesh}!dijkstraPathfinding.cpp@{dijkstra\-Pathfinding.\-cpp}}
+\subsubsection[{return\-Largest\-Connected\-Mesh}]{\setlength{\rightskip}{0pt plus 5cm}pcl\-::\-Polygon\-Mesh return\-Largest\-Connected\-Mesh (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Polygon\-Mesh $\ast$}]{current\-Mesh}
+\end{DoxyParamCaption}
+)}}\label{dijkstraPathfinding_8cpp_a1ffdddfc2f05c0bc1de5c6a5824601b1}
+
+
+Takes a set of vertices and edges, and returns the largest connected set. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em current\-Mesh} & pointer to a pcl\-::\-Polygon\-Mesh for which the largest connected subset will be found. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pcl\-::\-Polygon\-Mesh a pcl\-::\-Polygon\-Mesh that is the largest connected subset of the input mesh. 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick 
+\end{DoxyAuthor}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<InputParameters>
+	<ParameterSet name="NormalEstimation" description="Estimates normals of cloud">
+		<Parameter name="RadiusSearch" description="Radius of point search for normal estimation" type="float" value="30.0"> </Parameter>
+		<Parameter name="KSearch" description="Number of neighbors to consider for normal estimation" type="int" value="10"> </Parameter>
+	</ParameterSet>
+	<ParameterSet name="FeatureEstimation" description="Estimates features of cloud">
+		<Parameter name="RadiusSearch" description="Radius of point search for feature estimation" type="float" value="20.0"> </Parameter>
+		<Parameter name="KSearch" description="Number of neighbors to consider for feature estimation" type="int" value="100"> </Parameter>
+	</ParameterSet>
+	<ParameterSet name="Debugging" description="Level of debugging output. 0 will prevent display of images. 1 will show images. 2 will pause images.">
+		<Parameter name="DebuggingLevel" description="Level of debugging output; 0 is lowest level" type="int" value="0"> </Parameter>
+	</ParameterSet>
+</InputParameters>

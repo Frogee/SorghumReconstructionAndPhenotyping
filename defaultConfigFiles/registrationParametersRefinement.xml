@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<InputParameters>
+	<ParameterSet name="PassThroughFilter" description="Hard filter for X, Y, and Z axes">
+		<Parameter name="Xmin" description="X axis filter minimum" type="int" value="-400"> </Parameter>
+		<Parameter name="Xmax" description="X axis filter maximum" type="int" value="200"> </Parameter>
+		<Parameter name="Ymin" description="Y axis filter minimum" type="int" value="-320"> </Parameter>
+		<Parameter name="Ymax" description="Y axis filter maximum" type="int" value="480"> </Parameter>
+		<Parameter name="Zmin" description="Z axis filter minimum" type="int" value="500"> </Parameter>
+		<Parameter name="Zmax" description="Z axis filter maximum" type="int" value="1500"> </Parameter>
+	</ParameterSet>
+	<ParameterSet name="StatisticalOutlierRemoval" description="Removes outlier points">
+		<Parameter name="MeanK" description="Number of neighbors considered for calculating average distance of points" type="int" value="30"> </Parameter>
+		<Parameter name="StdDevMulThresh" description="Standard deviation threshold over which points are considered outliers" type="float" value="0.80"> 
+			30 and 0.25 seem good for the initial filter.
+			30 and 1.0 seem okay for the final filter.
+		</Parameter>
+	</ParameterSet>
+	<ParameterSet name="VoxelGridFilter" description="Voxel grid for downsampling">
+		<Parameter name="LeafSize" description="Size of X, Y, and Z grid leaves" type="float" value="2.00"> 
+			Some earlier notes in my code suggest that I couldn't get this to work. I think it may need to be write the output to a new cloud instead of overwriting the input cloud. It seems to work well though, at least on clouds of individual leaves; before it was choking on the whole plant.
+
+			3.0 is good, higher values can sometimes be used to speed up things for testing (e.g. 10).
+		</Parameter>
+	</ParameterSet>
+	<ParameterSet name="IterativeClosestPoint" description="Iterative Closest Point for registration">
+		<Parameter name="MaximumIterations" description="Maximum number of iterations ICP will perform" type="int" value="2000"> </Parameter>
+		<Parameter name="MaxCorrespondenceDistance" description="Maximum distance two points can still be considered corresponding points" type="float" value="100.0"> </Parameter>
+		<Parameter name="MinCorrespondenceDistance" description="Minimum distance that two points will be considered corresponding points. Used to terminate ICP" type="float" value="1.0"> </Parameter>
+		<Parameter name="LargeCorrespondenceDistanceStepReduction" description="How much the correspondence distance will be reduced after converging at a given correspondence distance when the correspondence distance is above the Threshold Switch" type="float" value="10.0"> </Parameter>
+		<Parameter name="SmallCorrespondenceDistanceStepReduction" description="How much the corrspondence distance will be reduced after converging at a given correspondence distance when the correspondence distance is below the Threshold Switch" type="float" value="5.0"> </Parameter>
+		<Parameter name="ThresholdSwitchFromLargeToSmallDistanceSteps" description="Value at which step size will switch from large to small" type="float" value="10.0"> </Parameter>
+	</ParameterSet>
+	<ParameterSet name="Debugging" description="Level of debugging output. 0 will prevent display of images. 1 will show images. 2 will pause images.">
+		<Parameter name="DebuggingLevel" description="Level of debugging output; 0 is lowest level" type="int" value="2"> </Parameter>
+	</ParameterSet>
+</InputParameters>

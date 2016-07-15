@@ -1,0 +1,173 @@
+\hypertarget{classSupervoxelDataContainer}{\section{Supervoxel\-Data\-Container Class Reference}
+\label{classSupervoxelDataContainer}\index{Supervoxel\-Data\-Container@{Supervoxel\-Data\-Container}}
+}
+
+
+Contains data pertaining to the clustering of a point cloud into supervoxels.  
+
+
+
+
+{\ttfamily \#include $<$supervoxel\-\_\-construction.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSupervoxelDataContainer_a035aedc42b3d77636faf92524fc3f210}{Supervoxel\-Data\-Container} ()
+\item 
+\hyperlink{classSupervoxelDataContainer_aecb208c84b94a8df23ff66b19df6258c}{$\sim$\-Supervoxel\-Data\-Container} ()
+\item 
+void \hyperlink{classSupervoxelDataContainer_af2e6c5567a8c255c77cb1b19a971f6a4}{print\-\_\-cloud\-Sizes} ()
+\item 
+void \hyperlink{classSupervoxelDataContainer_af9bde74d97bbc6ec290be106e7f8fea4}{print\-\_\-supervoxel\-Clusters} ()
+\item 
+void \hyperlink{classSupervoxelDataContainer_a95d15d62b141323149ea43bc8164e3e8}{print\-\_\-supervoxel\-Adjacency} ()
+\item 
+void \hyperlink{classSupervoxelDataContainer_a835cee4a1f0f7707ba4be8c1b11d8fe7}{print\-\_\-supervoxel\-Adjacency} (uint32\-\_\-t input\-Label)
+\item 
+std\-::vector$<$ uint32\-\_\-t $>$ \hyperlink{classSupervoxelDataContainer_a3d853e7cc4cabec622768ebfb380648d}{return\-Vector\-Of\-Supervoxel\-Adjacency\-Labels} (uint32\-\_\-t input\-Label)
+\item 
+void \hyperlink{classSupervoxelDataContainer_ac13ff75a5ffe19587bfcb8826cf0bccf}{print\-\_\-vv\-\_\-color\-Vector} ()
+\item 
+void \hyperlink{classSupervoxelDataContainer_ad7cf2e6bdd359f1481e327aa26e22159}{construct\-Internal\-Maps} ()
+\item 
+void \hyperlink{classSupervoxelDataContainer_aa0633b596626eef815862fd1ecff8ed4}{trim\-Adjacency\-Map\-On\-Geodesic\-Distance} (\hyperlink{classInputParameters}{Input\-Parameters} input\-Params, pcl\-::\-Polygon\-Mesh $\ast$input\-Mesh)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+pcl\-::\-Point\-Cloud\\*
+$<$ pcl\-::\-Point\-X\-Y\-Z\-L $>$\-::Ptr \hyperlink{classSupervoxelDataContainer_a273723386c6419c2e22fc4a82d708faa}{\-\_\-cloud\-With\-Labeled\-Points}
+\item 
+pcl\-::\-Point\-Cloud\\*
+$<$ pcl\-::\-Point\-X\-Y\-Z\-R\-G\-B\-A $>$\-::Ptr \hyperlink{classSupervoxelDataContainer_a850060193389a623dcb8600eee8e4d54}{\-\_\-cloud\-With\-Points\-Colorized\-By\-Label}
+\item 
+pcl\-::\-Point\-Cloud\\*
+$<$ pcl\-::\-Point\-X\-Y\-Z\-L $>$\-::Ptr \hyperlink{classSupervoxelDataContainer_ae3c91d4f8e5a4c8511dac692a1c8dd6f}{\-\_\-cloud\-With\-Centroids\-By\-Label}
+\item 
+std\-::map$<$ \hyperlink{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{Tuple\-Triplet}, uint32\-\_\-t $>$ \hyperlink{classSupervoxelDataContainer_a4fd7af5a22476fc212394a9fdd869f98}{\-\_\-map\-\_\-points\-To\-Label}
+\item 
+std\-::map$<$ uint32\-\_\-t, \hyperlink{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{Tuple\-Triplet} $>$ \hyperlink{classSupervoxelDataContainer_a0021bdaa8ddf908922afa29911a0f5eb}{\-\_\-map\-\_\-label\-To\-Centroid\-Of\-Supervoxel}
+\item 
+std\-::map$<$ uint32\-\_\-t, \\*
+pcl\-::\-Supervoxel\\*
+$<$ pcl\-::\-Point\-X\-Y\-Z\-R\-G\-B\-A $>$\-::Ptr $>$ \hyperlink{classSupervoxelDataContainer_a93773d70194fdb465f29cd4aa5aacb6d}{\-\_\-supervoxel\-Clusters}
+\item 
+std\-::multimap$<$ uint32\-\_\-t, uint32\-\_\-t $>$ \hyperlink{classSupervoxelDataContainer_a5730592d6b01b4770f65ab274901505f}{\-\_\-supervoxel\-Adjacency}
+\item 
+std\-::vector$<$ std\-::vector\\*
+$<$ uint8\-\_\-t $>$ $>$ \hyperlink{classSupervoxelDataContainer_abc7ed8d684b58d402c37e83a590469f5}{\-\_\-vv\-\_\-color\-Vector}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains data pertaining to the clustering of a point cloud into supervoxels. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSupervoxelDataContainer_a035aedc42b3d77636faf92524fc3f210}{\index{Supervoxel\-Data\-Container@{Supervoxel\-Data\-Container}!Supervoxel\-Data\-Container@{Supervoxel\-Data\-Container}}
+\index{Supervoxel\-Data\-Container@{Supervoxel\-Data\-Container}!SupervoxelDataContainer@{Supervoxel\-Data\-Container}}
+\subsubsection[{Supervoxel\-Data\-Container}]{\setlength{\rightskip}{0pt plus 5cm}Supervoxel\-Data\-Container\-::\-Supervoxel\-Data\-Container (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSupervoxelDataContainer_a035aedc42b3d77636faf92524fc3f210}
+\hypertarget{classSupervoxelDataContainer_aecb208c84b94a8df23ff66b19df6258c}{\index{Supervoxel\-Data\-Container@{Supervoxel\-Data\-Container}!$\sim$\-Supervoxel\-Data\-Container@{$\sim$\-Supervoxel\-Data\-Container}}
+\index{$\sim$\-Supervoxel\-Data\-Container@{$\sim$\-Supervoxel\-Data\-Container}!SupervoxelDataContainer@{Supervoxel\-Data\-Container}}
+\subsubsection[{$\sim$\-Supervoxel\-Data\-Container}]{\setlength{\rightskip}{0pt plus 5cm}Supervoxel\-Data\-Container\-::$\sim$\-Supervoxel\-Data\-Container (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSupervoxelDataContainer_aecb208c84b94a8df23ff66b19df6258c}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSupervoxelDataContainer_ad7cf2e6bdd359f1481e327aa26e22159}{\index{Supervoxel\-Data\-Container@{Supervoxel\-Data\-Container}!construct\-Internal\-Maps@{construct\-Internal\-Maps}}
+\index{construct\-Internal\-Maps@{construct\-Internal\-Maps}!SupervoxelDataContainer@{Supervoxel\-Data\-Container}}
+\subsubsection[{construct\-Internal\-Maps}]{\setlength{\rightskip}{0pt plus 5cm}void Supervoxel\-Data\-Container\-::construct\-Internal\-Maps (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSupervoxelDataContainer_ad7cf2e6bdd359f1481e327aa26e22159}
+\hypertarget{classSupervoxelDataContainer_af2e6c5567a8c255c77cb1b19a971f6a4}{\index{Supervoxel\-Data\-Container@{Supervoxel\-Data\-Container}!print\-\_\-cloud\-Sizes@{print\-\_\-cloud\-Sizes}}
+\index{print\-\_\-cloud\-Sizes@{print\-\_\-cloud\-Sizes}!SupervoxelDataContainer@{Supervoxel\-Data\-Container}}
+\subsubsection[{print\-\_\-cloud\-Sizes}]{\setlength{\rightskip}{0pt plus 5cm}void Supervoxel\-Data\-Container\-::print\-\_\-cloud\-Sizes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSupervoxelDataContainer_af2e6c5567a8c255c77cb1b19a971f6a4}
+\hypertarget{classSupervoxelDataContainer_a95d15d62b141323149ea43bc8164e3e8}{\index{Supervoxel\-Data\-Container@{Supervoxel\-Data\-Container}!print\-\_\-supervoxel\-Adjacency@{print\-\_\-supervoxel\-Adjacency}}
+\index{print\-\_\-supervoxel\-Adjacency@{print\-\_\-supervoxel\-Adjacency}!SupervoxelDataContainer@{Supervoxel\-Data\-Container}}
+\subsubsection[{print\-\_\-supervoxel\-Adjacency}]{\setlength{\rightskip}{0pt plus 5cm}void Supervoxel\-Data\-Container\-::print\-\_\-supervoxel\-Adjacency (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSupervoxelDataContainer_a95d15d62b141323149ea43bc8164e3e8}
+\hypertarget{classSupervoxelDataContainer_a835cee4a1f0f7707ba4be8c1b11d8fe7}{\index{Supervoxel\-Data\-Container@{Supervoxel\-Data\-Container}!print\-\_\-supervoxel\-Adjacency@{print\-\_\-supervoxel\-Adjacency}}
+\index{print\-\_\-supervoxel\-Adjacency@{print\-\_\-supervoxel\-Adjacency}!SupervoxelDataContainer@{Supervoxel\-Data\-Container}}
+\subsubsection[{print\-\_\-supervoxel\-Adjacency}]{\setlength{\rightskip}{0pt plus 5cm}void Supervoxel\-Data\-Container\-::print\-\_\-supervoxel\-Adjacency (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{input\-Label}
+\end{DoxyParamCaption}
+)}}\label{classSupervoxelDataContainer_a835cee4a1f0f7707ba4be8c1b11d8fe7}
+\hypertarget{classSupervoxelDataContainer_af9bde74d97bbc6ec290be106e7f8fea4}{\index{Supervoxel\-Data\-Container@{Supervoxel\-Data\-Container}!print\-\_\-supervoxel\-Clusters@{print\-\_\-supervoxel\-Clusters}}
+\index{print\-\_\-supervoxel\-Clusters@{print\-\_\-supervoxel\-Clusters}!SupervoxelDataContainer@{Supervoxel\-Data\-Container}}
+\subsubsection[{print\-\_\-supervoxel\-Clusters}]{\setlength{\rightskip}{0pt plus 5cm}void Supervoxel\-Data\-Container\-::print\-\_\-supervoxel\-Clusters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSupervoxelDataContainer_af9bde74d97bbc6ec290be106e7f8fea4}
+\hypertarget{classSupervoxelDataContainer_ac13ff75a5ffe19587bfcb8826cf0bccf}{\index{Supervoxel\-Data\-Container@{Supervoxel\-Data\-Container}!print\-\_\-vv\-\_\-color\-Vector@{print\-\_\-vv\-\_\-color\-Vector}}
+\index{print\-\_\-vv\-\_\-color\-Vector@{print\-\_\-vv\-\_\-color\-Vector}!SupervoxelDataContainer@{Supervoxel\-Data\-Container}}
+\subsubsection[{print\-\_\-vv\-\_\-color\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}void Supervoxel\-Data\-Container\-::print\-\_\-vv\-\_\-color\-Vector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSupervoxelDataContainer_ac13ff75a5ffe19587bfcb8826cf0bccf}
+\hypertarget{classSupervoxelDataContainer_a3d853e7cc4cabec622768ebfb380648d}{\index{Supervoxel\-Data\-Container@{Supervoxel\-Data\-Container}!return\-Vector\-Of\-Supervoxel\-Adjacency\-Labels@{return\-Vector\-Of\-Supervoxel\-Adjacency\-Labels}}
+\index{return\-Vector\-Of\-Supervoxel\-Adjacency\-Labels@{return\-Vector\-Of\-Supervoxel\-Adjacency\-Labels}!SupervoxelDataContainer@{Supervoxel\-Data\-Container}}
+\subsubsection[{return\-Vector\-Of\-Supervoxel\-Adjacency\-Labels}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ uint32\-\_\-t $>$ Supervoxel\-Data\-Container\-::return\-Vector\-Of\-Supervoxel\-Adjacency\-Labels (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{input\-Label}
+\end{DoxyParamCaption}
+)}}\label{classSupervoxelDataContainer_a3d853e7cc4cabec622768ebfb380648d}
+\hypertarget{classSupervoxelDataContainer_aa0633b596626eef815862fd1ecff8ed4}{\index{Supervoxel\-Data\-Container@{Supervoxel\-Data\-Container}!trim\-Adjacency\-Map\-On\-Geodesic\-Distance@{trim\-Adjacency\-Map\-On\-Geodesic\-Distance}}
+\index{trim\-Adjacency\-Map\-On\-Geodesic\-Distance@{trim\-Adjacency\-Map\-On\-Geodesic\-Distance}!SupervoxelDataContainer@{Supervoxel\-Data\-Container}}
+\subsubsection[{trim\-Adjacency\-Map\-On\-Geodesic\-Distance}]{\setlength{\rightskip}{0pt plus 5cm}void Supervoxel\-Data\-Container\-::trim\-Adjacency\-Map\-On\-Geodesic\-Distance (
+\begin{DoxyParamCaption}
+\item[{{\bf Input\-Parameters}}]{input\-Params, }
+\item[{pcl\-::\-Polygon\-Mesh $\ast$}]{input\-Mesh}
+\end{DoxyParamCaption}
+)}}\label{classSupervoxelDataContainer_aa0633b596626eef815862fd1ecff8ed4}
+Hmm... we need the index of the point to be able to search for it in the mesh. I guess we need two maps, one mapping index to coordinate, and one mapping coordinate to index. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classSupervoxelDataContainer_ae3c91d4f8e5a4c8511dac692a1c8dd6f}{\index{Supervoxel\-Data\-Container@{Supervoxel\-Data\-Container}!\-\_\-cloud\-With\-Centroids\-By\-Label@{\-\_\-cloud\-With\-Centroids\-By\-Label}}
+\index{\-\_\-cloud\-With\-Centroids\-By\-Label@{\-\_\-cloud\-With\-Centroids\-By\-Label}!SupervoxelDataContainer@{Supervoxel\-Data\-Container}}
+\subsubsection[{\-\_\-cloud\-With\-Centroids\-By\-Label}]{\setlength{\rightskip}{0pt plus 5cm}pcl\-::\-Point\-Cloud$<$pcl\-::\-Point\-X\-Y\-Z\-L$>$\-::Ptr Supervoxel\-Data\-Container\-::\-\_\-cloud\-With\-Centroids\-By\-Label}}\label{classSupervoxelDataContainer_ae3c91d4f8e5a4c8511dac692a1c8dd6f}
+\hypertarget{classSupervoxelDataContainer_a273723386c6419c2e22fc4a82d708faa}{\index{Supervoxel\-Data\-Container@{Supervoxel\-Data\-Container}!\-\_\-cloud\-With\-Labeled\-Points@{\-\_\-cloud\-With\-Labeled\-Points}}
+\index{\-\_\-cloud\-With\-Labeled\-Points@{\-\_\-cloud\-With\-Labeled\-Points}!SupervoxelDataContainer@{Supervoxel\-Data\-Container}}
+\subsubsection[{\-\_\-cloud\-With\-Labeled\-Points}]{\setlength{\rightskip}{0pt plus 5cm}pcl\-::\-Point\-Cloud$<$pcl\-::\-Point\-X\-Y\-Z\-L$>$\-::Ptr Supervoxel\-Data\-Container\-::\-\_\-cloud\-With\-Labeled\-Points}}\label{classSupervoxelDataContainer_a273723386c6419c2e22fc4a82d708faa}
+\hypertarget{classSupervoxelDataContainer_a850060193389a623dcb8600eee8e4d54}{\index{Supervoxel\-Data\-Container@{Supervoxel\-Data\-Container}!\-\_\-cloud\-With\-Points\-Colorized\-By\-Label@{\-\_\-cloud\-With\-Points\-Colorized\-By\-Label}}
+\index{\-\_\-cloud\-With\-Points\-Colorized\-By\-Label@{\-\_\-cloud\-With\-Points\-Colorized\-By\-Label}!SupervoxelDataContainer@{Supervoxel\-Data\-Container}}
+\subsubsection[{\-\_\-cloud\-With\-Points\-Colorized\-By\-Label}]{\setlength{\rightskip}{0pt plus 5cm}pcl\-::\-Point\-Cloud$<$pcl\-::\-Point\-X\-Y\-Z\-R\-G\-B\-A$>$\-::Ptr Supervoxel\-Data\-Container\-::\-\_\-cloud\-With\-Points\-Colorized\-By\-Label}}\label{classSupervoxelDataContainer_a850060193389a623dcb8600eee8e4d54}
+\hypertarget{classSupervoxelDataContainer_a0021bdaa8ddf908922afa29911a0f5eb}{\index{Supervoxel\-Data\-Container@{Supervoxel\-Data\-Container}!\-\_\-map\-\_\-label\-To\-Centroid\-Of\-Supervoxel@{\-\_\-map\-\_\-label\-To\-Centroid\-Of\-Supervoxel}}
+\index{\-\_\-map\-\_\-label\-To\-Centroid\-Of\-Supervoxel@{\-\_\-map\-\_\-label\-To\-Centroid\-Of\-Supervoxel}!SupervoxelDataContainer@{Supervoxel\-Data\-Container}}
+\subsubsection[{\-\_\-map\-\_\-label\-To\-Centroid\-Of\-Supervoxel}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$uint32\-\_\-t, {\bf Tuple\-Triplet}$>$ Supervoxel\-Data\-Container\-::\-\_\-map\-\_\-label\-To\-Centroid\-Of\-Supervoxel}}\label{classSupervoxelDataContainer_a0021bdaa8ddf908922afa29911a0f5eb}
+\hypertarget{classSupervoxelDataContainer_a4fd7af5a22476fc212394a9fdd869f98}{\index{Supervoxel\-Data\-Container@{Supervoxel\-Data\-Container}!\-\_\-map\-\_\-points\-To\-Label@{\-\_\-map\-\_\-points\-To\-Label}}
+\index{\-\_\-map\-\_\-points\-To\-Label@{\-\_\-map\-\_\-points\-To\-Label}!SupervoxelDataContainer@{Supervoxel\-Data\-Container}}
+\subsubsection[{\-\_\-map\-\_\-points\-To\-Label}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<${\bf Tuple\-Triplet}, uint32\-\_\-t$>$ Supervoxel\-Data\-Container\-::\-\_\-map\-\_\-points\-To\-Label}}\label{classSupervoxelDataContainer_a4fd7af5a22476fc212394a9fdd869f98}
+\hypertarget{classSupervoxelDataContainer_a5730592d6b01b4770f65ab274901505f}{\index{Supervoxel\-Data\-Container@{Supervoxel\-Data\-Container}!\-\_\-supervoxel\-Adjacency@{\-\_\-supervoxel\-Adjacency}}
+\index{\-\_\-supervoxel\-Adjacency@{\-\_\-supervoxel\-Adjacency}!SupervoxelDataContainer@{Supervoxel\-Data\-Container}}
+\subsubsection[{\-\_\-supervoxel\-Adjacency}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$uint32\-\_\-t, uint32\-\_\-t$>$ Supervoxel\-Data\-Container\-::\-\_\-supervoxel\-Adjacency}}\label{classSupervoxelDataContainer_a5730592d6b01b4770f65ab274901505f}
+\hypertarget{classSupervoxelDataContainer_a93773d70194fdb465f29cd4aa5aacb6d}{\index{Supervoxel\-Data\-Container@{Supervoxel\-Data\-Container}!\-\_\-supervoxel\-Clusters@{\-\_\-supervoxel\-Clusters}}
+\index{\-\_\-supervoxel\-Clusters@{\-\_\-supervoxel\-Clusters}!SupervoxelDataContainer@{Supervoxel\-Data\-Container}}
+\subsubsection[{\-\_\-supervoxel\-Clusters}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$uint32\-\_\-t, pcl\-::\-Supervoxel$<$pcl\-::\-Point\-X\-Y\-Z\-R\-G\-B\-A$>$\-::Ptr $>$ Supervoxel\-Data\-Container\-::\-\_\-supervoxel\-Clusters}}\label{classSupervoxelDataContainer_a93773d70194fdb465f29cd4aa5aacb6d}
+\hypertarget{classSupervoxelDataContainer_abc7ed8d684b58d402c37e83a590469f5}{\index{Supervoxel\-Data\-Container@{Supervoxel\-Data\-Container}!\-\_\-vv\-\_\-color\-Vector@{\-\_\-vv\-\_\-color\-Vector}}
+\index{\-\_\-vv\-\_\-color\-Vector@{\-\_\-vv\-\_\-color\-Vector}!SupervoxelDataContainer@{Supervoxel\-Data\-Container}}
+\subsubsection[{\-\_\-vv\-\_\-color\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ std\-::vector$<$ uint8\-\_\-t $>$ $>$ Supervoxel\-Data\-Container\-::\-\_\-vv\-\_\-color\-Vector}}\label{classSupervoxelDataContainer_abc7ed8d684b58d402c37e83a590469f5}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{supervoxel__construction_8h}{supervoxel\-\_\-construction.\-h}\item 
+\hyperlink{supervoxel__construction_8cpp}{supervoxel\-\_\-construction.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,8 @@
+11/18/2015 -
+It seems that the debug level 0 version of the registration modules is providing poorer meshes than the debug level > 1 versions.
+To reproduce: process sample 59_1 from 08/03 using debug level 0 for all registration procedures and compare it to debug level > 1 
+
+02/02/2016 -
+Logging vs. writing to stdout are inconsistent.
+
+

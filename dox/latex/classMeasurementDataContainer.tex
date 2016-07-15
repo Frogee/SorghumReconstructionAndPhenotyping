@@ -1,0 +1,97 @@
+\hypertarget{classMeasurementDataContainer}{\section{Measurement\-Data\-Container Class Reference}
+\label{classMeasurementDataContainer}\index{Measurement\-Data\-Container@{Measurement\-Data\-Container}}
+}
+
+
+Class that holds measurements made for a given mesh as they are being made.  
+
+
+
+
+{\ttfamily \#include $<$measurement\-Data\-Container.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMeasurementDataContainer_ad5c4b7326d7182d810044b417c063d49}{Measurement\-Data\-Container} ()
+\item 
+\hyperlink{classMeasurementDataContainer_a284e16b430bf27e9f47b2911d12bfcbc}{$\sim$\-Measurement\-Data\-Container} ()
+\item 
+void \hyperlink{classMeasurementDataContainer_ae188cde8f036724dc0b2399d92b2ef97}{add\-Name\-And\-Measurement} (std\-::string input\-String, float input\-Value)
+\item 
+std\-::map$<$ std\-::string, float $>$ \hyperlink{classMeasurementDataContainer_a6e18bce3080595ca2276f452cbd460ce}{get\-Measurement\-Data} ()
+\item 
+void \hyperlink{classMeasurementDataContainer_a73c657aa08420738d78cc46db36d26f4}{write\-Measurements\-To\-File} (std\-::string file\-Name)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ std\-::string $>$ \hyperlink{classMeasurementDataContainer_aedf6dcab70e753e2ceb7f20a58ae3112}{\-\_\-measurement\-Name\-Container}
+\item 
+std\-::vector$<$ float $>$ \hyperlink{classMeasurementDataContainer_a2795d51b1daf461af38923e1fdc4c444}{\-\_\-measurement\-Value\-Container}
+\item 
+std\-::map$<$ std\-::string, float $>$ \hyperlink{classMeasurementDataContainer_afd620c2a3da101266e5738d5a64235b5}{\-\_\-map\-\_\-measurement\-Data}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that holds measurements made for a given mesh as they are being made. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMeasurementDataContainer_ad5c4b7326d7182d810044b417c063d49}{\index{Measurement\-Data\-Container@{Measurement\-Data\-Container}!Measurement\-Data\-Container@{Measurement\-Data\-Container}}
+\index{Measurement\-Data\-Container@{Measurement\-Data\-Container}!MeasurementDataContainer@{Measurement\-Data\-Container}}
+\subsubsection[{Measurement\-Data\-Container}]{\setlength{\rightskip}{0pt plus 5cm}Measurement\-Data\-Container\-::\-Measurement\-Data\-Container (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMeasurementDataContainer_ad5c4b7326d7182d810044b417c063d49}
+\hypertarget{classMeasurementDataContainer_a284e16b430bf27e9f47b2911d12bfcbc}{\index{Measurement\-Data\-Container@{Measurement\-Data\-Container}!$\sim$\-Measurement\-Data\-Container@{$\sim$\-Measurement\-Data\-Container}}
+\index{$\sim$\-Measurement\-Data\-Container@{$\sim$\-Measurement\-Data\-Container}!MeasurementDataContainer@{Measurement\-Data\-Container}}
+\subsubsection[{$\sim$\-Measurement\-Data\-Container}]{\setlength{\rightskip}{0pt plus 5cm}Measurement\-Data\-Container\-::$\sim$\-Measurement\-Data\-Container (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMeasurementDataContainer_a284e16b430bf27e9f47b2911d12bfcbc}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMeasurementDataContainer_ae188cde8f036724dc0b2399d92b2ef97}{\index{Measurement\-Data\-Container@{Measurement\-Data\-Container}!add\-Name\-And\-Measurement@{add\-Name\-And\-Measurement}}
+\index{add\-Name\-And\-Measurement@{add\-Name\-And\-Measurement}!MeasurementDataContainer@{Measurement\-Data\-Container}}
+\subsubsection[{add\-Name\-And\-Measurement}]{\setlength{\rightskip}{0pt plus 5cm}void Measurement\-Data\-Container\-::add\-Name\-And\-Measurement (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{input\-String, }
+\item[{float}]{input\-Value}
+\end{DoxyParamCaption}
+)}}\label{classMeasurementDataContainer_ae188cde8f036724dc0b2399d92b2ef97}
+\hypertarget{classMeasurementDataContainer_a6e18bce3080595ca2276f452cbd460ce}{\index{Measurement\-Data\-Container@{Measurement\-Data\-Container}!get\-Measurement\-Data@{get\-Measurement\-Data}}
+\index{get\-Measurement\-Data@{get\-Measurement\-Data}!MeasurementDataContainer@{Measurement\-Data\-Container}}
+\subsubsection[{get\-Measurement\-Data}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$ std\-::string, float $>$ Measurement\-Data\-Container\-::get\-Measurement\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMeasurementDataContainer_a6e18bce3080595ca2276f452cbd460ce}
+\hypertarget{classMeasurementDataContainer_a73c657aa08420738d78cc46db36d26f4}{\index{Measurement\-Data\-Container@{Measurement\-Data\-Container}!write\-Measurements\-To\-File@{write\-Measurements\-To\-File}}
+\index{write\-Measurements\-To\-File@{write\-Measurements\-To\-File}!MeasurementDataContainer@{Measurement\-Data\-Container}}
+\subsubsection[{write\-Measurements\-To\-File}]{\setlength{\rightskip}{0pt plus 5cm}void Measurement\-Data\-Container\-::write\-Measurements\-To\-File (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{file\-Name}
+\end{DoxyParamCaption}
+)}}\label{classMeasurementDataContainer_a73c657aa08420738d78cc46db36d26f4}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classMeasurementDataContainer_afd620c2a3da101266e5738d5a64235b5}{\index{Measurement\-Data\-Container@{Measurement\-Data\-Container}!\-\_\-map\-\_\-measurement\-Data@{\-\_\-map\-\_\-measurement\-Data}}
+\index{\-\_\-map\-\_\-measurement\-Data@{\-\_\-map\-\_\-measurement\-Data}!MeasurementDataContainer@{Measurement\-Data\-Container}}
+\subsubsection[{\-\_\-map\-\_\-measurement\-Data}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$std\-::string, float$>$ Measurement\-Data\-Container\-::\-\_\-map\-\_\-measurement\-Data\hspace{0.3cm}{\ttfamily [private]}}}\label{classMeasurementDataContainer_afd620c2a3da101266e5738d5a64235b5}
+\hypertarget{classMeasurementDataContainer_aedf6dcab70e753e2ceb7f20a58ae3112}{\index{Measurement\-Data\-Container@{Measurement\-Data\-Container}!\-\_\-measurement\-Name\-Container@{\-\_\-measurement\-Name\-Container}}
+\index{\-\_\-measurement\-Name\-Container@{\-\_\-measurement\-Name\-Container}!MeasurementDataContainer@{Measurement\-Data\-Container}}
+\subsubsection[{\-\_\-measurement\-Name\-Container}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$std\-::string$>$ Measurement\-Data\-Container\-::\-\_\-measurement\-Name\-Container\hspace{0.3cm}{\ttfamily [private]}}}\label{classMeasurementDataContainer_aedf6dcab70e753e2ceb7f20a58ae3112}
+\hypertarget{classMeasurementDataContainer_a2795d51b1daf461af38923e1fdc4c444}{\index{Measurement\-Data\-Container@{Measurement\-Data\-Container}!\-\_\-measurement\-Value\-Container@{\-\_\-measurement\-Value\-Container}}
+\index{\-\_\-measurement\-Value\-Container@{\-\_\-measurement\-Value\-Container}!MeasurementDataContainer@{Measurement\-Data\-Container}}
+\subsubsection[{\-\_\-measurement\-Value\-Container}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$float$>$ Measurement\-Data\-Container\-::\-\_\-measurement\-Value\-Container\hspace{0.3cm}{\ttfamily [private]}}}\label{classMeasurementDataContainer_a2795d51b1daf461af38923e1fdc4c444}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{measurementDataContainer_8h}{measurement\-Data\-Container.\-h}\item 
+\hyperlink{measurementDataContainer_8cpp}{measurement\-Data\-Container.\-cpp}\end{DoxyCompactItemize}

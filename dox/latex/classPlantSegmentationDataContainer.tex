@@ -1,0 +1,168 @@
+\hypertarget{classPlantSegmentationDataContainer}{\section{Plant\-Segmentation\-Data\-Container Class Reference}
+\label{classPlantSegmentationDataContainer}\index{Plant\-Segmentation\-Data\-Container@{Plant\-Segmentation\-Data\-Container}}
+}
+
+
+Container to hold data associating X, Y, Z points with R, G, B colors.  
+
+
+
+
+{\ttfamily \#include $<$plant\-Segmentation\-Data\-Container.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPlantSegmentationDataContainer_a0c472bd303d09113a018534a8cae09ef}{Plant\-Segmentation\-Data\-Container} ()
+\item 
+\hyperlink{classPlantSegmentationDataContainer_a0d8c9eb11c61c323293d478ef5675f3e}{Plant\-Segmentation\-Data\-Container} (pcl\-::\-Polygon\-Mesh $\ast$input\-Mesh)
+\item 
+\hyperlink{classPlantSegmentationDataContainer_acf75b9d4e3e118b8020bddd9fe897178}{$\sim$\-Plant\-Segmentation\-Data\-Container} ()
+\item 
+bool \hyperlink{classPlantSegmentationDataContainer_ac5083217e91a5aceb99a74e5d975579c}{all\-Points\-Are\-Labeled} ()
+\item 
+bool \hyperlink{classPlantSegmentationDataContainer_a565c2a3678d8bd19e0601422c00e1f6c}{all\-Supervoxels\-Are\-Labeled} ()
+\item 
+int \hyperlink{classPlantSegmentationDataContainer_a29624cc8d663a4b928328c70c19f2aa6}{update\-Supervoxel\-Segmentation\-Map} ()
+\item 
+int \hyperlink{classPlantSegmentationDataContainer_a02c1aa9311002fd1e52aa6467131e6a5}{update\-Learned\-Points\-With\-Supervoxels} ()
+\item 
+std\-::multimap$<$ uint32\-\_\-t, uint32\-\_\-t $>$ \hyperlink{classPlantSegmentationDataContainer_ad650087b1dbce31afbaafd91ff2d1a35}{return\-Supervoxel\-Adjacency\-For\-Non\-Leaf\-Supervoxels} ()
+\item 
+std\-::multimap$<$ uint32\-\_\-t, uint32\-\_\-t $>$ \hyperlink{classPlantSegmentationDataContainer_a032fa43ce457e01be971fa2bce20ff90}{return\-Supervoxel\-Adjacency\-For\-Unlabeled\-Supervoxels} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::map$<$ \hyperlink{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{Tuple\-Triplet}, \\*
+\hyperlink{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{Tuple\-Triplet} $>$ \hyperlink{classPlantSegmentationDataContainer_a69cd3fc8af8419f86977a1a1cbd92dda}{\-\_\-map\-\_\-segmented\-Points}
+\begin{DoxyCompactList}\small\item\em The X, Y, Z point and its corresponding R, G, B value. $>$ \end{DoxyCompactList}\item 
+std\-::map$<$ uint32\-\_\-t, \hyperlink{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{Tuple\-Triplet} $>$ \hyperlink{classPlantSegmentationDataContainer_a593599986e0a17d7e94df9e7bbae9db2}{\-\_\-map\-\_\-segmented\-Supervoxels}
+\begin{DoxyCompactList}\small\item\em The supervoxel label and its corresponding R, G, B value. $>$ \end{DoxyCompactList}\item 
+\hyperlink{classSupervoxelDataContainer}{Supervoxel\-Data\-Container} \hyperlink{classPlantSegmentationDataContainer_a83b40592cb99a418ea689481425fc894}{\-\_\-supervoxel\-Data}
+\begin{DoxyCompactList}\small\item\em Supervoxel data for the mesh. $>$ \end{DoxyCompactList}\item 
+std\-::map$<$ uint32\-\_\-t, \hyperlink{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{Tuple\-Triplet} $>$ \hyperlink{classPlantSegmentationDataContainer_ad0a98dbe2681b9b3ee693b6c5b37e667}{\-\_\-map\-\_\-leaf\-Tip\-Labels}
+\begin{DoxyCompactList}\small\item\em Supervoxel labels of the leaf tips. $>$ \end{DoxyCompactList}\item 
+std\-::vector$<$ uint32\-\_\-t $>$ \hyperlink{classPlantSegmentationDataContainer_a6df4ddb8fefd98b15d007bd9fdb16413}{\-\_\-leaf\-Order\-Bottom\-To\-Top}
+\begin{DoxyCompactList}\small\item\em Leaf labels ordered from bottom to top. $>$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Container to hold data associating X, Y, Z points with R, G, B colors. 
+
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPlantSegmentationDataContainer_a0c472bd303d09113a018534a8cae09ef}{\index{Plant\-Segmentation\-Data\-Container@{Plant\-Segmentation\-Data\-Container}!Plant\-Segmentation\-Data\-Container@{Plant\-Segmentation\-Data\-Container}}
+\index{Plant\-Segmentation\-Data\-Container@{Plant\-Segmentation\-Data\-Container}!PlantSegmentationDataContainer@{Plant\-Segmentation\-Data\-Container}}
+\subsubsection[{Plant\-Segmentation\-Data\-Container}]{\setlength{\rightskip}{0pt plus 5cm}Plant\-Segmentation\-Data\-Container\-::\-Plant\-Segmentation\-Data\-Container (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPlantSegmentationDataContainer_a0c472bd303d09113a018534a8cae09ef}
+\hypertarget{classPlantSegmentationDataContainer_a0d8c9eb11c61c323293d478ef5675f3e}{\index{Plant\-Segmentation\-Data\-Container@{Plant\-Segmentation\-Data\-Container}!Plant\-Segmentation\-Data\-Container@{Plant\-Segmentation\-Data\-Container}}
+\index{Plant\-Segmentation\-Data\-Container@{Plant\-Segmentation\-Data\-Container}!PlantSegmentationDataContainer@{Plant\-Segmentation\-Data\-Container}}
+\subsubsection[{Plant\-Segmentation\-Data\-Container}]{\setlength{\rightskip}{0pt plus 5cm}Plant\-Segmentation\-Data\-Container\-::\-Plant\-Segmentation\-Data\-Container (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Polygon\-Mesh $\ast$}]{input\-Mesh}
+\end{DoxyParamCaption}
+)}}\label{classPlantSegmentationDataContainer_a0d8c9eb11c61c323293d478ef5675f3e}
+\hypertarget{classPlantSegmentationDataContainer_acf75b9d4e3e118b8020bddd9fe897178}{\index{Plant\-Segmentation\-Data\-Container@{Plant\-Segmentation\-Data\-Container}!$\sim$\-Plant\-Segmentation\-Data\-Container@{$\sim$\-Plant\-Segmentation\-Data\-Container}}
+\index{$\sim$\-Plant\-Segmentation\-Data\-Container@{$\sim$\-Plant\-Segmentation\-Data\-Container}!PlantSegmentationDataContainer@{Plant\-Segmentation\-Data\-Container}}
+\subsubsection[{$\sim$\-Plant\-Segmentation\-Data\-Container}]{\setlength{\rightskip}{0pt plus 5cm}Plant\-Segmentation\-Data\-Container\-::$\sim$\-Plant\-Segmentation\-Data\-Container (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPlantSegmentationDataContainer_acf75b9d4e3e118b8020bddd9fe897178}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPlantSegmentationDataContainer_ac5083217e91a5aceb99a74e5d975579c}{\index{Plant\-Segmentation\-Data\-Container@{Plant\-Segmentation\-Data\-Container}!all\-Points\-Are\-Labeled@{all\-Points\-Are\-Labeled}}
+\index{all\-Points\-Are\-Labeled@{all\-Points\-Are\-Labeled}!PlantSegmentationDataContainer@{Plant\-Segmentation\-Data\-Container}}
+\subsubsection[{all\-Points\-Are\-Labeled}]{\setlength{\rightskip}{0pt plus 5cm}bool Plant\-Segmentation\-Data\-Container\-::all\-Points\-Are\-Labeled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPlantSegmentationDataContainer_ac5083217e91a5aceb99a74e5d975579c}
+\hypertarget{classPlantSegmentationDataContainer_a565c2a3678d8bd19e0601422c00e1f6c}{\index{Plant\-Segmentation\-Data\-Container@{Plant\-Segmentation\-Data\-Container}!all\-Supervoxels\-Are\-Labeled@{all\-Supervoxels\-Are\-Labeled}}
+\index{all\-Supervoxels\-Are\-Labeled@{all\-Supervoxels\-Are\-Labeled}!PlantSegmentationDataContainer@{Plant\-Segmentation\-Data\-Container}}
+\subsubsection[{all\-Supervoxels\-Are\-Labeled}]{\setlength{\rightskip}{0pt plus 5cm}bool Plant\-Segmentation\-Data\-Container\-::all\-Supervoxels\-Are\-Labeled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPlantSegmentationDataContainer_a565c2a3678d8bd19e0601422c00e1f6c}
+\hypertarget{classPlantSegmentationDataContainer_ad650087b1dbce31afbaafd91ff2d1a35}{\index{Plant\-Segmentation\-Data\-Container@{Plant\-Segmentation\-Data\-Container}!return\-Supervoxel\-Adjacency\-For\-Non\-Leaf\-Supervoxels@{return\-Supervoxel\-Adjacency\-For\-Non\-Leaf\-Supervoxels}}
+\index{return\-Supervoxel\-Adjacency\-For\-Non\-Leaf\-Supervoxels@{return\-Supervoxel\-Adjacency\-For\-Non\-Leaf\-Supervoxels}!PlantSegmentationDataContainer@{Plant\-Segmentation\-Data\-Container}}
+\subsubsection[{return\-Supervoxel\-Adjacency\-For\-Non\-Leaf\-Supervoxels}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$ uint32\-\_\-t, uint32\-\_\-t $>$ Plant\-Segmentation\-Data\-Container\-::return\-Supervoxel\-Adjacency\-For\-Non\-Leaf\-Supervoxels (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPlantSegmentationDataContainer_ad650087b1dbce31afbaafd91ff2d1a35}
+\hypertarget{classPlantSegmentationDataContainer_a032fa43ce457e01be971fa2bce20ff90}{\index{Plant\-Segmentation\-Data\-Container@{Plant\-Segmentation\-Data\-Container}!return\-Supervoxel\-Adjacency\-For\-Unlabeled\-Supervoxels@{return\-Supervoxel\-Adjacency\-For\-Unlabeled\-Supervoxels}}
+\index{return\-Supervoxel\-Adjacency\-For\-Unlabeled\-Supervoxels@{return\-Supervoxel\-Adjacency\-For\-Unlabeled\-Supervoxels}!PlantSegmentationDataContainer@{Plant\-Segmentation\-Data\-Container}}
+\subsubsection[{return\-Supervoxel\-Adjacency\-For\-Unlabeled\-Supervoxels}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$ uint32\-\_\-t, uint32\-\_\-t $>$ Plant\-Segmentation\-Data\-Container\-::return\-Supervoxel\-Adjacency\-For\-Unlabeled\-Supervoxels (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPlantSegmentationDataContainer_a032fa43ce457e01be971fa2bce20ff90}
+\hypertarget{classPlantSegmentationDataContainer_a02c1aa9311002fd1e52aa6467131e6a5}{\index{Plant\-Segmentation\-Data\-Container@{Plant\-Segmentation\-Data\-Container}!update\-Learned\-Points\-With\-Supervoxels@{update\-Learned\-Points\-With\-Supervoxels}}
+\index{update\-Learned\-Points\-With\-Supervoxels@{update\-Learned\-Points\-With\-Supervoxels}!PlantSegmentationDataContainer@{Plant\-Segmentation\-Data\-Container}}
+\subsubsection[{update\-Learned\-Points\-With\-Supervoxels}]{\setlength{\rightskip}{0pt plus 5cm}int Plant\-Segmentation\-Data\-Container\-::update\-Learned\-Points\-With\-Supervoxels (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPlantSegmentationDataContainer_a02c1aa9311002fd1e52aa6467131e6a5}
+\hypertarget{classPlantSegmentationDataContainer_a29624cc8d663a4b928328c70c19f2aa6}{\index{Plant\-Segmentation\-Data\-Container@{Plant\-Segmentation\-Data\-Container}!update\-Supervoxel\-Segmentation\-Map@{update\-Supervoxel\-Segmentation\-Map}}
+\index{update\-Supervoxel\-Segmentation\-Map@{update\-Supervoxel\-Segmentation\-Map}!PlantSegmentationDataContainer@{Plant\-Segmentation\-Data\-Container}}
+\subsubsection[{update\-Supervoxel\-Segmentation\-Map}]{\setlength{\rightskip}{0pt plus 5cm}int Plant\-Segmentation\-Data\-Container\-::update\-Supervoxel\-Segmentation\-Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPlantSegmentationDataContainer_a29624cc8d663a4b928328c70c19f2aa6}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classPlantSegmentationDataContainer_a6df4ddb8fefd98b15d007bd9fdb16413}{\index{Plant\-Segmentation\-Data\-Container@{Plant\-Segmentation\-Data\-Container}!\-\_\-leaf\-Order\-Bottom\-To\-Top@{\-\_\-leaf\-Order\-Bottom\-To\-Top}}
+\index{\-\_\-leaf\-Order\-Bottom\-To\-Top@{\-\_\-leaf\-Order\-Bottom\-To\-Top}!PlantSegmentationDataContainer@{Plant\-Segmentation\-Data\-Container}}
+\subsubsection[{\-\_\-leaf\-Order\-Bottom\-To\-Top}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$uint32\-\_\-t$>$ Plant\-Segmentation\-Data\-Container\-::\-\_\-leaf\-Order\-Bottom\-To\-Top}}\label{classPlantSegmentationDataContainer_a6df4ddb8fefd98b15d007bd9fdb16413}
+
+
+Leaf labels ordered from bottom to top. $>$ 
+
+\hypertarget{classPlantSegmentationDataContainer_ad0a98dbe2681b9b3ee693b6c5b37e667}{\index{Plant\-Segmentation\-Data\-Container@{Plant\-Segmentation\-Data\-Container}!\-\_\-map\-\_\-leaf\-Tip\-Labels@{\-\_\-map\-\_\-leaf\-Tip\-Labels}}
+\index{\-\_\-map\-\_\-leaf\-Tip\-Labels@{\-\_\-map\-\_\-leaf\-Tip\-Labels}!PlantSegmentationDataContainer@{Plant\-Segmentation\-Data\-Container}}
+\subsubsection[{\-\_\-map\-\_\-leaf\-Tip\-Labels}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$uint32\-\_\-t, {\bf Tuple\-Triplet}$>$ Plant\-Segmentation\-Data\-Container\-::\-\_\-map\-\_\-leaf\-Tip\-Labels}}\label{classPlantSegmentationDataContainer_ad0a98dbe2681b9b3ee693b6c5b37e667}
+
+
+Supervoxel labels of the leaf tips. $>$ 
+
+\hypertarget{classPlantSegmentationDataContainer_a69cd3fc8af8419f86977a1a1cbd92dda}{\index{Plant\-Segmentation\-Data\-Container@{Plant\-Segmentation\-Data\-Container}!\-\_\-map\-\_\-segmented\-Points@{\-\_\-map\-\_\-segmented\-Points}}
+\index{\-\_\-map\-\_\-segmented\-Points@{\-\_\-map\-\_\-segmented\-Points}!PlantSegmentationDataContainer@{Plant\-Segmentation\-Data\-Container}}
+\subsubsection[{\-\_\-map\-\_\-segmented\-Points}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<${\bf Tuple\-Triplet}, {\bf Tuple\-Triplet}$>$ Plant\-Segmentation\-Data\-Container\-::\-\_\-map\-\_\-segmented\-Points}}\label{classPlantSegmentationDataContainer_a69cd3fc8af8419f86977a1a1cbd92dda}
+
+
+The X, Y, Z point and its corresponding R, G, B value. $>$ 
+
+\hypertarget{classPlantSegmentationDataContainer_a593599986e0a17d7e94df9e7bbae9db2}{\index{Plant\-Segmentation\-Data\-Container@{Plant\-Segmentation\-Data\-Container}!\-\_\-map\-\_\-segmented\-Supervoxels@{\-\_\-map\-\_\-segmented\-Supervoxels}}
+\index{\-\_\-map\-\_\-segmented\-Supervoxels@{\-\_\-map\-\_\-segmented\-Supervoxels}!PlantSegmentationDataContainer@{Plant\-Segmentation\-Data\-Container}}
+\subsubsection[{\-\_\-map\-\_\-segmented\-Supervoxels}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$uint32\-\_\-t, {\bf Tuple\-Triplet}$>$ Plant\-Segmentation\-Data\-Container\-::\-\_\-map\-\_\-segmented\-Supervoxels}}\label{classPlantSegmentationDataContainer_a593599986e0a17d7e94df9e7bbae9db2}
+
+
+The supervoxel label and its corresponding R, G, B value. $>$ 
+
+\hypertarget{classPlantSegmentationDataContainer_a83b40592cb99a418ea689481425fc894}{\index{Plant\-Segmentation\-Data\-Container@{Plant\-Segmentation\-Data\-Container}!\-\_\-supervoxel\-Data@{\-\_\-supervoxel\-Data}}
+\index{\-\_\-supervoxel\-Data@{\-\_\-supervoxel\-Data}!PlantSegmentationDataContainer@{Plant\-Segmentation\-Data\-Container}}
+\subsubsection[{\-\_\-supervoxel\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Supervoxel\-Data\-Container} Plant\-Segmentation\-Data\-Container\-::\-\_\-supervoxel\-Data}}\label{classPlantSegmentationDataContainer_a83b40592cb99a418ea689481425fc894}
+
+
+Supervoxel data for the mesh. $>$ 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{plantSegmentationDataContainer_8h}{plant\-Segmentation\-Data\-Container.\-h}\item 
+\hyperlink{plantSegmentationDataContainer_8cpp}{plant\-Segmentation\-Data\-Container.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,119 @@
+\hypertarget{classPathDataContainer}{\section{Path\-Data\-Container Class Reference}
+\label{classPathDataContainer}\index{Path\-Data\-Container@{Path\-Data\-Container}}
+}
+
+
+Container to hold data corresponding to the path found via Dijkstra's algorithm.  
+
+
+
+
+{\ttfamily \#include $<$dijkstra\-Pathfinding.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPathDataContainer_ad37b6c63127d1896eee0a911284f1744}{Path\-Data\-Container} ()
+\item 
+\hyperlink{classPathDataContainer_aaf5492fd2e31cf2fe4b2e753007ad143}{$\sim$\-Path\-Data\-Container} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dijkstraPathfinding_8h_af4d7cdf2478501dc15b627a84f3f4073}{vertex\-\_\-t} \hyperlink{classPathDataContainer_a2ba5058e1240bf7b2d5c7cfba9058cde}{\-\_\-source\-Index}
+\begin{DoxyCompactList}\small\item\em The index in the adjacency list of the source point $>$ \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classPathDataContainer_a938627791e643867d3a5a67b92141cbf}{\-\_\-source\-Label}
+\begin{DoxyCompactList}\small\item\em The node I\-D of the source point. $>$ \end{DoxyCompactList}\item 
+\hyperlink{dijkstraPathfinding_8h_af4d7cdf2478501dc15b627a84f3f4073}{vertex\-\_\-t} \hyperlink{classPathDataContainer_a276bb46806ebf42d7c0f620469f2f2da}{\-\_\-target\-Index}
+\begin{DoxyCompactList}\small\item\em The index in the adjacency list of the target point $>$ \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classPathDataContainer_ad0f623b05a5421f9a81dddc8375d5102}{\-\_\-target\-Label}
+\begin{DoxyCompactList}\small\item\em The node I\-D of the target point $>$ \end{DoxyCompactList}\item 
+std\-::list$<$ \hyperlink{dijkstraPathfinding_8h_af4d7cdf2478501dc15b627a84f3f4073}{vertex\-\_\-t} $>$ \hyperlink{classPathDataContainer_a4fc598d01fec07280012333ec2ae41a8}{\-\_\-path\-List\-Of\-Indices}
+\begin{DoxyCompactList}\small\item\em List of indices to get from the source point to the target point. $>$ \end{DoxyCompactList}\item 
+std\-::vector$<$ uint32\-\_\-t $>$ \hyperlink{classPathDataContainer_a295280af08a51cdf16fbba3c106cf35b}{\-\_\-path\-Vector\-Of\-Labels}
+\begin{DoxyCompactList}\small\item\em Vector of node I\-Ds to get from the source point to the target point. $>$ \end{DoxyCompactList}\item 
+\hyperlink{dijkstraPathfinding_8h_ac7889bf9b3596f63c57011af217212dd}{weight\-\_\-t} \hyperlink{classPathDataContainer_a339ae57ff022c272bb6a98bbdf68105e}{\-\_\-distance}
+\begin{DoxyCompactList}\small\item\em The length of the path. $>$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Container to hold data corresponding to the path found via Dijkstra's algorithm. 
+
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPathDataContainer_ad37b6c63127d1896eee0a911284f1744}{\index{Path\-Data\-Container@{Path\-Data\-Container}!Path\-Data\-Container@{Path\-Data\-Container}}
+\index{Path\-Data\-Container@{Path\-Data\-Container}!PathDataContainer@{Path\-Data\-Container}}
+\subsubsection[{Path\-Data\-Container}]{\setlength{\rightskip}{0pt plus 5cm}Path\-Data\-Container\-::\-Path\-Data\-Container (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPathDataContainer_ad37b6c63127d1896eee0a911284f1744}
+\hypertarget{classPathDataContainer_aaf5492fd2e31cf2fe4b2e753007ad143}{\index{Path\-Data\-Container@{Path\-Data\-Container}!$\sim$\-Path\-Data\-Container@{$\sim$\-Path\-Data\-Container}}
+\index{$\sim$\-Path\-Data\-Container@{$\sim$\-Path\-Data\-Container}!PathDataContainer@{Path\-Data\-Container}}
+\subsubsection[{$\sim$\-Path\-Data\-Container}]{\setlength{\rightskip}{0pt plus 5cm}Path\-Data\-Container\-::$\sim$\-Path\-Data\-Container (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPathDataContainer_aaf5492fd2e31cf2fe4b2e753007ad143}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classPathDataContainer_a339ae57ff022c272bb6a98bbdf68105e}{\index{Path\-Data\-Container@{Path\-Data\-Container}!\-\_\-distance@{\-\_\-distance}}
+\index{\-\_\-distance@{\-\_\-distance}!PathDataContainer@{Path\-Data\-Container}}
+\subsubsection[{\-\_\-distance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf weight\-\_\-t} Path\-Data\-Container\-::\-\_\-distance}}\label{classPathDataContainer_a339ae57ff022c272bb6a98bbdf68105e}
+
+
+The length of the path. $>$ 
+
+\hypertarget{classPathDataContainer_a4fc598d01fec07280012333ec2ae41a8}{\index{Path\-Data\-Container@{Path\-Data\-Container}!\-\_\-path\-List\-Of\-Indices@{\-\_\-path\-List\-Of\-Indices}}
+\index{\-\_\-path\-List\-Of\-Indices@{\-\_\-path\-List\-Of\-Indices}!PathDataContainer@{Path\-Data\-Container}}
+\subsubsection[{\-\_\-path\-List\-Of\-Indices}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<${\bf vertex\-\_\-t}$>$ Path\-Data\-Container\-::\-\_\-path\-List\-Of\-Indices}}\label{classPathDataContainer_a4fc598d01fec07280012333ec2ae41a8}
+
+
+List of indices to get from the source point to the target point. $>$ 
+
+\hypertarget{classPathDataContainer_a295280af08a51cdf16fbba3c106cf35b}{\index{Path\-Data\-Container@{Path\-Data\-Container}!\-\_\-path\-Vector\-Of\-Labels@{\-\_\-path\-Vector\-Of\-Labels}}
+\index{\-\_\-path\-Vector\-Of\-Labels@{\-\_\-path\-Vector\-Of\-Labels}!PathDataContainer@{Path\-Data\-Container}}
+\subsubsection[{\-\_\-path\-Vector\-Of\-Labels}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$uint32\-\_\-t$>$ Path\-Data\-Container\-::\-\_\-path\-Vector\-Of\-Labels}}\label{classPathDataContainer_a295280af08a51cdf16fbba3c106cf35b}
+
+
+Vector of node I\-Ds to get from the source point to the target point. $>$ 
+
+\hypertarget{classPathDataContainer_a2ba5058e1240bf7b2d5c7cfba9058cde}{\index{Path\-Data\-Container@{Path\-Data\-Container}!\-\_\-source\-Index@{\-\_\-source\-Index}}
+\index{\-\_\-source\-Index@{\-\_\-source\-Index}!PathDataContainer@{Path\-Data\-Container}}
+\subsubsection[{\-\_\-source\-Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vertex\-\_\-t} Path\-Data\-Container\-::\-\_\-source\-Index}}\label{classPathDataContainer_a2ba5058e1240bf7b2d5c7cfba9058cde}
+
+
+The index in the adjacency list of the source point $>$ 
+
+\hypertarget{classPathDataContainer_a938627791e643867d3a5a67b92141cbf}{\index{Path\-Data\-Container@{Path\-Data\-Container}!\-\_\-source\-Label@{\-\_\-source\-Label}}
+\index{\-\_\-source\-Label@{\-\_\-source\-Label}!PathDataContainer@{Path\-Data\-Container}}
+\subsubsection[{\-\_\-source\-Label}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t Path\-Data\-Container\-::\-\_\-source\-Label}}\label{classPathDataContainer_a938627791e643867d3a5a67b92141cbf}
+
+
+The node I\-D of the source point. $>$ 
+
+\hypertarget{classPathDataContainer_a276bb46806ebf42d7c0f620469f2f2da}{\index{Path\-Data\-Container@{Path\-Data\-Container}!\-\_\-target\-Index@{\-\_\-target\-Index}}
+\index{\-\_\-target\-Index@{\-\_\-target\-Index}!PathDataContainer@{Path\-Data\-Container}}
+\subsubsection[{\-\_\-target\-Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vertex\-\_\-t} Path\-Data\-Container\-::\-\_\-target\-Index}}\label{classPathDataContainer_a276bb46806ebf42d7c0f620469f2f2da}
+
+
+The index in the adjacency list of the target point $>$ 
+
+\hypertarget{classPathDataContainer_ad0f623b05a5421f9a81dddc8375d5102}{\index{Path\-Data\-Container@{Path\-Data\-Container}!\-\_\-target\-Label@{\-\_\-target\-Label}}
+\index{\-\_\-target\-Label@{\-\_\-target\-Label}!PathDataContainer@{Path\-Data\-Container}}
+\subsubsection[{\-\_\-target\-Label}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t Path\-Data\-Container\-::\-\_\-target\-Label}}\label{classPathDataContainer_ad0f623b05a5421f9a81dddc8375d5102}
+
+
+The node I\-D of the target point $>$ 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dijkstraPathfinding_8h}{dijkstra\-Pathfinding.\-h}\item 
+\hyperlink{dijkstraPathfinding_8cpp}{dijkstra\-Pathfinding.\-cpp}\end{DoxyCompactItemize}

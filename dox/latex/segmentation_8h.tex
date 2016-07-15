@@ -1,0 +1,285 @@
+\hypertarget{segmentation_8h}{\section{segmentation.\-h File Reference}
+\label{segmentation_8h}\index{segmentation.\-h@{segmentation.\-h}}
+}
+{\ttfamily \#include $<$pcl/visualization/pcl\-\_\-visualizer.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}input\-Params.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}tuple\-Triplet.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}supervoxel\-\_\-construction.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}plant\-Segmentation\-Data\-Container.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$pcl/point\-\_\-types.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/point\-\_\-cloud.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/\-Polygon\-Mesh.\-h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{segmentation_8h_acb5f94312ab02c059ee6d19ea0d8ab06}{segmentation\-Region\-Growing} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+int \hyperlink{segmentation_8h_abaa87267d16769b2c218af48724c5820}{segmentation\-S\-A\-C\-From\-Normals} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+int \hyperlink{segmentation_8h_a2ab4959bd79f6778d430f95d649e77a4}{segmentation\-From\-P\-L\-Y} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\begin{DoxyCompactList}\small\item\em Function called by main to initiate segmentation of a plant mesh. \end{DoxyCompactList}\item 
+int \hyperlink{segmentation_8h_a9b34dd5bc3bac44f7411e0020df1450a}{geodesic\-Distance\-Segmentation} (int argc, char $\ast$$\ast$argv, pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$visualizer, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\begin{DoxyCompactList}\small\item\em Segment a mesh mostly by using geodesic distances across the mesh. Called by \hyperlink{segmentation_8h_a2ab4959bd79f6778d430f95d649e77a4}{segmentation\-From\-P\-L\-Y()}. \end{DoxyCompactList}\item 
+\hyperlink{classPlantSegmentationDataContainer}{Plant\-Segmentation\-Data\-Container} \hyperlink{segmentation_8h_a3d61e15fa03f8db8dea9f671ab7c9ff9}{segment\-From\-Learned\-Points} (int argc, char $\ast$$\ast$argv, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr cloud\-Points, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Normal $>$\-::Ptr cloud\-Normals, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params, pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$visualizer, int viewport)
+\begin{DoxyCompactList}\small\item\em Code to segment mesh points based on assignments made during machine learning. \end{DoxyCompactList}\item 
+int \hyperlink{segmentation_8h_a4b4c302733e16f9b523b175b43960f68}{segment\-Out\-Pot} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\begin{DoxyCompactList}\small\item\em Segment the pot out of a series of registered point clouds. \end{DoxyCompactList}\item 
+int \hyperlink{segmentation_8h_a01e6e6698097f15cdf734d81ba449ecc}{write\-Individual\-Components\-Of\-Segmented\-Mesh} (pcl\-::\-Polygon\-Mesh input\-Mesh, pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$visualizer)
+\item 
+pcl\-::\-Polygon\-Mesh \hyperlink{segmentation_8h_aa33d29c6a70009528ccfc7eca55b2938}{extract\-Mesh\-From\-Polygon\-Mesh\-Given\-Point\-Cloud} (pcl\-::\-Polygon\-Mesh input\-Mesh, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr segmented\-Cloud)
+\item 
+int \hyperlink{segmentation_8h_a6f867c875d00c653b0b6d2f62e31791e}{return\-Label\-Of\-Supervoxel\-With\-Minimum\-Stem\-Point} (\hyperlink{classPlantSegmentationDataContainer}{Plant\-Segmentation\-Data\-Container} input\-Segmentation\-Data)
+\item 
+int \hyperlink{segmentation_8h_ae7342aeb7785778015691788eb17a1c7}{return\-Label\-Of\-Supervoxel\-With\-Maximum\-Stem\-Point} (\hyperlink{classPlantSegmentationDataContainer}{Plant\-Segmentation\-Data\-Container} input\-Segmentation\-Data)
+\item 
+\hyperlink{classPlantSegmentationDataContainer}{Plant\-Segmentation\-Data\-Container} \hyperlink{segmentation_8h_a38e839a389d04132b03fc509700194b6}{refine\-Segmentation} (\hyperlink{classInputParameters}{Input\-Parameters} input\-Params, pcl\-::\-Polygon\-Mesh $\ast$input\-Mesh, \hyperlink{classPlantSegmentationDataContainer}{Plant\-Segmentation\-Data\-Container} $\ast$input\-Segmentation\-Data, pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$visualizer)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{segmentation_8h_aa33d29c6a70009528ccfc7eca55b2938}{\index{segmentation.\-h@{segmentation.\-h}!extract\-Mesh\-From\-Polygon\-Mesh\-Given\-Point\-Cloud@{extract\-Mesh\-From\-Polygon\-Mesh\-Given\-Point\-Cloud}}
+\index{extract\-Mesh\-From\-Polygon\-Mesh\-Given\-Point\-Cloud@{extract\-Mesh\-From\-Polygon\-Mesh\-Given\-Point\-Cloud}!segmentation.h@{segmentation.\-h}}
+\subsubsection[{extract\-Mesh\-From\-Polygon\-Mesh\-Given\-Point\-Cloud}]{\setlength{\rightskip}{0pt plus 5cm}pcl\-::\-Polygon\-Mesh extract\-Mesh\-From\-Polygon\-Mesh\-Given\-Point\-Cloud (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Polygon\-Mesh}]{input\-Mesh, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{segmented\-Cloud}
+\end{DoxyParamCaption}
+)}}\label{segmentation_8h_aa33d29c6a70009528ccfc7eca55b2938}
+Take an input mesh and a point cloud that had been segmented from that mesh. The function should get all of the triangles from the original mesh that would be in the segmented mesh, and output the segmented mesh. This needs to be the segmented subset of the original cloud
+
+This needs to be the original polygon mesh \hypertarget{segmentation_8h_a9b34dd5bc3bac44f7411e0020df1450a}{\index{segmentation.\-h@{segmentation.\-h}!geodesic\-Distance\-Segmentation@{geodesic\-Distance\-Segmentation}}
+\index{geodesic\-Distance\-Segmentation@{geodesic\-Distance\-Segmentation}!segmentation.h@{segmentation.\-h}}
+\subsubsection[{geodesic\-Distance\-Segmentation}]{\setlength{\rightskip}{0pt plus 5cm}int geodesic\-Distance\-Segmentation (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$}]{visualizer, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{segmentation_8h_a9b34dd5bc3bac44f7411e0020df1450a}
+
+
+Segment a mesh mostly by using geodesic distances across the mesh. Called by \hyperlink{segmentation_8h_a2ab4959bd79f6778d430f95d649e77a4}{segmentation\-From\-P\-L\-Y()}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em argc} & the value of argc at runtime decremented by 2 (to account for removing the program name and the input .xml file) \\
+\hline
+\mbox{\tt in}  & {\em argv} & the argv given at runtime shifted by two indices (to account for removing the program name and the input .xml file). argv will have the called processing option in argv\mbox{[}0\mbox{]}. Of the two remaining indices, argv\mbox{[}1\mbox{]} contains the .ply format mesh to be segmented. and argv\mbox{[}2\mbox{]} contains the .ply format point cloud that contains the points from the same cloud as argv\mbox{[}1\mbox{]} with labels assigned as colors. Currently, only the stem has labeled points via machine learning. \\
+\hline
+\mbox{\tt in}  & {\em visualizer} & the pcl\-::visualization\-::\-P\-C\-L\-Visualizer that will be used to display the segmentation process \\
+\hline
+\mbox{\tt in}  & {\em input\-Params} & the \hyperlink{classInputParameters}{Input\-Parameters} object that contains values to be used, read in from the input .xml file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick
+\end{DoxyAuthor}
+This is a third prototype of a segmentation method so that it can be broken and we can get back to the old one if necessary. This time around, we're using an implementation of Dijkstra's Algorithm to find paths over the mesh instead of the geodesic path implementation of Surazhsky et al. \char`\"{}\-Fast Exact and Approximate Geodesics on Meshes\char`\"{}. Use the stem points identified from machine learning to label the stem.
+
+Partition the cloud into supervoxels that can be used during segmentation
+
+Traverse the supervoxel adjacency graph using Dijkstra's Algorithm as opposed to the geodesic implementation.
+
+First, find the index of the supervoxel that contains the stem point with the minimum Z.
+
+This is the first, rough segmentation. It finds unlabeled points that are most distant to the stem bottom and grows them to identify leaves. This initial rough segmentation gets refined later.
+
+The rough segmentation is complete.
+
+Refine the segmentation based on the leaf tips from the rough segmentation above.
+
+Refine the segmentation.
+
+And finally, we want to recolor the leaves based on their ordering.
+
+Use the stem to align the plant to the z axis.
+
+Write out the final transformed, segmented mesh. \hypertarget{segmentation_8h_a38e839a389d04132b03fc509700194b6}{\index{segmentation.\-h@{segmentation.\-h}!refine\-Segmentation@{refine\-Segmentation}}
+\index{refine\-Segmentation@{refine\-Segmentation}!segmentation.h@{segmentation.\-h}}
+\subsubsection[{refine\-Segmentation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Plant\-Segmentation\-Data\-Container} refine\-Segmentation (
+\begin{DoxyParamCaption}
+\item[{{\bf Input\-Parameters}}]{input\-Params, }
+\item[{pcl\-::\-Polygon\-Mesh $\ast$}]{input\-Mesh, }
+\item[{{\bf Plant\-Segmentation\-Data\-Container} $\ast$}]{input\-Segmentation\-Data, }
+\item[{pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$}]{visualizer}
+\end{DoxyParamCaption}
+)}}\label{segmentation_8h_a38e839a389d04132b03fc509700194b6}
+Given the initial rough segmentation, use the leaf tips that it identified to refine the segmentation. Here we want to take a phytomer approach to segmentation and grow from the ground up, in a somewhat opposite fashion to the first approach. This requires identifying the right order to process the leaves. Let's loop through the leaf tips and rank them based on their minimum geodesic distance to the stem bottom. Let's also identify the Z coordinate at which their geodesic path is first adjacent to a stem supervoxel.
+
+The Z coordinate at which their geodesic path is first adjacent to a stem supervoxel should be the primary feature for ordering. Leaves below the top of the stem can be ordered by taking the minimum Z coordinate. If the Z coordinates are close, then take the leaf with the minimum geodesic path length. Leaves above the top of the stem (i.\-e., the whorl), should be ordered by maximum geodesic path length, since the most fully emerged leaves will be the longest.
+
+First, find the index of the supervoxels that contains the stem points with minimum and maximum Z coordinates.
+
+Next, determine how many leaf tips were identified in the initial round, and find the distances for each tip.
+
+This step seems to be one of the most important parts. Doing it based on geodesic distance to the bottom of the stem runs into a problem with the whorl. Maybe we can do it based on the Z coordinate at which the path intercepts a stem point. Maybe the z coordinate at which the path becomes adjacent to a stem point? This should be relatively large Zs for the whorl
+
+We combine two approaches here. 1) Find the Z coordinate of the first leaf supervoxel that is adjacent to a stem supervoxel, and 2) Find the geodesic distance between the leaf tip and the stem base.
+
+Once we have the Z coordinate of the first stem adjacency and the geodesic distance between stem base and leaf tip, we can use that information to order leaves. First, we use the Z coordinate of the first stem adjacency as the primary feature.
+
+That finishes ordering based on Z coordinate of stem adjacency and minimum leaf tip distance. This doesn't work well for leaves above the whorl. For example, if a leaf is part of the whorl, it gives precedence to a young whorl leaf. So, for each supervoxel in the traversal order that has a stem\-Adjacency greater than the max of the stem, we re-\/order it based on maximum leaf distance. That is, older leaves will be longer than younger leaves above the stem for a typical plant.
+
+Done finding the ordering that we want to work with the leaves.
+
+Moving on with refinement. Trace the path from each leaf tip to the stem.
+
+We should probably do something like\-: Label adjacent supervoxels except when one of the adjacent supervoxels is labeled. in which case don't.
+
+Now we fill in the remaining unlabeled supervoxels using a majority rules fill-\/in. Each iteration, this fills in supervoxels with the most labeled adjacencies based on which color is most abundant in the adjacencies.
+
+Finally, we need to make sure that all of the leaf tips in the original ordering are well represented in the final refined mesh. If they aren't, we should remove the tip and recolor points as necessary. We should also recolor debug color points based on the nearest euclidean color. \hypertarget{segmentation_8h_ae7342aeb7785778015691788eb17a1c7}{\index{segmentation.\-h@{segmentation.\-h}!return\-Label\-Of\-Supervoxel\-With\-Maximum\-Stem\-Point@{return\-Label\-Of\-Supervoxel\-With\-Maximum\-Stem\-Point}}
+\index{return\-Label\-Of\-Supervoxel\-With\-Maximum\-Stem\-Point@{return\-Label\-Of\-Supervoxel\-With\-Maximum\-Stem\-Point}!segmentation.h@{segmentation.\-h}}
+\subsubsection[{return\-Label\-Of\-Supervoxel\-With\-Maximum\-Stem\-Point}]{\setlength{\rightskip}{0pt plus 5cm}int return\-Label\-Of\-Supervoxel\-With\-Maximum\-Stem\-Point (
+\begin{DoxyParamCaption}
+\item[{{\bf Plant\-Segmentation\-Data\-Container}}]{input\-Segmentation\-Data}
+\end{DoxyParamCaption}
+)}}\label{segmentation_8h_ae7342aeb7785778015691788eb17a1c7}
+This should probably get refactored into the supervoxel code? \hypertarget{segmentation_8h_a6f867c875d00c653b0b6d2f62e31791e}{\index{segmentation.\-h@{segmentation.\-h}!return\-Label\-Of\-Supervoxel\-With\-Minimum\-Stem\-Point@{return\-Label\-Of\-Supervoxel\-With\-Minimum\-Stem\-Point}}
+\index{return\-Label\-Of\-Supervoxel\-With\-Minimum\-Stem\-Point@{return\-Label\-Of\-Supervoxel\-With\-Minimum\-Stem\-Point}!segmentation.h@{segmentation.\-h}}
+\subsubsection[{return\-Label\-Of\-Supervoxel\-With\-Minimum\-Stem\-Point}]{\setlength{\rightskip}{0pt plus 5cm}int return\-Label\-Of\-Supervoxel\-With\-Minimum\-Stem\-Point (
+\begin{DoxyParamCaption}
+\item[{{\bf Plant\-Segmentation\-Data\-Container}}]{input\-Segmentation\-Data}
+\end{DoxyParamCaption}
+)}}\label{segmentation_8h_a6f867c875d00c653b0b6d2f62e31791e}
+This should probably get refactored into the supervoxel code? \hypertarget{segmentation_8h_a2ab4959bd79f6778d430f95d649e77a4}{\index{segmentation.\-h@{segmentation.\-h}!segmentation\-From\-P\-L\-Y@{segmentation\-From\-P\-L\-Y}}
+\index{segmentation\-From\-P\-L\-Y@{segmentation\-From\-P\-L\-Y}!segmentation.h@{segmentation.\-h}}
+\subsubsection[{segmentation\-From\-P\-L\-Y}]{\setlength{\rightskip}{0pt plus 5cm}int segmentation\-From\-P\-L\-Y (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{segmentation_8h_a2ab4959bd79f6778d430f95d649e77a4}
+
+
+Function called by main to initiate segmentation of a plant mesh. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em argc} & the value of argc at runtime decremented by 2 (to account for removing the program name and the input .xml file) \\
+\hline
+\mbox{\tt in}  & {\em argv} & the argv given at runtime shifted by two indices (to account for removing the program name and the input .xml file). argv will have the called processing option in argv\mbox{[}0\mbox{]}. Of the two remaining indices, argv\mbox{[}1\mbox{]} contains the .ply format mesh to be segmented. and argv\mbox{[}2\mbox{]} contains the .ply format point cloud that contains the points from the same cloud as argv\mbox{[}1\mbox{]} with labels assigned as colors. Currently, only the stem has labeled points via machine learning. \\
+\hline
+\mbox{\tt in}  & {\em input\-Params} & the \hyperlink{classInputParameters}{Input\-Parameters} object that contains values to be used, read in from the input .xml file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick
+\end{DoxyAuthor}
+Placeholder until segmentation is worked out. \hypertarget{segmentation_8h_acb5f94312ab02c059ee6d19ea0d8ab06}{\index{segmentation.\-h@{segmentation.\-h}!segmentation\-Region\-Growing@{segmentation\-Region\-Growing}}
+\index{segmentation\-Region\-Growing@{segmentation\-Region\-Growing}!segmentation.h@{segmentation.\-h}}
+\subsubsection[{segmentation\-Region\-Growing}]{\setlength{\rightskip}{0pt plus 5cm}int segmentation\-Region\-Growing (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{segmentation_8h_acb5f94312ab02c059ee6d19ea0d8ab06}
+\hypertarget{segmentation_8h_abaa87267d16769b2c218af48724c5820}{\index{segmentation.\-h@{segmentation.\-h}!segmentation\-S\-A\-C\-From\-Normals@{segmentation\-S\-A\-C\-From\-Normals}}
+\index{segmentation\-S\-A\-C\-From\-Normals@{segmentation\-S\-A\-C\-From\-Normals}!segmentation.h@{segmentation.\-h}}
+\subsubsection[{segmentation\-S\-A\-C\-From\-Normals}]{\setlength{\rightskip}{0pt plus 5cm}int segmentation\-S\-A\-C\-From\-Normals (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{segmentation_8h_abaa87267d16769b2c218af48724c5820}
+\hypertarget{segmentation_8h_a3d61e15fa03f8db8dea9f671ab7c9ff9}{\index{segmentation.\-h@{segmentation.\-h}!segment\-From\-Learned\-Points@{segment\-From\-Learned\-Points}}
+\index{segment\-From\-Learned\-Points@{segment\-From\-Learned\-Points}!segmentation.h@{segmentation.\-h}}
+\subsubsection[{segment\-From\-Learned\-Points}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Plant\-Segmentation\-Data\-Container} segment\-From\-Learned\-Points (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{cloud\-Points, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Normal $>$\-::Ptr}]{cloud\-Normals, }
+\item[{{\bf Input\-Parameters}}]{input\-Params, }
+\item[{pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$}]{visualizer, }
+\item[{int}]{viewport}
+\end{DoxyParamCaption}
+)}}\label{segmentation_8h_a3d61e15fa03f8db8dea9f671ab7c9ff9}
+
+
+Code to segment mesh points based on assignments made during machine learning. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em argc} & the value of argc at runtime decremented by 2 (to account for removing the program name and the input .xml file) \\
+\hline
+\mbox{\tt in}  & {\em argv} & the argv given at runtime shifted by two indices (to account for removing the program name and the input .xml file). argv will have the called processing option in argv\mbox{[}0\mbox{]}. Of the two remaining indices, argv\mbox{[}1\mbox{]} contains the .ply format mesh to be segmented. and argv\mbox{[}2\mbox{]} contains the .ply format point cloud that contains the points from the same cloud as argv\mbox{[}1\mbox{]} with labels assigned as colors. Currently, only the stem has labeled points via machine learning. \\
+\hline
+\mbox{\tt in}  & {\em input\-Params} & the \hyperlink{classInputParameters}{Input\-Parameters} object that contains values to be used, read in from the input .xml file. \\
+\hline
+\mbox{\tt in}  & {\em visualizer} & the pcl\-::visualization\-::\-P\-C\-L\-Visualizer that will be used to display the segmentation process. \\
+\hline
+\mbox{\tt in}  & {\em viewport} & the pcl\-::visualization\-::\-P\-C\-L\-Visualizer viewport that will be used to display the segmentation process. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classPlantSegmentationDataContainer}{Plant\-Segmentation\-Data\-Container} the \hyperlink{classPlantSegmentationDataContainer}{Plant\-Segmentation\-Data\-Container} containing the segmented mesh. 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick
+\end{DoxyAuthor}
+Second version of segmenting stem with learned points so that we can get back to the working original We need to \char`\"{}reconstruct\char`\"{} the learned cloud using the point values from the input mesh, otherwise we have problems searching it in the tuple map. This assumes the point indices are the same.
+
+Instead of fitting a cylinder, could we region grow the learned points?
+
+Region growing for the stem and inflorescence. \begin{DoxyVerb}Finished Region growing for the stem and inflorescence.
+\end{DoxyVerb}
+ //////////////////////////////////////////////////\hypertarget{segmentation_8h_a4b4c302733e16f9b523b175b43960f68}{\index{segmentation.\-h@{segmentation.\-h}!segment\-Out\-Pot@{segment\-Out\-Pot}}
+\index{segment\-Out\-Pot@{segment\-Out\-Pot}!segmentation.h@{segmentation.\-h}}
+\subsubsection[{segment\-Out\-Pot}]{\setlength{\rightskip}{0pt plus 5cm}int segment\-Out\-Pot (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{segmentation_8h_a4b4c302733e16f9b523b175b43960f68}
+
+
+Segment the pot out of a series of registered point clouds. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em argc} & the value of argc at runtime decremented by 2 (to account for removing the program name and the input .xml file) \\
+\hline
+\mbox{\tt in}  & {\em argv} & the argv given at runtime shifted by two indices (to account for removing the program name and the input .xml file). argv will have the called processing option in argv\mbox{[}0\mbox{]}, and the remaining indices are transformed individual point clouds to be processed. \\
+\hline
+\mbox{\tt in}  & {\em input\-Params} & the \hyperlink{classInputParameters}{Input\-Parameters} object that contains values to be used, read in from the input .xml file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick
+\end{DoxyAuthor}
+This function is currently a monolithic monster. It needs to be refactored.
+
+The premise behind it is\-:
+
+First, crudely cut out points corresponding to the plant with a pass-\/through filter. Then, use a combined clound to first find a circle corresponding to the pot; we find a circle instead of a cylinder because the cylinder tends to fit remaining portion of the plant rather than the pot. That circle is used to orient the pot to the Z axis at the origin. Then a cylinder and a plane are used to identify the pot and the dirt, respectively. These are removed, and then region growing is used to get rid of any extra pot points. Crudely cut off the top part of the plant so that a large circle doesn't mistakenly get fit to the plant A better solution would be to constrain the circle radius in a similar manner to how the cylinder radius can be constrained. However, this doesn't seem to be implemented in P\-C\-L right now. So doing this as a temporary fix.
+
+In order to help with identification of the circle, we remove statistical outliers from the pass through filtered cloud.
+
+Finding the circle corresponding to the pot and translating it to the origin aligned with the z axis. \begin{DoxyVerb}Finished finding the circle corresponding to the pot and translating it to the origin aligned with the z axis.
+\end{DoxyVerb}
+ ///////////////////////////////////////
+
+Getting the rest of the pot out using R\-A\-N\-S\-A\-C
+
+Instead of estimating the cylinder model, we manually set it to be at the origin and based on the circle radius. \begin{DoxyVerb}Finished getting the rest of the pot out using RANSAC
+\end{DoxyVerb}
+ ///////////////////////////////////////
+
+Need to add another input parameter value for the select within distance here.
+
+Region growing. \begin{DoxyVerb}Finished Region growing.
+\end{DoxyVerb}
+ //////////////////////////////////////////////////\hypertarget{segmentation_8h_a01e6e6698097f15cdf734d81ba449ecc}{\index{segmentation.\-h@{segmentation.\-h}!write\-Individual\-Components\-Of\-Segmented\-Mesh@{write\-Individual\-Components\-Of\-Segmented\-Mesh}}
+\index{write\-Individual\-Components\-Of\-Segmented\-Mesh@{write\-Individual\-Components\-Of\-Segmented\-Mesh}!segmentation.h@{segmentation.\-h}}
+\subsubsection[{write\-Individual\-Components\-Of\-Segmented\-Mesh}]{\setlength{\rightskip}{0pt plus 5cm}int write\-Individual\-Components\-Of\-Segmented\-Mesh (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Polygon\-Mesh}]{input\-Mesh, }
+\item[{pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$}]{visualizer}
+\end{DoxyParamCaption}
+)}}\label{segmentation_8h_a01e6e6698097f15cdf734d81ba449ecc}

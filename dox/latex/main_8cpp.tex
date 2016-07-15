@@ -1,0 +1,69 @@
+\hypertarget{main_8cpp}{\section{main.\-cpp File Reference}
+\label{main_8cpp}\index{main.\-cpp@{main.\-cpp}}
+}
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$chrono$>$}\\*
+{\ttfamily \#include $<$ctime$>$}\\*
+{\ttfamily \#include \char`\"{}point\-Cloud\-From\-Depth\-Image.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Sample\-Consensus\-Prerejective.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mesh\-Generation.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}segmentation.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Iterative\-Closest\-Point.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}input\-Params.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}features.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}visualizer\-\_\-helper.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mesh\-Measurements.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}logging\-Helper.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}lsystem\-Fitting.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{main_8cpp_a219bed611a44bb70eb24e7fbe3eaa3eb}{P\-R\-O\-G\-R\-A\-M\-N\-A\-M\-E}~\char`\"{}Plant\-Mesh\-Phenotyper\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8cpp_ac66836a33d36c1b896f08df90ad9417d}{print\-Usage\-Message} ()
+\item 
+int \hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em main \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{main_8cpp_a219bed611a44bb70eb24e7fbe3eaa3eb}{\index{main.\-cpp@{main.\-cpp}!P\-R\-O\-G\-R\-A\-M\-N\-A\-M\-E@{P\-R\-O\-G\-R\-A\-M\-N\-A\-M\-E}}
+\index{P\-R\-O\-G\-R\-A\-M\-N\-A\-M\-E@{P\-R\-O\-G\-R\-A\-M\-N\-A\-M\-E}!main.cpp@{main.\-cpp}}
+\subsubsection[{P\-R\-O\-G\-R\-A\-M\-N\-A\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-G\-R\-A\-M\-N\-A\-M\-E~\char`\"{}Plant\-Mesh\-Phenotyper\char`\"{}}}\label{main_8cpp_a219bed611a44bb70eb24e7fbe3eaa3eb}
+
+
+\subsection{Function Documentation}
+\hypertarget{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{\index{main.\-cpp@{main.\-cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+
+
+main 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em argc} & Number of command line arguments received. Prior to input to processing functions, this gets decremented by 2 (to account for removing the program name and the input .xml file). \\
+\hline
+\mbox{\tt in}  & {\em argv} & Character array of arguments. Prior to input to processing functions, this gets shifted by two indices (to account for removing the program name and the input .xml file). argv should contain the processing selection and all of the input files to be used for that processing selection. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick 
+\end{DoxyAuthor}
+Each of the specific options expects a variable number of input arguments. We trim the original input, which has the input parameters, so that each of the options behaves like its own \hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main()} function. \hypertarget{main_8cpp_ac66836a33d36c1b896f08df90ad9417d}{\index{main.\-cpp@{main.\-cpp}!print\-Usage\-Message@{print\-Usage\-Message}}
+\index{print\-Usage\-Message@{print\-Usage\-Message}!main.cpp@{main.\-cpp}}
+\subsubsection[{print\-Usage\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void print\-Usage\-Message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{main_8cpp_ac66836a33d36c1b896f08df90ad9417d}

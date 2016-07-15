@@ -1,0 +1,54 @@
+\hypertarget{features_8h}{\section{features.\-h File Reference}
+\label{features_8h}\index{features.\-h@{features.\-h}}
+}
+{\ttfamily \#include $<$opencv2/core/core.\-hpp$>$}\\*
+{\ttfamily \#include $<$opencv2/highgui/highgui.\-hpp$>$}\\*
+{\ttfamily \#include $<$pcl/io/pcd\-\_\-io.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/point\-\_\-cloud.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}input\-Params.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{features_8h_a9017882049a427b9d031b2b3da627be1}{compute\-Point\-Features} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\begin{DoxyCompactList}\small\item\em Computes point features for the input mesh. \end{DoxyCompactList}\item 
+int \hyperlink{features_8h_aed8f95d9336444777eea5cbcbedd22e6}{supervoxel\-Construction} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{features_8h_a9017882049a427b9d031b2b3da627be1}{\index{features.\-h@{features.\-h}!compute\-Point\-Features@{compute\-Point\-Features}}
+\index{compute\-Point\-Features@{compute\-Point\-Features}!features.h@{features.\-h}}
+\subsubsection[{compute\-Point\-Features}]{\setlength{\rightskip}{0pt plus 5cm}int compute\-Point\-Features (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{features_8h_a9017882049a427b9d031b2b3da627be1}
+
+
+Computes point features for the input mesh. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em argc} & the value of argc at runtime decremented by 2 (to account for removing the program name and the input .xml file) \\
+\hline
+\mbox{\tt in}  & {\em argv} & the argv given at runtime shifted by two indices (to account for removing the program name and the input .xml file). argv will have the called processing option in argv\mbox{[}0\mbox{]}, and the remaining index (argv\mbox{[}1\mbox{]}) is the labeled or unlabeled mesh for which features will be calculated. \\
+\hline
+\mbox{\tt in}  & {\em input\-Params} & the \hyperlink{classInputParameters}{Input\-Parameters} object that contains values to be used, read in from the input .xml file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick
+\end{DoxyAuthor}
+Compute point features for use with machine learning. If the point is colored cyan (0, 255, 255), the point will be labeled as S\-T\-E\-M, otherwise will be unlabeled. Features for all points are written to an output file (an .arf) that can be input to Multi\-Boost. Estimate features. We use two \char`\"{}scales\char`\"{} of features to try and improve identification.
+
+Without a doubt, the features calculated here can be (and should be) improved. Things to add\-: geodesic distance from bottom of plant? geodesic distance to center of plant? \hypertarget{features_8h_aed8f95d9336444777eea5cbcbedd22e6}{\index{features.\-h@{features.\-h}!supervoxel\-Construction@{supervoxel\-Construction}}
+\index{supervoxel\-Construction@{supervoxel\-Construction}!features.h@{features.\-h}}
+\subsubsection[{supervoxel\-Construction}]{\setlength{\rightskip}{0pt plus 5cm}int supervoxel\-Construction (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{features_8h_aed8f95d9336444777eea5cbcbedd22e6}

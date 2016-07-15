@@ -1,0 +1,125 @@
+\hypertarget{pointCloudFromDepthImage_8cpp}{\section{point\-Cloud\-From\-Depth\-Image.\-cpp File Reference}
+\label{pointCloudFromDepthImage_8cpp}\index{point\-Cloud\-From\-Depth\-Image.\-cpp@{point\-Cloud\-From\-Depth\-Image.\-cpp}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$assert.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include $<$opencv2/core/core.\-hpp$>$}\\*
+{\ttfamily \#include $<$opencv2/highgui/highgui.\-hpp$>$}\\*
+{\ttfamily \#include $<$pcl/io/pcd\-\_\-io.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/io/ply\-\_\-io.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/point\-\_\-cloud.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/filters/passthrough.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/filters/statistical\-\_\-outlier\-\_\-removal.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/filters/voxel\-\_\-grid.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/surface/mls.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/visualization/pcl\-\_\-visualizer.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/segmentation/region\-\_\-growing.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/features/normal\-\_\-3d.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/features/normal\-\_\-3d\-\_\-omp.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/segmentation/extract\-\_\-clusters.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/filters/extract\-\_\-indices.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}point\-Cloud\-From\-Depth\-Image.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}input\-Params.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}logging\-Helper.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{pointCloudFromDepthImage_8cpp_a2fce70e4af9763ea2cdf5bd788c157df}{K\-I\-N\-E\-C\-T\-\_\-\-S\-C\-A\-L\-E\-\_\-\-F\-A\-C\-T\-O\-R}~1.\-4089
+\item 
+\#define \hyperlink{pointCloudFromDepthImage_8cpp_a038186aff6c444c7e47d5b529e9263d0}{K\-I\-N\-E\-C\-T\-\_\-\-M\-I\-N\-I\-M\-U\-M\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}~500.\-0
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \\*
+pcl\-::visualization\-::\-Point\-Cloud\-Color\-Handler\-Custom\\*
+$<$ pcl\-::\-Point\-X\-Y\-Z $>$ \hyperlink{pointCloudFromDepthImage_8cpp_a2782f78115ae6b3e2449e6775607a98b}{Color\-Handler\-X\-Y\-Z}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{pointCloudFromDepthImage_8cpp_a869c2196368ed07824263493adbea2d2}{convert\-Depth\-Images\-To\-Point\-Cloud} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\begin{DoxyCompactList}\small\item\em Function called by \hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main()} to convert depth images from input file names to point clouds and then write the point clouds to disk. \end{DoxyCompactList}\item 
+void \hyperlink{pointCloudFromDepthImage_8cpp_acd653c55fc86eb3f03dc2ededb8aef8d}{load\-Data\-From\-Image} (int argc, char $\ast$$\ast$argv, \hyperlink{pointCloudFromDepthImage_8h_a94f7efe84e81ba5c22e42ecc01a3118f}{Vector\-Mats} \&v\-\_\-mats, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\begin{DoxyCompactList}\small\item\em Given a list of file names representing .png images, will read in the images to open\-C\-V matrices. \end{DoxyCompactList}\item 
+void \hyperlink{pointCloudFromDepthImage_8cpp_a162a672d6d39aa056607b1147c1e8075}{write\-Point\-Clouds} (\hyperlink{pointCloudFromDepthImage_8h_a94f7efe84e81ba5c22e42ecc01a3118f}{Vector\-Mats} $\ast$v\-\_\-mats, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\begin{DoxyCompactList}\small\item\em Performs post processing on depth images provided as open\-C\-V matrices, and writes them to file as point cloud data (.pcd). \end{DoxyCompactList}\item 
+int \hyperlink{pointCloudFromDepthImage_8cpp_a2ce7e8d6d7079b904e9be7b9ba755a2b}{remove\-Statistical\-Outliers} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\begin{DoxyCompactList}\small\item\em Function to filter points that are statistical outliers from the input point cloud. This needs to be refactored to its own header file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{pointCloudFromDepthImage_8cpp_a038186aff6c444c7e47d5b529e9263d0}{\index{point\-Cloud\-From\-Depth\-Image.\-cpp@{point\-Cloud\-From\-Depth\-Image.\-cpp}!K\-I\-N\-E\-C\-T\-\_\-\-M\-I\-N\-I\-M\-U\-M\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E@{K\-I\-N\-E\-C\-T\-\_\-\-M\-I\-N\-I\-M\-U\-M\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}}
+\index{K\-I\-N\-E\-C\-T\-\_\-\-M\-I\-N\-I\-M\-U\-M\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E@{K\-I\-N\-E\-C\-T\-\_\-\-M\-I\-N\-I\-M\-U\-M\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}!pointCloudFromDepthImage.cpp@{point\-Cloud\-From\-Depth\-Image.\-cpp}}
+\subsubsection[{K\-I\-N\-E\-C\-T\-\_\-\-M\-I\-N\-I\-M\-U\-M\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\-I\-N\-E\-C\-T\-\_\-\-M\-I\-N\-I\-M\-U\-M\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E~500.\-0}}\label{pointCloudFromDepthImage_8cpp_a038186aff6c444c7e47d5b529e9263d0}
+\hypertarget{pointCloudFromDepthImage_8cpp_a2fce70e4af9763ea2cdf5bd788c157df}{\index{point\-Cloud\-From\-Depth\-Image.\-cpp@{point\-Cloud\-From\-Depth\-Image.\-cpp}!K\-I\-N\-E\-C\-T\-\_\-\-S\-C\-A\-L\-E\-\_\-\-F\-A\-C\-T\-O\-R@{K\-I\-N\-E\-C\-T\-\_\-\-S\-C\-A\-L\-E\-\_\-\-F\-A\-C\-T\-O\-R}}
+\index{K\-I\-N\-E\-C\-T\-\_\-\-S\-C\-A\-L\-E\-\_\-\-F\-A\-C\-T\-O\-R@{K\-I\-N\-E\-C\-T\-\_\-\-S\-C\-A\-L\-E\-\_\-\-F\-A\-C\-T\-O\-R}!pointCloudFromDepthImage.cpp@{point\-Cloud\-From\-Depth\-Image.\-cpp}}
+\subsubsection[{K\-I\-N\-E\-C\-T\-\_\-\-S\-C\-A\-L\-E\-\_\-\-F\-A\-C\-T\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\-I\-N\-E\-C\-T\-\_\-\-S\-C\-A\-L\-E\-\_\-\-F\-A\-C\-T\-O\-R~1.\-4089}}\label{pointCloudFromDepthImage_8cpp_a2fce70e4af9763ea2cdf5bd788c157df}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{pointCloudFromDepthImage_8cpp_a2782f78115ae6b3e2449e6775607a98b}{\index{point\-Cloud\-From\-Depth\-Image.\-cpp@{point\-Cloud\-From\-Depth\-Image.\-cpp}!Color\-Handler\-X\-Y\-Z@{Color\-Handler\-X\-Y\-Z}}
+\index{Color\-Handler\-X\-Y\-Z@{Color\-Handler\-X\-Y\-Z}!pointCloudFromDepthImage.cpp@{point\-Cloud\-From\-Depth\-Image.\-cpp}}
+\subsubsection[{Color\-Handler\-X\-Y\-Z}]{\setlength{\rightskip}{0pt plus 5cm}typedef pcl\-::visualization\-::\-Point\-Cloud\-Color\-Handler\-Custom$<$pcl\-::\-Point\-X\-Y\-Z$>$ {\bf Color\-Handler\-X\-Y\-Z}}}\label{pointCloudFromDepthImage_8cpp_a2782f78115ae6b3e2449e6775607a98b}
+
+
+\subsection{Function Documentation}
+\hypertarget{pointCloudFromDepthImage_8cpp_a869c2196368ed07824263493adbea2d2}{\index{point\-Cloud\-From\-Depth\-Image.\-cpp@{point\-Cloud\-From\-Depth\-Image.\-cpp}!convert\-Depth\-Images\-To\-Point\-Cloud@{convert\-Depth\-Images\-To\-Point\-Cloud}}
+\index{convert\-Depth\-Images\-To\-Point\-Cloud@{convert\-Depth\-Images\-To\-Point\-Cloud}!pointCloudFromDepthImage.cpp@{point\-Cloud\-From\-Depth\-Image.\-cpp}}
+\subsubsection[{convert\-Depth\-Images\-To\-Point\-Cloud}]{\setlength{\rightskip}{0pt plus 5cm}int convert\-Depth\-Images\-To\-Point\-Cloud (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{pointCloudFromDepthImage_8cpp_a869c2196368ed07824263493adbea2d2}
+
+
+Function called by \hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main()} to convert depth images from input file names to point clouds and then write the point clouds to disk. 
+
+Currently, this only handles depth images. In the future we should be able to stitch R\-G\-B and depth images together
+
+Relevant sets of input parameters to convert depth images to point cloud\-: \hyperlink{classPassThroughFilterParameters}{Pass\-Through\-Filter\-Parameters} to remove non-\/interesting parts of the image that could harm downstream processing. \hyperlink{classStatisticalOutlierRemovalParameters}{Statistical\-Outlier\-Removal\-Parameters} to do a coarse cleanup of the point cloud. \hyperlink{classDebuggingParameters}{Debugging\-Parameters} to effect the verbosity of the output. \hypertarget{pointCloudFromDepthImage_8cpp_acd653c55fc86eb3f03dc2ededb8aef8d}{\index{point\-Cloud\-From\-Depth\-Image.\-cpp@{point\-Cloud\-From\-Depth\-Image.\-cpp}!load\-Data\-From\-Image@{load\-Data\-From\-Image}}
+\index{load\-Data\-From\-Image@{load\-Data\-From\-Image}!pointCloudFromDepthImage.cpp@{point\-Cloud\-From\-Depth\-Image.\-cpp}}
+\subsubsection[{load\-Data\-From\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void load\-Data\-From\-Image (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Vector\-Mats} \&}]{v\-\_\-mats, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{pointCloudFromDepthImage_8cpp_acd653c55fc86eb3f03dc2ededb8aef8d}
+
+
+Given a list of file names representing .png images, will read in the images to open\-C\-V matrices. 
+
+Load .png images from a list of files names contained in argv, and load them to a vector of Open\-C\-V Mat \hypertarget{pointCloudFromDepthImage_8cpp_a2ce7e8d6d7079b904e9be7b9ba755a2b}{\index{point\-Cloud\-From\-Depth\-Image.\-cpp@{point\-Cloud\-From\-Depth\-Image.\-cpp}!remove\-Statistical\-Outliers@{remove\-Statistical\-Outliers}}
+\index{remove\-Statistical\-Outliers@{remove\-Statistical\-Outliers}!pointCloudFromDepthImage.cpp@{point\-Cloud\-From\-Depth\-Image.\-cpp}}
+\subsubsection[{remove\-Statistical\-Outliers}]{\setlength{\rightskip}{0pt plus 5cm}int remove\-Statistical\-Outliers (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{pointCloudFromDepthImage_8cpp_a2ce7e8d6d7079b904e9be7b9ba755a2b}
+
+
+Function to filter points that are statistical outliers from the input point cloud. This needs to be refactored to its own header file. 
+
+This function was originally used to filter clouds when they were initially read in, but the filtering step has since moved to other places. This should be refactored to a more general filtratrion module. Region growing. This should help clean up portions that are disconnected from the plant. \begin{DoxyVerb}Finished Region growing.
+\end{DoxyVerb}
+ //////////////////////////////////////////////////\hypertarget{pointCloudFromDepthImage_8cpp_a162a672d6d39aa056607b1147c1e8075}{\index{point\-Cloud\-From\-Depth\-Image.\-cpp@{point\-Cloud\-From\-Depth\-Image.\-cpp}!write\-Point\-Clouds@{write\-Point\-Clouds}}
+\index{write\-Point\-Clouds@{write\-Point\-Clouds}!pointCloudFromDepthImage.cpp@{point\-Cloud\-From\-Depth\-Image.\-cpp}}
+\subsubsection[{write\-Point\-Clouds}]{\setlength{\rightskip}{0pt plus 5cm}void write\-Point\-Clouds (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector\-Mats} $\ast$}]{v\-\_\-mats, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{pointCloudFromDepthImage_8cpp_a162a672d6d39aa056607b1147c1e8075}
+
+
+Performs post processing on depth images provided as open\-C\-V matrices, and writes them to file as point cloud data (.pcd). 
+
+Convert a vector of Open\-C\-V Mat images to point clouds, and write them to file 

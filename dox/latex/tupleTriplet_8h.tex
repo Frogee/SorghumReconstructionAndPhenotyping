@@ -1,0 +1,108 @@
+\hypertarget{tupleTriplet_8h}{\section{tuple\-Triplet.\-h File Reference}
+\label{tupleTriplet_8h}\index{tuple\-Triplet.\-h@{tuple\-Triplet.\-h}}
+}
+{\ttfamily \#include $<$tuple$>$}\\*
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$pcl/point\-\_\-types.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classColorMap}{Color\-Map}
+\begin{DoxyCompactList}\small\item\em Container for all R\-G\-B colors that have meaning during segmentation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::tuple$<$ float, \\*
+float, float $>$ \hyperlink{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{Tuple\-Triplet}
+\begin{DoxyCompactList}\small\item\em Container to stores 3 floats, intended for either (x, y, z) or (r, g, b). \end{DoxyCompactList}\item 
+typedef std\-::tuple$<$ float, \\*
+float, float $>$ \hyperlink{tupleTriplet_8h_a3081ebe482abd2cbbcdd527e597e71fb}{Tuple\-Point\-X\-Y\-Z}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{tupleTriplet_8h_a684a68c802b97384af030da2dc1f6cd7}{Tuple\-Triplets\-Are\-Equal} (\hyperlink{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{Tuple\-Triplet} point1, \hyperlink{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{Tuple\-Triplet} point2)
+\begin{DoxyCompactList}\small\item\em Tests if two Tuple\-Triplets are equal. It's pretty unsafe since it tests for exact equality on floats (e.\-g. rounding from 5 to 4 decimals will cause two Tuple\-Triplets to evaluate as not equal). \end{DoxyCompactList}\item 
+\hyperlink{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{Tuple\-Triplet} \hyperlink{tupleTriplet_8h_a1d8a26cf1dc1e731e98a320ea05bedd5}{convert\-Pcl\-Point\-X\-Y\-Zto\-Tuple\-Triplet} (pcl\-::\-Point\-X\-Y\-Z input\-Point)
+\begin{DoxyCompactList}\small\item\em Converts at pcl\-::\-Point\-X\-Y\-Z to a Tuple\-Triplet. \end{DoxyCompactList}\item 
+pcl\-::\-Point\-X\-Y\-Z \hyperlink{tupleTriplet_8h_aa3f20686792604a810e5b2ea65e28a0b}{convert\-Tuple\-Tripletto\-Pcl\-Point\-X\-Y\-Z} (\hyperlink{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{Tuple\-Triplet} input\-Tuple)
+\begin{DoxyCompactList}\small\item\em Converts a Tuple\-Triplet to a pcl\-::\-Point\-X\-Y\-Z. \end{DoxyCompactList}\item 
+void \hyperlink{tupleTriplet_8h_a803e48270bd12b104896b3f4d9f1aa4b}{print\-Tuple\-Triplet} (\hyperlink{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{Tuple\-Triplet} input\-Tuple)
+\begin{DoxyCompactList}\small\item\em Prints the contents of a Tuple\-Triplet. \end{DoxyCompactList}\item 
+void \hyperlink{tupleTriplet_8h_a91e7f18c693c3c556415c469abec5c9d}{print\-Tuple\-Triplet} (\hyperlink{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{Tuple\-Triplet} input\-Tuple, uint32\-\_\-t debugging\-Level, uint32\-\_\-t debugging\-Threshold)
+\begin{DoxyCompactList}\small\item\em Prints the contents of a Tuple\-Triplet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{tupleTriplet_8h_a3081ebe482abd2cbbcdd527e597e71fb}{\index{tuple\-Triplet.\-h@{tuple\-Triplet.\-h}!Tuple\-Point\-X\-Y\-Z@{Tuple\-Point\-X\-Y\-Z}}
+\index{Tuple\-Point\-X\-Y\-Z@{Tuple\-Point\-X\-Y\-Z}!tupleTriplet.h@{tuple\-Triplet.\-h}}
+\subsubsection[{Tuple\-Point\-X\-Y\-Z}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::tuple$<$float, float, float$>$ {\bf Tuple\-Point\-X\-Y\-Z}}}\label{tupleTriplet_8h_a3081ebe482abd2cbbcdd527e597e71fb}
+\hypertarget{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{\index{tuple\-Triplet.\-h@{tuple\-Triplet.\-h}!Tuple\-Triplet@{Tuple\-Triplet}}
+\index{Tuple\-Triplet@{Tuple\-Triplet}!tupleTriplet.h@{tuple\-Triplet.\-h}}
+\subsubsection[{Tuple\-Triplet}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::tuple$<$float, float, float$>$ {\bf Tuple\-Triplet}}}\label{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}
+
+
+Container to stores 3 floats, intended for either (x, y, z) or (r, g, b). 
+
+The Tuple\-Triplet is a tuple of 3 floats used as a hacky way to be able to store data from types pcl\-::\-Point\-X\-Y\-Z, geodesic\-::\-Surafce\-Point, and R\-G\-B values into std\-::map and std\-::unordered\-\_\-map for fast searches. The better way (I think) would be to create hash functions for the pcl\-::\-Point\-X\-Y\-Z, geodesic\-::\-Surface\-Point, etc, but using Tuple\-Triplets as an intermediate has worked for now. Tuple\-Triplets are of the form (x, y, z) and (r, g, b). 
+
+\subsection{Function Documentation}
+\hypertarget{tupleTriplet_8h_a1d8a26cf1dc1e731e98a320ea05bedd5}{\index{tuple\-Triplet.\-h@{tuple\-Triplet.\-h}!convert\-Pcl\-Point\-X\-Y\-Zto\-Tuple\-Triplet@{convert\-Pcl\-Point\-X\-Y\-Zto\-Tuple\-Triplet}}
+\index{convert\-Pcl\-Point\-X\-Y\-Zto\-Tuple\-Triplet@{convert\-Pcl\-Point\-X\-Y\-Zto\-Tuple\-Triplet}!tupleTriplet.h@{tuple\-Triplet.\-h}}
+\subsubsection[{convert\-Pcl\-Point\-X\-Y\-Zto\-Tuple\-Triplet}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tuple\-Triplet} convert\-Pcl\-Point\-X\-Y\-Zto\-Tuple\-Triplet (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Point\-X\-Y\-Z}]{input\-Point}
+\end{DoxyParamCaption}
+)}}\label{tupleTriplet_8h_a1d8a26cf1dc1e731e98a320ea05bedd5}
+
+
+Converts at pcl\-::\-Point\-X\-Y\-Z to a Tuple\-Triplet. 
+
+\hypertarget{tupleTriplet_8h_aa3f20686792604a810e5b2ea65e28a0b}{\index{tuple\-Triplet.\-h@{tuple\-Triplet.\-h}!convert\-Tuple\-Tripletto\-Pcl\-Point\-X\-Y\-Z@{convert\-Tuple\-Tripletto\-Pcl\-Point\-X\-Y\-Z}}
+\index{convert\-Tuple\-Tripletto\-Pcl\-Point\-X\-Y\-Z@{convert\-Tuple\-Tripletto\-Pcl\-Point\-X\-Y\-Z}!tupleTriplet.h@{tuple\-Triplet.\-h}}
+\subsubsection[{convert\-Tuple\-Tripletto\-Pcl\-Point\-X\-Y\-Z}]{\setlength{\rightskip}{0pt plus 5cm}pcl\-::\-Point\-X\-Y\-Z convert\-Tuple\-Tripletto\-Pcl\-Point\-X\-Y\-Z (
+\begin{DoxyParamCaption}
+\item[{{\bf Tuple\-Triplet}}]{input\-Tuple}
+\end{DoxyParamCaption}
+)}}\label{tupleTriplet_8h_aa3f20686792604a810e5b2ea65e28a0b}
+
+
+Converts a Tuple\-Triplet to a pcl\-::\-Point\-X\-Y\-Z. 
+
+\hypertarget{tupleTriplet_8h_a803e48270bd12b104896b3f4d9f1aa4b}{\index{tuple\-Triplet.\-h@{tuple\-Triplet.\-h}!print\-Tuple\-Triplet@{print\-Tuple\-Triplet}}
+\index{print\-Tuple\-Triplet@{print\-Tuple\-Triplet}!tupleTriplet.h@{tuple\-Triplet.\-h}}
+\subsubsection[{print\-Tuple\-Triplet}]{\setlength{\rightskip}{0pt plus 5cm}void print\-Tuple\-Triplet (
+\begin{DoxyParamCaption}
+\item[{{\bf Tuple\-Triplet}}]{input\-Tuple}
+\end{DoxyParamCaption}
+)}}\label{tupleTriplet_8h_a803e48270bd12b104896b3f4d9f1aa4b}
+
+
+Prints the contents of a Tuple\-Triplet. 
+
+\hypertarget{tupleTriplet_8h_a91e7f18c693c3c556415c469abec5c9d}{\index{tuple\-Triplet.\-h@{tuple\-Triplet.\-h}!print\-Tuple\-Triplet@{print\-Tuple\-Triplet}}
+\index{print\-Tuple\-Triplet@{print\-Tuple\-Triplet}!tupleTriplet.h@{tuple\-Triplet.\-h}}
+\subsubsection[{print\-Tuple\-Triplet}]{\setlength{\rightskip}{0pt plus 5cm}void print\-Tuple\-Triplet (
+\begin{DoxyParamCaption}
+\item[{{\bf Tuple\-Triplet}}]{input\-Tuple, }
+\item[{uint32\-\_\-t}]{debugging\-Level, }
+\item[{uint32\-\_\-t}]{debugging\-Threshold}
+\end{DoxyParamCaption}
+)}}\label{tupleTriplet_8h_a91e7f18c693c3c556415c469abec5c9d}
+
+
+Prints the contents of a Tuple\-Triplet. 
+
+\hypertarget{tupleTriplet_8h_a684a68c802b97384af030da2dc1f6cd7}{\index{tuple\-Triplet.\-h@{tuple\-Triplet.\-h}!Tuple\-Triplets\-Are\-Equal@{Tuple\-Triplets\-Are\-Equal}}
+\index{Tuple\-Triplets\-Are\-Equal@{Tuple\-Triplets\-Are\-Equal}!tupleTriplet.h@{tuple\-Triplet.\-h}}
+\subsubsection[{Tuple\-Triplets\-Are\-Equal}]{\setlength{\rightskip}{0pt plus 5cm}bool Tuple\-Triplets\-Are\-Equal (
+\begin{DoxyParamCaption}
+\item[{{\bf Tuple\-Triplet}}]{point1, }
+\item[{{\bf Tuple\-Triplet}}]{point2}
+\end{DoxyParamCaption}
+)}}\label{tupleTriplet_8h_a684a68c802b97384af030da2dc1f6cd7}
+
+
+Tests if two Tuple\-Triplets are equal. It's pretty unsafe since it tests for exact equality on floats (e.\-g. rounding from 5 to 4 decimals will cause two Tuple\-Triplets to evaluate as not equal). 
+
+This tests for exact equality of floats, so doesn't work in cases where, say, one (x, y, z) point has been rounded to 3 decimal places and the other one is at 4 decimal places. We should consider modifying this to work within some sort of rounding error. 

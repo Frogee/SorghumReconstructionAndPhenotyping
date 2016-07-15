@@ -1,0 +1,40 @@
+\hypertarget{supervoxel__construction_8cpp}{\section{supervoxel\-\_\-construction.\-cpp File Reference}
+\label{supervoxel__construction_8cpp}\index{supervoxel\-\_\-construction.\-cpp@{supervoxel\-\_\-construction.\-cpp}}
+}
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$pcl/point\-\_\-types.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/segmentation/supervoxel\-\_\-clustering.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/\-Polygon\-Mesh.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/common/distances.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}supervoxel\-\_\-construction.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}dijkstra\-Pathfinding.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}logging\-Helper.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSupervoxelDataContainer}{Supervoxel\-Data\-Container} \hyperlink{supervoxel__construction_8cpp_a36bdd5ee7fff0e1d217f6a227b3f8bb3}{construct\-Supervoxels} (pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z\-R\-G\-B\-A $>$\-::Ptr cloud\-Points\-Input, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Normal $>$\-::Ptr input\-Normals, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+pcl\-::\-Point\-X\-Y\-Z \hyperlink{supervoxel__construction_8cpp_a4414be009100ec2a4c55f091ebd63313}{return\-Closest\-Point\-To\-Centroid\-Given\-Supervoxel} (pcl\-::\-Supervoxel$<$ pcl\-::\-Point\-X\-Y\-Z\-R\-G\-B\-A $>$\-::Ptr input\-Supervoxel)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{supervoxel__construction_8cpp_a36bdd5ee7fff0e1d217f6a227b3f8bb3}{\index{supervoxel\-\_\-construction.\-cpp@{supervoxel\-\_\-construction.\-cpp}!construct\-Supervoxels@{construct\-Supervoxels}}
+\index{construct\-Supervoxels@{construct\-Supervoxels}!supervoxel_construction.cpp@{supervoxel\-\_\-construction.\-cpp}}
+\subsubsection[{construct\-Supervoxels}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Supervoxel\-Data\-Container} construct\-Supervoxels (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z\-R\-G\-B\-A $>$\-::Ptr}]{cloud\-Points\-Input, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Normal $>$\-::Ptr}]{input\-Normals, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{supervoxel__construction_8cpp_a36bdd5ee7fff0e1d217f6a227b3f8bb3}
+Handling edge case where a label of 0 exists\-:
+
+Finished handling edge case with label of 0. \hypertarget{supervoxel__construction_8cpp_a4414be009100ec2a4c55f091ebd63313}{\index{supervoxel\-\_\-construction.\-cpp@{supervoxel\-\_\-construction.\-cpp}!return\-Closest\-Point\-To\-Centroid\-Given\-Supervoxel@{return\-Closest\-Point\-To\-Centroid\-Given\-Supervoxel}}
+\index{return\-Closest\-Point\-To\-Centroid\-Given\-Supervoxel@{return\-Closest\-Point\-To\-Centroid\-Given\-Supervoxel}!supervoxel_construction.cpp@{supervoxel\-\_\-construction.\-cpp}}
+\subsubsection[{return\-Closest\-Point\-To\-Centroid\-Given\-Supervoxel}]{\setlength{\rightskip}{0pt plus 5cm}pcl\-::\-Point\-X\-Y\-Z return\-Closest\-Point\-To\-Centroid\-Given\-Supervoxel (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Supervoxel$<$ pcl\-::\-Point\-X\-Y\-Z\-R\-G\-B\-A $>$\-::Ptr}]{input\-Supervoxel}
+\end{DoxyParamCaption}
+)}}\label{supervoxel__construction_8cpp_a4414be009100ec2a4c55f091ebd63313}

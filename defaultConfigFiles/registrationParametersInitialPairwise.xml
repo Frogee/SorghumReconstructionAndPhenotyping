@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<InputParameters>
+	<ParameterSet name="PassThroughFilter" description="Hard filter for X, Y, and Z axes">
+		<Parameter name="Xmin" description="X axis filter minimum" type="int" value="-500"> </Parameter>
+		<Parameter name="Xmax" description="X axis filter maximum" type="int" value="500"> </Parameter>
+		<Parameter name="Ymin" description="Y axis filter minimum" type="int" value="-350"> </Parameter>
+		<Parameter name="Ymax" description="Y axis filter maximum" type="int" value="500"> </Parameter>
+		<Parameter name="Zmin" description="Z axis filter minimum" type="int" value="500"> </Parameter>
+		<Parameter name="Zmax" description="Z axis filter maximum" type="int" value="1500"> </Parameter>
+	</ParameterSet>
+	<ParameterSet name="VoxelGridFilter" description="Voxel grid for downsampling">
+		<Parameter name="LeafSize" description="Size of X, Y, and Z grid leaves" type="float" value="7.00"> 
+		</Parameter>
+	</ParameterSet>
+	<ParameterSet name="IterativeClosestPoint" description="Iterative Closest Point for registration">
+		<Parameter name="MaximumIterations" description="Maximum number of iterations ICP will perform" type="int" value="2000"> </Parameter>
+		<Parameter name="MaxCorrespondenceDistance" description="Maximum distance two points can still be considered corresponding points" type="float" value="500.0"> </Parameter>
+		<Parameter name="MinCorrespondenceDistance" description="Minimum distance that two points will be considered corresponding points. Used to terminate ICP" type="float" value="20.0"> </Parameter>
+		<Parameter name="LargeCorrespondenceDistanceStepReduction" description="How much the correspondence distance will be reduced after converging at a given correspondence distance when the correspondence distance is above the Threshold Switch" type="float" value="90.0"> </Parameter>
+		<Parameter name="SmallCorrespondenceDistanceStepReduction" description="How much the corrspondence distance will be reduced after converging at a given correspondence distance when the correspondence distance is below the Threshold Switch" type="float" value="10.0"> </Parameter>
+		<Parameter name="ThresholdSwitchFromLargeToSmallDistanceSteps" description="Value at which step size will switch from large to small" type="float" value="100.0"> </Parameter>
+		<Parameter name="FitnessThresholdDefiningFailure" description="Fitness threshold over which RANSAC will be used for registration over ICP" type="float" value="150.0"> </Parameter>
+	</ParameterSet>
+	<ParameterSet name="NormalEstimation" description="Estimates normals of cloud">
+		<Parameter name="RadiusSearch" description="Radius of point search for normal estimation" type="float" value="30.0"> </Parameter>
+		<Parameter name="KSearch" description="Number of neighbors to consider for normal estimation" type="int" value="10"> </Parameter>
+	</ParameterSet>
+	<ParameterSet name="FeatureEstimation" description="Estimates features of cloud">
+		<Parameter name="RadiusSearch" description="Radius of point search for feature estimation" type="float" value="60.0"> </Parameter>
+	</ParameterSet>
+	<ParameterSet name="SampleConsensusPrerejective" description="RANSAC with pre-rejection step">
+		<Parameter name="MaximumIterations" description="Maximum number of iterations of RANSAC" type="int" value="50000"> </Parameter>
+		<Parameter name="NumberOfSamples" description="Number of samples to take for generating a pose" type="int" value="5"> </Parameter>
+		<Parameter name="CorrespondenceRandomness" description="Number of nearest features to use" type="int" value="3"> </Parameter>
+		<Parameter name="SimilarityThreshold" description="Polygonal edge length similarity threshold necessary to avoid immediate rejection" type="float" value="0.80"> </Parameter>
+		<Parameter name="MaxCorrespondenceDistance" description="Maximum distance for points to be considered inliers" type="float" value="9.0"> </Parameter>
+		<Parameter name="InlierFraction" description="Proportion of inliers required to accept a pose" type="float" value="0.60"> </Parameter>
+	</ParameterSet>
+
+	<ParameterSet name="Debugging" description="Level of debugging output. 0 will prevent display of images. 1 will show images. 2 will pause images.">
+		<Parameter name="DebuggingLevel" description="Level of debugging output; 0 is lowest level" type="int" value="2"> </Parameter>
+	</ParameterSet>
+</InputParameters>

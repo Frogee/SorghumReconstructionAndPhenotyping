@@ -1,0 +1,269 @@
+\hypertarget{LeafMeasurements_8cpp}{\section{Leaf\-Measurements.\-cpp File Reference}
+\label{LeafMeasurements_8cpp}\index{Leaf\-Measurements.\-cpp@{Leaf\-Measurements.\-cpp}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include $<$unordered\-\_\-map$>$}\\*
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$assert.\-h$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/point\-\_\-types.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/io/pcd\-\_\-io.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/kdtree/kdtree\-\_\-flann.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/features/normal\-\_\-3d.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/surface/gp3.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/io/vtk\-\_\-io.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/io/ply\-\_\-io.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/io/obj\-\_\-io.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/surface/mls.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/filters/voxel\-\_\-grid.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/sample\-\_\-consensus/method\-\_\-types.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/sample\-\_\-consensus/model\-\_\-types.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/filters/project\-\_\-inliers.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/segmentation/sac\-\_\-segmentation.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/surface/concave\-\_\-hull.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/surface/convex\-\_\-hull.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/sample\-\_\-consensus/sac\-\_\-model\-\_\-circle3d.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/sample\-\_\-consensus/sac\-\_\-model\-\_\-cylinder.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/visualization/pcl\-\_\-visualizer.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/surface/marching\-\_\-cubes\-\_\-rbf.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/surface/marching\-\_\-cubes\-\_\-hoppe.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/filters/statistical\-\_\-outlier\-\_\-removal.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/filters/passthrough.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/common/common.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/features/normal\-\_\-3d\-\_\-omp.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/surface/poisson.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/surface/vtk\-\_\-smoothing/vtk\-\_\-mesh\-\_\-quadric\-\_\-decimation.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/surface/processing.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/surface/vtk\-\_\-smoothing/vtk.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/surface/vtk\-\_\-smoothing/vtk\-\_\-utils.\-h$>$}\\*
+{\ttfamily \#include $<$vtk\-Version.\-h$>$}\\*
+{\ttfamily \#include $<$vtk\-Quadric\-Clustering.\-h$>$}\\*
+{\ttfamily \#include $<$vtk\-Quadric\-Decimation.\-h$>$}\\*
+{\ttfamily \#include $<$vtk\-Decimate\-Pro.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/filters/extract\-\_\-indices.\-h$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include $<$C\-G\-A\-L/\-Simple\-\_\-cartesian.\-h$>$}\\*
+{\ttfamily \#include $<$C\-G\-A\-L/\-Polyhedron\-\_\-incremental\-\_\-builder\-\_\-3.\-h$>$}\\*
+{\ttfamily \#include $<$C\-G\-A\-L/\-Polyhedron\-\_\-3.\-h$>$}\\*
+{\ttfamily \#include $<$C\-G\-A\-L/\-I\-O/\-Polyhedron\-\_\-iostream.\-h$>$}\\*
+{\ttfamily \#include $<$C\-G\-A\-L/boost/graph/graph\-\_\-traits\-\_\-\-Polyhedron\-\_\-3.\-h$>$}\\*
+{\ttfamily \#include $<$C\-G\-A\-L/\-Surface\-\_\-mesh\-\_\-simplification/edge\-\_\-collapse.\-h$>$}\\*
+{\ttfamily \#include $<$C\-G\-A\-L/\-Surface\-\_\-mesh\-\_\-simplification/\-Policies/\-Edge\-\_\-collapse/\-Count\-\_\-stop\-\_\-predicate.\-h$>$}\\*
+{\ttfamily \#include $<$C\-G\-A\-L/\-Surface\-\_\-mesh\-\_\-simplification/\-Policies/\-Edge\-\_\-collapse/\-Edge\-\_\-length\-\_\-cost.\-h$>$}\\*
+{\ttfamily \#include $<$C\-G\-A\-L/\-Surface\-\_\-mesh\-\_\-simplification/\-Policies/\-Edge\-\_\-collapse/\-Midpoint\-\_\-placement.\-h$>$}\\*
+{\ttfamily \#include $<$boost/graph/graph\-\_\-traits.\-hpp$>$}\\*
+{\ttfamily \#include $<$C\-G\-A\-L/\-Exact\-\_\-predicates\-\_\-inexact\-\_\-constructions\-\_\-kernel.\-h$>$}\\*
+{\ttfamily \#include $<$C\-G\-A\-L/convex\-\_\-hull\-\_\-2.\-h$>$}\\*
+{\ttfamily \#include $<$vtk\-Smart\-Pointer.\-h$>$}\\*
+{\ttfamily \#include $<$vtk\-Curvatures.\-h$>$}\\*
+{\ttfamily \#include $<$vtk\-X\-M\-L\-Poly\-Data\-Reader.\-h$>$}\\*
+{\ttfamily \#include $<$vtk\-Lookup\-Table.\-h$>$}\\*
+{\ttfamily \#include $<$vtk\-Color\-Transfer\-Function.\-h$>$}\\*
+{\ttfamily \#include $<$vtk\-Color\-Series.\-h$>$}\\*
+{\ttfamily \#include $<$vtk\-Point\-Data.\-h$>$}\\*
+{\ttfamily \#include $<$vtk\-Poly\-Data\-Mapper.\-h$>$}\\*
+{\ttfamily \#include $<$vtk\-Actor.\-h$>$}\\*
+{\ttfamily \#include $<$vtk\-Scalar\-Bar\-Actor.\-h$>$}\\*
+{\ttfamily \#include $<$vtk\-Render\-Window.\-h$>$}\\*
+{\ttfamily \#include $<$vtk\-Renderer.\-h$>$}\\*
+{\ttfamily \#include $<$vtk\-Render\-Window\-Interactor.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}bounding\-Box.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}segmentation.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Leaf\-Measurements.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}input\-Params.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}measurement\-Data\-Container.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}geodesic\-\_\-wrapper.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}visualizer\-\_\-helper.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}tuple\-Triplet.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mesh\-Measurements.\-h\char`\"{}}\\*
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \\*
+C\-G\-A\-L\-::\-Exact\-\_\-predicates\-\_\-inexact\-\_\-constructions\-\_\-kernel \hyperlink{LeafMeasurements_8cpp_a891e241aa245ae63618f03737efba309}{K}
+\item 
+typedef K\-::\-Point\-\_\-2 \hyperlink{LeafMeasurements_8cpp_ae78d446e5a38328af86f58f933a55cfa}{Point\-\_\-2}
+\item 
+typedef std\-::vector$<$ \hyperlink{LeafMeasurements_8cpp_ae78d446e5a38328af86f58f933a55cfa}{Point\-\_\-2} $>$ \hyperlink{LeafMeasurements_8cpp_a4bd0677eddb028c5e1b38225d4c1aa3e}{Points}
+\item 
+typedef C\-G\-A\-L\-::\-Simple\-\_\-cartesian\\*
+$<$ double $>$ \hyperlink{LeafMeasurements_8cpp_a3c01774fc10462ecfaf77dad1447e89e}{Kernel}
+\item 
+typedef C\-G\-A\-L\-::\-Polyhedron\-\_\-3\\*
+$<$ \hyperlink{LeafMeasurements_8cpp_a3c01774fc10462ecfaf77dad1447e89e}{Kernel} $>$ \hyperlink{LeafMeasurements_8cpp_ad81428c0af4a7d40cb349c95feff1a04}{Surface\-\_\-mesh}
+\item 
+typedef pcl\-::\-Point\-Normal \hyperlink{LeafMeasurements_8cpp_addedd5f094ff6a9309d30e396aa0514b}{Point\-N\-T}
+\item 
+typedef \\*
+pcl\-::visualization\-::\-Point\-Cloud\-Color\-Handler\-Custom\\*
+$<$ pcl\-::\-Point\-X\-Y\-Z $>$ \hyperlink{LeafMeasurements_8cpp_a2782f78115ae6b3e2449e6775607a98b}{Color\-Handler\-X\-Y\-Z}
+\item 
+typedef \\*
+pcl\-::visualization\-::\-Point\-Cloud\-Color\-Handler\-Custom\\*
+$<$ \hyperlink{features_8cpp_addedd5f094ff6a9309d30e396aa0514b}{Point\-N\-T} $>$ \hyperlink{LeafMeasurements_8cpp_ab5a065c9a2e6dc92a1da2023ab564420}{Color\-Handler\-N\-T}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{LeafMeasurements_8cpp_a4a41f7611aec4de71fa741c1f31ea36c}{make\-Plant\-Measurements\-Deprecated2} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+int \hyperlink{LeafMeasurements_8cpp_a55a29aee8022cd6c609c8f5284eccbd1}{make\-Leaf\-Measurements\-Deprecated} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+int \hyperlink{LeafMeasurements_8cpp_a7d4caf4a9cc50323dbe346aa808998ba}{make\-Leaf\-Measurements\-Prototype1\-Deprecated} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+int \hyperlink{LeafMeasurements_8cpp_a000c332e8b7b819673579c592c206b85}{make\-Plant\-Measurements\-Deprecated} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{LeafMeasurements_8cpp_ab5a065c9a2e6dc92a1da2023ab564420}{\index{Leaf\-Measurements.\-cpp@{Leaf\-Measurements.\-cpp}!Color\-Handler\-N\-T@{Color\-Handler\-N\-T}}
+\index{Color\-Handler\-N\-T@{Color\-Handler\-N\-T}!LeafMeasurements.cpp@{Leaf\-Measurements.\-cpp}}
+\subsubsection[{Color\-Handler\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}typedef pcl\-::visualization\-::\-Point\-Cloud\-Color\-Handler\-Custom$<${\bf Point\-N\-T}$>$ {\bf Color\-Handler\-N\-T}}}\label{LeafMeasurements_8cpp_ab5a065c9a2e6dc92a1da2023ab564420}
+\hypertarget{LeafMeasurements_8cpp_a2782f78115ae6b3e2449e6775607a98b}{\index{Leaf\-Measurements.\-cpp@{Leaf\-Measurements.\-cpp}!Color\-Handler\-X\-Y\-Z@{Color\-Handler\-X\-Y\-Z}}
+\index{Color\-Handler\-X\-Y\-Z@{Color\-Handler\-X\-Y\-Z}!LeafMeasurements.cpp@{Leaf\-Measurements.\-cpp}}
+\subsubsection[{Color\-Handler\-X\-Y\-Z}]{\setlength{\rightskip}{0pt plus 5cm}typedef pcl\-::visualization\-::\-Point\-Cloud\-Color\-Handler\-Custom$<$pcl\-::\-Point\-X\-Y\-Z$>$ {\bf Color\-Handler\-X\-Y\-Z}}}\label{LeafMeasurements_8cpp_a2782f78115ae6b3e2449e6775607a98b}
+\hypertarget{LeafMeasurements_8cpp_a891e241aa245ae63618f03737efba309}{\index{Leaf\-Measurements.\-cpp@{Leaf\-Measurements.\-cpp}!K@{K}}
+\index{K@{K}!LeafMeasurements.cpp@{Leaf\-Measurements.\-cpp}}
+\subsubsection[{K}]{\setlength{\rightskip}{0pt plus 5cm}typedef C\-G\-A\-L\-::\-Exact\-\_\-predicates\-\_\-inexact\-\_\-constructions\-\_\-kernel {\bf K}}}\label{LeafMeasurements_8cpp_a891e241aa245ae63618f03737efba309}
+\hypertarget{LeafMeasurements_8cpp_a3c01774fc10462ecfaf77dad1447e89e}{\index{Leaf\-Measurements.\-cpp@{Leaf\-Measurements.\-cpp}!Kernel@{Kernel}}
+\index{Kernel@{Kernel}!LeafMeasurements.cpp@{Leaf\-Measurements.\-cpp}}
+\subsubsection[{Kernel}]{\setlength{\rightskip}{0pt plus 5cm}typedef C\-G\-A\-L\-::\-Simple\-\_\-cartesian$<$double$>$ {\bf Kernel}}}\label{LeafMeasurements_8cpp_a3c01774fc10462ecfaf77dad1447e89e}
+\hypertarget{LeafMeasurements_8cpp_ae78d446e5a38328af86f58f933a55cfa}{\index{Leaf\-Measurements.\-cpp@{Leaf\-Measurements.\-cpp}!Point\-\_\-2@{Point\-\_\-2}}
+\index{Point\-\_\-2@{Point\-\_\-2}!LeafMeasurements.cpp@{Leaf\-Measurements.\-cpp}}
+\subsubsection[{Point\-\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}typedef K\-::\-Point\-\_\-2 {\bf Point\-\_\-2}}}\label{LeafMeasurements_8cpp_ae78d446e5a38328af86f58f933a55cfa}
+\hypertarget{LeafMeasurements_8cpp_addedd5f094ff6a9309d30e396aa0514b}{\index{Leaf\-Measurements.\-cpp@{Leaf\-Measurements.\-cpp}!Point\-N\-T@{Point\-N\-T}}
+\index{Point\-N\-T@{Point\-N\-T}!LeafMeasurements.cpp@{Leaf\-Measurements.\-cpp}}
+\subsubsection[{Point\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}typedef pcl\-::\-Point\-Normal {\bf Point\-N\-T}}}\label{LeafMeasurements_8cpp_addedd5f094ff6a9309d30e396aa0514b}
+\hypertarget{LeafMeasurements_8cpp_a4bd0677eddb028c5e1b38225d4c1aa3e}{\index{Leaf\-Measurements.\-cpp@{Leaf\-Measurements.\-cpp}!Points@{Points}}
+\index{Points@{Points}!LeafMeasurements.cpp@{Leaf\-Measurements.\-cpp}}
+\subsubsection[{Points}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::vector$<${\bf Point\-\_\-2}$>$ {\bf Points}}}\label{LeafMeasurements_8cpp_a4bd0677eddb028c5e1b38225d4c1aa3e}
+\hypertarget{LeafMeasurements_8cpp_ad81428c0af4a7d40cb349c95feff1a04}{\index{Leaf\-Measurements.\-cpp@{Leaf\-Measurements.\-cpp}!Surface\-\_\-mesh@{Surface\-\_\-mesh}}
+\index{Surface\-\_\-mesh@{Surface\-\_\-mesh}!LeafMeasurements.cpp@{Leaf\-Measurements.\-cpp}}
+\subsubsection[{Surface\-\_\-mesh}]{\setlength{\rightskip}{0pt plus 5cm}typedef C\-G\-A\-L\-::\-Polyhedron\-\_\-3$<${\bf Kernel}$>$ {\bf Surface\-\_\-mesh}}}\label{LeafMeasurements_8cpp_ad81428c0af4a7d40cb349c95feff1a04}
+
+
+\subsection{Function Documentation}
+\hypertarget{LeafMeasurements_8cpp_a55a29aee8022cd6c609c8f5284eccbd1}{\index{Leaf\-Measurements.\-cpp@{Leaf\-Measurements.\-cpp}!make\-Leaf\-Measurements\-Deprecated@{make\-Leaf\-Measurements\-Deprecated}}
+\index{make\-Leaf\-Measurements\-Deprecated@{make\-Leaf\-Measurements\-Deprecated}!LeafMeasurements.cpp@{Leaf\-Measurements.\-cpp}}
+\subsubsection[{make\-Leaf\-Measurements\-Deprecated}]{\setlength{\rightskip}{0pt plus 5cm}int make\-Leaf\-Measurements\-Deprecated (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{LeafMeasurements_8cpp_a55a29aee8022cd6c609c8f5284eccbd1}
+The intent of this one is to make measurements of the stem and leaves when they are provided separately, but we should probably refactor this so that the stem and leaves are written out as part of measuring the segmented mesh. Bounding box dimensions of stem
+
+Surface area of stem
+
+Convex hull of stem
+
+Use R\-A\-N\-S\-A\-C to get the stem diameter. Maybe we can use a circle model at specific sandwich points up the stem to get individual internode diameters?
+
+Surface area, length, and width of leaf
+
+Angle and curvature of leaf. We use the geodesic distance so the code from leaf length is copied here. Consider refactoring.
+
+Find internode spacing using the base leaf points. \hypertarget{LeafMeasurements_8cpp_a7d4caf4a9cc50323dbe346aa808998ba}{\index{Leaf\-Measurements.\-cpp@{Leaf\-Measurements.\-cpp}!make\-Leaf\-Measurements\-Prototype1\-Deprecated@{make\-Leaf\-Measurements\-Prototype1\-Deprecated}}
+\index{make\-Leaf\-Measurements\-Prototype1\-Deprecated@{make\-Leaf\-Measurements\-Prototype1\-Deprecated}!LeafMeasurements.cpp@{Leaf\-Measurements.\-cpp}}
+\subsubsection[{make\-Leaf\-Measurements\-Prototype1\-Deprecated}]{\setlength{\rightskip}{0pt plus 5cm}int make\-Leaf\-Measurements\-Prototype1\-Deprecated (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{LeafMeasurements_8cpp_a7d4caf4a9cc50323dbe346aa808998ba}
+It turns out that decimation was working fine all along. There seems to be an issue in the P\-C\-L Visualizer such that updating a polygon doesn't work. Decimation seems to work fine!
+
+We can use the Mesh\-Lab\-Server to calculate curvature using A\-P\-S\-S since I can't find an implementation anywhere else.
+
+It doesn't look like it loads the \char`\"{}vertex quality\char`\"{} (which contains curvature) output by meshlab
+
+But we can still get the point cloud information from the mesh.
+
+...just not as Point Type Point\-X\-Y\-Z\-R\-G\-B\-Normal for some reason, so we do this twice, once for R\-G\-B and once for curvature.
+
+Here we're going to try to calculate some curvatures with V\-T\-K \href{http://www.vtk.org/Wiki/VTK/Examples/Cxx/PolyData/Curvatures}{\tt http\-://www.\-vtk.\-org/\-Wiki/\-V\-T\-K/\-Examples/\-Cxx/\-Poly\-Data/\-Curvatures} Curvature calculations from V\-T\-K work fine, but not at the scale we need them. The A\-P\-S\-S from meshlab works well
+
+Lets try some C\-G\-A\-L stuff here. \href{http://doc.cgal.org/latest/Surface_mesh_simplification/index.html#Chapter_Triangulated_Surface_Mesh_Simplification}{\tt http\-://doc.\-cgal.\-org/latest/\-Surface\-\_\-mesh\-\_\-simplification/index.\-html\#\-Chapter\-\_\-\-Triangulated\-\_\-\-Surface\-\_\-\-Mesh\-\_\-\-Simplification} \href{http://jamesgregson.blogspot.com/2012/05/example-code-for-building.html}{\tt http\-://jamesgregson.\-blogspot.\-com/2012/05/example-\/code-\/for-\/building.\-html}
+
+Finished playing with C\-G\-A\-L.
+
+Using std\-::map here since std\-::unordered\-\_\-map requires a hash function to
+
+be defined for std\-::pair$<$int, int$>$, and I don't know a function that would be guaranteed to return something unique to the pair.
+
+We're constructing this map here so that we can identify border edges later for perimeter calculation
+
+For now we can approximate the leaf as a rectangle and use the area and perimeter to approximate width and height. \href{http://mathcentral.uregina.ca/QQ/database/QQ.09.06/h/brooklyn3.html}{\tt http\-://mathcentral.\-uregina.\-ca/\-Q\-Q/database/\-Q\-Q.\-09.\-06/h/brooklyn3.\-html} This requires finding the perimeter, which requires identifying border edges. These are edges that only have one face. \href{http://stackoverflow.com/questions/14108553/get-border-edges-of-mesh-in-winding-order}{\tt http\-://stackoverflow.\-com/questions/14108553/get-\/border-\/edges-\/of-\/mesh-\/in-\/winding-\/order} Boundary edges are only referenced by a single triangle in the mesh, so to find them you need to scan through all triangles in the mesh and take the edges with a single reference count. You can do this efficiently (in O(\-N)) by making use of a hash table. To convert the edge set to an ordered polygon loop you can use a traversal method\-:
+\begin{DoxyEnumerate}
+\item Pick any unvisited edge segment \mbox{[}v\-\_\-start,v\-\_\-next\mbox{]} and add these vertices to the polygon loop.
+\item Find the unvisited edge segment \mbox{[}v\-\_\-i,v\-\_\-j\mbox{]} that has either v\-\_\-i = v\-\_\-next or v\-\_\-j = v\-\_\-next and add the other vertex (the one not equal to v\-\_\-next) to the polygon loop. Reset v\-\_\-next as this newly added vertex, mark the edge as visited and continue from 2.
+\item Traversal is done when we get back to v\-\_\-start. The traversal will give a polygon loop that could have either clock-\/wise or counter-\/clock-\/wise ordering. A consistent ordering can be established by considering the signed area of the polygon. If the traversal results in the wrong orientation you simply need to reverse the order of the polygon loop vertices.
+\end{DoxyEnumerate}
+
+3 . Traversal is done when we get back to v\-\_\-start.
+
+current\-Vertex\-Index is v\-\_\-next.
+
+
+\begin{DoxyEnumerate}
+\item Find the unvisited edge segment \mbox{[}v\-\_\-i,v\-\_\-j\mbox{]} that has either v\-\_\-i = v\-\_\-next
+\end{DoxyEnumerate}
+
+and add the other vertex (the one not equal to v\-\_\-next) to the polygon loop. Reset v\-\_\-next as this newly added vertex,
+
+mark the edge as visited and continue from 2.
+
+or v\-\_\-j = v\-\_\-next
+
+and add the other vertex (the one not equal to v\-\_\-next) to the polygon loop. Reset v\-\_\-next as this newly added vertex,
+
+mark the edge as visited and continue from 2. \hypertarget{LeafMeasurements_8cpp_a000c332e8b7b819673579c592c206b85}{\index{Leaf\-Measurements.\-cpp@{Leaf\-Measurements.\-cpp}!make\-Plant\-Measurements\-Deprecated@{make\-Plant\-Measurements\-Deprecated}}
+\index{make\-Plant\-Measurements\-Deprecated@{make\-Plant\-Measurements\-Deprecated}!LeafMeasurements.cpp@{Leaf\-Measurements.\-cpp}}
+\subsubsection[{make\-Plant\-Measurements\-Deprecated}]{\setlength{\rightskip}{0pt plus 5cm}int make\-Plant\-Measurements\-Deprecated (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{LeafMeasurements_8cpp_a000c332e8b7b819673579c592c206b85}
+Though not currently written as such, the intent of this should be to take a segmented mesh and write all of the measurements to a file. This version is being deprecated to save a working version and rewrite it. T\-O\-D\-O\-: Refactor such that it reads in segmented mesh, makes whole plant measurements, then measures segmented organs, then writes all individual pieces to files as well as all of the measurements.
+
+Centroid
+
+Bounding box dimensions of plant
+
+Surface area of plant
+
+Area of z layers up the canopy.
+
+Convex hull of plant
+
+I think we will need to write an interface for the geodesic distance code. The geodesic code has definitions in the header files which prevents including them from multiple locations (throws a multiple definition error). So, a geodesic interface needs to be written to allow multiple files to call on it (e.\-g. the segmentation code and here). \hypertarget{LeafMeasurements_8cpp_a4a41f7611aec4de71fa741c1f31ea36c}{\index{Leaf\-Measurements.\-cpp@{Leaf\-Measurements.\-cpp}!make\-Plant\-Measurements\-Deprecated2@{make\-Plant\-Measurements\-Deprecated2}}
+\index{make\-Plant\-Measurements\-Deprecated2@{make\-Plant\-Measurements\-Deprecated2}!LeafMeasurements.cpp@{Leaf\-Measurements.\-cpp}}
+\subsubsection[{make\-Plant\-Measurements\-Deprecated2}]{\setlength{\rightskip}{0pt plus 5cm}int make\-Plant\-Measurements\-Deprecated2 (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{LeafMeasurements_8cpp_a4a41f7611aec4de71fa741c1f31ea36c}
+Though not currently written as such, the intent of this should be to take a segmented mesh and write all of the measurements to a file. T\-O\-D\-O\-: Refactor such that it reads in segmented mesh, makes whole plant measurements, then measures segmented organs, then writes all individual pieces to files as well as all of the measurements.
+
+Centroid
+
+Bounding box dimensions of plant
+
+Surface area of plant
+
+Area of z layers up the canopy.
+
+Convex hull of plant
+
+T\-O\-D\-O\-: Include geodesic diameter? 

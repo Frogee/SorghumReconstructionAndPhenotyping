@@ -1,0 +1,74 @@
+\hypertarget{sampleMeshToPointCloud_8cpp}{\section{sample\-Mesh\-To\-Point\-Cloud.\-cpp File Reference}
+\label{sampleMeshToPointCloud_8cpp}\index{sample\-Mesh\-To\-Point\-Cloud.\-cpp@{sample\-Mesh\-To\-Point\-Cloud.\-cpp}}
+}
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/conversions.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/filters/voxel\-\_\-grid.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}input\-Params.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}logging\-Helper.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sample\-Mesh\-To\-Point\-Cloud.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mesh\-Measurements.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{sampleMeshToPointCloud_8cpp_ae4b4baf58df946b5f5bde24a8c40caf8}{uniform\-\_\-deviate} (int seed)
+\begin{DoxyCompactList}\small\item\em Function obtained from \href{https://github.com/PointCloudLibrary/pcl/blob/master/tools/mesh_sampling.cpp}{\tt https\-://github.\-com/\-Point\-Cloud\-Library/pcl/blob/master/tools/mesh\-\_\-sampling.\-cpp}. \end{DoxyCompactList}\item 
+pcl\-::\-Point\-X\-Y\-Z \hyperlink{sampleMeshToPointCloud_8cpp_a3e18c65f85444c2eaad2aaad3cff9d09}{sample\-Random\-Point\-On\-Triangle\-Surface} (pcl\-::\-Point\-X\-Y\-Z input\-Point\-One, pcl\-::\-Point\-X\-Y\-Z input\-Point\-Two, pcl\-::\-Point\-X\-Y\-Z input\-Point\-Three)
+\begin{DoxyCompactList}\small\item\em Function logic obtained from \href{https://github.com/PointCloudLibrary/pcl/blob/master/tools/mesh_sampling.cpp}{\tt https\-://github.\-com/\-Point\-Cloud\-Library/pcl/blob/master/tools/mesh\-\_\-sampling.\-cpp}. \end{DoxyCompactList}\item 
+int \hyperlink{sampleMeshToPointCloud_8cpp_a85367c814fe5c4af7645f979dd16de3a}{sample\-Mesh\-To\-Point\-Cloud} (pcl\-::\-Polygon\-Mesh $\ast$input\-Mesh\-To\-Sample, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$ \&output\-Cloud, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\begin{DoxyCompactList}\small\item\em This very closely follows the pcl method at \href{http://docs.pointclouds.org/trunk/conversions_8h_source.html}{\tt http\-://docs.\-pointclouds.\-org/trunk/conversions\-\_\-8h\-\_\-source.\-html}. \end{DoxyCompactList}\item 
+int \hyperlink{sampleMeshToPointCloud_8cpp_aad5b2dcf468f814ccd8c7c01c5180162}{sample\-Mesh\-To\-Point\-Cloud\-\_\-\-For\-Parallel\-Calling} (pcl\-::\-Polygon\-Mesh $\ast$input\-Mesh\-To\-Sample, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$ \&output\-Cloud, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\begin{DoxyCompactList}\small\item\em This very closely follows the pcl method at \href{http://docs.pointclouds.org/trunk/conversions_8h_source.html}{\tt http\-://docs.\-pointclouds.\-org/trunk/conversions\-\_\-8h\-\_\-source.\-html}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{sampleMeshToPointCloud_8cpp_a85367c814fe5c4af7645f979dd16de3a}{\index{sample\-Mesh\-To\-Point\-Cloud.\-cpp@{sample\-Mesh\-To\-Point\-Cloud.\-cpp}!sample\-Mesh\-To\-Point\-Cloud@{sample\-Mesh\-To\-Point\-Cloud}}
+\index{sample\-Mesh\-To\-Point\-Cloud@{sample\-Mesh\-To\-Point\-Cloud}!sampleMeshToPointCloud.cpp@{sample\-Mesh\-To\-Point\-Cloud.\-cpp}}
+\subsubsection[{sample\-Mesh\-To\-Point\-Cloud}]{\setlength{\rightskip}{0pt plus 5cm}int sample\-Mesh\-To\-Point\-Cloud (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Polygon\-Mesh $\ast$}]{input\-Mesh\-To\-Sample, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$ \&}]{output\-Cloud, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{sampleMeshToPointCloud_8cpp_a85367c814fe5c4af7645f979dd16de3a}
+
+
+This very closely follows the pcl method at \href{http://docs.pointclouds.org/trunk/conversions_8h_source.html}{\tt http\-://docs.\-pointclouds.\-org/trunk/conversions\-\_\-8h\-\_\-source.\-html}. 
+
+\hypertarget{sampleMeshToPointCloud_8cpp_aad5b2dcf468f814ccd8c7c01c5180162}{\index{sample\-Mesh\-To\-Point\-Cloud.\-cpp@{sample\-Mesh\-To\-Point\-Cloud.\-cpp}!sample\-Mesh\-To\-Point\-Cloud\-\_\-\-For\-Parallel\-Calling@{sample\-Mesh\-To\-Point\-Cloud\-\_\-\-For\-Parallel\-Calling}}
+\index{sample\-Mesh\-To\-Point\-Cloud\-\_\-\-For\-Parallel\-Calling@{sample\-Mesh\-To\-Point\-Cloud\-\_\-\-For\-Parallel\-Calling}!sampleMeshToPointCloud.cpp@{sample\-Mesh\-To\-Point\-Cloud.\-cpp}}
+\subsubsection[{sample\-Mesh\-To\-Point\-Cloud\-\_\-\-For\-Parallel\-Calling}]{\setlength{\rightskip}{0pt plus 5cm}int sample\-Mesh\-To\-Point\-Cloud\-\_\-\-For\-Parallel\-Calling (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Polygon\-Mesh $\ast$}]{input\-Mesh\-To\-Sample, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$ \&}]{output\-Cloud, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{sampleMeshToPointCloud_8cpp_aad5b2dcf468f814ccd8c7c01c5180162}
+
+
+This very closely follows the pcl method at \href{http://docs.pointclouds.org/trunk/conversions_8h_source.html}{\tt http\-://docs.\-pointclouds.\-org/trunk/conversions\-\_\-8h\-\_\-source.\-html}. 
+
+\hypertarget{sampleMeshToPointCloud_8cpp_a3e18c65f85444c2eaad2aaad3cff9d09}{\index{sample\-Mesh\-To\-Point\-Cloud.\-cpp@{sample\-Mesh\-To\-Point\-Cloud.\-cpp}!sample\-Random\-Point\-On\-Triangle\-Surface@{sample\-Random\-Point\-On\-Triangle\-Surface}}
+\index{sample\-Random\-Point\-On\-Triangle\-Surface@{sample\-Random\-Point\-On\-Triangle\-Surface}!sampleMeshToPointCloud.cpp@{sample\-Mesh\-To\-Point\-Cloud.\-cpp}}
+\subsubsection[{sample\-Random\-Point\-On\-Triangle\-Surface}]{\setlength{\rightskip}{0pt plus 5cm}pcl\-::\-Point\-X\-Y\-Z sample\-Random\-Point\-On\-Triangle\-Surface (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Point\-X\-Y\-Z}]{input\-Point\-One, }
+\item[{pcl\-::\-Point\-X\-Y\-Z}]{input\-Point\-Two, }
+\item[{pcl\-::\-Point\-X\-Y\-Z}]{input\-Point\-Three}
+\end{DoxyParamCaption}
+)}}\label{sampleMeshToPointCloud_8cpp_a3e18c65f85444c2eaad2aaad3cff9d09}
+
+
+Function logic obtained from \href{https://github.com/PointCloudLibrary/pcl/blob/master/tools/mesh_sampling.cpp}{\tt https\-://github.\-com/\-Point\-Cloud\-Library/pcl/blob/master/tools/mesh\-\_\-sampling.\-cpp}. 
+
+\hypertarget{sampleMeshToPointCloud_8cpp_ae4b4baf58df946b5f5bde24a8c40caf8}{\index{sample\-Mesh\-To\-Point\-Cloud.\-cpp@{sample\-Mesh\-To\-Point\-Cloud.\-cpp}!uniform\-\_\-deviate@{uniform\-\_\-deviate}}
+\index{uniform\-\_\-deviate@{uniform\-\_\-deviate}!sampleMeshToPointCloud.cpp@{sample\-Mesh\-To\-Point\-Cloud.\-cpp}}
+\subsubsection[{uniform\-\_\-deviate}]{\setlength{\rightskip}{0pt plus 5cm}double uniform\-\_\-deviate (
+\begin{DoxyParamCaption}
+\item[{int}]{seed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sampleMeshToPointCloud_8cpp_ae4b4baf58df946b5f5bde24a8c40caf8}
+
+
+Function obtained from \href{https://github.com/PointCloudLibrary/pcl/blob/master/tools/mesh_sampling.cpp}{\tt https\-://github.\-com/\-Point\-Cloud\-Library/pcl/blob/master/tools/mesh\-\_\-sampling.\-cpp}. 
+

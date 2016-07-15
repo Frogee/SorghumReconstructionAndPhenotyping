@@ -1,0 +1,163 @@
+\hypertarget{classGraph}{\section{Graph Class Reference}
+\label{classGraph}\index{Graph@{Graph}}
+}
+
+
+Container to hold data corresponding to a graph that will be used for pathfinding via Dijkstra's algorithm.  
+
+
+
+
+{\ttfamily \#include $<$dijkstra\-Pathfinding.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGraph_ae4c72b8ac4d693c49800a4c7e273654f}{Graph} ()
+\item 
+\hyperlink{classGraph_a5931d933e409b90b4343c0d7061bde34}{Graph} (std\-::multimap$<$ uint32\-\_\-t, uint32\-\_\-t $>$ input\-Node\-Label\-Adjacency, std\-::map$<$ uint32\-\_\-t, \hyperlink{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{Tuple\-Triplet} $>$ input\-Node\-Label\-To\-Point\-Coordinate)
+\item 
+\hyperlink{classGraph_a54abed46b8823658542b2125df3e121e}{Graph} (pcl\-::\-Polygon\-Mesh $\ast$input\-Mesh)
+\item 
+\hyperlink{classGraph_a902c5b3eacb66d60752525ab23297a95}{$\sim$\-Graph} ()
+\item 
+int \hyperlink{classGraph_a104553164f05adc9ef6ab2b5c0972d9b}{build\-Graph} ()
+\begin{DoxyCompactList}\small\item\em Uses the input node adjacency and point coordinates to construct the internal data structure used by the Dijkstra code. $>$ \end{DoxyCompactList}\item 
+int \hyperlink{classGraph_a31f238c112af88d1deeaf3920997192a}{set\-Node\-Label\-Adjacency} (std\-::multimap$<$ uint32\-\_\-t, uint32\-\_\-t $>$ input\-Node\-Label\-Adjacency)
+\item 
+int \hyperlink{classGraph_a82968068ef79a1a18160630962d08b98}{set\-Node\-Label\-To\-Point\-Coordinates} (std\-::map$<$ uint32\-\_\-t, \hyperlink{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{Tuple\-Triplet} $>$ input\-Node\-Label\-To\-Point\-Coordinate)
+\item 
+\hyperlink{dijkstraPathfinding_8h_a8c1d6029622c85b0c047b344a90a6f84}{adjacency\-\_\-list\-\_\-t} \hyperlink{classGraph_a64488ecea2d5bcacdcc3294fd497a929}{get\-Adjacency\-List} ()
+\begin{DoxyCompactList}\small\item\em Returns the adjacency list used by the internal Dijkstra code. $>$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dijkstraPathfinding_8h_a8c1d6029622c85b0c047b344a90a6f84}{adjacency\-\_\-list\-\_\-t} \hyperlink{classGraph_a18f350623c272fa0988f70c299895a8a}{\-\_\-adjacency\-List}
+\item 
+std\-::map$<$ uint32\-\_\-t, uint32\-\_\-t $>$ \hyperlink{classGraph_a56f4b3715081a555236768f48260caee}{\-\_\-map\-\_\-node\-Label\-To\-List\-Index}
+\begin{DoxyCompactList}\small\item\em Maps an integer node I\-D to its index in the list used by the Dijkstra code. $>$ \end{DoxyCompactList}\item 
+std\-::map$<$ uint32\-\_\-t, uint32\-\_\-t $>$ \hyperlink{classGraph_a991d6f0ebad396b5acfc10b6787530ec}{\-\_\-map\-\_\-list\-Index\-To\-Node\-Label}
+\begin{DoxyCompactList}\small\item\em Maps the index in the list used by the Dijkstra code to an integer node I\-D. $>$ \end{DoxyCompactList}\item 
+std\-::multimap$<$ uint32\-\_\-t, uint32\-\_\-t $>$ \hyperlink{classGraph_abdd870b000b22aecd02ab84e18666914}{\-\_\-map\-\_\-node\-Label\-Adjacency}
+\begin{DoxyCompactList}\small\item\em The adjacency of node I\-Ds that will be used to construct the internal data structures. $>$ \end{DoxyCompactList}\item 
+std\-::map$<$ uint32\-\_\-t, \hyperlink{tupleTriplet_8h_a0cdd11cd4d27abbb7b778a8fee3b2397}{Tuple\-Triplet} $>$ \hyperlink{classGraph_ad4cf5d8f988e253e00aaa73a72810233}{\-\_\-map\-\_\-node\-Label\-To\-Point\-Coordinate}
+\begin{DoxyCompactList}\small\item\em Maps the node I\-D to a x, y, z coordinate that will be used to calculate edge weights $>$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Container to hold data corresponding to a graph that will be used for pathfinding via Dijkstra's algorithm. 
+
+The primary purpose is to keep track of which node label belongs to which index for the Dijkstra implementation we're using. The edges of the graph will be calculated using the point coordinates provided as part of \-\_\-map\-\_\-node\-Label\-To\-Point\-Coordinate \begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGraph_ae4c72b8ac4d693c49800a4c7e273654f}{\index{Graph@{Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!Graph@{Graph}}
+\subsubsection[{Graph}]{\setlength{\rightskip}{0pt plus 5cm}Graph\-::\-Graph (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGraph_ae4c72b8ac4d693c49800a4c7e273654f}
+\hyperlink{classGraph}{Graph} class \hypertarget{classGraph_a5931d933e409b90b4343c0d7061bde34}{\index{Graph@{Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!Graph@{Graph}}
+\subsubsection[{Graph}]{\setlength{\rightskip}{0pt plus 5cm}Graph\-::\-Graph (
+\begin{DoxyParamCaption}
+\item[{std\-::multimap$<$ uint32\-\_\-t, uint32\-\_\-t $>$}]{input\-Node\-Label\-Adjacency, }
+\item[{std\-::map$<$ uint32\-\_\-t, {\bf Tuple\-Triplet} $>$}]{input\-Node\-Label\-To\-Point\-Coordinate}
+\end{DoxyParamCaption}
+)}}\label{classGraph_a5931d933e409b90b4343c0d7061bde34}
+Initializes a graph given input node adjacencies and input coordinates of those nodes (to find edge lengths) by calling \hyperlink{classGraph_a104553164f05adc9ef6ab2b5c0972d9b}{build\-Graph()} \hypertarget{classGraph_a54abed46b8823658542b2125df3e121e}{\index{Graph@{Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!Graph@{Graph}}
+\subsubsection[{Graph}]{\setlength{\rightskip}{0pt plus 5cm}Graph\-::\-Graph (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Polygon\-Mesh $\ast$}]{input\-Mesh}
+\end{DoxyParamCaption}
+)}}\label{classGraph_a54abed46b8823658542b2125df3e121e}
+Initializes a graph using an input pcl\-::\-Polygon\-Mesh input\-Mesh-\/$>$polygons\mbox{[}i\mbox{]} will return a 3-\/vector of three point indices. The point index will work as the node name, but we need the actual point To determine euclidean distance. It should correspond to the index of the point cloud. \hypertarget{classGraph_a902c5b3eacb66d60752525ab23297a95}{\index{Graph@{Graph}!$\sim$\-Graph@{$\sim$\-Graph}}
+\index{$\sim$\-Graph@{$\sim$\-Graph}!Graph@{Graph}}
+\subsubsection[{$\sim$\-Graph}]{\setlength{\rightskip}{0pt plus 5cm}Graph\-::$\sim$\-Graph (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGraph_a902c5b3eacb66d60752525ab23297a95}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGraph_a104553164f05adc9ef6ab2b5c0972d9b}{\index{Graph@{Graph}!build\-Graph@{build\-Graph}}
+\index{build\-Graph@{build\-Graph}!Graph@{Graph}}
+\subsubsection[{build\-Graph}]{\setlength{\rightskip}{0pt plus 5cm}int Graph\-::build\-Graph (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGraph_a104553164f05adc9ef6ab2b5c0972d9b}
+
+
+Uses the input node adjacency and point coordinates to construct the internal data structure used by the Dijkstra code. $>$ 
+
+Initializes a graph given input node adjacencies and input coordinates of those nodes (to find edge lengths); called from the \hyperlink{classGraph}{Graph} constructor. \hypertarget{classGraph_a64488ecea2d5bcacdcc3294fd497a929}{\index{Graph@{Graph}!get\-Adjacency\-List@{get\-Adjacency\-List}}
+\index{get\-Adjacency\-List@{get\-Adjacency\-List}!Graph@{Graph}}
+\subsubsection[{get\-Adjacency\-List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf adjacency\-\_\-list\-\_\-t} Graph\-::get\-Adjacency\-List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGraph_a64488ecea2d5bcacdcc3294fd497a929}
+
+
+Returns the adjacency list used by the internal Dijkstra code. $>$ 
+
+\hypertarget{classGraph_a31f238c112af88d1deeaf3920997192a}{\index{Graph@{Graph}!set\-Node\-Label\-Adjacency@{set\-Node\-Label\-Adjacency}}
+\index{set\-Node\-Label\-Adjacency@{set\-Node\-Label\-Adjacency}!Graph@{Graph}}
+\subsubsection[{set\-Node\-Label\-Adjacency}]{\setlength{\rightskip}{0pt plus 5cm}int Graph\-::set\-Node\-Label\-Adjacency (
+\begin{DoxyParamCaption}
+\item[{std\-::multimap$<$ uint32\-\_\-t, uint32\-\_\-t $>$}]{input\-Node\-Label\-Adjacency}
+\end{DoxyParamCaption}
+)}}\label{classGraph_a31f238c112af88d1deeaf3920997192a}
+Sets the adacency of nodes in the graph. \hypertarget{classGraph_a82968068ef79a1a18160630962d08b98}{\index{Graph@{Graph}!set\-Node\-Label\-To\-Point\-Coordinates@{set\-Node\-Label\-To\-Point\-Coordinates}}
+\index{set\-Node\-Label\-To\-Point\-Coordinates@{set\-Node\-Label\-To\-Point\-Coordinates}!Graph@{Graph}}
+\subsubsection[{set\-Node\-Label\-To\-Point\-Coordinates}]{\setlength{\rightskip}{0pt plus 5cm}int Graph\-::set\-Node\-Label\-To\-Point\-Coordinates (
+\begin{DoxyParamCaption}
+\item[{std\-::map$<$ uint32\-\_\-t, {\bf Tuple\-Triplet} $>$}]{input\-Node\-Label\-To\-Point\-Coordinate}
+\end{DoxyParamCaption}
+)}}\label{classGraph_a82968068ef79a1a18160630962d08b98}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classGraph_a18f350623c272fa0988f70c299895a8a}{\index{Graph@{Graph}!\-\_\-adjacency\-List@{\-\_\-adjacency\-List}}
+\index{\-\_\-adjacency\-List@{\-\_\-adjacency\-List}!Graph@{Graph}}
+\subsubsection[{\-\_\-adjacency\-List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf adjacency\-\_\-list\-\_\-t} Graph\-::\-\_\-adjacency\-List}}\label{classGraph_a18f350623c272fa0988f70c299895a8a}
+\hypertarget{classGraph_a991d6f0ebad396b5acfc10b6787530ec}{\index{Graph@{Graph}!\-\_\-map\-\_\-list\-Index\-To\-Node\-Label@{\-\_\-map\-\_\-list\-Index\-To\-Node\-Label}}
+\index{\-\_\-map\-\_\-list\-Index\-To\-Node\-Label@{\-\_\-map\-\_\-list\-Index\-To\-Node\-Label}!Graph@{Graph}}
+\subsubsection[{\-\_\-map\-\_\-list\-Index\-To\-Node\-Label}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$uint32\-\_\-t, uint32\-\_\-t$>$ Graph\-::\-\_\-map\-\_\-list\-Index\-To\-Node\-Label}}\label{classGraph_a991d6f0ebad396b5acfc10b6787530ec}
+
+
+Maps the index in the list used by the Dijkstra code to an integer node I\-D. $>$ 
+
+\hypertarget{classGraph_abdd870b000b22aecd02ab84e18666914}{\index{Graph@{Graph}!\-\_\-map\-\_\-node\-Label\-Adjacency@{\-\_\-map\-\_\-node\-Label\-Adjacency}}
+\index{\-\_\-map\-\_\-node\-Label\-Adjacency@{\-\_\-map\-\_\-node\-Label\-Adjacency}!Graph@{Graph}}
+\subsubsection[{\-\_\-map\-\_\-node\-Label\-Adjacency}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$uint32\-\_\-t, uint32\-\_\-t$>$ Graph\-::\-\_\-map\-\_\-node\-Label\-Adjacency}}\label{classGraph_abdd870b000b22aecd02ab84e18666914}
+
+
+The adjacency of node I\-Ds that will be used to construct the internal data structures. $>$ 
+
+\hypertarget{classGraph_a56f4b3715081a555236768f48260caee}{\index{Graph@{Graph}!\-\_\-map\-\_\-node\-Label\-To\-List\-Index@{\-\_\-map\-\_\-node\-Label\-To\-List\-Index}}
+\index{\-\_\-map\-\_\-node\-Label\-To\-List\-Index@{\-\_\-map\-\_\-node\-Label\-To\-List\-Index}!Graph@{Graph}}
+\subsubsection[{\-\_\-map\-\_\-node\-Label\-To\-List\-Index}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$uint32\-\_\-t, uint32\-\_\-t$>$ Graph\-::\-\_\-map\-\_\-node\-Label\-To\-List\-Index}}\label{classGraph_a56f4b3715081a555236768f48260caee}
+
+
+Maps an integer node I\-D to its index in the list used by the Dijkstra code. $>$ 
+
+\hypertarget{classGraph_ad4cf5d8f988e253e00aaa73a72810233}{\index{Graph@{Graph}!\-\_\-map\-\_\-node\-Label\-To\-Point\-Coordinate@{\-\_\-map\-\_\-node\-Label\-To\-Point\-Coordinate}}
+\index{\-\_\-map\-\_\-node\-Label\-To\-Point\-Coordinate@{\-\_\-map\-\_\-node\-Label\-To\-Point\-Coordinate}!Graph@{Graph}}
+\subsubsection[{\-\_\-map\-\_\-node\-Label\-To\-Point\-Coordinate}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$uint32\-\_\-t, {\bf Tuple\-Triplet}$>$ Graph\-::\-\_\-map\-\_\-node\-Label\-To\-Point\-Coordinate}}\label{classGraph_ad4cf5d8f988e253e00aaa73a72810233}
+
+
+Maps the node I\-D to a x, y, z coordinate that will be used to calculate edge weights $>$ 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dijkstraPathfinding_8h}{dijkstra\-Pathfinding.\-h}\item 
+\hyperlink{dijkstraPathfinding_8cpp}{dijkstra\-Pathfinding.\-cpp}\end{DoxyCompactItemize}

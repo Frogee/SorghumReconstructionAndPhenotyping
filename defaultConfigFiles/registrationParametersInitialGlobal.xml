@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<InputParameters>
+	<ParameterSet name="PassThroughFilter" description="Hard filter for X, Y, and Z axes">
+		<Parameter name="Xmin" description="X axis filter minimum" type="int" value="-500"> </Parameter>
+		<Parameter name="Xmax" description="X axis filter maximum" type="int" value="500"> </Parameter>
+		<Parameter name="Ymin" description="Y axis filter minimum" type="int" value="-350"> </Parameter>
+		<Parameter name="Ymax" description="Y axis filter maximum" type="int" value="500"> </Parameter>
+		<Parameter name="Zmin" description="Z axis filter minimum" type="int" value="500"> </Parameter>
+		<Parameter name="Zmax" description="Z axis filter maximum" type="int" value="1500"> </Parameter>
+	</ParameterSet>
+	<ParameterSet name="VoxelGridFilter" description="Voxel grid for downsampling">
+		<Parameter name="LeafSize" description="Size of X, Y, and Z grid leaves" type="float" value="10.00"> 
+		</Parameter>
+	</ParameterSet>
+	<ParameterSet name="IterativeClosestPoint" description="Iterative Closest Point for registration">
+		<Parameter name="MaximumIterations" description="Maximum number of iterations ICP will perform" type="int" value="2000"> </Parameter>
+		<Parameter name="MaxCorrespondenceDistance" description="Maximum distance two points can still be considered corresponding points" type="float" value="100.0"> </Parameter>
+		<Parameter name="MinCorrespondenceDistance" description="Minimum distance that two points will be considered corresponding points. Used to terminate ICP" type="float" value="12.0"> </Parameter>
+		<Parameter name="LargeCorrespondenceDistanceStepReduction" description="How much the correspondence distance will be reduced after converging at a given correspondence distance when the correspondence distance is above the Threshold Switch" type="float" value="90.0"> </Parameter>
+		<Parameter name="SmallCorrespondenceDistanceStepReduction" description="How much the corrspondence distance will be reduced after converging at a given correspondence distance when the correspondence distance is below the Threshold Switch" type="float" value="10.0"> </Parameter>
+		<Parameter name="ThresholdSwitchFromLargeToSmallDistanceSteps" description="Value at which step size will switch from large to small" type="float" value="110.0"> </Parameter>
+	</ParameterSet>
+	<ParameterSet name="Debugging" description="Level of debugging output. 0 will prevent display of images. 1 will show images. 2 will pause images.">
+		<Parameter name="DebuggingLevel" description="Level of debugging output; 0 is lowest level" type="int" value="2"> </Parameter>
+	</ParameterSet>
+</InputParameters>

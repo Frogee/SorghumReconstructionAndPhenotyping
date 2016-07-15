@@ -1,0 +1,315 @@
+\hypertarget{lsystemFitting_8cpp}{\section{lsystem\-Fitting.\-cpp File Reference}
+\label{lsystemFitting_8cpp}\index{lsystem\-Fitting.\-cpp@{lsystem\-Fitting.\-cpp}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include $<$pcl/visualization/pcl\-\_\-visualizer.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/io/pcd\-\_\-io.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/io/ply\-\_\-io.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/common/common.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/common/pca.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/filters/passthrough.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/sample\-\_\-consensus/ransac.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/sample\-\_\-consensus/method\-\_\-types.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/sample\-\_\-consensus/model\-\_\-types.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/sample\-\_\-consensus/sac\-\_\-model\-\_\-circle3d.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/sample\-\_\-consensus/sac\-\_\-model\-\_\-cylinder.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/sample\-\_\-consensus/sac\-\_\-model\-\_\-plane.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/\-Model\-Coefficients.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/segmentation/sac\-\_\-segmentation.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/filters/extract\-\_\-indices.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/features/normal\-\_\-3d\-\_\-omp.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/kdtree/kdtree\-\_\-flann.\-h$>$}\\*
+{\ttfamily \#include $<$python2.\-7/\-Python.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}logging\-Helper.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bounding\-Box.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}lsystem\-Fitting.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}lsystem\-Parameters.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sample\-Mesh\-To\-Point\-Cloud.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Iterative\-Closest\-Point.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility\-Functions.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}lsystem\-Refinement.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{lsystemFitting_8cpp_a5f4d1870e38b06476f8656b1b4c761a2}{identify\-Cylinder\-Clouds\-Based\-On\-Stem\-Model} (pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr original\-Cloud, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr output\-Inner\-Cylinder\-Points, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr output\-Outer\-Cylinder\-Points\-Excluding\-Inner\-Cylinder, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr output\-Outer\-Cylinder\-Points, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr output\-Outside\-Outer\-Cylinder\-Points, Eigen\-::\-Vector\-Xf cylinder\-Coefficients, pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$visu, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+int \hyperlink{lsystemFitting_8cpp_add3c1259ed1656d1cb71b6ff478128c0}{identify\-Points\-Of\-Emerging\-Leaves} (pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr input\-Stem\-Cloud, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr input\-Putative\-Leaf\-Points, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr output\-Leaf\-Points, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+Eigen\-::\-Vector4f \hyperlink{lsystemFitting_8cpp_a0a7138e4cb7818a013faee7e2bcc29ff}{find\-Plane\-To\-Bisect\-Stem} (Eigen\-::\-Matrix3f input\-Leaf\-P\-C\-A\-Eigen\-Vectors, Eigen\-::\-Vector3f input\-Leaf\-P\-C\-A\-Eigen\-Values, pcl\-::\-Point\-X\-Y\-Z input\-Origin\-Point, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr non\-Cylinder\-Points, Eigen\-::\-Vector\-Xf input\-Cylinder\-Coefficients, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+int \hyperlink{lsystemFitting_8cpp_abb2481790b11cc6929b6d8c143192ac2}{fit\-L\-System\-To\-Point\-Cloud} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+pcl\-::\-Polygon\-Mesh \hyperlink{lsystemFitting_8cpp_a5ad1c875ec627e3d8bede7a8d737101d}{build\-L\-System} (Py\-Object $\ast$input\-Lpy\-Function, \hyperlink{classLSystemParameters}{L\-System\-Parameters} input\-L\-System\-Params, pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$visu, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+std\-::pair$<$ float, float $>$ \hyperlink{lsystemFitting_8cpp_a55d45d0986cfb2541c45d867e3484b22}{return\-Turn\-And\-Pitch\-Angles\-To\-Move\-Z\-Axis\-To\-Normal} (Eigen\-::\-Vector3f v\-Input\-Normal, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+float \hyperlink{lsystemFitting_8cpp_a8f1010a1f57a311aa425438f8b0321db}{return\-Leaf\-Phyllotaxy\-Angle\-To\-Move\-X\-Axis\-To\-Normal} (Eigen\-::\-Vector3f v\-Input\-Cylinder\-Axis\-Normal, Eigen\-::\-Vector3f v\-Input\-Plane\-Normal, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+std\-::pair$<$ float, float $>$ \hyperlink{lsystemFitting_8cpp_aafe617b8fa310a722050c652e0de5ff2}{return\-Second\-Leaf\-Curvature\-Control\-Point\-Estimate} (pcl\-::\-Point\-X\-Y\-Z input\-Leaf\-Point\-Origin, pcl\-::\-Point\-X\-Y\-Z input\-Leaf\-Point\-End, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+int \hyperlink{lsystemFitting_8cpp_a9432daeaca6de6906417422e6eb3c353}{fit\-L\-System\-To\-Point\-Cloudv2} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+int \hyperlink{lsystemFitting_8cpp_ac76041a749f4a77a1229fdf7bf806b5c}{fit\-L\-System\-To\-Point\-Cloudv1} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{lsystemFitting_8cpp_a5ad1c875ec627e3d8bede7a8d737101d}{\index{lsystem\-Fitting.\-cpp@{lsystem\-Fitting.\-cpp}!build\-L\-System@{build\-L\-System}}
+\index{build\-L\-System@{build\-L\-System}!lsystemFitting.cpp@{lsystem\-Fitting.\-cpp}}
+\subsubsection[{build\-L\-System}]{\setlength{\rightskip}{0pt plus 5cm}pcl\-::\-Polygon\-Mesh build\-L\-System (
+\begin{DoxyParamCaption}
+\item[{Py\-Object $\ast$}]{input\-Lpy\-Function, }
+\item[{{\bf L\-System\-Parameters}}]{input\-L\-System\-Params, }
+\item[{pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$}]{visu, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{lsystemFitting_8cpp_a5ad1c875ec627e3d8bede7a8d737101d}
+\hypertarget{lsystemFitting_8cpp_a0a7138e4cb7818a013faee7e2bcc29ff}{\index{lsystem\-Fitting.\-cpp@{lsystem\-Fitting.\-cpp}!find\-Plane\-To\-Bisect\-Stem@{find\-Plane\-To\-Bisect\-Stem}}
+\index{find\-Plane\-To\-Bisect\-Stem@{find\-Plane\-To\-Bisect\-Stem}!lsystemFitting.cpp@{lsystem\-Fitting.\-cpp}}
+\subsubsection[{find\-Plane\-To\-Bisect\-Stem}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\-::\-Vector4f find\-Plane\-To\-Bisect\-Stem (
+\begin{DoxyParamCaption}
+\item[{Eigen\-::\-Matrix3f}]{input\-Leaf\-P\-C\-A\-Eigen\-Vectors, }
+\item[{Eigen\-::\-Vector3f}]{input\-Leaf\-P\-C\-A\-Eigen\-Values, }
+\item[{pcl\-::\-Point\-X\-Y\-Z}]{input\-Origin\-Point, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{non\-Cylinder\-Points, }
+\item[{Eigen\-::\-Vector\-Xf}]{input\-Cylinder\-Coefficients, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{lsystemFitting_8cpp_a0a7138e4cb7818a013faee7e2bcc29ff}
+I think the trick will be to find the plane that contains both the plane normal vector and the cylinder vector. Then we can drop the vector of the plane normal to be 90 degrees relative to the cylinder vector using that plane.
+
+In some cases, this can be misleading if the second principal component is leaf width as opposed to leaf length. To try to resolve cases where leaf width mistakenly gets used. If the leaf width dimension gets mistakenly used, a large proportion of the points on either side of the plane will be adjacent to each other. If this is the case, I think we can swap the x and y of the principal component for the plane and try again.
+
+I\-M\-P\-O\-R\-T\-A\-N\-T M\-A\-G\-I\-C N\-U\-M\-B\-E\-R H\-E\-R\-E, C\-O\-N\-S\-I\-D\-E\-R R\-E\-F\-A\-C\-T\-O\-R\-I\-N\-G T\-O I\-N\-P\-U\-T V\-A\-R\-I\-A\-B\-L\-E I\-F T\-H\-I\-S M\-E\-T\-H\-O\-D I\-S U\-S\-E\-D. This number determines the radius away from the stem points that putative leaf points will be considered neighbors. \hypertarget{lsystemFitting_8cpp_abb2481790b11cc6929b6d8c143192ac2}{\index{lsystem\-Fitting.\-cpp@{lsystem\-Fitting.\-cpp}!fit\-L\-System\-To\-Point\-Cloud@{fit\-L\-System\-To\-Point\-Cloud}}
+\index{fit\-L\-System\-To\-Point\-Cloud@{fit\-L\-System\-To\-Point\-Cloud}!lsystemFitting.cpp@{lsystem\-Fitting.\-cpp}}
+\subsubsection[{fit\-L\-System\-To\-Point\-Cloud}]{\setlength{\rightskip}{0pt plus 5cm}int fit\-L\-System\-To\-Point\-Cloud (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{lsystemFitting_8cpp_abb2481790b11cc6929b6d8c143192ac2}
+Load the necessary elements for embedded python.
+
+Finished loading elements for embedded python.
+
+Set up the visualizer for viewing.
+
+Finished setting up the visualizer for viewing.
+
+As a first attempt, we'll move from the bottom, up and fit single phytomer L-\/systems to the cloud. I think the best way to do this will be to fit a cylinder the the very bottom of the plant (i.\-e., no leaves) and keep moving up incrementally until a large number of points don't fit with the cylinder (i.\-e., a leaf is found).
+
+Assumptions\-: Plant stem is reasonably well aligned with the Z axis (oriented via pot segmentation)
+
+First, get a short portion of the bottom stem (pass through filter) and find a cylinder that fits it (R\-A\-N\-S\-A\-C).
+
+To get a short portion of the bottom stem, we've move 5\% up from the bottom to the top along the z axis.
+
+Now, find a cylinder that fits those points. R\-A\-N\-S\-A\-C of stem to find radius. Let's consider modifying this to find multiple stem layers up the stem instead of one large cylinder.
+
+So we have a starting cylindrical model (i.\-e., cylinder radius for the lsystem). Can we iteratively move up the stem until the points outside of it become significant? Let's work with a donut model, where the \char`\"{}hole\char`\"{} is the stem, and points within a second radius can be considered leaves.
+
+Here's the important logic loop for constructing the L-\/\-System.
+
+If we've found a set of points that don't belong to the stem, it's likely a leaf emerging. We can probably save the internode height and radius here. Then we can figure out the orientation that the leaf is emerging.
+
+One common error is that leaf points not accounted for are present in the next layer up (due to angle and curvature). I think we can correct for those by only considering points that are adjacent to stem points for adding a phytomer, that is, only consider points that might be from leaf emerging from the stem, rather than points that might be from a leaf from a phytomer below that are far away from the stem.
+
+I think one way to do this, since we expect $\sim$ 180 degree phyllotaxy, is to bisect the stem to isolate a leaf (if more than one leaf are appearing), then use orientation of the principal component of the leaf points to orient the L system. I think we can use the axis of the cylinder as one dimension for the plane, then find the principal component of non cylinder points and use an orthogonal normal that is most orthogonal to the cylinder axis.
+
+Try to draw a line that starts halway in the layer z interval and centered at the cylinder center, pointing in the direction of the first principal component. \href{http://math.stackexchange.com/questions/404440/what-is-the-formula-for-a-3d-line}{\tt http\-://math.\-stackexchange.\-com/questions/404440/what-\/is-\/the-\/formula-\/for-\/a-\/3d-\/line}
+
+Find a plane that bisects the stem to try and partition the leaf points to one half of the plant. This is to correctly generate two phytomers if the layer contains two leaves. Plane model parameters contains the x, y, and z of the plane equation in indices 0, 1, and 2. Index 3 contains the intercept.
+
+I think we pretty much have to do everything above again, but once for each set of points if two significant sets of points are found.
+
+Try to draw a line that starts halway in the layer z interval and centered at the cylinder center, pointing in the direction of the first principal component. \href{http://math.stackexchange.com/questions/404440/what-is-the-formula-for-a-3d-line}{\tt http\-://math.\-stackexchange.\-com/questions/404440/what-\/is-\/the-\/formula-\/for-\/a-\/3d-\/line}
+
+Maybe what we really want is to use the x and the y of the leaf projection, and fix the z to find a plane.
+
+Now I think we have enough data to build a rough L-\/system. We have estimations of\-: how tall the internode is. the radius of the internode. the phyllotaxy of the leaf with respect to the internode. the angle of emergence of the leaf with respect to the internode. Now let's build an L-\/system from that.
+
+Internode lengths. Each phytomer will be different.
+
+Internode radii. Both phytomers will be equivalent.
+
+Stem turn and pitch. The second phytomer will be 0, 0
+
+Leaf widths. Set to the same as a default for now.
+
+Leaf phyllotaxy angle.
+
+Leaf curvature.
+
+Process normal side first.
+
+Internode lengths.
+
+Internode radii. Both phytomers will be equivalent.
+
+Stem turn and pitch. The second phytomer will be 0, 0
+
+Leaf widths. Set to the same as a default for now.
+
+Leaf phyllotaxy angle.
+
+Leaf curvature.
+
+Internode lengths.
+
+Internode radii.
+
+Stem turn and pitch.
+
+Leaf widths.
+
+Leaf phyllotaxy angle.
+
+Leaf curvature.
+
+04/26/16 Resume from here; work on making sure the cylinder gets identified correctly. Derivation 4 appears to be having problems.
+
+To fast forward when testing things, can set up a fixed L-\/\-System here.
+
+Now we need to get a point cloud sampled from the mesh of the L-\/system to create what a point cloud generated from that L-\/system might look like.
+
+Now I guess we can fit this L-\/system and make minor refinements to things like internode height, leaf phyllotaxy, and the first two control points (really, only the second control point since the first is always (0, 0). I don't think we'd want to refine either of the other two control points since we might not have the full leaf yet.
+
+This will allow us to assign points as accounted for or not by the L-\/\-System. Iterative closest point seems as good as anything else for the time being, though really we should be able to just transform the Lsystem to the R\-A\-N\-S\-A\-C cylinder of the stem and get pretty close?
+
+I\-M\-P\-O\-R\-T\-A\-N\-T M\-A\-G\-I\-C N\-U\-M\-B\-E\-R H\-E\-R\-E, C\-O\-N\-S\-I\-D\-E\-R R\-E\-F\-A\-C\-T\-O\-R\-I\-N\-G T\-O I\-N\-P\-U\-T V\-A\-R\-I\-A\-B\-L\-E I\-F T\-H\-I\-S M\-E\-T\-H\-O\-D I\-S U\-S\-E\-D. This number determines the radius away from the L-\/\-System points that points in the original cloud will be considered accounted for in the L-\/system. \hypertarget{lsystemFitting_8cpp_ac76041a749f4a77a1229fdf7bf806b5c}{\index{lsystem\-Fitting.\-cpp@{lsystem\-Fitting.\-cpp}!fit\-L\-System\-To\-Point\-Cloudv1@{fit\-L\-System\-To\-Point\-Cloudv1}}
+\index{fit\-L\-System\-To\-Point\-Cloudv1@{fit\-L\-System\-To\-Point\-Cloudv1}!lsystemFitting.cpp@{lsystem\-Fitting.\-cpp}}
+\subsubsection[{fit\-L\-System\-To\-Point\-Cloudv1}]{\setlength{\rightskip}{0pt plus 5cm}int fit\-L\-System\-To\-Point\-Cloudv1 (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{lsystemFitting_8cpp_ac76041a749f4a77a1229fdf7bf806b5c}
+As a first attempt, we'll move from the bottom, up and fit single phytomer L-\/systems to the cloud. I think the best way to do this will be to fit a cylinder the the very bottom of the plant (i.\-e., no leaves) and keep moving up incrementally until a large number of points don't fit with the cylinder (i.\-e., a leaf is found).
+
+Assumptions\-: Plant stem is reasonably well aligned with the Z axis (oriented via pot segmentation)
+
+First, get a short portion of the bottom stem (pass through filter) and find a cylinder that fits it (R\-A\-N\-S\-A\-C).
+
+To get a short portion of the bottom stem, we've move 5\% up from the bottom to the top along the z axis.
+
+Now, find a cylinder that fits those points. R\-A\-N\-S\-A\-C of stem to find radius. Let's consider modifying this to find multiple stem layers up the stem instead of one large cylinder.
+
+So we have a vague cylindrical model (i.\-e., cylinder radius for the lsystem). Can we iteratively move up the stem until the points outside of it become significant?
+
+If we've found a set of points that don't belong to the stem, it's likely a leaf emerging. We can probably save the internode height and radius here. Then we can figure out the orientation that the leaf is emerging.
+
+I think one way to do this, since we expect $\sim$ 180 degree phyllotaxy, is to bisect the stem to isolate a leaf (if more than one leaf are appearing), then use orientation of the principal component of the leaf points to orient the L system. I think we can use the axis of the cylinder as one dimension for the plane, then find the principal component of non cylinder points and use an orthogonal normal that is most orthogonal to the cylinder axis.
+
+Try to draw a line that starts halway in the layer z interval and centered at the cylinder center, pointing in the direction of the first principal component. \href{http://math.stackexchange.com/questions/404440/what-is-the-formula-for-a-3d-line}{\tt http\-://math.\-stackexchange.\-com/questions/404440/what-\/is-\/the-\/formula-\/for-\/a-\/3d-\/line}
+
+So we should have a rough orientation of the leaf. Now we want to bisect the stem. I think we can do this by ignoring the z dimension, and finding a line that is orthogonal to the leaf orientation.
+
+Maybe instead of an orthogonal rotation, one way to go is to just rotate it by 90 around one of the axes.
+
+Maybe what we really want is to use the x and the y of the leaf projection, and fix the z to find a plane.
+
+With the rotated line, we use it as the basis of a plane to bisect the points. All points that are one one side belong to a new leaf point cloud. \hypertarget{lsystemFitting_8cpp_a9432daeaca6de6906417422e6eb3c353}{\index{lsystem\-Fitting.\-cpp@{lsystem\-Fitting.\-cpp}!fit\-L\-System\-To\-Point\-Cloudv2@{fit\-L\-System\-To\-Point\-Cloudv2}}
+\index{fit\-L\-System\-To\-Point\-Cloudv2@{fit\-L\-System\-To\-Point\-Cloudv2}!lsystemFitting.cpp@{lsystem\-Fitting.\-cpp}}
+\subsubsection[{fit\-L\-System\-To\-Point\-Cloudv2}]{\setlength{\rightskip}{0pt plus 5cm}int fit\-L\-System\-To\-Point\-Cloudv2 (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{lsystemFitting_8cpp_a9432daeaca6de6906417422e6eb3c353}
+Load the necessary elements for embedded python.
+
+Finished loading elements for embedded python.
+
+As a first attempt, we'll move from the bottom, up and fit single phytomer L-\/systems to the cloud. I think the best way to do this will be to fit a cylinder the the very bottom of the plant (i.\-e., no leaves) and keep moving up incrementally until a large number of points don't fit with the cylinder (i.\-e., a leaf is found).
+
+Assumptions\-: Plant stem is reasonably well aligned with the Z axis (oriented via pot segmentation)
+
+First, get a short portion of the bottom stem (pass through filter) and find a cylinder that fits it (R\-A\-N\-S\-A\-C).
+
+To get a short portion of the bottom stem, we've move 5\% up from the bottom to the top along the z axis.
+
+Now, find a cylinder that fits those points. R\-A\-N\-S\-A\-C of stem to find radius. Let's consider modifying this to find multiple stem layers up the stem instead of one large cylinder.
+
+So we have a vague cylindrical model (i.\-e., cylinder radius for the lsystem). Can we iteratively move up the stem until the points outside of it become significant?
+
+If we've found a set of points that don't belong to the stem, it's likely a leaf emerging. We can probably save the internode height and radius here. Then we can figure out the orientation that the leaf is emerging.
+
+I think one way to do this, since we expect $\sim$ 180 degree phyllotaxy, is to bisect the stem to isolate a leaf (if more than one leaf are appearing), then use orientation of the principal component of the leaf points to orient the L system. I think we can use the axis of the cylinder as one dimension for the plane, then find the principal component of non cylinder points and use an orthogonal normal that is most orthogonal to the cylinder axis.
+
+Try to draw a line that starts halway in the layer z interval and centered at the cylinder center, pointing in the direction of the first principal component. \href{http://math.stackexchange.com/questions/404440/what-is-the-formula-for-a-3d-line}{\tt http\-://math.\-stackexchange.\-com/questions/404440/what-\/is-\/the-\/formula-\/for-\/a-\/3d-\/line}
+
+Maybe what we really want is to use the x and the y of the leaf projection, and fix the z to find a plane.
+
+With the rotated line, we use it as the basis of a plane to bisect the points. All points that are one one side belong to a new leaf point cloud.
+
+Now I think we have enough data to build a rough L-\/system. We have estimations of\-: how tall the internode is. the radius of the internode. the phyllotaxy of the leaf with respect to the internode. the angle of emergence of the leaf with respect to the internode. Now let's build an L-\/system from that.
+
+Now we need to get a point cloud sampled from the mesh of the L-\/system to create what a point cloud generated from that L-\/system might look like.
+
+Now I guess we can fit this L-\/system and make minor refinements to things like internode height, leaf phyllotaxy, and the first two control points (really, only the second control point since the first is always (0, 0). I don't think we'd want to refine either of the other two control points since we might not have the full leaf yet.
+
+This will allow us to assign points as accounted for or not by the L-\/\-System. Iterative closest point seems as good as anything else for the time being, though really we should be able to just transform the Lsystem to the R\-A\-N\-S\-A\-C cylinder of the stem and get pretty close?
+
+At this point, I think we'll have a decent L-\/system for the first phytomer. The next step is to move up one and add a phytomer, taking into consideration the current L-\/system and the points that remain after fitting it. \hypertarget{lsystemFitting_8cpp_a5f4d1870e38b06476f8656b1b4c761a2}{\index{lsystem\-Fitting.\-cpp@{lsystem\-Fitting.\-cpp}!identify\-Cylinder\-Clouds\-Based\-On\-Stem\-Model@{identify\-Cylinder\-Clouds\-Based\-On\-Stem\-Model}}
+\index{identify\-Cylinder\-Clouds\-Based\-On\-Stem\-Model@{identify\-Cylinder\-Clouds\-Based\-On\-Stem\-Model}!lsystemFitting.cpp@{lsystem\-Fitting.\-cpp}}
+\subsubsection[{identify\-Cylinder\-Clouds\-Based\-On\-Stem\-Model}]{\setlength{\rightskip}{0pt plus 5cm}int identify\-Cylinder\-Clouds\-Based\-On\-Stem\-Model (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{original\-Cloud, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{output\-Inner\-Cylinder\-Points, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{output\-Outer\-Cylinder\-Points\-Excluding\-Inner\-Cylinder, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{output\-Outer\-Cylinder\-Points, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{output\-Outside\-Outer\-Cylinder\-Points, }
+\item[{Eigen\-::\-Vector\-Xf}]{cylinder\-Coefficients, }
+\item[{pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$}]{visu, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{lsystemFitting_8cpp_a5f4d1870e38b06476f8656b1b4c761a2}
+I think the easiest approach will be to transform the cylinder to the z axis, and then find if a point is within the X,Y circle.
+
+I\-M\-P\-O\-R\-T\-A\-N\-T M\-A\-G\-I\-C N\-U\-M\-B\-E\-R\-S H\-E\-R\-E, C\-O\-N\-S\-I\-D\-E\-R R\-E\-F\-A\-C\-T\-O\-R\-I\-N\-G T\-O I\-N\-P\-U\-T V\-A\-R\-I\-A\-B\-L\-E I\-F T\-H\-I\-S M\-E\-T\-H\-O\-D I\-S U\-S\-E\-D. The inner radius number determines a scaling factor of how much the inner cylinder will be expanded. The outer radius number determines a scaling factor of how much the outer radius will be expanded relative to the inner radius. \hypertarget{lsystemFitting_8cpp_add3c1259ed1656d1cb71b6ff478128c0}{\index{lsystem\-Fitting.\-cpp@{lsystem\-Fitting.\-cpp}!identify\-Points\-Of\-Emerging\-Leaves@{identify\-Points\-Of\-Emerging\-Leaves}}
+\index{identify\-Points\-Of\-Emerging\-Leaves@{identify\-Points\-Of\-Emerging\-Leaves}!lsystemFitting.cpp@{lsystem\-Fitting.\-cpp}}
+\subsubsection[{identify\-Points\-Of\-Emerging\-Leaves}]{\setlength{\rightskip}{0pt plus 5cm}int identify\-Points\-Of\-Emerging\-Leaves (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{input\-Stem\-Cloud, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{input\-Putative\-Leaf\-Points, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{output\-Leaf\-Points, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{lsystemFitting_8cpp_add3c1259ed1656d1cb71b6ff478128c0}
+I\-M\-P\-O\-R\-T\-A\-N\-T M\-A\-G\-I\-C N\-U\-M\-B\-E\-R H\-E\-R\-E, C\-O\-N\-S\-I\-D\-E\-R R\-E\-F\-A\-C\-T\-O\-R\-I\-N\-G T\-O I\-N\-P\-U\-T V\-A\-R\-I\-A\-B\-L\-E I\-F T\-H\-I\-S M\-E\-T\-H\-O\-D I\-S U\-S\-E\-D. This number determines the radius away from the stem points that putative leaf points will be considered neighbors. \hypertarget{lsystemFitting_8cpp_a8f1010a1f57a311aa425438f8b0321db}{\index{lsystem\-Fitting.\-cpp@{lsystem\-Fitting.\-cpp}!return\-Leaf\-Phyllotaxy\-Angle\-To\-Move\-X\-Axis\-To\-Normal@{return\-Leaf\-Phyllotaxy\-Angle\-To\-Move\-X\-Axis\-To\-Normal}}
+\index{return\-Leaf\-Phyllotaxy\-Angle\-To\-Move\-X\-Axis\-To\-Normal@{return\-Leaf\-Phyllotaxy\-Angle\-To\-Move\-X\-Axis\-To\-Normal}!lsystemFitting.cpp@{lsystem\-Fitting.\-cpp}}
+\subsubsection[{return\-Leaf\-Phyllotaxy\-Angle\-To\-Move\-X\-Axis\-To\-Normal}]{\setlength{\rightskip}{0pt plus 5cm}float return\-Leaf\-Phyllotaxy\-Angle\-To\-Move\-X\-Axis\-To\-Normal (
+\begin{DoxyParamCaption}
+\item[{Eigen\-::\-Vector3f}]{v\-Input\-Cylinder\-Axis\-Normal, }
+\item[{Eigen\-::\-Vector3f}]{v\-Input\-Plane\-Normal, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{lsystemFitting_8cpp_a8f1010a1f57a311aa425438f8b0321db}
+This function is also a mess; for now we just find phyllotaxy based on the normal of the plane for the leaf. For the leaf phyllotaxy angle, I suppose we can align the cylinder to the z axis, use the rotation matrix from that alignment, apply it to the leaf plane normal, then find the angle between the leaf plane normal and the x axis, and use that as the leaf phyllotaxy angle. This doesn't seem to work in application since we don't have any guarantee where the plane axis will end up. It can be fixed once a better solution is identified. and by better solution, one that keeps the L system as close of a transformation as possible to the original cloud (ideally just a translation). This line pretty much overrides everything above with respect to finding the rotated plane. It can be removed once a better solution is identified. and by better solution, one that keeps the L system as close of a transformation as possible to the original cloud (ideally just a translation). \hypertarget{lsystemFitting_8cpp_aafe617b8fa310a722050c652e0de5ff2}{\index{lsystem\-Fitting.\-cpp@{lsystem\-Fitting.\-cpp}!return\-Second\-Leaf\-Curvature\-Control\-Point\-Estimate@{return\-Second\-Leaf\-Curvature\-Control\-Point\-Estimate}}
+\index{return\-Second\-Leaf\-Curvature\-Control\-Point\-Estimate@{return\-Second\-Leaf\-Curvature\-Control\-Point\-Estimate}!lsystemFitting.cpp@{lsystem\-Fitting.\-cpp}}
+\subsubsection[{return\-Second\-Leaf\-Curvature\-Control\-Point\-Estimate}]{\setlength{\rightskip}{0pt plus 5cm}std\-::pair$<$float, float$>$ return\-Second\-Leaf\-Curvature\-Control\-Point\-Estimate (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Point\-X\-Y\-Z}]{input\-Leaf\-Point\-Origin, }
+\item[{pcl\-::\-Point\-X\-Y\-Z}]{input\-Leaf\-Point\-End, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{lsystemFitting_8cpp_aafe617b8fa310a722050c652e0de5ff2}
+\hypertarget{lsystemFitting_8cpp_a55d45d0986cfb2541c45d867e3484b22}{\index{lsystem\-Fitting.\-cpp@{lsystem\-Fitting.\-cpp}!return\-Turn\-And\-Pitch\-Angles\-To\-Move\-Z\-Axis\-To\-Normal@{return\-Turn\-And\-Pitch\-Angles\-To\-Move\-Z\-Axis\-To\-Normal}}
+\index{return\-Turn\-And\-Pitch\-Angles\-To\-Move\-Z\-Axis\-To\-Normal@{return\-Turn\-And\-Pitch\-Angles\-To\-Move\-Z\-Axis\-To\-Normal}!lsystemFitting.cpp@{lsystem\-Fitting.\-cpp}}
+\subsubsection[{return\-Turn\-And\-Pitch\-Angles\-To\-Move\-Z\-Axis\-To\-Normal}]{\setlength{\rightskip}{0pt plus 5cm}std\-::pair$<$float, float$>$ return\-Turn\-And\-Pitch\-Angles\-To\-Move\-Z\-Axis\-To\-Normal (
+\begin{DoxyParamCaption}
+\item[{Eigen\-::\-Vector3f}]{v\-Input\-Normal, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{lsystemFitting_8cpp_a55d45d0986cfb2541c45d867e3484b22}
+This function is currently a mess and needs to be cleaned up. The mess is mostly a consequence of my lack of understanding regarding vector rotations. The clutter will be kept until enough test cases have been run to be convincing that this generally works. These unit vectors can be used to test calculations.
+
+We need to find one rotation first, then the second since it's dependent on the first. Rotation matrix about the x axis\-: \href{https://en.wikipedia.org/wiki/Rotation_matrix}{\tt https\-://en.\-wikipedia.\-org/wiki/\-Rotation\-\_\-matrix} 

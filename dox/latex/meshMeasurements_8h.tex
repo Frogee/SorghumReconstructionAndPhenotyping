@@ -1,0 +1,312 @@
+\hypertarget{meshMeasurements_8h}{\section{mesh\-Measurements.\-h File Reference}
+\label{meshMeasurements_8h}\index{mesh\-Measurements.\-h@{mesh\-Measurements.\-h}}
+}
+{\ttfamily \#include $<$pcl/\-Polygon\-Mesh.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/point\-\_\-types.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/visualization/pcl\-\_\-visualizer.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}input\-Params.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}measurement\-Data\-Container.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{meshMeasurements_8h_ae7d9dcf444251645bf468b123f30efab}{make\-Plant\-Measurements} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\begin{DoxyCompactList}\small\item\em The primary function called by \hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main()} to make measurements of plant architecture. \end{DoxyCompactList}\item 
+int \hyperlink{meshMeasurements_8h_a3464319e8e486f43803a384efffc1d0b}{make\-Segmented\-Feature\-Measurements} (pcl\-::\-Polygon\-Mesh $\ast$input\-Mesh, \hyperlink{classMeasurementDataContainer}{Measurement\-Data\-Container} \&input\-Measurement\-Data, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params, pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$visualizer)
+\begin{DoxyCompactList}\small\item\em The secondary function called by \hyperlink{meshMeasurements_8h_ae7d9dcf444251645bf468b123f30efab}{make\-Plant\-Measurements()} to measure all of the segmented features in the mesh, including the stem and leaves. \end{DoxyCompactList}\item 
+int \hyperlink{meshMeasurements_8h_a89b3e0c0c096c88616542b9bddb6c551}{make\-Stem\-Measurements} (pcl\-::\-Polygon\-Mesh $\ast$mesh\-To\-Measure, pcl\-::\-Polygon\-Mesh $\ast$original\-Mesh, \hyperlink{classMeasurementDataContainer}{Measurement\-Data\-Container} \&input\-Measurement\-Data, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params, pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$visualizer)
+\begin{DoxyCompactList}\small\item\em A tertiary function called by \hyperlink{meshMeasurements_8h_a3464319e8e486f43803a384efffc1d0b}{make\-Segmented\-Feature\-Measurements()} to measure the stem component of the mesh. \end{DoxyCompactList}\item 
+int \hyperlink{meshMeasurements_8h_a7df679df271b97c5c4b571d30b1fac9e}{make\-Individual\-Leaf\-Measurements} (pcl\-::\-Polygon\-Mesh $\ast$mesh\-To\-Measure, pcl\-::\-Polygon\-Mesh $\ast$original\-Mesh, \hyperlink{classMeasurementDataContainer}{Measurement\-Data\-Container} \&input\-Measurement\-Data, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params, pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$visualizer)
+\begin{DoxyCompactList}\small\item\em A tertiary function called by \hyperlink{meshMeasurements_8h_a3464319e8e486f43803a384efffc1d0b}{make\-Segmented\-Feature\-Measurements()} to measure a leaf component of the mesh. \end{DoxyCompactList}\item 
+float \hyperlink{meshMeasurements_8h_aea8998a60c671849181bbb02166fe9cc}{calculate\-Area\-Polygon} (const pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$ \&polygon)
+\begin{DoxyCompactList}\small\item\em Calculates the area of the triangle formed by three points. \end{DoxyCompactList}\item 
+float \hyperlink{meshMeasurements_8h_ae12f84b78af4abf66aabd48deb025b67}{calculate\-Distance\-Between\-Points} (const pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$ \&edge)
+\begin{DoxyCompactList}\small\item\em Calculates the distance between two points. This should probably be removed, as I don't think it gets used. \end{DoxyCompactList}\item 
+std\-::pair$<$ float, float $>$ \hyperlink{meshMeasurements_8h_afa0e1c297328f5bc0dd6a29bb0174509}{calculate\-Length\-And\-Width\-From\-Area\-And\-Perimeter} (float area, float perimeter)
+\begin{DoxyCompactList}\small\item\em Calculates the length and width from area and perimeter for a rectangle. This should probably be removed, as I don't think it gets used. \end{DoxyCompactList}\item 
+float \hyperlink{meshMeasurements_8h_af1e5539a2afcbf00a807564a2a8a7208}{return\-Surface\-Area\-Of\-Mesh} (pcl\-::\-Polygon\-Mesh $\ast$input\-Mesh)
+\begin{DoxyCompactList}\small\item\em Calculates the surface area of a mesh using \hyperlink{meshMeasurements_8h_aea8998a60c671849181bbb02166fe9cc}{calculate\-Area\-Polygon()};. \end{DoxyCompactList}\item 
+bool \hyperlink{meshMeasurements_8h_aa30ab009c23658be9efe23e25ba128e5}{z\-Sorting\-Function} (pcl\-::\-Point\-X\-Y\-Z p1, pcl\-::\-Point\-X\-Y\-Z p2)
+\begin{DoxyCompactList}\small\item\em Determines which of the input points has a greater z coordinate. This should probably be removed, as I don't think it gets used. \end{DoxyCompactList}\item 
+int \hyperlink{meshMeasurements_8h_a019257c4a7eff9845aded56ffdc33768}{visualize\-Specific\-Measurements} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\begin{DoxyCompactList}\small\item\em Provides visual representation of some of the mesh measurements made in \hyperlink{meshMeasurements_8h_ae7d9dcf444251645bf468b123f30efab}{make\-Plant\-Measurements()};. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{meshMeasurements_8h_aea8998a60c671849181bbb02166fe9cc}{\index{mesh\-Measurements.\-h@{mesh\-Measurements.\-h}!calculate\-Area\-Polygon@{calculate\-Area\-Polygon}}
+\index{calculate\-Area\-Polygon@{calculate\-Area\-Polygon}!meshMeasurements.h@{mesh\-Measurements.\-h}}
+\subsubsection[{calculate\-Area\-Polygon}]{\setlength{\rightskip}{0pt plus 5cm}float calculate\-Area\-Polygon (
+\begin{DoxyParamCaption}
+\item[{const pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$ \&}]{polygon}
+\end{DoxyParamCaption}
+)}}\label{meshMeasurements_8h_aea8998a60c671849181bbb02166fe9cc}
+
+
+Calculates the area of the triangle formed by three points. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em polygon} & a pcl\-::\-Point\-Cloud of three pcl\-::\-Point\-X\-Y\-Z points that comprise the triangle for which area will be calculated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the area of the polygon. 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick, but the logic comes from the P\-C\-L forums. 
+\end{DoxyAuthor}
+\hypertarget{meshMeasurements_8h_ae12f84b78af4abf66aabd48deb025b67}{\index{mesh\-Measurements.\-h@{mesh\-Measurements.\-h}!calculate\-Distance\-Between\-Points@{calculate\-Distance\-Between\-Points}}
+\index{calculate\-Distance\-Between\-Points@{calculate\-Distance\-Between\-Points}!meshMeasurements.h@{mesh\-Measurements.\-h}}
+\subsubsection[{calculate\-Distance\-Between\-Points}]{\setlength{\rightskip}{0pt plus 5cm}float calculate\-Distance\-Between\-Points (
+\begin{DoxyParamCaption}
+\item[{const pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$ \&}]{edge}
+\end{DoxyParamCaption}
+)}}\label{meshMeasurements_8h_ae12f84b78af4abf66aabd48deb025b67}
+
+
+Calculates the distance between two points. This should probably be removed, as I don't think it gets used. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em edge} & a pcl\-::\-Point\-Cloud of two pcl\-::\-Point\-X\-Y\-Z points that represent the edge to be calculated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the distance between the points. 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick, but the logic comes from the P\-C\-L forums. 
+\end{DoxyAuthor}
+\hypertarget{meshMeasurements_8h_afa0e1c297328f5bc0dd6a29bb0174509}{\index{mesh\-Measurements.\-h@{mesh\-Measurements.\-h}!calculate\-Length\-And\-Width\-From\-Area\-And\-Perimeter@{calculate\-Length\-And\-Width\-From\-Area\-And\-Perimeter}}
+\index{calculate\-Length\-And\-Width\-From\-Area\-And\-Perimeter@{calculate\-Length\-And\-Width\-From\-Area\-And\-Perimeter}!meshMeasurements.h@{mesh\-Measurements.\-h}}
+\subsubsection[{calculate\-Length\-And\-Width\-From\-Area\-And\-Perimeter}]{\setlength{\rightskip}{0pt plus 5cm}std\-::pair$<$float,float$>$ calculate\-Length\-And\-Width\-From\-Area\-And\-Perimeter (
+\begin{DoxyParamCaption}
+\item[{float}]{area, }
+\item[{float}]{perimeter}
+\end{DoxyParamCaption}
+)}}\label{meshMeasurements_8h_afa0e1c297328f5bc0dd6a29bb0174509}
+
+
+Calculates the length and width from area and perimeter for a rectangle. This should probably be removed, as I don't think it gets used. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em area} & surface area of the 3\-D rectangle. \\
+\hline
+\mbox{\tt in}  & {\em perimeter} & perimeter of the 3\-D rectangle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the length and width as a std\-::pair. 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick. 
+\end{DoxyAuthor}
+\hypertarget{meshMeasurements_8h_a7df679df271b97c5c4b571d30b1fac9e}{\index{mesh\-Measurements.\-h@{mesh\-Measurements.\-h}!make\-Individual\-Leaf\-Measurements@{make\-Individual\-Leaf\-Measurements}}
+\index{make\-Individual\-Leaf\-Measurements@{make\-Individual\-Leaf\-Measurements}!meshMeasurements.h@{mesh\-Measurements.\-h}}
+\subsubsection[{make\-Individual\-Leaf\-Measurements}]{\setlength{\rightskip}{0pt plus 5cm}int make\-Individual\-Leaf\-Measurements (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Polygon\-Mesh $\ast$}]{mesh\-To\-Measure, }
+\item[{pcl\-::\-Polygon\-Mesh $\ast$}]{original\-Mesh, }
+\item[{{\bf Measurement\-Data\-Container} \&}]{input\-Measurement\-Data, }
+\item[{{\bf Input\-Parameters}}]{input\-Params, }
+\item[{pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$}]{visualizer}
+\end{DoxyParamCaption}
+)}}\label{meshMeasurements_8h_a7df679df271b97c5c4b571d30b1fac9e}
+
+
+A tertiary function called by \hyperlink{meshMeasurements_8h_a3464319e8e486f43803a384efffc1d0b}{make\-Segmented\-Feature\-Measurements()} to measure a leaf component of the mesh. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mesh\-To\-Measure} & a pointer to a leaf subset of original\-Mesh for which measurements will be made. \\
+\hline
+\mbox{\tt in}  & {\em original\-Mesh} & a pointer to the original mesh from which mesh to Measure originally derived. \\
+\hline
+\mbox{\tt in}  & {\em input\-Measurement\-Data} & the \hyperlink{classMeasurementDataContainer}{Measurement\-Data\-Container} to which new measurements will be added. \\
+\hline
+\mbox{\tt in}  & {\em input\-Params} & the \hyperlink{classInputParameters}{Input\-Parameters} object that contains values to be used, read in from the input .xml file. \\
+\hline
+\mbox{\tt in}  & {\em visualizer} & a pointer to a pcl\-::visualization\-::\-P\-C\-L\-Visualizer that will be used to display output if debugging level is sufficiently high. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick 
+\end{DoxyAuthor}
+Surface area, length, width, and angles of leaf \hypertarget{meshMeasurements_8h_ae7d9dcf444251645bf468b123f30efab}{\index{mesh\-Measurements.\-h@{mesh\-Measurements.\-h}!make\-Plant\-Measurements@{make\-Plant\-Measurements}}
+\index{make\-Plant\-Measurements@{make\-Plant\-Measurements}!meshMeasurements.h@{mesh\-Measurements.\-h}}
+\subsubsection[{make\-Plant\-Measurements}]{\setlength{\rightskip}{0pt plus 5cm}int make\-Plant\-Measurements (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{meshMeasurements_8h_ae7d9dcf444251645bf468b123f30efab}
+
+
+The primary function called by \hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main()} to make measurements of plant architecture. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em argc} & the value of argc at runtime decremented by 2 (to account for removing the program name and the input .xml file). The function only expects 1 .ply mesh. \\
+\hline
+\mbox{\tt in}  & {\em argv} & the argv given at runtime shifted by two indices (to account for removing the program name and the input .xml file). argv will have the called processing option in argv\mbox{[}0\mbox{]}, and the remaining index is the segmented .ply (i.\-e., colored vertices) that will be measured. \\
+\hline
+\mbox{\tt in}  & {\em input\-Params} & the \hyperlink{classInputParameters}{Input\-Parameters} object that contains values to be used, read in from the input .xml file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick
+\end{DoxyAuthor}
+The intent of this should be to take a segmented mesh and write all of the measurements to a file. Bounding box dimensions of plant
+
+Centroid
+
+Surface area of plant
+
+Area of z layers up the canopy.
+
+Convex hull of plant \hypertarget{meshMeasurements_8h_a3464319e8e486f43803a384efffc1d0b}{\index{mesh\-Measurements.\-h@{mesh\-Measurements.\-h}!make\-Segmented\-Feature\-Measurements@{make\-Segmented\-Feature\-Measurements}}
+\index{make\-Segmented\-Feature\-Measurements@{make\-Segmented\-Feature\-Measurements}!meshMeasurements.h@{mesh\-Measurements.\-h}}
+\subsubsection[{make\-Segmented\-Feature\-Measurements}]{\setlength{\rightskip}{0pt plus 5cm}int make\-Segmented\-Feature\-Measurements (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Polygon\-Mesh $\ast$}]{input\-Mesh, }
+\item[{{\bf Measurement\-Data\-Container} \&}]{input\-Measurement\-Data, }
+\item[{{\bf Input\-Parameters}}]{input\-Params, }
+\item[{pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$}]{visualizer}
+\end{DoxyParamCaption}
+)}}\label{meshMeasurements_8h_a3464319e8e486f43803a384efffc1d0b}
+
+
+The secondary function called by \hyperlink{meshMeasurements_8h_ae7d9dcf444251645bf468b123f30efab}{make\-Plant\-Measurements()} to measure all of the segmented features in the mesh, including the stem and leaves. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input\-Mesh} & a pointer to a segmented (i.\-e., colored vertices) mesh for which individual portions of the mesh will be measured. \\
+\hline
+\mbox{\tt in}  & {\em input\-Measurement\-Data} & the \hyperlink{classMeasurementDataContainer}{Measurement\-Data\-Container} to which new measurements will be added. \\
+\hline
+\mbox{\tt in}  & {\em input\-Params} & the \hyperlink{classInputParameters}{Input\-Parameters} object that contains values to be used, read in from the input .xml file. \\
+\hline
+\mbox{\tt in}  & {\em visualizer} & a pointer to a pcl\-::visualization\-::\-P\-C\-L\-Visualizer that will be used to display output if debugging level is sufficiently high. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick 
+\end{DoxyAuthor}
+I think we want to iterate over the individual segmented components, and choose how to handle them based on whether they are leaf or stem. For now, let's assume they are the largest connected piece. At the end we can get things like total leaf area. Average leaf area of the leaves beneath the top three leaves, etc.
+
+Find internode spacing using the base leaf points.
+
+Let's take a few derived measurements, such as averaging leaf sets, etc. \hypertarget{meshMeasurements_8h_a89b3e0c0c096c88616542b9bddb6c551}{\index{mesh\-Measurements.\-h@{mesh\-Measurements.\-h}!make\-Stem\-Measurements@{make\-Stem\-Measurements}}
+\index{make\-Stem\-Measurements@{make\-Stem\-Measurements}!meshMeasurements.h@{mesh\-Measurements.\-h}}
+\subsubsection[{make\-Stem\-Measurements}]{\setlength{\rightskip}{0pt plus 5cm}int make\-Stem\-Measurements (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Polygon\-Mesh $\ast$}]{mesh\-To\-Measure, }
+\item[{pcl\-::\-Polygon\-Mesh $\ast$}]{original\-Mesh, }
+\item[{{\bf Measurement\-Data\-Container} \&}]{input\-Measurement\-Data, }
+\item[{{\bf Input\-Parameters}}]{input\-Params, }
+\item[{pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$}]{visualizer}
+\end{DoxyParamCaption}
+)}}\label{meshMeasurements_8h_a89b3e0c0c096c88616542b9bddb6c551}
+
+
+A tertiary function called by \hyperlink{meshMeasurements_8h_a3464319e8e486f43803a384efffc1d0b}{make\-Segmented\-Feature\-Measurements()} to measure the stem component of the mesh. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mesh\-To\-Measure} & a pointer to the stem subset of original\-Mesh for which measurements will be made. \\
+\hline
+\mbox{\tt in}  & {\em original\-Mesh} & a pointer to the original mesh from which mesh to Measure originally derived. \\
+\hline
+\mbox{\tt in}  & {\em input\-Measurement\-Data} & the \hyperlink{classMeasurementDataContainer}{Measurement\-Data\-Container} to which new measurements will be added. \\
+\hline
+\mbox{\tt in}  & {\em input\-Params} & the \hyperlink{classInputParameters}{Input\-Parameters} object that contains values to be used, read in from the input .xml file. \\
+\hline
+\mbox{\tt in}  & {\em visualizer} & a pointer to a pcl\-::visualization\-::\-P\-C\-L\-Visualizer that will be used to display output if debugging level is sufficiently high. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick 
+\end{DoxyAuthor}
+Geodesic diameter of stem
+
+Bounding box dimensions of stem
+
+Surface area of stem
+
+Convex hull of stem
+
+R\-A\-N\-S\-A\-C of stem to find radius. Let's consider modifying this to find multiple stem layers up the stem instead of one large cylinder. \hypertarget{meshMeasurements_8h_af1e5539a2afcbf00a807564a2a8a7208}{\index{mesh\-Measurements.\-h@{mesh\-Measurements.\-h}!return\-Surface\-Area\-Of\-Mesh@{return\-Surface\-Area\-Of\-Mesh}}
+\index{return\-Surface\-Area\-Of\-Mesh@{return\-Surface\-Area\-Of\-Mesh}!meshMeasurements.h@{mesh\-Measurements.\-h}}
+\subsubsection[{return\-Surface\-Area\-Of\-Mesh}]{\setlength{\rightskip}{0pt plus 5cm}float return\-Surface\-Area\-Of\-Mesh (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Polygon\-Mesh $\ast$}]{input\-Mesh}
+\end{DoxyParamCaption}
+)}}\label{meshMeasurements_8h_af1e5539a2afcbf00a807564a2a8a7208}
+
+
+Calculates the surface area of a mesh using \hyperlink{meshMeasurements_8h_aea8998a60c671849181bbb02166fe9cc}{calculate\-Area\-Polygon()};. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input\-Mesh} & a pointer to a pcl\-::\-Polygon\-Mesh for which the surface area will be calculated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the surface area of the mesh. 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick. 
+\end{DoxyAuthor}
+\hypertarget{meshMeasurements_8h_a019257c4a7eff9845aded56ffdc33768}{\index{mesh\-Measurements.\-h@{mesh\-Measurements.\-h}!visualize\-Specific\-Measurements@{visualize\-Specific\-Measurements}}
+\index{visualize\-Specific\-Measurements@{visualize\-Specific\-Measurements}!meshMeasurements.h@{mesh\-Measurements.\-h}}
+\subsubsection[{visualize\-Specific\-Measurements}]{\setlength{\rightskip}{0pt plus 5cm}int visualize\-Specific\-Measurements (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{meshMeasurements_8h_a019257c4a7eff9845aded56ffdc33768}
+
+
+Provides visual representation of some of the mesh measurements made in \hyperlink{meshMeasurements_8h_ae7d9dcf444251645bf468b123f30efab}{make\-Plant\-Measurements()};. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em argc} & the value of argc at runtime decremented by 2 (to account for removing the program name and the input .xml file). The function only expects 1 .ply mesh. \\
+\hline
+\mbox{\tt in}  & {\em argv} & the argv given at runtime shifted by two indices (to account for removing the program name and the input .xml file). argv will have the called processing option in argv\mbox{[}0\mbox{]}, and the remaining index is the segmented .ply (i.\-e., colored vertices) that will be measured. \\
+\hline
+\mbox{\tt in}  & {\em input\-Params} & the \hyperlink{classInputParameters}{Input\-Parameters} object that contains values to be used, read in from the input .xml file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick 
+\end{DoxyAuthor}
+Centroid
+
+Bounding box dimensions of plant \hypertarget{meshMeasurements_8h_aa30ab009c23658be9efe23e25ba128e5}{\index{mesh\-Measurements.\-h@{mesh\-Measurements.\-h}!z\-Sorting\-Function@{z\-Sorting\-Function}}
+\index{z\-Sorting\-Function@{z\-Sorting\-Function}!meshMeasurements.h@{mesh\-Measurements.\-h}}
+\subsubsection[{z\-Sorting\-Function}]{\setlength{\rightskip}{0pt plus 5cm}bool z\-Sorting\-Function (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Point\-X\-Y\-Z}]{p1, }
+\item[{pcl\-::\-Point\-X\-Y\-Z}]{p2}
+\end{DoxyParamCaption}
+)}}\label{meshMeasurements_8h_aa30ab009c23658be9efe23e25ba128e5}
+
+
+Determines which of the input points has a greater z coordinate. This should probably be removed, as I don't think it gets used. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p1} & a pcl\-::\-Point\-X\-Y\-Z to compare with p2. \\
+\hline
+\mbox{\tt in}  & {\em p2} & a pcl\-::\-Point\-X\-Y\-Z to compare with p1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool for p1.\-z $<$ p2.\-z 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick. 
+\end{DoxyAuthor}

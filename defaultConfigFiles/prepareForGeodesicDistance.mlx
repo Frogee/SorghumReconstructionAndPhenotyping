@@ -1,0 +1,10 @@
+<!DOCTYPE FilterScript>
+<FilterScript>
+ <filter name="Remove Duplicate Faces"/>
+ <filter name="Remove Duplicated Vertex"/>
+ <filter name="Remove Isolated pieces (wrt Diameter)">
+  <Param type="RichAbsPerc" value="300.9055" min="0" name="MinComponentDiag" max="929.055"/>
+ </filter>
+ <filter name="Remove Faces from Non Manifold Edges"/>
+ <filter name="Remove Unreferenced Vertex"/>
+</FilterScript>

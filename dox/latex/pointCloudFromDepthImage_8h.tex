@@ -1,0 +1,142 @@
+\hypertarget{pointCloudFromDepthImage_8h}{\section{point\-Cloud\-From\-Depth\-Image.\-h File Reference}
+\label{pointCloudFromDepthImage_8h}\index{point\-Cloud\-From\-Depth\-Image.\-h@{point\-Cloud\-From\-Depth\-Image.\-h}}
+}
+{\ttfamily \#include $<$opencv2/core/core.\-hpp$>$}\\*
+{\ttfamily \#include $<$opencv2/highgui/highgui.\-hpp$>$}\\*
+{\ttfamily \#include $<$pcl/io/pcd\-\_\-io.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/point\-\_\-cloud.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}input\-Params.\-h\char`\"{}}\\*
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::vector$<$ cv\-::\-Mat $>$ \hyperlink{pointCloudFromDepthImage_8h_a94f7efe84e81ba5c22e42ecc01a3118f}{Vector\-Mats}
+\begin{DoxyCompactList}\small\item\em Convience typedef to represent a std\-::vector of open\-C\-V matrices. Can be used to hold a group of images that belong together. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{pointCloudFromDepthImage_8h_acd653c55fc86eb3f03dc2ededb8aef8d}{load\-Data\-From\-Image} (int argc, char $\ast$$\ast$argv, \hyperlink{pointCloudFromDepthImage_8h_a94f7efe84e81ba5c22e42ecc01a3118f}{Vector\-Mats} \&v\-\_\-mats, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\begin{DoxyCompactList}\small\item\em Given a list of file names representing .png images, will read in the images to open\-C\-V matrices. \end{DoxyCompactList}\item 
+void \hyperlink{pointCloudFromDepthImage_8h_a162a672d6d39aa056607b1147c1e8075}{write\-Point\-Clouds} (\hyperlink{pointCloudFromDepthImage_8h_a94f7efe84e81ba5c22e42ecc01a3118f}{Vector\-Mats} $\ast$v\-\_\-mats, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\begin{DoxyCompactList}\small\item\em Performs post processing on depth images provided as open\-C\-V matrices, and writes them to file as point cloud data (.pcd). \end{DoxyCompactList}\item 
+int \hyperlink{pointCloudFromDepthImage_8h_a869c2196368ed07824263493adbea2d2}{convert\-Depth\-Images\-To\-Point\-Cloud} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\begin{DoxyCompactList}\small\item\em Function called by \hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main()} to convert depth images from input file names to point clouds and then write the point clouds to disk. \end{DoxyCompactList}\item 
+int \hyperlink{pointCloudFromDepthImage_8h_a2ce7e8d6d7079b904e9be7b9ba755a2b}{remove\-Statistical\-Outliers} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\begin{DoxyCompactList}\small\item\em Function to filter points that are statistical outliers from the input point cloud. This needs to be refactored to its own header file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{pointCloudFromDepthImage_8h_a94f7efe84e81ba5c22e42ecc01a3118f}{\index{point\-Cloud\-From\-Depth\-Image.\-h@{point\-Cloud\-From\-Depth\-Image.\-h}!Vector\-Mats@{Vector\-Mats}}
+\index{Vector\-Mats@{Vector\-Mats}!pointCloudFromDepthImage.h@{point\-Cloud\-From\-Depth\-Image.\-h}}
+\subsubsection[{Vector\-Mats}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::vector$<$cv\-::\-Mat$>$ {\bf Vector\-Mats}}}\label{pointCloudFromDepthImage_8h_a94f7efe84e81ba5c22e42ecc01a3118f}
+
+
+Convience typedef to represent a std\-::vector of open\-C\-V matrices. Can be used to hold a group of images that belong together. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{pointCloudFromDepthImage_8h_a869c2196368ed07824263493adbea2d2}{\index{point\-Cloud\-From\-Depth\-Image.\-h@{point\-Cloud\-From\-Depth\-Image.\-h}!convert\-Depth\-Images\-To\-Point\-Cloud@{convert\-Depth\-Images\-To\-Point\-Cloud}}
+\index{convert\-Depth\-Images\-To\-Point\-Cloud@{convert\-Depth\-Images\-To\-Point\-Cloud}!pointCloudFromDepthImage.h@{point\-Cloud\-From\-Depth\-Image.\-h}}
+\subsubsection[{convert\-Depth\-Images\-To\-Point\-Cloud}]{\setlength{\rightskip}{0pt plus 5cm}int convert\-Depth\-Images\-To\-Point\-Cloud (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{pointCloudFromDepthImage_8h_a869c2196368ed07824263493adbea2d2}
+
+
+Function called by \hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main()} to convert depth images from input file names to point clouds and then write the point clouds to disk. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em argc} & the value of argc at runtime decremented by 2 (to account for removing the program name and the input .xml file) \\
+\hline
+\mbox{\tt in}  & {\em argv} & the argv given at runtime shifted by two indices (to account for removing the program name and the input .xml file). argv will have the called processing option in argv\mbox{[}0\mbox{]}. All remaining indices should be the the files paths to .png images. \\
+\hline
+\mbox{\tt in}  & {\em input\-Params} & the \hyperlink{classInputParameters}{Input\-Parameters} object that contains values to be used, read in from the input .xml file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick
+\end{DoxyAuthor}
+Currently, this only handles depth images. In the future we should be able to stitch R\-G\-B and depth images together
+
+Relevant sets of input parameters to convert depth images to point cloud\-: \hyperlink{classPassThroughFilterParameters}{Pass\-Through\-Filter\-Parameters} to remove non-\/interesting parts of the image that could harm downstream processing. \hyperlink{classStatisticalOutlierRemovalParameters}{Statistical\-Outlier\-Removal\-Parameters} to do a coarse cleanup of the point cloud. \hyperlink{classDebuggingParameters}{Debugging\-Parameters} to effect the verbosity of the output. \hypertarget{pointCloudFromDepthImage_8h_acd653c55fc86eb3f03dc2ededb8aef8d}{\index{point\-Cloud\-From\-Depth\-Image.\-h@{point\-Cloud\-From\-Depth\-Image.\-h}!load\-Data\-From\-Image@{load\-Data\-From\-Image}}
+\index{load\-Data\-From\-Image@{load\-Data\-From\-Image}!pointCloudFromDepthImage.h@{point\-Cloud\-From\-Depth\-Image.\-h}}
+\subsubsection[{load\-Data\-From\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void load\-Data\-From\-Image (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Vector\-Mats} \&}]{v\-\_\-mats, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{pointCloudFromDepthImage_8h_acd653c55fc86eb3f03dc2ededb8aef8d}
+
+
+Given a list of file names representing .png images, will read in the images to open\-C\-V matrices. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em argc} & the value of argc at runtime decremented by 2 (to account for removing the program name and the input .xml file) \\
+\hline
+\mbox{\tt in}  & {\em argv} & the argv given at runtime shifted by two indices (to account for removing the program name and the input .xml file). argv will have the called processing option in argv\mbox{[}0\mbox{]}. All remaining indices should be the the files paths to .png images. \\
+\hline
+\mbox{\tt in}  & {\em v\-\_\-mats} & the Vector\-Mats container in which all of the loaded image data will be stored as open\-C\-V matrices. \\
+\hline
+\mbox{\tt in}  & {\em input\-Params} & the \hyperlink{classInputParameters}{Input\-Parameters} object that contains values to be used, read in from the input .xml file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick
+\end{DoxyAuthor}
+Load .png images from a list of files names contained in argv, and load them to a vector of Open\-C\-V Mat \hypertarget{pointCloudFromDepthImage_8h_a2ce7e8d6d7079b904e9be7b9ba755a2b}{\index{point\-Cloud\-From\-Depth\-Image.\-h@{point\-Cloud\-From\-Depth\-Image.\-h}!remove\-Statistical\-Outliers@{remove\-Statistical\-Outliers}}
+\index{remove\-Statistical\-Outliers@{remove\-Statistical\-Outliers}!pointCloudFromDepthImage.h@{point\-Cloud\-From\-Depth\-Image.\-h}}
+\subsubsection[{remove\-Statistical\-Outliers}]{\setlength{\rightskip}{0pt plus 5cm}int remove\-Statistical\-Outliers (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{pointCloudFromDepthImage_8h_a2ce7e8d6d7079b904e9be7b9ba755a2b}
+
+
+Function to filter points that are statistical outliers from the input point cloud. This needs to be refactored to its own header file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em argc} & the value of argc at runtime decremented by 2 (to account for removing the program name and the input .xml file) \\
+\hline
+\mbox{\tt in}  & {\em argv} & the argv given at runtime shifted by two indices (to account for removing the program name and the input .xml file). argv will have the called processing option in argv\mbox{[}0\mbox{]}. argv\mbox{[}1\mbox{]} should contain the cloud to be filtered. \\
+\hline
+\mbox{\tt in}  & {\em input\-Params} & the \hyperlink{classInputParameters}{Input\-Parameters} object that contains values to be used, read in from the input .xml file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick
+\end{DoxyAuthor}
+This function was originally used to filter clouds when they were initially read in, but the filtering step has since moved to other places. This should be refactored to a more general filtratrion module. Region growing. This should help clean up portions that are disconnected from the plant. \begin{DoxyVerb}Finished Region growing.
+\end{DoxyVerb}
+ //////////////////////////////////////////////////\hypertarget{pointCloudFromDepthImage_8h_a162a672d6d39aa056607b1147c1e8075}{\index{point\-Cloud\-From\-Depth\-Image.\-h@{point\-Cloud\-From\-Depth\-Image.\-h}!write\-Point\-Clouds@{write\-Point\-Clouds}}
+\index{write\-Point\-Clouds@{write\-Point\-Clouds}!pointCloudFromDepthImage.h@{point\-Cloud\-From\-Depth\-Image.\-h}}
+\subsubsection[{write\-Point\-Clouds}]{\setlength{\rightskip}{0pt plus 5cm}void write\-Point\-Clouds (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector\-Mats} $\ast$}]{v\-\_\-mats, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{pointCloudFromDepthImage_8h_a162a672d6d39aa056607b1147c1e8075}
+
+
+Performs post processing on depth images provided as open\-C\-V matrices, and writes them to file as point cloud data (.pcd). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em v\-\_\-mats} & the Vector\-Mats container that contains depth image data to be processed and written to disk as point cloud data (.pcd). \\
+\hline
+\mbox{\tt in}  & {\em input\-Params} & the \hyperlink{classInputParameters}{Input\-Parameters} object that contains values to be used, read in from the input .xml file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick
+\end{DoxyAuthor}
+Convert a vector of Open\-C\-V Mat images to point clouds, and write them to file 

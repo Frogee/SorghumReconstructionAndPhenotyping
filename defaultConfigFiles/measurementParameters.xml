@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<InputParameters>
+	<ParameterSet name="CameraParameters" description="Settings for the PCL visualizer camera.">
+		<Parameter name="xCoordinateLocation" description="the x coordinate of the camera location" type="float" value="0"> </Parameter>
+		<Parameter name="yCoordinateLocation" description="the y coordinate of the camera location" type="float" value="1250"> </Parameter>
+		<Parameter name="zCoordinateLocation" description="the z coordinate of the camera location" type="float" value="500"> </Parameter>
+		<Parameter name="xViewComponent" description="the x component of the view point of the camera" type="float" value="0"> </Parameter>
+		<Parameter name="yViewComponent" description="the y component of the view point of the camera" type="float" value="0"> </Parameter>
+		<Parameter name="zViewComponent" description="the z component of the view point of the camera" type="float" value="300"> </Parameter>
+		<Parameter name="xUpComponent" description="the x component of the view up direction of the camera" type="float" value="0"> </Parameter>
+		<Parameter name="yUpComponent" description="the y component of the view up direction of the camera" type="float" value="0"> </Parameter>
+		<Parameter name="zUpComponent" description="the z component of the view up direction of the camera" type="float" value="1"> </Parameter>
+	</ParameterSet>
+	<ParameterSet name="NormalEstimation" description="Estimates normals of cloud">
+		<Parameter name="RadiusSearch" description="Radius of point search for normal estimation" type="float" value="30.0"> </Parameter>
+		<Parameter name="KSearch" description="Number of neighbors to consider for normal estimation" type="int" value="10"> </Parameter>
+	</ParameterSet>
+	<ParameterSet name="SACFromNormals" description="Segmentation by fitting a cylindrical model">
+		<Parameter name="MaxIterations" description="Maximum number of SAC iterations" type="int" value="25000"> </Parameter>
+		<Parameter name="DistanceThreshold" description="TODO: Add description" type="float" value="5.0"> 15.0
+			A value of 13 captures the entire stem of the large plant. 3.0 is decent for getting a hollow tube. 
+		</Parameter>
+		<Parameter name="NormalDistanceWeight" description="TODO: Add description" type="float" value="0.1"> 0.1
+			A value of 0.1 works for large plant
+		</Parameter>
+		<Parameter name="RadiusLimitsMin" description="Minimum radius of cylindrical model for SAC" type="float" value="1.0"> 130.0 </Parameter>
+		<Parameter name="RadiusLimitsMax" description="Maximum radius of cylindrical model for SAC" type="float" value="50.0"> 
+			The stem shouldn't be more than 2x this value in diameter (mm).	
+		</Parameter>
+		<Parameter name="SelectWithinDistanceValue" description="Distance around original inliers that additional points will be considered as inliers." type="float" value="10.0">
+			IS3620C_3: 17.0
+			IS3620C_3-2: 10.0
+			BTx623_1: 10.0
+			MultiplePlants: 20.0
+		</Parameter>
+	</ParameterSet>
+	<ParameterSet name="Debugging" description="Level of debugging output. 0 will prevent display of images. 1 will show images. 2 will pause images.">
+		<Parameter name="DebuggingLevel" description="Level of debugging output; 0 is lowest level" type="int" value="0"> </Parameter>
+	</ParameterSet>
+</InputParameters>

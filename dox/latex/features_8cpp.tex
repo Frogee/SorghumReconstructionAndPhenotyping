@@ -1,0 +1,126 @@
+\hypertarget{features_8cpp}{\section{features.\-cpp File Reference}
+\label{features_8cpp}\index{features.\-cpp@{features.\-cpp}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$assert.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include $<$opencv2/core/core.\-hpp$>$}\\*
+{\ttfamily \#include $<$opencv2/highgui/highgui.\-hpp$>$}\\*
+{\ttfamily \#include $<$pcl/common/distances.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/io/pcd\-\_\-io.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/io/ply\-\_\-io.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/point\-\_\-cloud.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/filters/passthrough.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/filters/statistical\-\_\-outlier\-\_\-removal.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/filters/voxel\-\_\-grid.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/features/normal\-\_\-3d\-\_\-omp.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/features/fpfh\-\_\-omp.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/visualization/pcl\-\_\-visualizer.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}point\-Cloud\-From\-Depth\-Image.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}input\-Params.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}features.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}logging\-Helper.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}tuple\-Triplet.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$pcl/console/parse.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/point\-\_\-types.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/segmentation/supervoxel\-\_\-clustering.\-h$>$}\\*
+{\ttfamily \#include $<$vtk\-Poly\-Line.\-h$>$}\\*
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef pcl\-::\-Point\-Normal \hyperlink{features_8cpp_addedd5f094ff6a9309d30e396aa0514b}{Point\-N\-T}
+\item 
+typedef \\*
+pcl\-::visualization\-::\-Point\-Cloud\-Color\-Handler\-Custom\\*
+$<$ pcl\-::\-Point\-X\-Y\-Z $>$ \hyperlink{features_8cpp_a2782f78115ae6b3e2449e6775607a98b}{Color\-Handler\-X\-Y\-Z}
+\item 
+typedef \\*
+pcl\-::visualization\-::\-Point\-Cloud\-Color\-Handler\-Custom\\*
+$<$ \hyperlink{features_8cpp_addedd5f094ff6a9309d30e396aa0514b}{Point\-N\-T} $>$ \hyperlink{features_8cpp_ab5a065c9a2e6dc92a1da2023ab564420}{Color\-Handler\-N\-T}
+\item 
+typedef pcl\-::\-Point\-X\-Y\-Z\-R\-G\-B\-A \hyperlink{features_8cpp_a42b086f8f138c5a6d16e8926efa9ba87}{Point\-T}
+\item 
+typedef pcl\-::\-Point\-Cloud$<$ \hyperlink{features_8cpp_a42b086f8f138c5a6d16e8926efa9ba87}{Point\-T} $>$ \hyperlink{features_8cpp_a65f84e52c22989ffdf2ff723b7f49185}{Point\-Cloud\-T}
+\item 
+typedef pcl\-::\-Point\-Cloud$<$ \hyperlink{features_8cpp_addedd5f094ff6a9309d30e396aa0514b}{Point\-N\-T} $>$ \hyperlink{features_8cpp_a4a54ea8a0169449932c0568eb11c8d42}{Point\-N\-Cloud\-T}
+\item 
+typedef pcl\-::\-Point\-X\-Y\-Z\-L \hyperlink{features_8cpp_a45fe7ec21f2cee2182f1e06e88c74fd1}{Point\-L\-T}
+\item 
+typedef pcl\-::\-Point\-Cloud$<$ \hyperlink{features_8cpp_a45fe7ec21f2cee2182f1e06e88c74fd1}{Point\-L\-T} $>$ \hyperlink{features_8cpp_af7b2437825cce66c16165e9ea308703c}{Point\-L\-Cloud\-T}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{features_8cpp_a9017882049a427b9d031b2b3da627be1}{compute\-Point\-Features} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\begin{DoxyCompactList}\small\item\em Computes point features for the input mesh. \end{DoxyCompactList}\item 
+void \hyperlink{features_8cpp_ab1347a269250fea4e4df80fedaec895f}{add\-Supervoxel\-Connections\-To\-Viewer} (\hyperlink{features_8cpp_a42b086f8f138c5a6d16e8926efa9ba87}{Point\-T} \&supervoxel\-\_\-center, \hyperlink{features_8cpp_a65f84e52c22989ffdf2ff723b7f49185}{Point\-Cloud\-T} \&adjacent\-\_\-supervoxel\-\_\-centers, std\-::string supervoxel\-\_\-name, pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$viewer, int viewport)
+\item 
+int \hyperlink{features_8cpp_aed8f95d9336444777eea5cbcbedd22e6}{supervoxel\-Construction} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{features_8cpp_ab5a065c9a2e6dc92a1da2023ab564420}{\index{features.\-cpp@{features.\-cpp}!Color\-Handler\-N\-T@{Color\-Handler\-N\-T}}
+\index{Color\-Handler\-N\-T@{Color\-Handler\-N\-T}!features.cpp@{features.\-cpp}}
+\subsubsection[{Color\-Handler\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}typedef pcl\-::visualization\-::\-Point\-Cloud\-Color\-Handler\-Custom$<${\bf Point\-N\-T}$>$ {\bf Color\-Handler\-N\-T}}}\label{features_8cpp_ab5a065c9a2e6dc92a1da2023ab564420}
+\hypertarget{features_8cpp_a2782f78115ae6b3e2449e6775607a98b}{\index{features.\-cpp@{features.\-cpp}!Color\-Handler\-X\-Y\-Z@{Color\-Handler\-X\-Y\-Z}}
+\index{Color\-Handler\-X\-Y\-Z@{Color\-Handler\-X\-Y\-Z}!features.cpp@{features.\-cpp}}
+\subsubsection[{Color\-Handler\-X\-Y\-Z}]{\setlength{\rightskip}{0pt plus 5cm}typedef pcl\-::visualization\-::\-Point\-Cloud\-Color\-Handler\-Custom$<$pcl\-::\-Point\-X\-Y\-Z$>$ {\bf Color\-Handler\-X\-Y\-Z}}}\label{features_8cpp_a2782f78115ae6b3e2449e6775607a98b}
+\hypertarget{features_8cpp_a65f84e52c22989ffdf2ff723b7f49185}{\index{features.\-cpp@{features.\-cpp}!Point\-Cloud\-T@{Point\-Cloud\-T}}
+\index{Point\-Cloud\-T@{Point\-Cloud\-T}!features.cpp@{features.\-cpp}}
+\subsubsection[{Point\-Cloud\-T}]{\setlength{\rightskip}{0pt plus 5cm}typedef pcl\-::\-Point\-Cloud$<${\bf Point\-T}$>$ {\bf Point\-Cloud\-T}}}\label{features_8cpp_a65f84e52c22989ffdf2ff723b7f49185}
+\hypertarget{features_8cpp_af7b2437825cce66c16165e9ea308703c}{\index{features.\-cpp@{features.\-cpp}!Point\-L\-Cloud\-T@{Point\-L\-Cloud\-T}}
+\index{Point\-L\-Cloud\-T@{Point\-L\-Cloud\-T}!features.cpp@{features.\-cpp}}
+\subsubsection[{Point\-L\-Cloud\-T}]{\setlength{\rightskip}{0pt plus 5cm}typedef pcl\-::\-Point\-Cloud$<${\bf Point\-L\-T}$>$ {\bf Point\-L\-Cloud\-T}}}\label{features_8cpp_af7b2437825cce66c16165e9ea308703c}
+\hypertarget{features_8cpp_a45fe7ec21f2cee2182f1e06e88c74fd1}{\index{features.\-cpp@{features.\-cpp}!Point\-L\-T@{Point\-L\-T}}
+\index{Point\-L\-T@{Point\-L\-T}!features.cpp@{features.\-cpp}}
+\subsubsection[{Point\-L\-T}]{\setlength{\rightskip}{0pt plus 5cm}typedef pcl\-::\-Point\-X\-Y\-Z\-L {\bf Point\-L\-T}}}\label{features_8cpp_a45fe7ec21f2cee2182f1e06e88c74fd1}
+\hypertarget{features_8cpp_a4a54ea8a0169449932c0568eb11c8d42}{\index{features.\-cpp@{features.\-cpp}!Point\-N\-Cloud\-T@{Point\-N\-Cloud\-T}}
+\index{Point\-N\-Cloud\-T@{Point\-N\-Cloud\-T}!features.cpp@{features.\-cpp}}
+\subsubsection[{Point\-N\-Cloud\-T}]{\setlength{\rightskip}{0pt plus 5cm}typedef pcl\-::\-Point\-Cloud$<${\bf Point\-N\-T}$>$ {\bf Point\-N\-Cloud\-T}}}\label{features_8cpp_a4a54ea8a0169449932c0568eb11c8d42}
+\hypertarget{features_8cpp_addedd5f094ff6a9309d30e396aa0514b}{\index{features.\-cpp@{features.\-cpp}!Point\-N\-T@{Point\-N\-T}}
+\index{Point\-N\-T@{Point\-N\-T}!features.cpp@{features.\-cpp}}
+\subsubsection[{Point\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}typedef pcl\-::\-Point\-Normal {\bf Point\-N\-T}}}\label{features_8cpp_addedd5f094ff6a9309d30e396aa0514b}
+\hypertarget{features_8cpp_a42b086f8f138c5a6d16e8926efa9ba87}{\index{features.\-cpp@{features.\-cpp}!Point\-T@{Point\-T}}
+\index{Point\-T@{Point\-T}!features.cpp@{features.\-cpp}}
+\subsubsection[{Point\-T}]{\setlength{\rightskip}{0pt plus 5cm}typedef pcl\-::\-Point\-X\-Y\-Z\-R\-G\-B\-A {\bf Point\-T}}}\label{features_8cpp_a42b086f8f138c5a6d16e8926efa9ba87}
+
+
+\subsection{Function Documentation}
+\hypertarget{features_8cpp_ab1347a269250fea4e4df80fedaec895f}{\index{features.\-cpp@{features.\-cpp}!add\-Supervoxel\-Connections\-To\-Viewer@{add\-Supervoxel\-Connections\-To\-Viewer}}
+\index{add\-Supervoxel\-Connections\-To\-Viewer@{add\-Supervoxel\-Connections\-To\-Viewer}!features.cpp@{features.\-cpp}}
+\subsubsection[{add\-Supervoxel\-Connections\-To\-Viewer}]{\setlength{\rightskip}{0pt plus 5cm}void add\-Supervoxel\-Connections\-To\-Viewer (
+\begin{DoxyParamCaption}
+\item[{{\bf Point\-T} \&}]{supervoxel\-\_\-center, }
+\item[{{\bf Point\-Cloud\-T} \&}]{adjacent\-\_\-supervoxel\-\_\-centers, }
+\item[{std\-::string}]{supervoxel\-\_\-name, }
+\item[{pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$}]{viewer, }
+\item[{int}]{viewport}
+\end{DoxyParamCaption}
+)}}\label{features_8cpp_ab1347a269250fea4e4df80fedaec895f}
+\hypertarget{features_8cpp_a9017882049a427b9d031b2b3da627be1}{\index{features.\-cpp@{features.\-cpp}!compute\-Point\-Features@{compute\-Point\-Features}}
+\index{compute\-Point\-Features@{compute\-Point\-Features}!features.cpp@{features.\-cpp}}
+\subsubsection[{compute\-Point\-Features}]{\setlength{\rightskip}{0pt plus 5cm}int compute\-Point\-Features (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{features_8cpp_a9017882049a427b9d031b2b3da627be1}
+
+
+Computes point features for the input mesh. 
+
+Compute point features for use with machine learning. If the point is colored cyan (0, 255, 255), the point will be labeled as S\-T\-E\-M, otherwise will be unlabeled. Features for all points are written to an output file (an .arf) that can be input to Multi\-Boost. Estimate features. We use two \char`\"{}scales\char`\"{} of features to try and improve identification.
+
+Without a doubt, the features calculated here can be (and should be) improved. Things to add\-: geodesic distance from bottom of plant? geodesic distance to center of plant? \hypertarget{features_8cpp_aed8f95d9336444777eea5cbcbedd22e6}{\index{features.\-cpp@{features.\-cpp}!supervoxel\-Construction@{supervoxel\-Construction}}
+\index{supervoxel\-Construction@{supervoxel\-Construction}!features.cpp@{features.\-cpp}}
+\subsubsection[{supervoxel\-Construction}]{\setlength{\rightskip}{0pt plus 5cm}int supervoxel\-Construction (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{features_8cpp_aed8f95d9336444777eea5cbcbedd22e6}

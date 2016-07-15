@@ -1,0 +1,86 @@
+\hypertarget{visualizer__helper_8cpp}{\section{visualizer\-\_\-helper.\-cpp File Reference}
+\label{visualizer__helper_8cpp}\index{visualizer\-\_\-helper.\-cpp@{visualizer\-\_\-helper.\-cpp}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$pcl/visualization/pcl\-\_\-visualizer.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/point\-\_\-types.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/\-Polygon\-Mesh.\-h$>$}\\*
+{\ttfamily \#include $<$vtk\-Poly\-Line.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}vtk\-Smart\-Pointer.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}segmentation.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}supervoxel\-\_\-construction.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}logging\-Helper.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{visualizer__helper_8cpp_aa07d5d6bb6003ad9c530e2774faaef22}{add\-Line\-Connection\-To\-Viewer} (pcl\-::\-Point\-X\-Y\-Z point\-Begin, pcl\-::\-Point\-X\-Y\-Z point\-End, std\-::string line\-Name, pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$viewer, int viewport)
+\item 
+void \hyperlink{visualizer__helper_8cpp_ad0f504ca4ff963f2f764c06ff89ab2eb}{add\-Supervoxel\-Adjacency\-To\-Viewer} (\hyperlink{classSupervoxelDataContainer}{Supervoxel\-Data\-Container} input\-Supervoxel\-Data, pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$viewer, int viewport)
+\item 
+int \hyperlink{visualizer__helper_8cpp_a61b07d8525eda23096d54bad254c50a9}{update\-Segmented\-Mesh\-In\-Viewer} (pcl\-::\-Polygon\-Mesh $\ast$current\-Mesh, \hyperlink{classPlantSegmentationDataContainer}{Plant\-Segmentation\-Data\-Container} input\-Segmentation\-Data, pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$visualizer, std\-::string mesh\-I\-D, int viewport)
+\begin{DoxyCompactList}\small\item\em Updates a mesh in a P\-C\-L\-Visualizer given the mesh and segmentation data for the mesh. \end{DoxyCompactList}\item 
+int \hyperlink{visualizer__helper_8cpp_a1d08e7d4a3ef93c0b15ae5ae5480e466}{screenshot\-P\-L\-Y} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{visualizer__helper_8cpp_aa07d5d6bb6003ad9c530e2774faaef22}{\index{visualizer\-\_\-helper.\-cpp@{visualizer\-\_\-helper.\-cpp}!add\-Line\-Connection\-To\-Viewer@{add\-Line\-Connection\-To\-Viewer}}
+\index{add\-Line\-Connection\-To\-Viewer@{add\-Line\-Connection\-To\-Viewer}!visualizer_helper.cpp@{visualizer\-\_\-helper.\-cpp}}
+\subsubsection[{add\-Line\-Connection\-To\-Viewer}]{\setlength{\rightskip}{0pt plus 5cm}void add\-Line\-Connection\-To\-Viewer (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Point\-X\-Y\-Z}]{point\-Begin, }
+\item[{pcl\-::\-Point\-X\-Y\-Z}]{point\-End, }
+\item[{std\-::string}]{line\-Name, }
+\item[{pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$}]{viewer, }
+\item[{int}]{viewport}
+\end{DoxyParamCaption}
+)}}\label{visualizer__helper_8cpp_aa07d5d6bb6003ad9c530e2774faaef22}
+\hypertarget{visualizer__helper_8cpp_ad0f504ca4ff963f2f764c06ff89ab2eb}{\index{visualizer\-\_\-helper.\-cpp@{visualizer\-\_\-helper.\-cpp}!add\-Supervoxel\-Adjacency\-To\-Viewer@{add\-Supervoxel\-Adjacency\-To\-Viewer}}
+\index{add\-Supervoxel\-Adjacency\-To\-Viewer@{add\-Supervoxel\-Adjacency\-To\-Viewer}!visualizer_helper.cpp@{visualizer\-\_\-helper.\-cpp}}
+\subsubsection[{add\-Supervoxel\-Adjacency\-To\-Viewer}]{\setlength{\rightskip}{0pt plus 5cm}void add\-Supervoxel\-Adjacency\-To\-Viewer (
+\begin{DoxyParamCaption}
+\item[{{\bf Supervoxel\-Data\-Container}}]{input\-Supervoxel\-Data, }
+\item[{pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$}]{viewer, }
+\item[{int}]{viewport}
+\end{DoxyParamCaption}
+)}}\label{visualizer__helper_8cpp_ad0f504ca4ff963f2f764c06ff89ab2eb}
+\hypertarget{visualizer__helper_8cpp_a1d08e7d4a3ef93c0b15ae5ae5480e466}{\index{visualizer\-\_\-helper.\-cpp@{visualizer\-\_\-helper.\-cpp}!screenshot\-P\-L\-Y@{screenshot\-P\-L\-Y}}
+\index{screenshot\-P\-L\-Y@{screenshot\-P\-L\-Y}!visualizer_helper.cpp@{visualizer\-\_\-helper.\-cpp}}
+\subsubsection[{screenshot\-P\-L\-Y}]{\setlength{\rightskip}{0pt plus 5cm}int screenshot\-P\-L\-Y (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{visualizer__helper_8cpp_a1d08e7d4a3ef93c0b15ae5ae5480e466}
+\hypertarget{visualizer__helper_8cpp_a61b07d8525eda23096d54bad254c50a9}{\index{visualizer\-\_\-helper.\-cpp@{visualizer\-\_\-helper.\-cpp}!update\-Segmented\-Mesh\-In\-Viewer@{update\-Segmented\-Mesh\-In\-Viewer}}
+\index{update\-Segmented\-Mesh\-In\-Viewer@{update\-Segmented\-Mesh\-In\-Viewer}!visualizer_helper.cpp@{visualizer\-\_\-helper.\-cpp}}
+\subsubsection[{update\-Segmented\-Mesh\-In\-Viewer}]{\setlength{\rightskip}{0pt plus 5cm}int update\-Segmented\-Mesh\-In\-Viewer (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Polygon\-Mesh $\ast$}]{current\-Mesh, }
+\item[{{\bf Plant\-Segmentation\-Data\-Container}}]{input\-Segmentation\-Data, }
+\item[{pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$}]{visualizer, }
+\item[{std\-::string}]{mesh\-I\-D, }
+\item[{int}]{viewport}
+\end{DoxyParamCaption}
+)}}\label{visualizer__helper_8cpp_a61b07d8525eda23096d54bad254c50a9}
+
+
+Updates a mesh in a P\-C\-L\-Visualizer given the mesh and segmentation data for the mesh. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em current\-Mesh} & pointer to the Polygon\-Mesh that will be used to update the mesh. \\
+\hline
+\mbox{\tt in}  & {\em input\-Segmentation\-Data} & \hyperlink{classPlantSegmentationDataContainer}{Plant\-Segmentation\-Data\-Container} that holds the segmentation information. \\
+\hline
+\mbox{\tt in}  & {\em visualizer} & pointer to the P\-C\-L\-Visualizer to be used. \\
+\hline
+\mbox{\tt in}  & {\em viewport} & integer referring to the viewport to be used. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick 
+\end{DoxyAuthor}

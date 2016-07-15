@@ -1,0 +1,77 @@
+\hypertarget{SampleConsensusPrerejective_8cpp}{\section{Sample\-Consensus\-Prerejective.\-cpp File Reference}
+\label{SampleConsensusPrerejective_8cpp}\index{Sample\-Consensus\-Prerejective.\-cpp@{Sample\-Consensus\-Prerejective.\-cpp}}
+}
+{\ttfamily \#include $<$Eigen/\-Core$>$}\\*
+{\ttfamily \#include $<$pcl/point\-\_\-types.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/point\-\_\-cloud.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/common/time.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/console/print.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/features/normal\-\_\-3d\-\_\-omp.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/features/fpfh\-\_\-omp.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/io/pcd\-\_\-io.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/io/ply\-\_\-io.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/registration/sample\-\_\-consensus\-\_\-prerejective.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/visualization/pcl\-\_\-visualizer.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/common/common.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/filters/random\-\_\-sample.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/filters/voxel\-\_\-grid.\-h$>$}\\*
+{\ttfamily \#include $<$pcl/filters/passthrough.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}input\-Params.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}logging\-Helper.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{SampleConsensusPrerejective_8cpp_acb60632d2d3c3c4869dd087fc65b9e1d}{register\-Point\-Clouds\-R\-A\-N\-S\-A\-C\-Prerejective} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+Eigen\-::\-Matrix4f \hyperlink{SampleConsensusPrerejective_8cpp_aaf07f3b73beffad11546f2b32990ba4b}{return\-Pairwise\-Registration\-Transform\-Using\-R\-A\-N\-S\-A\-C} (pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr target, pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr source, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params, pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$visualizer)
+\begin{DoxyCompactList}\small\item\em Performs pre-\/rejective R\-A\-N\-S\-A\-C on two point clouds and returns the transform that transforms the source to the target. \end{DoxyCompactList}\item 
+int \hyperlink{SampleConsensusPrerejective_8cpp_aee127ad6249affa04f58e89847972cd7}{register\-Kinect\-Fusion\-P\-L\-Ys\-R\-A\-N\-S\-A\-C} (int argc, char $\ast$$\ast$argv, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{SampleConsensusPrerejective_8cpp_a7d4110d966533f5f0fa54b275abdc7a4}{global\-\_\-visualizer\-Initialized} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{SampleConsensusPrerejective_8cpp_aee127ad6249affa04f58e89847972cd7}{\index{Sample\-Consensus\-Prerejective.\-cpp@{Sample\-Consensus\-Prerejective.\-cpp}!register\-Kinect\-Fusion\-P\-L\-Ys\-R\-A\-N\-S\-A\-C@{register\-Kinect\-Fusion\-P\-L\-Ys\-R\-A\-N\-S\-A\-C}}
+\index{register\-Kinect\-Fusion\-P\-L\-Ys\-R\-A\-N\-S\-A\-C@{register\-Kinect\-Fusion\-P\-L\-Ys\-R\-A\-N\-S\-A\-C}!SampleConsensusPrerejective.cpp@{Sample\-Consensus\-Prerejective.\-cpp}}
+\subsubsection[{register\-Kinect\-Fusion\-P\-L\-Ys\-R\-A\-N\-S\-A\-C}]{\setlength{\rightskip}{0pt plus 5cm}int register\-Kinect\-Fusion\-P\-L\-Ys\-R\-A\-N\-S\-A\-C (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{SampleConsensusPrerejective_8cpp_aee127ad6249affa04f58e89847972cd7}
+\hypertarget{SampleConsensusPrerejective_8cpp_acb60632d2d3c3c4869dd087fc65b9e1d}{\index{Sample\-Consensus\-Prerejective.\-cpp@{Sample\-Consensus\-Prerejective.\-cpp}!register\-Point\-Clouds\-R\-A\-N\-S\-A\-C\-Prerejective@{register\-Point\-Clouds\-R\-A\-N\-S\-A\-C\-Prerejective}}
+\index{register\-Point\-Clouds\-R\-A\-N\-S\-A\-C\-Prerejective@{register\-Point\-Clouds\-R\-A\-N\-S\-A\-C\-Prerejective}!SampleConsensusPrerejective.cpp@{Sample\-Consensus\-Prerejective.\-cpp}}
+\subsubsection[{register\-Point\-Clouds\-R\-A\-N\-S\-A\-C\-Prerejective}]{\setlength{\rightskip}{0pt plus 5cm}int register\-Point\-Clouds\-R\-A\-N\-S\-A\-C\-Prerejective (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{SampleConsensusPrerejective_8cpp_acb60632d2d3c3c4869dd087fc65b9e1d}
+Align a rigid object to a scene with clutter and occlusions. Most of this code has its origins from here\-: \href{http://pointclouds.org/documentation/tutorials/alignment_prerejective.php#alignment-prerejective}{\tt http\-://pointclouds.\-org/documentation/tutorials/alignment\-\_\-prerejective.\-php\#alignment-\/prerejective} T\-O\-D\-O\-: Here we also want to add a pass through filter to grossly cut off the pot for scene and object. For small samples, the pot can ruin registration. We should have a filtration header and .cpp for pass through and stat outlier removal.
+
+End pass through filter \hypertarget{SampleConsensusPrerejective_8cpp_aaf07f3b73beffad11546f2b32990ba4b}{\index{Sample\-Consensus\-Prerejective.\-cpp@{Sample\-Consensus\-Prerejective.\-cpp}!return\-Pairwise\-Registration\-Transform\-Using\-R\-A\-N\-S\-A\-C@{return\-Pairwise\-Registration\-Transform\-Using\-R\-A\-N\-S\-A\-C}}
+\index{return\-Pairwise\-Registration\-Transform\-Using\-R\-A\-N\-S\-A\-C@{return\-Pairwise\-Registration\-Transform\-Using\-R\-A\-N\-S\-A\-C}!SampleConsensusPrerejective.cpp@{Sample\-Consensus\-Prerejective.\-cpp}}
+\subsubsection[{return\-Pairwise\-Registration\-Transform\-Using\-R\-A\-N\-S\-A\-C}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\-::\-Matrix4f return\-Pairwise\-Registration\-Transform\-Using\-R\-A\-N\-S\-A\-C (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{target, }
+\item[{pcl\-::\-Point\-Cloud$<$ pcl\-::\-Point\-X\-Y\-Z $>$\-::Ptr}]{source, }
+\item[{{\bf Input\-Parameters}}]{input\-Params, }
+\item[{pcl\-::visualization\-::\-P\-C\-L\-Visualizer $\ast$}]{visualizer}
+\end{DoxyParamCaption}
+)}}\label{SampleConsensusPrerejective_8cpp_aaf07f3b73beffad11546f2b32990ba4b}
+
+
+Performs pre-\/rejective R\-A\-N\-S\-A\-C on two point clouds and returns the transform that transforms the source to the target. 
+
+This function is meant to take a pair of clouds and return a transform to register them using prerejective R\-A\-N\-S\-A\-C. The target is kept fixed and the transform that is returned will transform the source to the target. much of the code for this function has origins from here\-: \href{http://pointclouds.org/documentation/tutorials/alignment_prerejective.php#alignment-prerejective}{\tt http\-://pointclouds.\-org/documentation/tutorials/alignment\-\_\-prerejective.\-php\#alignment-\/prerejective} 
+
+\subsection{Variable Documentation}
+\hypertarget{SampleConsensusPrerejective_8cpp_a7d4110d966533f5f0fa54b275abdc7a4}{\index{Sample\-Consensus\-Prerejective.\-cpp@{Sample\-Consensus\-Prerejective.\-cpp}!global\-\_\-visualizer\-Initialized@{global\-\_\-visualizer\-Initialized}}
+\index{global\-\_\-visualizer\-Initialized@{global\-\_\-visualizer\-Initialized}!SampleConsensusPrerejective.cpp@{Sample\-Consensus\-Prerejective.\-cpp}}
+\subsubsection[{global\-\_\-visualizer\-Initialized}]{\setlength{\rightskip}{0pt plus 5cm}bool global\-\_\-visualizer\-Initialized = false}}\label{SampleConsensusPrerejective_8cpp_a7d4110d966533f5f0fa54b275abdc7a4}

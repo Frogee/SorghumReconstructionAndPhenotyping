@@ -1,0 +1,226 @@
+\hypertarget{classDijkstraPathfinder}{\section{Dijkstra\-Pathfinder Class Reference}
+\label{classDijkstraPathfinder}\index{Dijkstra\-Pathfinder@{Dijkstra\-Pathfinder}}
+}
+
+
+Class to hold content for pathfinding across a graph.  
+
+
+
+
+{\ttfamily \#include $<$dijkstra\-Pathfinding.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDijkstraPathfinder_a635adf041b1674db9227b7a942829d2c}{Dijkstra\-Pathfinder} ()
+\item 
+\hyperlink{classDijkstraPathfinder_a523612f9992907e5b80cc9930df82557}{Dijkstra\-Pathfinder} (\hyperlink{classGraph}{Graph} input\-Graph\-To\-Traverse)
+\item 
+\hyperlink{classDijkstraPathfinder_aa47f02c0cfde1806df53ed11e909d3d1}{$\sim$\-Dijkstra\-Pathfinder} ()
+\item 
+int \hyperlink{classDijkstraPathfinder_a64300c90245030665a7d828e16269e43}{set\-Graph\-To\-Traverse} (\hyperlink{classGraph}{Graph} input\-Graph\-To\-Traverse)
+\item 
+\hyperlink{classPathDataContainer}{Path\-Data\-Container} \hyperlink{classDijkstraPathfinder_a42b24acdc0f7bd8702bb30228ebf630e}{find\-Path\-To\-Furthest\-Unsegmented\-Supervoxel} (int input\-Label, \hyperlink{classPlantSegmentationDataContainer}{Plant\-Segmentation\-Data\-Container} $\ast$input\-Segmentation\-Data)
+\item 
+\hyperlink{classPathDataContainer}{Path\-Data\-Container} \hyperlink{classDijkstraPathfinder_a168705fdccb09a13eedde09c0e2e7ad4}{find\-Path\-To\-Closest\-Unsegmented\-Supervoxel} (int input\-Label, \hyperlink{classPlantSegmentationDataContainer}{Plant\-Segmentation\-Data\-Container} $\ast$input\-Segmentation\-Data)
+\item 
+\hyperlink{classPathDataContainer}{Path\-Data\-Container} \hyperlink{classDijkstraPathfinder_a610b7ecdd16501d689c5aa5b35528310}{find\-Path\-From\-Source\-Label\-To\-Unsegmented\-Connected\-Label\-That\-Is\-Closest\-To\-Unconnected\-Label} (uint32\-\_\-t input\-Source\-Label, uint32\-\_\-t input\-Target\-Label, \hyperlink{classPlantSegmentationDataContainer}{Plant\-Segmentation\-Data\-Container} $\ast$input\-Segmentation\-Data)
+\item 
+\hyperlink{classPathDataContainer}{Path\-Data\-Container} \hyperlink{classDijkstraPathfinder_a0b7ef55a95ad75edc86d4dcc4ea01fed}{find\-Path\-To\-Closest\-Stem\-Point} (uint32\-\_\-t input\-Label, \hyperlink{classPlantSegmentationDataContainer}{Plant\-Segmentation\-Data\-Container} $\ast$input\-Segmentation\-Data)
+\item 
+\hyperlink{classPathDataContainer}{Path\-Data\-Container} \hyperlink{classDijkstraPathfinder_a1a7fccaf7fd61e0a94e04d4b42b9e67c}{find\-Path\-To\-Lowest\-And\-Closest\-Stem\-Point} (uint32\-\_\-t input\-Label, \hyperlink{classPlantSegmentationDataContainer}{Plant\-Segmentation\-Data\-Container} $\ast$input\-Segmentation\-Data)
+\item 
+\hyperlink{classPathDataContainer}{Path\-Data\-Container} \hyperlink{classDijkstraPathfinder_a435466df93be2dfd714820f9749a6d48}{find\-Path\-For\-Isolated\-Tip} (uint32\-\_\-t input\-Label, \hyperlink{classPlantSegmentationDataContainer}{Plant\-Segmentation\-Data\-Container} $\ast$input\-Segmentation\-Data, \hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\item 
+\hyperlink{classPathDataContainer}{Path\-Data\-Container} \hyperlink{classDijkstraPathfinder_a0911d1e140a05e751634298855c03c31}{find\-Path\-To\-Most\-Distant\-Node\-From\-Input\-Source} (uint32\-\_\-t input\-Label)
+\item 
+uint32\-\_\-t \hyperlink{classDijkstraPathfinder_a96521864f85917d6ef56eef84173abd3}{return\-Index\-Of\-Input\-Subset\-Mesh\-Closest\-To\-Stem\-Bottom} (pcl\-::\-Polygon\-Mesh $\ast$input\-Leaf\-Mesh, pcl\-::\-Polygon\-Mesh $\ast$input\-Segmented\-Mesh)
+\item 
+\hyperlink{classPathDataContainer}{Path\-Data\-Container} \hyperlink{classDijkstraPathfinder_a9607a23481b2913e9b67ff4c271a65dc}{find\-Path\-Between\-Two\-Labels} (uint32\-\_\-t input\-Source\-Label, uint32\-\_\-t input\-Target\-Label)
+\item 
+\hyperlink{classPathDataContainer}{Path\-Data\-Container} \hyperlink{classDijkstraPathfinder_aec108eda94566ce2b25fd0b3dd3b0c87}{find\-Geodesic\-Diameter} ()
+\item 
+float \hyperlink{classDijkstraPathfinder_a6b0047285a23902222718b16b97012b8}{get\-Z\-Coordinate\-Of\-First\-Stem\-Adjacency} (uint32\-\_\-t input\-Source\-Label, uint32\-\_\-t input\-Stem\-Target, \hyperlink{classPlantSegmentationDataContainer}{Plant\-Segmentation\-Data\-Container} $\ast$input\-Segmentation\-Data)
+\item 
+\hyperlink{classGraph}{Graph} \hyperlink{classDijkstraPathfinder_ab1b156fb3b6bd0e1f0cd0ee81f070881}{get\-Graph\-To\-Traverse} ()
+\item 
+std\-::vector$<$ uint32\-\_\-t $>$ \hyperlink{classDijkstraPathfinder_acd588e3cb888ade9e38005a9b7042462}{return\-Labels\-Of\-Largest\-Connected\-Set} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classDijkstraPathfinder_a2758373bc41b0b23152d4dafcccb74bf}{compute\-Paths} (\hyperlink{dijkstraPathfinding_8h_af4d7cdf2478501dc15b627a84f3f4073}{vertex\-\_\-t} source, const \hyperlink{dijkstraPathfinding_8h_a8c1d6029622c85b0c047b344a90a6f84}{adjacency\-\_\-list\-\_\-t} \&adjacency\-\_\-list, std\-::vector$<$ \hyperlink{dijkstraPathfinding_8h_ac7889bf9b3596f63c57011af217212dd}{weight\-\_\-t} $>$ \&min\-\_\-distance, std\-::vector$<$ \hyperlink{dijkstraPathfinding_8h_af4d7cdf2478501dc15b627a84f3f4073}{vertex\-\_\-t} $>$ \&previous)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGraph}{Graph} \hyperlink{classDijkstraPathfinder_ab33602aec0ee4c2060def95da74b09a7}{\-\_\-graph\-To\-Traverse}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to hold content for pathfinding across a graph. 
+
+This class does most of the heavy lifting for pathfinding with respect to segmentation. \begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDijkstraPathfinder_a635adf041b1674db9227b7a942829d2c}{\index{Dijkstra\-Pathfinder@{Dijkstra\-Pathfinder}!Dijkstra\-Pathfinder@{Dijkstra\-Pathfinder}}
+\index{Dijkstra\-Pathfinder@{Dijkstra\-Pathfinder}!DijkstraPathfinder@{Dijkstra\-Pathfinder}}
+\subsubsection[{Dijkstra\-Pathfinder}]{\setlength{\rightskip}{0pt plus 5cm}Dijkstra\-Pathfinder\-::\-Dijkstra\-Pathfinder (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDijkstraPathfinder_a635adf041b1674db9227b7a942829d2c}
+\hyperlink{classDijkstraPathfinder}{Dijkstra\-Pathfinder} class \hypertarget{classDijkstraPathfinder_a523612f9992907e5b80cc9930df82557}{\index{Dijkstra\-Pathfinder@{Dijkstra\-Pathfinder}!Dijkstra\-Pathfinder@{Dijkstra\-Pathfinder}}
+\index{Dijkstra\-Pathfinder@{Dijkstra\-Pathfinder}!DijkstraPathfinder@{Dijkstra\-Pathfinder}}
+\subsubsection[{Dijkstra\-Pathfinder}]{\setlength{\rightskip}{0pt plus 5cm}Dijkstra\-Pathfinder\-::\-Dijkstra\-Pathfinder (
+\begin{DoxyParamCaption}
+\item[{{\bf Graph}}]{input\-Graph\-To\-Traverse}
+\end{DoxyParamCaption}
+)}}\label{classDijkstraPathfinder_a523612f9992907e5b80cc9930df82557}
+\hypertarget{classDijkstraPathfinder_aa47f02c0cfde1806df53ed11e909d3d1}{\index{Dijkstra\-Pathfinder@{Dijkstra\-Pathfinder}!$\sim$\-Dijkstra\-Pathfinder@{$\sim$\-Dijkstra\-Pathfinder}}
+\index{$\sim$\-Dijkstra\-Pathfinder@{$\sim$\-Dijkstra\-Pathfinder}!DijkstraPathfinder@{Dijkstra\-Pathfinder}}
+\subsubsection[{$\sim$\-Dijkstra\-Pathfinder}]{\setlength{\rightskip}{0pt plus 5cm}Dijkstra\-Pathfinder\-::$\sim$\-Dijkstra\-Pathfinder (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDijkstraPathfinder_aa47f02c0cfde1806df53ed11e909d3d1}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDijkstraPathfinder_a2758373bc41b0b23152d4dafcccb74bf}{\index{Dijkstra\-Pathfinder@{Dijkstra\-Pathfinder}!compute\-Paths@{compute\-Paths}}
+\index{compute\-Paths@{compute\-Paths}!DijkstraPathfinder@{Dijkstra\-Pathfinder}}
+\subsubsection[{compute\-Paths}]{\setlength{\rightskip}{0pt plus 5cm}void Dijkstra\-Pathfinder\-::compute\-Paths (
+\begin{DoxyParamCaption}
+\item[{{\bf vertex\-\_\-t}}]{source, }
+\item[{const {\bf adjacency\-\_\-list\-\_\-t} \&}]{adjacency\-\_\-list, }
+\item[{std\-::vector$<$ {\bf weight\-\_\-t} $>$ \&}]{min\-\_\-distance, }
+\item[{std\-::vector$<$ {\bf vertex\-\_\-t} $>$ \&}]{previous}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classDijkstraPathfinder_a2758373bc41b0b23152d4dafcccb74bf}
+\hypertarget{classDijkstraPathfinder_aec108eda94566ce2b25fd0b3dd3b0c87}{\index{Dijkstra\-Pathfinder@{Dijkstra\-Pathfinder}!find\-Geodesic\-Diameter@{find\-Geodesic\-Diameter}}
+\index{find\-Geodesic\-Diameter@{find\-Geodesic\-Diameter}!DijkstraPathfinder@{Dijkstra\-Pathfinder}}
+\subsubsection[{find\-Geodesic\-Diameter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Path\-Data\-Container} Dijkstra\-Pathfinder\-::find\-Geodesic\-Diameter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDijkstraPathfinder_aec108eda94566ce2b25fd0b3dd3b0c87}
+I'm not sure if this is guaranteed to find the geodesic diameter, but I suspect it's a decent approximation. We pick an arbitrary node on the graph, and then travel to the most distant node from it. We set that node as the source, then find the most distant node from it. \hypertarget{classDijkstraPathfinder_a9607a23481b2913e9b67ff4c271a65dc}{\index{Dijkstra\-Pathfinder@{Dijkstra\-Pathfinder}!find\-Path\-Between\-Two\-Labels@{find\-Path\-Between\-Two\-Labels}}
+\index{find\-Path\-Between\-Two\-Labels@{find\-Path\-Between\-Two\-Labels}!DijkstraPathfinder@{Dijkstra\-Pathfinder}}
+\subsubsection[{find\-Path\-Between\-Two\-Labels}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Path\-Data\-Container} Dijkstra\-Pathfinder\-::find\-Path\-Between\-Two\-Labels (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{input\-Source\-Label, }
+\item[{uint32\-\_\-t}]{input\-Target\-Label}
+\end{DoxyParamCaption}
+)}}\label{classDijkstraPathfinder_a9607a23481b2913e9b67ff4c271a65dc}
+\hypertarget{classDijkstraPathfinder_a435466df93be2dfd714820f9749a6d48}{\index{Dijkstra\-Pathfinder@{Dijkstra\-Pathfinder}!find\-Path\-For\-Isolated\-Tip@{find\-Path\-For\-Isolated\-Tip}}
+\index{find\-Path\-For\-Isolated\-Tip@{find\-Path\-For\-Isolated\-Tip}!DijkstraPathfinder@{Dijkstra\-Pathfinder}}
+\subsubsection[{find\-Path\-For\-Isolated\-Tip}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Path\-Data\-Container} Dijkstra\-Pathfinder\-::find\-Path\-For\-Isolated\-Tip (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{input\-Label, }
+\item[{{\bf Plant\-Segmentation\-Data\-Container} $\ast$}]{input\-Segmentation\-Data, }
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{classDijkstraPathfinder_a435466df93be2dfd714820f9749a6d48}
+We've determined if there is an unsegmented adjacency. Now we handle each individual case. \hypertarget{classDijkstraPathfinder_a610b7ecdd16501d689c5aa5b35528310}{\index{Dijkstra\-Pathfinder@{Dijkstra\-Pathfinder}!find\-Path\-From\-Source\-Label\-To\-Unsegmented\-Connected\-Label\-That\-Is\-Closest\-To\-Unconnected\-Label@{find\-Path\-From\-Source\-Label\-To\-Unsegmented\-Connected\-Label\-That\-Is\-Closest\-To\-Unconnected\-Label}}
+\index{find\-Path\-From\-Source\-Label\-To\-Unsegmented\-Connected\-Label\-That\-Is\-Closest\-To\-Unconnected\-Label@{find\-Path\-From\-Source\-Label\-To\-Unsegmented\-Connected\-Label\-That\-Is\-Closest\-To\-Unconnected\-Label}!DijkstraPathfinder@{Dijkstra\-Pathfinder}}
+\subsubsection[{find\-Path\-From\-Source\-Label\-To\-Unsegmented\-Connected\-Label\-That\-Is\-Closest\-To\-Unconnected\-Label}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Path\-Data\-Container} Dijkstra\-Pathfinder\-::find\-Path\-From\-Source\-Label\-To\-Unsegmented\-Connected\-Label\-That\-Is\-Closest\-To\-Unconnected\-Label (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{input\-Source\-Label, }
+\item[{uint32\-\_\-t}]{input\-Target\-Label, }
+\item[{{\bf Plant\-Segmentation\-Data\-Container} $\ast$}]{input\-Segmentation\-Data}
+\end{DoxyParamCaption}
+)}}\label{classDijkstraPathfinder_a610b7ecdd16501d689c5aa5b35528310}
+\hypertarget{classDijkstraPathfinder_a0b7ef55a95ad75edc86d4dcc4ea01fed}{\index{Dijkstra\-Pathfinder@{Dijkstra\-Pathfinder}!find\-Path\-To\-Closest\-Stem\-Point@{find\-Path\-To\-Closest\-Stem\-Point}}
+\index{find\-Path\-To\-Closest\-Stem\-Point@{find\-Path\-To\-Closest\-Stem\-Point}!DijkstraPathfinder@{Dijkstra\-Pathfinder}}
+\subsubsection[{find\-Path\-To\-Closest\-Stem\-Point}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Path\-Data\-Container} Dijkstra\-Pathfinder\-::find\-Path\-To\-Closest\-Stem\-Point (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{input\-Label, }
+\item[{{\bf Plant\-Segmentation\-Data\-Container} $\ast$}]{input\-Segmentation\-Data}
+\end{DoxyParamCaption}
+)}}\label{classDijkstraPathfinder_a0b7ef55a95ad75edc86d4dcc4ea01fed}
+\hypertarget{classDijkstraPathfinder_a168705fdccb09a13eedde09c0e2e7ad4}{\index{Dijkstra\-Pathfinder@{Dijkstra\-Pathfinder}!find\-Path\-To\-Closest\-Unsegmented\-Supervoxel@{find\-Path\-To\-Closest\-Unsegmented\-Supervoxel}}
+\index{find\-Path\-To\-Closest\-Unsegmented\-Supervoxel@{find\-Path\-To\-Closest\-Unsegmented\-Supervoxel}!DijkstraPathfinder@{Dijkstra\-Pathfinder}}
+\subsubsection[{find\-Path\-To\-Closest\-Unsegmented\-Supervoxel}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Path\-Data\-Container} Dijkstra\-Pathfinder\-::find\-Path\-To\-Closest\-Unsegmented\-Supervoxel (
+\begin{DoxyParamCaption}
+\item[{int}]{input\-Label, }
+\item[{{\bf Plant\-Segmentation\-Data\-Container} $\ast$}]{input\-Segmentation\-Data}
+\end{DoxyParamCaption}
+)}}\label{classDijkstraPathfinder_a168705fdccb09a13eedde09c0e2e7ad4}
+\hypertarget{classDijkstraPathfinder_a42b24acdc0f7bd8702bb30228ebf630e}{\index{Dijkstra\-Pathfinder@{Dijkstra\-Pathfinder}!find\-Path\-To\-Furthest\-Unsegmented\-Supervoxel@{find\-Path\-To\-Furthest\-Unsegmented\-Supervoxel}}
+\index{find\-Path\-To\-Furthest\-Unsegmented\-Supervoxel@{find\-Path\-To\-Furthest\-Unsegmented\-Supervoxel}!DijkstraPathfinder@{Dijkstra\-Pathfinder}}
+\subsubsection[{find\-Path\-To\-Furthest\-Unsegmented\-Supervoxel}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Path\-Data\-Container} Dijkstra\-Pathfinder\-::find\-Path\-To\-Furthest\-Unsegmented\-Supervoxel (
+\begin{DoxyParamCaption}
+\item[{int}]{input\-Label, }
+\item[{{\bf Plant\-Segmentation\-Data\-Container} $\ast$}]{input\-Segmentation\-Data}
+\end{DoxyParamCaption}
+)}}\label{classDijkstraPathfinder_a42b24acdc0f7bd8702bb30228ebf630e}
+\hypertarget{classDijkstraPathfinder_a1a7fccaf7fd61e0a94e04d4b42b9e67c}{\index{Dijkstra\-Pathfinder@{Dijkstra\-Pathfinder}!find\-Path\-To\-Lowest\-And\-Closest\-Stem\-Point@{find\-Path\-To\-Lowest\-And\-Closest\-Stem\-Point}}
+\index{find\-Path\-To\-Lowest\-And\-Closest\-Stem\-Point@{find\-Path\-To\-Lowest\-And\-Closest\-Stem\-Point}!DijkstraPathfinder@{Dijkstra\-Pathfinder}}
+\subsubsection[{find\-Path\-To\-Lowest\-And\-Closest\-Stem\-Point}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Path\-Data\-Container} Dijkstra\-Pathfinder\-::find\-Path\-To\-Lowest\-And\-Closest\-Stem\-Point (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{input\-Label, }
+\item[{{\bf Plant\-Segmentation\-Data\-Container} $\ast$}]{input\-Segmentation\-Data}
+\end{DoxyParamCaption}
+)}}\label{classDijkstraPathfinder_a1a7fccaf7fd61e0a94e04d4b42b9e67c}
+\hypertarget{classDijkstraPathfinder_a0911d1e140a05e751634298855c03c31}{\index{Dijkstra\-Pathfinder@{Dijkstra\-Pathfinder}!find\-Path\-To\-Most\-Distant\-Node\-From\-Input\-Source@{find\-Path\-To\-Most\-Distant\-Node\-From\-Input\-Source}}
+\index{find\-Path\-To\-Most\-Distant\-Node\-From\-Input\-Source@{find\-Path\-To\-Most\-Distant\-Node\-From\-Input\-Source}!DijkstraPathfinder@{Dijkstra\-Pathfinder}}
+\subsubsection[{find\-Path\-To\-Most\-Distant\-Node\-From\-Input\-Source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Path\-Data\-Container} Dijkstra\-Pathfinder\-::find\-Path\-To\-Most\-Distant\-Node\-From\-Input\-Source (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{input\-Label}
+\end{DoxyParamCaption}
+)}}\label{classDijkstraPathfinder_a0911d1e140a05e751634298855c03c31}
+\hypertarget{classDijkstraPathfinder_ab1b156fb3b6bd0e1f0cd0ee81f070881}{\index{Dijkstra\-Pathfinder@{Dijkstra\-Pathfinder}!get\-Graph\-To\-Traverse@{get\-Graph\-To\-Traverse}}
+\index{get\-Graph\-To\-Traverse@{get\-Graph\-To\-Traverse}!DijkstraPathfinder@{Dijkstra\-Pathfinder}}
+\subsubsection[{get\-Graph\-To\-Traverse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Graph} Dijkstra\-Pathfinder\-::get\-Graph\-To\-Traverse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDijkstraPathfinder_ab1b156fb3b6bd0e1f0cd0ee81f070881}
+\hypertarget{classDijkstraPathfinder_a6b0047285a23902222718b16b97012b8}{\index{Dijkstra\-Pathfinder@{Dijkstra\-Pathfinder}!get\-Z\-Coordinate\-Of\-First\-Stem\-Adjacency@{get\-Z\-Coordinate\-Of\-First\-Stem\-Adjacency}}
+\index{get\-Z\-Coordinate\-Of\-First\-Stem\-Adjacency@{get\-Z\-Coordinate\-Of\-First\-Stem\-Adjacency}!DijkstraPathfinder@{Dijkstra\-Pathfinder}}
+\subsubsection[{get\-Z\-Coordinate\-Of\-First\-Stem\-Adjacency}]{\setlength{\rightskip}{0pt plus 5cm}float Dijkstra\-Pathfinder\-::get\-Z\-Coordinate\-Of\-First\-Stem\-Adjacency (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{input\-Source\-Label, }
+\item[{uint32\-\_\-t}]{input\-Stem\-Target, }
+\item[{{\bf Plant\-Segmentation\-Data\-Container} $\ast$}]{input\-Segmentation\-Data}
+\end{DoxyParamCaption}
+)}}\label{classDijkstraPathfinder_a6b0047285a23902222718b16b97012b8}
+\hypertarget{classDijkstraPathfinder_a96521864f85917d6ef56eef84173abd3}{\index{Dijkstra\-Pathfinder@{Dijkstra\-Pathfinder}!return\-Index\-Of\-Input\-Subset\-Mesh\-Closest\-To\-Stem\-Bottom@{return\-Index\-Of\-Input\-Subset\-Mesh\-Closest\-To\-Stem\-Bottom}}
+\index{return\-Index\-Of\-Input\-Subset\-Mesh\-Closest\-To\-Stem\-Bottom@{return\-Index\-Of\-Input\-Subset\-Mesh\-Closest\-To\-Stem\-Bottom}!DijkstraPathfinder@{Dijkstra\-Pathfinder}}
+\subsubsection[{return\-Index\-Of\-Input\-Subset\-Mesh\-Closest\-To\-Stem\-Bottom}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t Dijkstra\-Pathfinder\-::return\-Index\-Of\-Input\-Subset\-Mesh\-Closest\-To\-Stem\-Bottom (
+\begin{DoxyParamCaption}
+\item[{pcl\-::\-Polygon\-Mesh $\ast$}]{input\-Leaf\-Mesh, }
+\item[{pcl\-::\-Polygon\-Mesh $\ast$}]{input\-Segmented\-Mesh}
+\end{DoxyParamCaption}
+)}}\label{classDijkstraPathfinder_a96521864f85917d6ef56eef84173abd3}
+The purpose of this is to find the leaf base. \hypertarget{classDijkstraPathfinder_acd588e3cb888ade9e38005a9b7042462}{\index{Dijkstra\-Pathfinder@{Dijkstra\-Pathfinder}!return\-Labels\-Of\-Largest\-Connected\-Set@{return\-Labels\-Of\-Largest\-Connected\-Set}}
+\index{return\-Labels\-Of\-Largest\-Connected\-Set@{return\-Labels\-Of\-Largest\-Connected\-Set}!DijkstraPathfinder@{Dijkstra\-Pathfinder}}
+\subsubsection[{return\-Labels\-Of\-Largest\-Connected\-Set}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ uint32\-\_\-t $>$ Dijkstra\-Pathfinder\-::return\-Labels\-Of\-Largest\-Connected\-Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDijkstraPathfinder_acd588e3cb888ade9e38005a9b7042462}
+\hypertarget{classDijkstraPathfinder_a64300c90245030665a7d828e16269e43}{\index{Dijkstra\-Pathfinder@{Dijkstra\-Pathfinder}!set\-Graph\-To\-Traverse@{set\-Graph\-To\-Traverse}}
+\index{set\-Graph\-To\-Traverse@{set\-Graph\-To\-Traverse}!DijkstraPathfinder@{Dijkstra\-Pathfinder}}
+\subsubsection[{set\-Graph\-To\-Traverse}]{\setlength{\rightskip}{0pt plus 5cm}int Dijkstra\-Pathfinder\-::set\-Graph\-To\-Traverse (
+\begin{DoxyParamCaption}
+\item[{{\bf Graph}}]{input\-Graph\-To\-Traverse}
+\end{DoxyParamCaption}
+)}}\label{classDijkstraPathfinder_a64300c90245030665a7d828e16269e43}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classDijkstraPathfinder_ab33602aec0ee4c2060def95da74b09a7}{\index{Dijkstra\-Pathfinder@{Dijkstra\-Pathfinder}!\-\_\-graph\-To\-Traverse@{\-\_\-graph\-To\-Traverse}}
+\index{\-\_\-graph\-To\-Traverse@{\-\_\-graph\-To\-Traverse}!DijkstraPathfinder@{Dijkstra\-Pathfinder}}
+\subsubsection[{\-\_\-graph\-To\-Traverse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Graph} Dijkstra\-Pathfinder\-::\-\_\-graph\-To\-Traverse\hspace{0.3cm}{\ttfamily [private]}}}\label{classDijkstraPathfinder_ab33602aec0ee4c2060def95da74b09a7}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dijkstraPathfinding_8h}{dijkstra\-Pathfinding.\-h}\item 
+\hyperlink{dijkstraPathfinding_8cpp}{dijkstra\-Pathfinding.\-cpp}\end{DoxyCompactItemize}

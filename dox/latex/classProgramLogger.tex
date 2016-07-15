@@ -1,0 +1,133 @@
+\hypertarget{classProgramLogger}{\section{Program\-Logger Class Reference}
+\label{classProgramLogger}\index{Program\-Logger@{Program\-Logger}}
+}
+
+
+A class for a global logging object for some logging and debugging functionality.  
+
+
+
+
+{\ttfamily \#include $<$logging\-Helper.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classProgramLogger_a9eccf2fe0e1fae09753ce44bc01cdc95}{Program\-Logger} ()
+\item 
+\hyperlink{classProgramLogger_a8bf760dfa45d3e58aa3315098e2dd507}{$\sim$\-Program\-Logger} ()
+\item 
+int \hyperlink{classProgramLogger_a64f5fd0ed7c17adf98545729f13234fc}{S\-E\-T\-L\-O\-G\-F\-I\-L\-E} (\hyperlink{classInputParameters}{Input\-Parameters} input\-Params)
+\begin{DoxyCompactList}\small\item\em Opens the file to which logging information will be appended. \end{DoxyCompactList}\item 
+int \hyperlink{classProgramLogger_afac112802f3baae79b6d87d387dfdfad}{D\-E\-B\-U\-G} (std\-::string input\-Message\-To\-Log, uint32\-\_\-t debugging\-Level=2, uint32\-\_\-t debugging\-Level\-Threshold\-Over\-Which\-To\-Log=2)
+\begin{DoxyCompactList}\small\item\em Writes content to the logging file and stdout if the debugging level is set sufficiently high by the user. \end{DoxyCompactList}\item 
+int \hyperlink{classProgramLogger_a9ae26969295c85f553a3a8152cf1bda6}{L\-O\-G} (std\-::string input\-Message\-To\-Log)
+\begin{DoxyCompactList}\small\item\em Write content to the logging file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ofstream \hyperlink{classProgramLogger_a8f50db08351b68577720255843dfd629}{\-\_\-output\-File\-Stream}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class for a global logging object for some logging and debugging functionality. 
+
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classProgramLogger_a9eccf2fe0e1fae09753ce44bc01cdc95}{\index{Program\-Logger@{Program\-Logger}!Program\-Logger@{Program\-Logger}}
+\index{Program\-Logger@{Program\-Logger}!ProgramLogger@{Program\-Logger}}
+\subsubsection[{Program\-Logger}]{\setlength{\rightskip}{0pt plus 5cm}Program\-Logger\-::\-Program\-Logger (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classProgramLogger_a9eccf2fe0e1fae09753ce44bc01cdc95}
+\hypertarget{classProgramLogger_a8bf760dfa45d3e58aa3315098e2dd507}{\index{Program\-Logger@{Program\-Logger}!$\sim$\-Program\-Logger@{$\sim$\-Program\-Logger}}
+\index{$\sim$\-Program\-Logger@{$\sim$\-Program\-Logger}!ProgramLogger@{Program\-Logger}}
+\subsubsection[{$\sim$\-Program\-Logger}]{\setlength{\rightskip}{0pt plus 5cm}Program\-Logger\-::$\sim$\-Program\-Logger (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classProgramLogger_a8bf760dfa45d3e58aa3315098e2dd507}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classProgramLogger_afac112802f3baae79b6d87d387dfdfad}{\index{Program\-Logger@{Program\-Logger}!D\-E\-B\-U\-G@{D\-E\-B\-U\-G}}
+\index{D\-E\-B\-U\-G@{D\-E\-B\-U\-G}!ProgramLogger@{Program\-Logger}}
+\subsubsection[{D\-E\-B\-U\-G}]{\setlength{\rightskip}{0pt plus 5cm}int Program\-Logger\-::\-D\-E\-B\-U\-G (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{input\-Message\-To\-Log, }
+\item[{uint32\-\_\-t}]{debugging\-Level = {\ttfamily 2}, }
+\item[{uint32\-\_\-t}]{debugging\-Level\-Threshold\-Over\-Which\-To\-Log = {\ttfamily 2}}
+\end{DoxyParamCaption}
+)}}\label{classProgramLogger_afac112802f3baae79b6d87d387dfdfad}
+
+
+Writes content to the logging file and stdout if the debugging level is set sufficiently high by the user. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input\-Message\-To\-Log} & The message to log as a string. \\
+\hline
+\mbox{\tt in}  & {\em debugging\-Level} & The current debugging level, typically obtained from input\-Params.\-debugging\-Parameters.\-get\-Debugging\-Level() \\
+\hline
+\mbox{\tt in}  & {\em debugging\-Threshold\-Over\-Which\-To\-Log} & The debugging level at which the input message should be logged. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick 
+\end{DoxyAuthor}
+\hypertarget{classProgramLogger_a9ae26969295c85f553a3a8152cf1bda6}{\index{Program\-Logger@{Program\-Logger}!L\-O\-G@{L\-O\-G}}
+\index{L\-O\-G@{L\-O\-G}!ProgramLogger@{Program\-Logger}}
+\subsubsection[{L\-O\-G}]{\setlength{\rightskip}{0pt plus 5cm}int Program\-Logger\-::\-L\-O\-G (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{input\-Message\-To\-Log}
+\end{DoxyParamCaption}
+)}}\label{classProgramLogger_a9ae26969295c85f553a3a8152cf1bda6}
+
+
+Write content to the logging file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input\-Message\-To\-Log} & The message to log as a string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick 
+\end{DoxyAuthor}
+\hypertarget{classProgramLogger_a64f5fd0ed7c17adf98545729f13234fc}{\index{Program\-Logger@{Program\-Logger}!S\-E\-T\-L\-O\-G\-F\-I\-L\-E@{S\-E\-T\-L\-O\-G\-F\-I\-L\-E}}
+\index{S\-E\-T\-L\-O\-G\-F\-I\-L\-E@{S\-E\-T\-L\-O\-G\-F\-I\-L\-E}!ProgramLogger@{Program\-Logger}}
+\subsubsection[{S\-E\-T\-L\-O\-G\-F\-I\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}int Program\-Logger\-::\-S\-E\-T\-L\-O\-G\-F\-I\-L\-E (
+\begin{DoxyParamCaption}
+\item[{{\bf Input\-Parameters}}]{input\-Params}
+\end{DoxyParamCaption}
+)}}\label{classProgramLogger_a64f5fd0ed7c17adf98545729f13234fc}
+
+
+Opens the file to which logging information will be appended. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input\-Params} & An \hyperlink{classInputParameters}{Input\-Parameters} object created from the input .xml file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick 
+\end{DoxyAuthor}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classProgramLogger_a8f50db08351b68577720255843dfd629}{\index{Program\-Logger@{Program\-Logger}!\-\_\-output\-File\-Stream@{\-\_\-output\-File\-Stream}}
+\index{\-\_\-output\-File\-Stream@{\-\_\-output\-File\-Stream}!ProgramLogger@{Program\-Logger}}
+\subsubsection[{\-\_\-output\-File\-Stream}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ofstream Program\-Logger\-::\-\_\-output\-File\-Stream}}\label{classProgramLogger_a8f50db08351b68577720255843dfd629}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{loggingHelper_8h}{logging\-Helper.\-h}\item 
+\hyperlink{loggingHelper_8cpp}{logging\-Helper.\-cpp}\end{DoxyCompactItemize}

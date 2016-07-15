@@ -1,0 +1,73 @@
+\hypertarget{classBoundingBoxMaker}{\section{Bounding\-Box\-Maker$<$ Point\-T $>$ Class Template Reference}
+\label{classBoundingBoxMaker}\index{Bounding\-Box\-Maker$<$ Point\-T $>$@{Bounding\-Box\-Maker$<$ Point\-T $>$}}
+}
+
+
+Class that can find an oriented bounding box and an axis aligned bounding box given a cloud. \href{http://codextechnicanum.blogspot.com/2015/04/find-minimum-oriented-bounding-box-of.html}{\tt http\-://codextechnicanum.\-blogspot.\-com/2015/04/find-\/minimum-\/oriented-\/bounding-\/box-\/of.\-html} \href{http://www.pcl-users.org/Finding-oriented-bounding-box-of-a-cloud-td4024616.html}{\tt http\-://www.\-pcl-\/users.\-org/\-Finding-\/oriented-\/bounding-\/box-\/of-\/a-\/cloud-\/td4024616.\-html}.  
+
+
+
+
+{\ttfamily \#include $<$bounding\-Box.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef pcl\-::\-Point\-Cloud$<$ \hyperlink{features_8cpp_a42b086f8f138c5a6d16e8926efa9ba87}{Point\-T} $>$ \hyperlink{classBoundingBoxMaker_a1ab959296f462cd1be2211308f700e96}{Base}
+\item 
+typedef Base\-::\-Ptr \hyperlink{classBoundingBoxMaker_a5e4d960f36f827a84eae516597a00959}{Ptr}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structBoundingBox}{Bounding\-Box} \hyperlink{classBoundingBoxMaker_a23e28cdb82b2eb624f687db39cb8ee22}{return\-Bounding\-Box\-Of\-Cloud} (\hyperlink{classBoundingBoxMaker_a5e4d960f36f827a84eae516597a00959}{Ptr} input\-Cloud)
+\begin{DoxyCompactList}\small\item\em I had to wrap the function in this class since I couldn't figure out passing dependent names to a function. \end{DoxyCompactList}\item 
+\hyperlink{structAxisAlignedBoundingBox}{Axis\-Aligned\-Bounding\-Box} \hyperlink{classBoundingBoxMaker_a504db8934bec432ae040720045c8fac2}{return\-Axis\-Aligned\-Bounding\-Box\-Of\-Cloud} (\hyperlink{classBoundingBoxMaker_a5e4d960f36f827a84eae516597a00959}{Ptr} input\-Cloud)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Point\-T$>$class Bounding\-Box\-Maker$<$ Point\-T $>$}
+
+Class that can find an oriented bounding box and an axis aligned bounding box given a cloud. \href{http://codextechnicanum.blogspot.com/2015/04/find-minimum-oriented-bounding-box-of.html}{\tt http\-://codextechnicanum.\-blogspot.\-com/2015/04/find-\/minimum-\/oriented-\/bounding-\/box-\/of.\-html} \href{http://www.pcl-users.org/Finding-oriented-bounding-box-of-a-cloud-td4024616.html}{\tt http\-://www.\-pcl-\/users.\-org/\-Finding-\/oriented-\/bounding-\/box-\/of-\/a-\/cloud-\/td4024616.\-html}. 
+
+\begin{DoxyAuthor}{Author}
+Ryan Mc\-Cormick\-I don't really understand templates. I wanted to do return\-Bounding\-Box\-Of\-Cloud(pcl\-::\-Point\-Cloud$<$\-Point\-T$>$\-::\-Ptr)... but that doesn't compile. Putting it into a class like this works since we typedef pcl\-::\-Point\-Cloud$<$\-Point\-T$>$ as Base. 
+\end{DoxyAuthor}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classBoundingBoxMaker_a1ab959296f462cd1be2211308f700e96}{\index{Bounding\-Box\-Maker@{Bounding\-Box\-Maker}!Base@{Base}}
+\index{Base@{Base}!BoundingBoxMaker@{Bounding\-Box\-Maker}}
+\subsubsection[{Base}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Point\-T $>$ typedef pcl\-::\-Point\-Cloud$<${\bf Point\-T}$>$ {\bf Bounding\-Box\-Maker}$<$ {\bf Point\-T} $>$\-::{\bf Base}}}\label{classBoundingBoxMaker_a1ab959296f462cd1be2211308f700e96}
+\hypertarget{classBoundingBoxMaker_a5e4d960f36f827a84eae516597a00959}{\index{Bounding\-Box\-Maker@{Bounding\-Box\-Maker}!Ptr@{Ptr}}
+\index{Ptr@{Ptr}!BoundingBoxMaker@{Bounding\-Box\-Maker}}
+\subsubsection[{Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Point\-T $>$ typedef Base\-::\-Ptr {\bf Bounding\-Box\-Maker}$<$ {\bf Point\-T} $>$\-::{\bf Ptr}}}\label{classBoundingBoxMaker_a5e4d960f36f827a84eae516597a00959}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classBoundingBoxMaker_a504db8934bec432ae040720045c8fac2}{\index{Bounding\-Box\-Maker@{Bounding\-Box\-Maker}!return\-Axis\-Aligned\-Bounding\-Box\-Of\-Cloud@{return\-Axis\-Aligned\-Bounding\-Box\-Of\-Cloud}}
+\index{return\-Axis\-Aligned\-Bounding\-Box\-Of\-Cloud@{return\-Axis\-Aligned\-Bounding\-Box\-Of\-Cloud}!BoundingBoxMaker@{Bounding\-Box\-Maker}}
+\subsubsection[{return\-Axis\-Aligned\-Bounding\-Box\-Of\-Cloud}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Point\-T $>$ {\bf Axis\-Aligned\-Bounding\-Box} {\bf Bounding\-Box\-Maker}$<$ {\bf Point\-T} $>$\-::return\-Axis\-Aligned\-Bounding\-Box\-Of\-Cloud (
+\begin{DoxyParamCaption}
+\item[{{\bf Ptr}}]{input\-Cloud}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classBoundingBoxMaker_a504db8934bec432ae040720045c8fac2}
+\hypertarget{classBoundingBoxMaker_a23e28cdb82b2eb624f687db39cb8ee22}{\index{Bounding\-Box\-Maker@{Bounding\-Box\-Maker}!return\-Bounding\-Box\-Of\-Cloud@{return\-Bounding\-Box\-Of\-Cloud}}
+\index{return\-Bounding\-Box\-Of\-Cloud@{return\-Bounding\-Box\-Of\-Cloud}!BoundingBoxMaker@{Bounding\-Box\-Maker}}
+\subsubsection[{return\-Bounding\-Box\-Of\-Cloud}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Point\-T $>$ {\bf Bounding\-Box} {\bf Bounding\-Box\-Maker}$<$ {\bf Point\-T} $>$\-::return\-Bounding\-Box\-Of\-Cloud (
+\begin{DoxyParamCaption}
+\item[{{\bf Ptr}}]{input\-Cloud}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classBoundingBoxMaker_a23e28cdb82b2eb624f687db39cb8ee22}
+
+
+I had to wrap the function in this class since I couldn't figure out passing dependent names to a function. 
+
+From user Nicola Fioraio on the P\-C\-L forums. \href{http://www.pcl-users.org/Finding-oriented-bounding-box-of-a-cloud-td4024616.html}{\tt http\-://www.\-pcl-\/users.\-org/\-Finding-\/oriented-\/bounding-\/box-\/of-\/a-\/cloud-\/td4024616.\-html}
+
+This line is necessary for proper orientation in some cases. The numbers come out the same without it, but the signs are different and the box doesn't get correctly oriented in some cases. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{boundingBox_8h}{bounding\-Box.\-h}\end{DoxyCompactItemize}
