@@ -1,6 +1,8 @@
 # SorghumReconstructionAndPhenotyping
 Program to reconstruct sorghum plants from depth images and make measurements of the reconstruction
 
+![meshes generated](/meshesExample.png?raw=true "Meshes generated using the software")
+
 This software is provided as is, without warranty or guarantee that it will work, and many features remain untested.
 
 # Workflow
