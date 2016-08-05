@@ -1,0 +1,98 @@
+QTL models traversed with associated pLOD for phenotype: 
+X08.20_leafAvg_345_width_Average_Normalized
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+$`0`
+   chr     pos
+Q1   4 115.552
+  Formula: y ~ Q1 
+  pLOD:  0.557 
+
+$`1`
+   chr       pos
+Q1   4 115.55200
+Q2   2  32.99189
+  Formula: y ~ Q1 + Q2 
+  pLOD:  -0.102 
+
+$`2`
+   chr       pos
+Q1   4 115.55200
+Q2   2  32.99189
+Q3   6  59.87414
+  Formula: y ~ Q1 + Q2 + Q3 
+  pLOD:  -1.218 
+
+$`3`
+   chr       pos
+Q1   4 115.55200
+Q2   2  32.99189
+Q3   6  59.87414
+Q4   6  72.05285
+  Formula: y ~ Q1 + Q2 + Q3 + Q4 + Q3:Q4 
+  pLOD:  -2.257 
+
+$`4`
+   chr       pos
+Q1   4 115.55200
+Q2   2  32.99189
+Q3   6  59.87414
+Q4   6  72.05285
+Q5   9  42.02893
+  Formula: y ~ Q1 + Q2 + Q3 + Q4 + Q3:Q4 + Q5 
+  pLOD:  -2.887 
+
+$`5`
+   chr       pos
+Q1   4 115.55200
+Q2   2  32.99189
+Q3   6  59.87414
+Q4   6  72.05285
+Q5   9  42.02893
+Q6   1  93.77643
+  Formula: y ~ Q1 + Q2 + Q3 + Q4 + Q3:Q4 + Q5 + Q6 
+  pLOD:  -3.758 
+
+$`6`
+   chr       pos
+Q1   4 115.55200
+Q2   2  32.99189
+Q3   6  59.87414
+Q4   6  72.05285
+Q5   9  42.02893
+  Formula: y ~ Q1 + Q2 + Q3 + Q4 + Q5 + Q3:Q4 
+  pLOD:  -2.887 
+
+$`7`
+   chr       pos
+Q1   4 115.55200
+Q2   2  32.99189
+Q3   6  59.87414
+Q4   6  72.05285
+  Formula: y ~ Q1 + Q2 + Q3 + Q4 + Q3:Q4 
+  pLOD:  -2.257 
+
+$`8`
+   chr       pos
+Q1   4 115.55200
+Q2   6  59.87414
+Q3   6  72.05285
+  Formula: y ~ Q1 + Q2 + Q3 + Q2:Q3 
+  pLOD:  -1.212 
+
+$`9`
+   chr       pos
+Q1   4 115.55200
+Q2   6  59.87414
+  Formula: y ~ Q1 + Q2 
+  pLOD:  -0.278 
+
+$`10`
+   chr     pos
+Q1   4 115.552
+  Formula: y ~ Q1 
+  pLOD:  0.557 
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+

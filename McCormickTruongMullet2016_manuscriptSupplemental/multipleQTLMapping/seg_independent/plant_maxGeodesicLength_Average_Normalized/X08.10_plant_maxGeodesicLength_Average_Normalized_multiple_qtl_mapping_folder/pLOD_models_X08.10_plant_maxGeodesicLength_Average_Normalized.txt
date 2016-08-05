@@ -1,0 +1,98 @@
+QTL models traversed with associated pLOD for phenotype: 
+X08.10_plant_maxGeodesicLength_Average_Normalized
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+$`0`
+   chr      pos
+Q1   7 73.75578
+  Formula: y ~ Q1 
+  pLOD:  1.479 
+
+$`1`
+   chr      pos
+Q1   7 73.75578
+Q2  10 75.71874
+  Formula: y ~ Q1 + Q2 
+  pLOD:  4.054 
+
+$`2`
+   chr      pos
+Q1   7 73.75578
+Q2  10 75.71874
+Q3   3 74.30408
+  Formula: y ~ Q1 + Q2 + Q3 
+  pLOD:  2.973 
+
+$`3`
+   chr       pos
+Q1   7  73.75578
+Q2  10  75.71874
+Q3   3  74.30408
+Q4   3 134.35544
+  Formula: y ~ Q1 + Q2 + Q3 + Q4 
+  pLOD:  2.359 
+
+$`4`
+   chr       pos
+Q1   7  73.75578
+Q2  10  75.71874
+Q3   3  74.30408
+Q4   3 134.35544
+Q5   5  77.01395
+  Formula: y ~ Q1 + Q2 + Q3 + Q4 + Q5 + Q4:Q5 
+  pLOD:  1.053 
+
+$`5`
+   chr        pos
+Q1   7  73.755778
+Q2  10  75.718736
+Q3   3  74.304082
+Q4   3 134.355440
+Q5   5  77.013947
+Q6   6   0.000001
+  Formula: y ~ Q1 + Q2 + Q3 + Q4 + Q5 + Q4:Q5 + Q6 
+  pLOD:  -0.459 
+
+$`6`
+   chr       pos
+Q1   7  73.75578
+Q2  10  75.71874
+Q3   3  74.30408
+Q4   3 134.35544
+Q5   5  77.01395
+  Formula: y ~ Q1 + Q2 + Q3 + Q4 + Q5 + Q4:Q5 
+  pLOD:  1.053 
+
+$`7`
+   chr       pos
+Q1   7  73.75578
+Q2  10  75.71874
+Q3   3  74.30408
+Q4   3 134.35544
+  Formula: y ~ Q1 + Q2 + Q3 + Q4 
+  pLOD:  2.359 
+
+$`8`
+   chr      pos
+Q1   7 73.75578
+Q2  10 75.71874
+Q3   3 74.30408
+  Formula: y ~ Q1 + Q2 + Q3 
+  pLOD:  2.973 
+
+$`9`
+   chr      pos
+Q1   7 73.75578
+Q2  10 75.71874
+  Formula: y ~ Q1 + Q2 
+  pLOD:  4.054 
+
+$`10`
+   chr      pos
+Q1   7 73.75578
+  Formula: y ~ Q1 
+  pLOD:  1.479 
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+

@@ -1,0 +1,47 @@
+Refined QTL from chosen model (within model selection) with pLOD for phenotype: 
+X08.20_stem_axisAligned_bbox_zDistance_Average_Normalized
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fit model statistics
+
+
+		fitqtl summary
+
+Method: multiple imputation 
+Model:  normal phenotype
+Number of observations : 97 
+
+Full model result
+----------------------------------  
+Model formula: y ~ Q1 + Q2 
+
+      df       SS         MS      LOD     %var Pvalue(Chi2)    Pvalue(F)
+Model  2 40.47944 20.2397218 12.71302 45.31403 1.936229e-13 4.788392e-13
+Error 94 48.85149  0.5196967                                            
+Total 96 89.33094                                                       
+
+
+Drop one QTL at a time ANOVA table: 
+----------------------------------  
+       df Type III SS   LOD  %var F value Pvalue(Chi2) Pvalue(F)    
+6@32.7  1       12.73 4.879 14.26   24.50            0  3.25e-06 ***
+7@73.2  1       28.97 9.808 32.43   55.74            0  4.14e-11 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+LOD 2 intervals of the QTL model
+
+Q1
+               chr      pos      lod
+6_40097072_SNP   6 26.22316 2.377423
+6_43304972_SNP   6 32.65820 4.879224
+6_44831606_SNP   6 36.60582 1.594342
+
+Q2
+                 chr      pos      lod
+7_59196977_SNP     7 69.39977 7.600204
+7_59654592_SNP     7 73.17079 9.807690
+7_59991087_indel   7 75.34282 6.452767
+

@@ -1,0 +1,47 @@
+Refined QTL from chosen model (within model selection) with pLOD for phenotype: 
+X08.20_plant_maxGeodesicLength_Average_Normalized
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fit model statistics
+
+
+		fitqtl summary
+
+Method: multiple imputation 
+Model:  normal phenotype
+Number of observations : 97 
+
+Full model result
+----------------------------------  
+Model formula: y ~ Q1 + Q2 
+
+      df       SS         MS      LOD     %var Pvalue(Chi2)   Pvalue(F)
+Model  2 37.50914 18.7545692 11.46974 41.98897  3.39051e-12 7.67364e-12
+Error 94 51.82180  0.5512957                                           
+Total 96 89.33094                                                      
+
+
+Drop one QTL at a time ANOVA table: 
+----------------------------------  
+        df Type III SS   LOD  %var F value Pvalue(Chi2) Pvalue(F)    
+4@116.0  1       12.57 4.575 14.07   22.81            0  6.58e-06 ***
+7@73.2   1       24.53 8.163 27.46   44.50            0  1.74e-09 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+LOD 2 intervals of the QTL model
+
+Q1
+               chr      pos      lod
+4_62066670_SNP   4 109.7731 2.403780
+4_62906270_SNP   4 115.9669 4.575463
+4_63849561_SNP   4 121.6734 2.500444
+
+Q2
+                 chr      pos      lod
+7_59196977_SNP     7 69.39977 5.950772
+7_59654592_SNP     7 73.17079 8.163437
+7_59991087_indel   7 75.34282 5.383443
+

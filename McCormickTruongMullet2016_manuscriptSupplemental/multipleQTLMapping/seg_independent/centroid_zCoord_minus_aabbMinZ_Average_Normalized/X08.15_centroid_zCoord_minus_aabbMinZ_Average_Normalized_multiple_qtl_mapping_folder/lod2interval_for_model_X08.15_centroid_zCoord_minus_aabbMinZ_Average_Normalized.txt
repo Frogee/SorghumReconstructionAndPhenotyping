@@ -1,0 +1,32 @@
+Refined QTL from chosen model (within model selection) with pLOD for phenotype: 
+X08.15_centroid_zCoord_minus_aabbMinZ_Average_Normalized
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fit model statistics
+
+
+		fitqtl summary
+
+Method: multiple imputation 
+Model:  normal phenotype
+Number of observations : 97 
+
+Full model result
+----------------------------------  
+Model formula: y ~ Q1 
+
+      df       SS         MS      LOD    %var Pvalue(Chi2)    Pvalue(F)
+Model  1 13.33469 13.3346936 3.405174 14.9273 7.495754e-05 9.276412e-05
+Error 95 75.99624  0.7999605                                           
+Total 96 89.33094                                                      
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+LOD 2 intervals of the QTL model
+
+Q1
+                chr      pos       lod
+10_5267950_SNP   10 36.84879 0.6529144
+10_7462982_SNP   10 48.03513 3.4051736
+10_52520368_SNP  10 78.08821 0.9719064
+

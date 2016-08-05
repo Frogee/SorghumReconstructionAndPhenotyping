@@ -1,0 +1,47 @@
+Refined QTL from chosen model (within model selection) with pLOD for phenotype: 
+X08.03_convexHullArea_Average_Normalized
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fit model statistics
+
+
+		fitqtl summary
+
+Method: multiple imputation 
+Model:  normal phenotype
+Number of observations : 97 
+
+Full model result
+----------------------------------  
+Model formula: y ~ Q1 + Q2 
+
+      df       SS         MS     LOD     %var Pvalue(Chi2)    Pvalue(F)
+Model  2 29.67602 14.8380120 8.50475 33.22032 3.127879e-09 5.731699e-09
+Error 94 59.65491  0.6346267                                           
+Total 96 89.33094                                                      
+
+
+Drop one QTL at a time ANOVA table: 
+----------------------------------  
+        df Type III SS   LOD  %var F value Pvalue(Chi2) Pvalue(F)    
+7@73.2   1       12.54 4.020 14.04   19.77            0  2.40e-05 ***
+10@38.8  1       15.50 4.864 17.35   24.42            0  3.37e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+LOD 2 intervals of the QTL model
+
+Q1
+               chr      pos      lod
+7_57288688_SNP   7 59.35286 1.776617
+7_59654592_SNP   7 73.17079 4.019853
+7_60470668_SNP   7 78.54984 1.539377
+
+Q2
+                chr      pos      lod
+10_5061840_SNP   10 35.07126 2.500353
+10_5630305_SNP   10 38.81872 4.863741
+10_52520368_SNP  10 78.08821 2.160585
+

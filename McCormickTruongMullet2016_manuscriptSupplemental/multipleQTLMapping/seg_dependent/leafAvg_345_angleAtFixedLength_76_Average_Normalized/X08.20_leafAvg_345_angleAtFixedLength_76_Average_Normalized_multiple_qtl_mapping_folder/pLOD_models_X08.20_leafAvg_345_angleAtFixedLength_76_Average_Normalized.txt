@@ -1,0 +1,116 @@
+QTL models traversed with associated pLOD for phenotype: 
+X08.20_leafAvg_345_angleAtFixedLength_76_Average_Normalized
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+$`0`
+   chr      pos
+Q1   7 72.89667
+  Formula: y ~ Q1 
+  pLOD:  4.58 
+
+$`1`
+   chr      pos
+Q1   7 72.89667
+Q2   3 70.81739
+  Formula: y ~ Q1 + Q2 
+  pLOD:  4.157 
+
+$`2`
+   chr       pos
+Q1   7  72.89667
+Q2   3  70.81739
+Q3   9 121.88540
+  Formula: y ~ Q1 + Q2 + Q3 
+  pLOD:  3.734 
+
+$`3`
+   chr       pos
+Q1   7  72.89667
+Q2   3  70.81739
+Q3   9 121.88540
+Q4   2 110.60246
+  Formula: y ~ Q1 + Q2 + Q3 + Q4 
+  pLOD:  2.622 
+
+$`4`
+   chr       pos
+Q1   7  72.89667
+Q2   3  70.81739
+Q3   9 121.88540
+Q4   2 110.60246
+  Formula: y ~ Q1 + Q2 + Q3 + Q4 + Q1:Q2 
+  pLOD:  1.443 
+
+$`5`
+   chr       pos
+Q1   7  72.89667
+Q2   3  70.81739
+Q3   9 121.88540
+Q4   2 110.60246
+Q5   4  95.94968
+  Formula: y ~ Q1 + Q2 + Q3 + Q4 + Q1:Q2 + Q5 
+  pLOD:  0.319 
+
+$`6`
+   chr       pos
+Q1   7  72.89667
+Q2   3  70.81739
+Q3   9 121.88540
+Q4   2 110.60246
+Q5   4  95.94968
+Q6   9  54.86533
+  Formula: y ~ Q1 + Q2 + Q3 + Q4 + Q1:Q2 + Q5 + Q6 
+  pLOD:  -0.592 
+
+$`7`
+   chr       pos
+Q1   7  72.89667
+Q2   3  70.81739
+Q3   9 121.88540
+Q4   2 110.60246
+Q5   4  95.94968
+  Formula: y ~ Q1 + Q2 + Q3 + Q4 + Q5 + Q1:Q2 
+  pLOD:  0.319 
+
+$`8`
+   chr       pos
+Q1   7  72.89667
+Q2   3  70.81739
+Q3   9 121.88540
+Q4   2 110.60246
+  Formula: y ~ Q1 + Q2 + Q3 + Q4 + Q1:Q2 
+  pLOD:  1.443 
+
+$`9`
+   chr       pos
+Q1   7  72.89667
+Q2   3  70.81739
+Q3   9 121.88540
+Q4   2 110.60246
+  Formula: y ~ Q1 + Q2 + Q3 + Q4 
+  pLOD:  2.622 
+
+$`10`
+   chr       pos
+Q1   7  72.89667
+Q2   3  70.81739
+Q3   9 121.88540
+  Formula: y ~ Q1 + Q2 + Q3 
+  pLOD:  3.734 
+
+$`11`
+   chr      pos
+Q1   7 72.89667
+Q2   3 70.81739
+  Formula: y ~ Q1 + Q2 
+  pLOD:  4.157 
+
+$`12`
+   chr      pos
+Q1   7 72.89667
+  Formula: y ~ Q1 
+  pLOD:  4.58 
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
