@@ -2,6 +2,8 @@
 # Notes on reproducibility
 Please note that if you attempt an exact reproduction of the results that there are a number of steps in the analysis that depend on genotype probabilities, and the results will not be exactly the same due to sampling. If you start from the .csv files, you will find that QTL shift positions slightly, and some QTL are sometimes over the significance threshold, sometimes not. In an effort to make the analysis as reproducible as possible, RData files containing R/qtl cross objects that were used in the analysis are provided. If you are attempting replication, load() those instead of using the "raw data" provided as .csv files. Note also that, if you are attempting replication, file paths specified in the R-scripts are absolute paths and will not work out of the box, and they will need to be adjusted.
 
+Please note also that the figures were made using ggplot2 v1.0.1. It appears that things might not work out of the box using ggplot2 v2.0+ (e.g., interpolate=TRUE appears to not have been working for geom_raster in v1.0.1 as it works in v2.0+). 
+
 # Workflow
 The workflow was as follows. First, a low stringency (i.e. low specificity, high sensitivity) analysis was performed using single QTL mapping for all of the phenotypes with the entire marker set (BTx623xIS3620c_01-02-14_v0007_Sbi3_MapAfterSDCOsleq2ToMissing_allPhenotypes.csv.gz or BTx623xIS3620c_01-02-14_v0007_Sbi3_MapAfterSDCOsleq2ToMissing_allPhenotypes_crossObjectForSingleQTLMapping.RData). The results were manually inspected. A subset of phenotypes that could be reliably measured and had biologically interesting results were identified and remapped at higher stringency (i.e. 95% threshold) with a single QTL model (BTx623xIS3620C_imageMapping_highStringency.R).
 
